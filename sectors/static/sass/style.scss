@@ -2,7 +2,7 @@
 Theme Name: Bootstrap 4 Sass
 Description: Bootstrap 4 with Sass
 */
-@import "../../../../bower_components/bootstrap/scss/bootstrap";
+//@import "../../../../bower_components/bootstrap/scss/bootstrap";
 // typography
 @import "base/typography";
 // compass
@@ -574,4 +574,15 @@ $translateX: 0;
 
     }
 
+}
+
+#hand {
+    -moz-animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    animation-duration: 1s;
+    //-moz-animation-delay: 3s;
+    //-webkit-animation-delay: 3s;
+    //-ms-animation-delay: 3s;
+    //animation-delay: 3s;
 }
