@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} {% block container %}
+<div id="fullpage">
+    <div id="section00" class="section">
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="landing">DoseTaper<small>.com</small></h1>
+                    <p class="lead">A medicinal dose tapering web application.</p>
+                </div>
+            </div>
+            <a href="#intro01"><span></span>&nbsp;</a>
+        </div>
+    </div>
+    <div id="section01" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    {#<img src="{{ url_for('static', filename='img/hand.png') }}" class="img-fluid center-block" alt="Responsive image">#}
+                    {#<img data-original="{{ url_for('static', filename='img/hand.png') }}" class="lazy" width="300" height="416">#}
+                    <img data-src="{{ url_for('static', filename='img/hand.png') }}" class="img-fluid center-block" alt="Responsive image">
+                </div>
+                <div class="col-sm-6">
+                    <h6>Title</h6>
+                    <p>Text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

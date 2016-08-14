@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {# META #}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>DoseTaper</title>
+    {% endif %}
+
+    {# CSS #}
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    {% block container %}{% endblock %}
+
+    {# JS #}
+    <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
+
+    {#{% include 'footer.html' %}#}
+</body>
+
+</html>
