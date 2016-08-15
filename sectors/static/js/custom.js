@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
         easing: 'linear',
-        anchors: ['intro00', 'intro01'],
+        anchors: ['00', '01'],
         //sectionsColor: ['rgba(255, 255, 255, 0)', '#4BBFC3'],
         //css3: false,
         //autoScrolling: false,
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     backgroundColor: jQuery.Color("#555").transition("transparent", 0)
                 }, 400, 'easeInOutCubic');
                 $(".nav-item .nav-link").toggleClass('nav-dark');
-                $('#hand').addClass('animated fadeInUpBig');
+                $('#blister_pack').addClass('animated fadeInUpBig');
             }
             // going to Introduction
             if (index == 2 && direction == 'up') {

@@ -196,7 +196,7 @@ a {
 }
 
 #section00 {
-    background-image: url(../img/splash4.jpg);
+    background-image: url(../img/section_00_bg.jpg);
     //-webkit-filter: brightness(50%);
     //filter: brightness(50%);
 
@@ -576,7 +576,9 @@ $translateX: 0;
 
 }
 
-#hand {
+/* Section 01
+---------------------------------------------------------------------------*/
+#blister_pack {
     -moz-animation-duration: 1s;
     -webkit-animation-duration: 1s;
     -ms-animation-duration: 1s;
@@ -585,4 +587,5 @@ $translateX: 0;
     //-webkit-animation-delay: 3s;
     //-ms-animation-delay: 3s;
     //animation-delay: 3s;
+    max-height: 500px;
 }

@@ -5091,7 +5091,7 @@ a {
     opacity: .5; }
 
 #section00 {
-  background-image: url(../img/splash4.jpg); }
+  background-image: url(../img/section_00_bg.jpg); }
   #section00 .jumbotron {
     background-color: rgba(255, 255, 255, 0);
     color: #fff; }
@@ -5283,10 +5283,13 @@ a {
       margin-left: -7px; }
   #section00 .jumbotron .lead {
     font-size: 2em; } }
-#hand {
+/* Section 01
+---------------------------------------------------------------------------*/
+#blister_pack {
   -moz-animation-duration: 1s;
   -webkit-animation-duration: 1s;
   -ms-animation-duration: 1s;
-  animation-duration: 1s; }
+  animation-duration: 1s;
+  max-height: 500px; }
 
 /*# sourceMappingURL=style.css.map */
