@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
         easing: 'linear',
-        anchors: ['00', '01'],
+        anchors: ['00', '01', '02'],
         //sectionsColor: ['rgba(255, 255, 255, 0)', '#4BBFC3'],
         //css3: false,
         //autoScrolling: false,
         //verticalCentered: true,
         //fitToSection: true,
+        normalScrollElements: '#section02',
         onLeave: function(index, nextIndex, direction) {
             // after leaving Introduction
             if (index == 1 && direction == 'down') {
@@ -24,7 +25,8 @@ $(document).ready(function() {
                     backgroundColor: jQuery.Color("#555").transition("transparent", 0)
                 }, 400, 'easeInOutCubic');
                 $(".nav-item .nav-link").toggleClass('nav-dark');
-                $('#blister_pack').addClass('animated fadeInUpBig');
+                //$('#blister_pack').addClass('animated fadeInUpBig');
+                $('#blister_pack').animateCss('fadeInUpBig');
             }
             // going to Introduction
             if (index == 2 && direction == 'up') {
@@ -78,10 +80,13 @@ $(document).ready(function() {
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
     };
-
-    $("img.lazy").lazyload({
-        effect: "fadeIn",
-        container: $("#section01")
+    $.fn.extend({
+        animateCss: function(animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+            });
+        }
     });
 });
 

@@ -13,15 +13,53 @@
     </div>
     <div id="section01" class="section">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    {#<img src="{{ url_for('static', filename='img/hand.png') }}" class="img-fluid center-block" alt="Responsive image">#}
-                    {#<img data-original="{{ url_for('static', filename='img/hand.png') }}" class="lazy" width="300" height="416">#}
-                    <img id="blister_pack" data-src="{{ url_for('static', filename='img/landing_imgs/landing_blister_sm.png') }}" class="img-fluid center-block" alt="Responsive image">
+            <div class="row is-table-row">
+                <div class="col-md-6">
+                    {#<img src="{{ url_for('static', filename='img/hand.png') }}" class="img-fluid center-block" alt="Responsive image">#} {#
+                    <img data-original="{{ url_for('static', filename='img/hand.png') }}" class="lazy" width="300" height="416">#}
+                    <img id="blister_pack" class="img-fluid" data-src="{{ url_for('static', filename='img/laptop.png') }}">
                 </div>
-                <div class="col-sm-6">
-                    <h6>Title</h6>
-                    <p>Text</p>
+                <div class="col-md-6 vertical-center">
+                    <span class="landing-text hidden-sm-down">Input the details of your taper.</span>
+                    <div class="landing-text hidden-md-up">Input the details of your taper.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section02" class="section">
+        <div class="container hidden-sm-down">
+            <div class="row">
+                <div class="col-md-6" style="text-align: center;">
+                    <span class="landing-text">DoseTaper outputs the prescription.</span>
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <span class="landing-text">And generates a printable calendar.</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="" class="img-fluid center-block" data-src="{{ url_for('static', filename='img/landing_rxpad.png') }}">
+                </div>
+                <div class="col-md-6">
+                    <img id="" class="img-fluid center-block" data-src="{{ url_for('static', filename='img/landing_cal.png') }}">
+                </div>
+            </div>
+        </div>
+        <div class="container hidden-md-up">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="" class="img-fluid center-block" data-src="{{ url_for('static', filename='img/landing_rxpad.png') }}">
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <div class="landing-text hidden-md-up">DoseTaper outputs the prescription.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="" class="img-fluid center-block" data-src="{{ url_for('static', filename='img/landing_cal.png') }}">
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <div class="landing-text hidden-md-up">And generates a printable calendar.</div>
                 </div>
             </div>
         </div>
