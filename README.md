@@ -27,9 +27,8 @@
     $ sudo npm install grunt-contrib-uglify --save-dev
     $ sudo npm install grunt-contrib-watch --save-dev
 
-- May or may not need this.  
-  
-  
+>  May or may not need this.
+
     $ sudo npm install -g minimatch@3.0.2
     $ sudo npm install -g jshint@2.5.11
 
