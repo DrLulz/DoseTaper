@@ -1,7 +1,7 @@
 Fresh Ubuntu Install
 
-$ adduser user
-$ adduser user sudo
+    $ adduser user  
+    $ adduser user sudo  
 
 > $ su user (to switch user)
 
