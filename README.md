@@ -44,7 +44,8 @@
 ### Git
 
 > add keys to /root/.ssh
-> sudo mkdir www
+
+    $ sudo mkdir www
     $ sudo git clone git@github.com:DrLulz/DoseTaper.git .
     $ sudo git pull git@github.com:DrLulz/DoseTaper.git .
 
