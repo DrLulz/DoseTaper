@@ -4705,7 +4705,8 @@ html.fp-enabled,
 .fp-slide {
   float: left; }
 
-.fp-slide, .fp-slidesContainer {
+.fp-slide,
+.fp-slidesContainer {
   height: 100%;
   display: block; }
 
@@ -4718,7 +4719,8 @@ html.fp-enabled,
   /* Safari<=6 Android<=4.3 */
   transition: all 0.3s ease-out; }
 
-.fp-section.fp-table, .fp-slide.fp-table {
+.fp-section.fp-table,
+.fp-slide.fp-table {
   display: table;
   table-layout: fixed;
   width: 100%; }
@@ -4764,7 +4766,8 @@ html.fp-enabled,
     border-color: transparent transparent transparent #fff; }
 
 .fp-scrollable {
-  overflow: scroll; }
+  /* overflow: scroll; */
+  overflow: hidden; }
 
 .fp-notransition {
   -webkit-transition: none !important;
@@ -5324,11 +5327,9 @@ a {
     vertical-align: top; } }
 /* Section 02
 ---------------------------------------------------------------------------*/
-#section02 img {
-  padding-top: 40px; }
-
-.card-deck {
-  overflow: scroll;
-  margin-top: 58px; }
+#section02 {
+  padding-top: 74px; }
+  #section02 img {
+    padding-top: 40px; }
 
 /*# sourceMappingURL=style.css.map */

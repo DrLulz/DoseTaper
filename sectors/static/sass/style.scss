@@ -646,6 +646,8 @@ $translateX: 0;
 /* Section 02
 ---------------------------------------------------------------------------*/
 #section02 {
+    padding-top: 74px;
+
     img {
         padding-top: 40px;
     }
@@ -653,6 +655,5 @@ $translateX: 0;
 }
 
 .card-deck {
-    overflow: scroll;
-    margin-top: 58px;
+    //margin-top: 58px;
 }
