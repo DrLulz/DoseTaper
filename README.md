@@ -1,16 +1,16 @@
-Fresh Ubuntu Install
+### Fresh Ubuntu Install
 
-    $ adduser user  
-    $ adduser user sudo  
+    $ adduser user
+    $ adduser user sudo
 
 > $ su user (to switch user)
 
-$ sudo apt-get update
-$ sudo apt-get install -y python python-pip python-virtualenv nginx gunicorn
+    $ sudo apt-get update
+    $ sudo apt-get install -y python python-pip python-virtualenv nginx gunicorn
 
 
-sudo apt-get install -y git nodejs npm
-sudo ln -s /usr/bin/nodejs /usr/bin/node
+    sudo apt-get install -y git nodejs npm
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ### Grunt
 
