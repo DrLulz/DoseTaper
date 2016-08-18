@@ -4,8 +4,8 @@
         <div class="container">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="landing animated bounceInLeft">DoseTaper<small>.com</small></h1>
-                    <p class="lead">A medicinal dose tapering web application.</p>
+                    <h1 class="landing animated fadeInUp">DoseTaper<small>.com</small></h1>
+                    <p class="lead animated fadeInUp">A medicinal dose tapering web application.</p>
                 </div>
             </div>
             <a href="#01"><span></span>&nbsp;</a>
@@ -26,6 +26,36 @@
             </div>
         </div>
     </div>
+    <div id="section02" class="section">
+        <div class="container">
+            <div class="card-deck-wrapper">
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top img-fluid center-block" src="{{ url_for('static', filename='img/landing_cal.png') }}" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top img-fluid center-block" src="{{ url_for('static', filename='img/landing_rxpad.png') }}" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top img-fluid center-block" src="{{ url_for('static', filename='img/landing_clipboard.png') }}" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#
     <div id="section02" class="section">
         <div class="container hidden-sm-down">
             <div class="row">
@@ -65,4 +95,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
+#} {% endblock %}

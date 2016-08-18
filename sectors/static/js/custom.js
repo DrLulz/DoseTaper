@@ -7,7 +7,7 @@ $(document).ready(function() {
         //autoScrolling: false,
         //verticalCentered: true,
         //fitToSection: true,
-        normalScrollElements: '#section02',
+        normalScrollElements: '.card-deck',
         onLeave: function(index, nextIndex, direction) {
             // after leaving Introduction
             if (index == 1 && direction == 'down') {
@@ -41,6 +41,22 @@ $(document).ready(function() {
                 }, 400, 'easeInOutCubic');
                 $(".nav-item .nav-link").toggleClass('nav-dark');
             }
+            if (index == 2 && direction == 'down') {
+                //var section02_height = ($('div.fp-tableCell').height()) - 58;
+                //var section02_height = window.innerHeight - 58;
+                //var section02_height = ($('#section02').height()) - 58;
+                var section02_height = $(window).height() - 78;
+                //alert(section02_height);
+                $('div.card-deck').height(section02_height);
+                //if ($(window).width() < 545) {
+                    //alert($(window).width());
+                    //alert(section02_height + 'px');
+                    //$('div.card-deck').css({ 'height': section02_height + "px" });
+                    //$('div.card-deck').height(section02_height + 'px');
+                //} else {
+                    //alert('More than 960');
+                //}
+            }
         }
     });
 
@@ -63,6 +79,15 @@ $(document).ready(function() {
         $(".overlay").fadeToggle(200);
         ham_icon.toggleClass('active');
     });
+
+
+
+    //$('.landing, .lead').animateCss('fadeInUp');
+
+
+
+    // Functions
+
     var resetMenu = function() {
         if (($('.overlay').is(":visible")) && ($(window).width() > 767)) {
             $(".overlay").fadeToggle(200);
