@@ -2,26 +2,25 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
         easing: 'linear',
         anchors: ['00', '01', '02'],
-        //sectionsColor: ['rgba(255, 255, 255, 0)', '#4BBFC3'],
+        sectionsColor: ['rgba(255, 255, 255, 0)', '#FFF', '#FFF'],
         //css3: false,
         //autoScrolling: false,
         //verticalCentered: true,
         //fitToSection: true,
         //normalScrollElements: '.card-deck',
         scrollOverflow: true,
-        afterRender: function(){
-            var height = $('#section02').height() - 74;
-            $('#section02, .fp-tableCell, .fp-scrollable').css({ 'height': height + "px" });
-            $('.iScrollVerticalScrollbar').css({ 'top': 74 + "px" });
-            $.fn.fullpage.reBuild();
+        //responsiveHeight: 900,
+        scrollOverflowOptions: {
+            fadeScrollbars: true
         },
+        /* afterRender: function() {}, */
+        /* afterResize: function() {}, */
         onLeave: function(index, nextIndex, direction) {
-            // after leaving Introduction
+            // Going to section01
             if (index == 1 && direction == 'down') {
                 $(".navbar .container").animate({ height: 40 }, 100, 'linear');
                 $(".navbar").animate({
                     backgroundColor: jQuery.Color("#ddd8ce").transition("transparent", 0.4),
-                    //backgroundColor: jQuery.Color("#F8F2ED").transition("transparent", 0),
                     borderBottomColor: jQuery.Color("#ddd8ce").transition("transparent", 0)
                 }, 400, 'easeInOutCubic');
 
@@ -32,10 +31,9 @@ $(document).ready(function() {
                     backgroundColor: jQuery.Color("#555").transition("transparent", 0)
                 }, 400, 'easeInOutCubic');
                 $(".nav-item .nav-link").toggleClass('nav-dark');
-                //$('#blister_pack').addClass('animated fadeInUpBig');
-                $('#blister_pack').animateCss('fadeInUpBig');
+                $('#laptop').animateCss('fadeInUpBig');
             }
-            // going to Introduction
+            // Going to section00
             if (index == 2 && direction == 'up') {
                 $(".navbar .container").animate({ height: 98 }, 100, 'linear');
                 $(".navbar").animate({
@@ -48,18 +46,13 @@ $(document).ready(function() {
                 }, 400, 'easeInOutCubic');
                 $(".nav-item .nav-link").toggleClass('nav-dark');
             }
+            // Going to section02
             if (index == 2 && direction == 'down') {
-                //var section02_height = ($('div.fp-tableCell').height()) - 58;
-                //var section02_height = window.innerHeight - 58;
-                //var section02_height = ($('#section02').height()) - 58;
-                //var section02_height = $(window).height() - 78;
-
-                //$('div.card-deck').height(section02_height);
-                //if ($(window).width() < 545) {
-                    //$('div.card-deck').css({ 'height': section02_height + "px" });
-                //} else {
-                    //alert('More than 960');
-                //}
+                if ($(window).width() > 543) {
+                    $('#calendar').animateCss('fadeInUpBig');
+                    $('#rxpad').animateCss('fadeInUpBig');
+                    $('#clipboard').animateCss('fadeInUpBig');
+                }
             }
         }
     });
@@ -83,12 +76,6 @@ $(document).ready(function() {
         $(".overlay").fadeToggle(200);
         ham_icon.toggleClass('active');
     });
-
-
-
-    //$('.landing, .lead').animateCss('fadeInUp');
-
-
 
     // Functions
 
@@ -119,37 +106,4 @@ $(document).ready(function() {
     });
 });
 
-/* flexibility - https://github.com/jonathantneal/flexibility
----------------------------------------------------------------------------*/
-/* function supportsFlexBox() {
-    var test = document.createElement('test');
-
-    test.style.display = 'flex';
-
-    return test.style.display === 'flex';
-}
-
-if (supportsFlexBox()) {
-    // Modern Flexbox is supported
-} else {
-    flexibility(document.documentElement);
-}
-
-var onresizeTimeout;
-
-window.onresize = onresize;
-
-function onresize() {
-    window.onresize = null;
-
-    if (!onresizeTimeout) {
-        onresizeTimeout = setTimeout(function() {
-            onresizeTimeout = null;
-
-            flexibility(container);
-
-            window.onresize = onresize;
-        }, 1000 / 60);
-    }
-}
- */
+/* flexibility - https://github.com/jonathantneal/flexibility */

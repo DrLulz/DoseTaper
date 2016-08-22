@@ -1,24 +1,24 @@
 <nav class="navbar navbar-fixed-top">
     <div class="container">
         <div class="nav-wrapper pull-xs-left">
-            <a href="#" class="vertical-center"><img class="v-c" src="{{ url_for('static', filename='img/logo.png') }}"></a>
+            <a href="#" class="vc-nav"><img class="wrap-nav" src="{{ url_for('static', filename='img/logo.png') }}"></a>
         </div>
         <div class="nav navbar-nav pull-xs-right hidden-sm-down">
-            <li class="nav-item vertical-center">
-                <a class="nav-link v-c" href="#">Login</a>
-                <a class="nav-link v-c" href="#">Disclaimer</a>
+            <li class="nav-item vc-nav">
+                <a class="nav-link wrap-nav" href="#">Login</a>
+                <a class="nav-link wrap-nav" href="#">Disclaimer</a>
             </li>
         </div>
-        <div id="hamburger-wrapper" class="nav navbar-nav pull-xs-right hidden-md-up vertical-center">
-            <a class="hamburger-icon v-c" title="Menu">
+        <div id="hamburger-wrapper" class="nav navbar-nav pull-xs-right hidden-md-up vc-nav">
+            <a class="hamburger-icon wrap-nav" title="Menu">
                 <span class="line line-1"></span>
                 <span class="line line-2"></span>
                 <span class="line line-3"></span>
             </a>
         </div>
         <div class="overlay">
-            <div class="menu vertical-center">
-                <ul class="overlay-ul v-c">
+            <div class="menu vc-nav">
+                <ul class="overlay-ul wrap-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
@@ -29,88 +29,3 @@
         <!-- overlay -->
     </div>
 </nav>
-{#
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-    <div class="container">
-        <div class="nav navbar-nav">
-            <div class="nav-item logo-wrapper">
-                <a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
-            </div>
-            <a class="nav-item nav-link pull-xs-left active" href="#">Home <span class="sr-only">(current)</span></a>
-            <div class="nav-item pull-xs-right">
-                <a class="nav-item nav-link pull-xs-left active" href="#">LOGIN</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-    <div class="container">
-        <div class="nav navbar-nav">
-            <div class="nav-item logo-wrapper">
-                <a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
-            </div>
-            <div class="nav-item pull-xs-right">
-                <a class="nav-link pull-xs-left active" href="#">LOGIN</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-    <div class="container">
-        <div class="nav navbar-nav">
-            <span class="logo-wrapper">
-                <a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
-            </span>
-            <div class="nav-item pull-xs-right">
-                <a class="nav-link pull-xs-left active" href="#">LOGIN</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <div class="nav navbar-nav">
-            <span class="logo-wrapper">
-                <a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
-            </span>
-            <li class="nav-item btn pull-xs-right">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item btn pull-xs-right">
-                <a class="nav-link" href="#">Disclaimer</a>
-            </li>
-        </div>
-    </div>
-</nav>
-<nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <div class="nav-wrapper pull-xs-left">
-            <a href="#" class="vertical-center"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
-        </div>
-        <div class="nav navbar-nav pull-xs-right hidden-sm-down">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-        </div>
-        <div id="hamburger-wrapper" class="nav navbar-nav pull-xs-right hidden-md-up">
-            <!--<a class="hamburger-icon" href="javascript:void(0)" title="Menu">-->
-            <a class="hamburger-icon" title="Menu">
-                <span class="line line-1"></span>
-                <span class="line line-2"></span>
-                <span class="line line-3"></span>
-            </a>
-        </div>
-        <div class="overlay">
-            <div class="menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- overlay -->
-    </div>
-</nav>
-#}
