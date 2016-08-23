@@ -21,6 +21,10 @@ Description: Bootstrap 4 with Sass
 * Fullpage JS Sections
 
 */
+
+body {
+    @include font-smoothing;
+}
 a {
     outline: none;
 }
@@ -61,17 +65,17 @@ a {
             padding: 0;
             position: relative;
             display: inline-block;
-            color: #fff;
+            color: $white;
             text-decoration: none;
             font-size: 13px;
-            font-family: 'Oxygen', sans-serif;
+            font-family: $font-oxygen;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             word-spacing: 1px;
 
             &:hover {
-                color: #fff;
+                color: $white;
             }
 
             &:before {
@@ -81,7 +85,7 @@ a {
                 height: 2px;
                 bottom: 0;
                 left: 0;
-                background-color: #fff;
+                background-color: $white;
                 visibility: hidden;
                 @include transform(scaleX(0));
                 @include transition(all 0.15s ease-in-out 0s);
@@ -183,7 +187,7 @@ a {
 
 }
 
-/* Fullpage JS
+/* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
 
 /* Background
@@ -204,7 +208,7 @@ a {
         z-index: 2;
         display: inline-block;
         @include transform(translate(0, -50%));
-        color: #fff;
+        color: $white;
         font: normal 400 20px/1 'Josefin Sans', sans-serif;
         letter-spacing: .1em;
         text-decoration: none;
@@ -232,7 +236,7 @@ a {
 
     .jumbotron {
         background-color: rgba(255, 255, 255, 0);
-        color: #fff;
+        color: $white;
         margin-bottom: 0;
 
         .text-00 {
@@ -241,10 +245,8 @@ a {
             @include responsive-font-size (2.1em, 6.5em, 400px, 992px, 0.4em);
             font-weight: 400;
             text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
-            //text-shadow: 0 -2.5px 0 darken(#ffffff, 20), 0 4px 6px rgba(204, 204, 192, .4), 0 7px 8px rgba(204, 204, 192, .15);
 
             &:first-letter {
-                //margin-left: -7px;
             }
 
         }
@@ -261,6 +263,84 @@ a {
             font-weight: 400;
         }
 
+        button {
+            font-family: $font-montserrat;
+            text-transform: uppercase;
+            position: relative;
+            border: none;
+            font-size: 18px;
+            @include responsiveProp(font-size, 70%, 80%, 90%, 100%);
+            @include transition(color 0.5s, transform 0.2s, background-color 0.2s);
+            outline: none;
+            @include border-radius(3px);
+            margin: 0;
+            @include animation-delay(.2s);
+            @include responsiveProp(padding, 10px, 15px, 20px, 23px);
+            border: 3px solid transparent;
+
+            &:active {
+                @include transform(translateY(3px));
+            }
+
+            &::after,
+            &::before {
+                @include border-radius(3px);
+            }
+
+        }
+
+        .btn00 {
+            background-color: transparent;
+            color: $off-white;
+            border: none;
+            overflow: hidden;
+            box-shadow: none;
+
+            &:hover {
+                color: $off-white;
+
+                &::before {
+                    @include opacity(0);
+                }
+
+                &::after {
+                    @include opacity(1);
+                    @include transform-origin(100px 100px);
+                    @include transform(scale(1) translate(-10px, -70px));
+                }
+
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                @include responsiveProp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white);
+                @include transition(opacity 0.3s, border 0.3s);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 190px;
+                height: 210px;
+                //background-color: $off-white;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: transparent;
+                @include border-radius(50%);
+                @include transform(translate(-10px, -70px) scale(0.1));
+                @include opacity(0);
+                z-index: -1;
+                @include transition(transform 0.3s, opacity 0.3s, background-color 0.3s);
+            }
+
+        }
+
     }
 
     a {
@@ -271,8 +351,8 @@ a {
             width: 24px;
             height: 24px;
             margin-left: -12px;
-            border-left: 2px solid #fff;
-            border-bottom: 2px solid #fff;
+            border-left: 2px solid $white;
+            border-bottom: 2px solid $white;
             @include transform(rotate(-45deg));
             @include animation(arrow_down 1.5s infinite);
             box-sizing: border-box;
@@ -290,23 +370,8 @@ a {
 #section01 {
     padding-top: 58px;
 
-    .text-01a,
-    .text-01b {
-        font-family: $font-lato;
-        font-weight: 300;
-    }
-
-    .text-01a {
-        @include responsive-font-size (1.3em, 1.8em, 800px, 1200px, 0.1em);
-    }
-
-    .text-01b {
-        padding-top: 20px;
-        @include responsive-font-size (1.3em, 1.6em, 400px, 544px, 0.1em);
-    }
-
     .auto-height {
-        height: calc(100vh - 58px);
+        @include calc(height, "100vh - 58px");
     }
 
     .nav-offset {
@@ -315,7 +380,19 @@ a {
 
     #laptop {
         @include animation-duration(1s);
-        //@include animation-delay(3s);
+    }
+
+    .text-01a {
+        font-family: $font-lato;
+        font-weight: 300;
+        @include responsive-font-size (1.3em, 1.8em, 800px, 1200px, 0.1em);
+    }
+
+    .text-01b {
+        padding-top: 20px;
+        font-family: $font-lato;
+        font-weight: 300;
+        @include responsive-font-size (1.3em, 1.6em, 400px, 544px, 0.1em);
     }
 
 }
@@ -325,52 +402,51 @@ a {
 
 /* Section02 on Big & Small Screens */
 #section02 {
-    .card-deck-wrapper {
-        padding-top: 20px;
-    }
-
-    .zero-margin {
-        margin: 0;
-    }
-
     .iScrollIndicator {
         border: 0 !important;
     }
 
-    .card {
-        border: none;
-    }
+    .card-deck-wrapper {
+        padding-top: 20px;
 
-    .card-img-top {
-        min-height: 200px;
-    }
+        .card-deck {
+            border-spacing: 0;
 
-    .card-deck {
-        border-spacing: 0;
-    }
+            .card {
+                border: none;
 
-    .card-title {
-        font-family: $font-lato;
-        white-space: nowrap;
-        @include responsive-font-size (1.2em, 2.0em, 768px, 992px, 0.1em);
-    }
+                .card-img-top {
+                    min-height: 200px;
+                }
 
-    .card-text {
-        font-family: $font-lato;
-        font-weight: 300;
-        @include responsive-font-size (1.0em, 1.2em, 768px, 992px, 0.1em);
-    }
+                .card-title {
+                    font-family: $font-lato;
+                    white-space: nowrap;
+                    @include responsive-font-size (1.2em, 2.0em, 768px, 992px, 0.1em);
+                }
 
-    #calendar {
-        @include animation-delay(.2s);
-    }
+                .card-text {
+                    font-family: $font-lato;
+                    font-weight: 300;
+                    @include responsive-font-size (1.0em, 1.2em, 768px, 992px, 0.1em);
+                }
 
-    #rxpad {
-        @include animation-delay(.4s);
-    }
+                #calendar {
+                    @include animation-delay(.2s);
+                }
 
-    #clipboard {
-        @include animation-delay(.1s);
+                #rxpad {
+                    @include animation-delay(.4s);
+                }
+
+                #clipboard {
+                    @include animation-delay(.1s);
+                }
+
+            }
+
+        }
+
     }
 
 }
@@ -379,7 +455,7 @@ a {
 @include media-breakpoint-up(sm) {
     #section02 {
         .auto-height {
-            height: calc(100vh - 58px);
+            @include calc(height, "100vh - 58px");
         }
 
         .nav-offset {
@@ -394,7 +470,6 @@ a {
 
 /* Hamburger
 ---------------------------------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 $background: #3d566e;
 $color: #ecf0f1;
 $height-icon: 20px;
@@ -420,7 +495,7 @@ $translateX: 0;
         height: $height-line;
         position: absolute;
         left: 0;
-        border-radius: ($height-line / 2);
+        @include border-radius(($height-line / 2));
         @include transition(all $transition-time);
 
         &.line-1 {
@@ -495,9 +570,9 @@ $translateX: 0;
             @include transition-property(all .2s linear 0s);
 
             a {
-                color: #fff;
+                color: $white;
                 font-size: 20px;
-                font-family: 'Oxygen', sans-serif;
+                font-family: $font-oxygen;
                 font-weight: bold;
                 text-transform: uppercase;
                 letter-spacing: 2px;
@@ -511,11 +586,11 @@ $translateX: 0;
 
             > a {
                 position: relative;
-                color: #fff;
+                color: $white;
                 text-decoration: none;
 
                 &:hover {
-                    color: #fff;
+                    color: $white;
                 }
 
                 &:before {
@@ -525,7 +600,7 @@ $translateX: 0;
                     height: 2px;
                     bottom: 0;
                     left: 0;
-                    background-color: #fff;
+                    background-color: $white;
                     visibility: hidden;
                     @include transform(scaleX(0));
                     @include transition(all 0.15s ease-in-out 0s);
@@ -544,85 +619,53 @@ $translateX: 0;
 
 }
 
-/* RESPONSIVE FONT
+/* RESPONSIVE
 ---------------------------------------------------------------------------*/
 
-/* @include media-breakpoint-up(xs) {
+/* FONT
+--------------------------------------------------*/
+@include media-breakpoint-up(xs) {
     .text-00 {
-        font-size: 3.3rem;
-
         &:first-letter {
             margin-left: -3px;
         }
 
-    }
-
-    .lead-00 {
-        font-size: 0.9em;
-    }
-
-    .text-01 {
-        font-size: 1.2rem;
     }
 
 }
 
 @include media-breakpoint-up(sm) {
     .text-00 {
-        font-size: 4.5rem;
-
         &:first-letter {
             margin-left: -3px;
         }
 
     }
 
-    .lead-00 {
-        font-size: 1.4em;
-    }
-
-    .text-01 {
-        font-size: 1.5rem;
-    }
-
 }
 
 @include media-breakpoint-up(md) {
     .text-00 {
-        font-size: 5.5rem;
-
         &:first-letter {
             margin-left: -5px;
         }
 
     }
 
-    .lead-00 {
-        font-size: 1.8em;
-    }
-
-    .text-01 {
-        font-size: 1.3rem;
-    }
-
 }
 
 @include media-breakpoint-up(lg) {
     .text-00 {
-        font-size: 6.5rem;
-
         &:first-letter {
             margin-left: -7px;
         }
 
     }
 
-    .lead-00 {
-        font-size: 2em;
-    }
+}
 
-    .text-01 {
-        font-size: 1.5rem;
-    }
-
-} */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
