@@ -5520,7 +5520,8 @@ a {
     #section02 .card-deck-wrapper .card-deck .card {
       border: none; }
       #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-        min-height: 200px; }
+        min-height: 200px;
+        max-height: 200px; }
       #section02 .card-deck-wrapper .card-deck .card .card-title {
         font-family: "Lato", Arial, Verdana, sans-serif;
         white-space: nowrap;
