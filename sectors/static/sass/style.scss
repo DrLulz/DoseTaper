@@ -368,7 +368,7 @@ a {
 /* Section 01
 --------------------------------------------------*/
 #section01 {
-    //padding-top: 58px;
+    padding-top: 58px;
 
     .auto-height {
         @include calc(height, "100vh - 58px");
