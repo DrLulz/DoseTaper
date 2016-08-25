@@ -388,6 +388,9 @@ a {
         @include custom(landscape) {
             max-height: 150px;
         };
+        @include iphone6(landscape) {
+            max-height: 100px;
+        };
     }
 
     .text-01a {
