@@ -4979,6 +4979,9 @@ body {
 /* @import "../css/fa/css/font-awesome.min.css"; */
 /* @import url(animate.css); */
 /* MIXINS */
+/* 0, 544, 768, 992, 1200 */
+/* 0, 544, 768, 992, 1200 */
+/* No greater than $max, no less than $min */
 /* VARIABLES */
 /*
 * -- CONTENTS --
@@ -5266,6 +5269,9 @@ a {
       @media (min-width: 992px) {
         #section00 .jumbotron button {
           font-size: 100%; } }
+      @media (min-width: 1200px) {
+        #section00 .jumbotron button {
+          font-size: 100%; } }
       @media (min-width: 544px) {
         #section00 .jumbotron button {
           padding: 15px; } }
@@ -5273,6 +5279,9 @@ a {
         #section00 .jumbotron button {
           padding: 20px; } }
       @media (min-width: 992px) {
+        #section00 .jumbotron button {
+          padding: 23px; } }
+      @media (min-width: 1200px) {
         #section00 .jumbotron button {
           padding: 23px; } }
       #section00 .jumbotron button:active {
@@ -5330,6 +5339,9 @@ a {
           #section00 .jumbotron .btn00::before {
             border: 3px solid #e6e6e6; } }
         @media (min-width: 992px) {
+          #section00 .jumbotron .btn00::before {
+            border: 3px solid #e6e6e6; } }
+        @media (min-width: 1200px) {
           #section00 .jumbotron .btn00::before {
             border: 3px solid #e6e6e6; } }
       #section00 .jumbotron .btn00::after {
@@ -5448,14 +5460,15 @@ a {
     height: -webkit-calc(100vh - 58px);
     height: -moz-calc(100vh - 58px);
     height: calc(100vh - 58px); }
-  #section01 .nav-offset {
-    padding-bottom: 58px; }
   #section01 #laptop {
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
     animation-duration: 1s;
     /* IE9 not supported */
     /* https://modernizr.com */ }
+    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+      #section01 #laptop {
+        max-height: 150px; } }
   #section01 .text-01a {
     font-family: "Lato", Arial, Verdana, sans-serif;
     font-weight: 300;
@@ -5511,8 +5524,23 @@ a {
 /* Section 02
 --------------------------------------------------*/
 /* Section02 on Big & Small Screens */
+/* Fullpage.js LN 2792 */
 #section02 .iScrollIndicator {
   border: 0 !important; }
+#section02 .nav-offset {
+  padding-bottom: 0; }
+  @media (min-width: 544px) {
+    #section02 .nav-offset {
+      padding-bottom: 0; } }
+  @media (min-width: 768px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
+  @media (min-width: 992px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
+  @media (min-width: 1200px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
 #section02 .card-deck-wrapper {
   padding-top: 20px; }
   #section02 .card-deck-wrapper .card-deck {
@@ -5520,8 +5548,13 @@ a {
     #section02 .card-deck-wrapper .card-deck .card {
       border: none; }
       #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-        min-height: 200px;
         max-height: 200px; }
+        @media (max-width: 666px) and (min-width: 0px) {
+          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+            max-height: 200px; } }
+        @media (max-width: 1023px) and (min-width: 667px) {
+          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+            max-height: 150px; } }
       #section02 .card-deck-wrapper .card-deck .card .card-title {
         font-family: "Lato", Arial, Verdana, sans-serif;
         white-space: nowrap;
@@ -5584,9 +5617,7 @@ a {
   #section02 .auto-height {
     height: -webkit-calc(100vh - 58px);
     height: -moz-calc(100vh - 58px);
-    height: calc(100vh - 58px); }
-  #section02 .nav-offset {
-    padding-bottom: 58px; } }
+    height: calc(100vh - 58px); } }
 /* scrollable.height(scrollHeight - 58); */
 /* Hamburger
 ---------------------------------------------------------------------------*/

@@ -21,10 +21,10 @@ Description: Bootstrap 4 with Sass
 * Fullpage JS Sections
 
 */
-
 body {
     @include font-smoothing;
 }
+
 a {
     outline: none;
 }
@@ -269,13 +269,13 @@ a {
             position: relative;
             border: none;
             font-size: 18px;
-            @include responsiveProp(font-size, 70%, 80%, 90%, 100%);
+            @include responsivePropUp(font-size, 70%, 80%, 90%, 100%, 100%);
             @include transition(color 0.5s, transform 0.2s, background-color 0.2s);
             outline: none;
             @include border-radius(3px);
             margin: 0;
             @include animation-delay(.2s);
-            @include responsiveProp(padding, 10px, 15px, 20px, 23px);
+            @include responsivePropUp(padding, 10px, 15px, 20px, 23px, 23px);
             border: 3px solid transparent;
 
             &:active {
@@ -318,7 +318,7 @@ a {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                @include responsiveProp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white);
+                @include responsivePropUp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white, 3px solid $off-white);
                 @include transition(opacity 0.3s, border 0.3s);
             }
 
@@ -375,11 +375,19 @@ a {
     }
 
     .nav-offset {
-        padding-bottom: 58px;
+        //padding-bottom: 58px;
     }
 
     #laptop {
         @include animation-duration(1s);
+        //@include between-widths(max-height, 150px, 0, 666);
+        //@include between-widths(max-height, 200px, 667, 766);
+        //@include media(">=phone", "<tablet") {
+        //    max-height: 150px;
+        //}
+        @include custom(landscape) {
+            max-height: 150px;
+        };
     }
 
     .text-01a {
@@ -401,9 +409,16 @@ a {
 --------------------------------------------------*/
 
 /* Section02 on Big & Small Screens */
+
+/* Fullpage.js LN 2792 */
 #section02 {
     .iScrollIndicator {
         border: 0 !important;
+    }
+
+    .nav-offset {
+        //padding-bottom: 58px;
+        @include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
     }
 
     .card-deck-wrapper {
@@ -416,8 +431,15 @@ a {
                 border: none;
 
                 .card-img-top {
-                    min-height: 200px;
+                    //min-height: 200px;
+                    //@include responsivePropDn(min-height, 200px, 150px, 200px, 200px, 200px);
+                    //max-height: 200px;
+                    //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
+                    //@include between-widths(min-height, 200px, 667, 1200);
                     max-height: 200px;
+                    @include between-widths(max-height, 200px, 0, 666);
+                    @include between-widths(max-height, 150px, 667, 1023);
+                    //@include between-widths(max-height, 150px, 667, 1200);
                 }
 
                 .card-title {
@@ -460,7 +482,7 @@ a {
         }
 
         .nav-offset {
-            padding-bottom: 58px;
+            //padding-bottom: 58px;
         }
 
     }

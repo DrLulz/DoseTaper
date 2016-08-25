@@ -205,8 +205,8 @@
         }
     }
 }
-
-@mixin responsiveProp ($property, $xs, $sm, $md, $lg) {
+/* 0, 544, 768, 992, 1200 */
+@mixin responsivePropUp ($property, $xs, $sm, $md, $lg, $xl) {
     @include media-breakpoint-up(xs) {
         #{$property}: $xs;
     }
@@ -219,4 +219,79 @@
     @include media-breakpoint-up(lg) {
         #{$property}: $lg;
     }
+    @include media-breakpoint-up(xl) {
+        #{$property}: $xl;
+    }
+}
+/* 0, 544, 768, 992, 1200 */
+@mixin responsivePropDn ($property, $xs, $sm, $md, $lg, $xl) {
+    @include media-breakpoint-down(xs) {
+        #{$property}: $xs;
+    }
+    @include media-breakpoint-down(sm) {
+        #{$property}: $sm;
+    }
+    @include media-breakpoint-down(md) {
+        #{$property}: $md;
+    }
+    @include media-breakpoint-down(lg) {
+        #{$property}: $lg;
+    }
+    @include media-breakpoint-down(xl) {
+        #{$property}: $xl;
+    }
+}
+/* No greater than $max, no less than $min */
+//@mixin between-widths ($element, $property, $value, $min, $max) {
+//    @media (max-width: $max) and (min-width: $min) {
+//        #{$element} {
+//            #{$property}: $value;
+//        }
+//    }
+//}
+@mixin between-widths ($property, $value, $min, $max) {
+    @media (max-width: #{$max}px) and (min-width: #{$min}px) {
+        #{$property}: $value;
+    }
+}
+@mixin between-heights ($property, $value, $min, $max) {
+    @media (max-height: #{$max}px) and (min-height: #{$min}px) {
+        #{$property}: $value;
+    }
+}
+
+@mixin retina {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+@mixin custom-device($min, $max) {
+    @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
+        @content;
+    }
+}
+
+@mixin custom($orientation: false) {
+    $min: 320px;
+    $max: 480px;
+
+    @include mq(
+        $min-width: $min,
+        $max-width: $max,
+        $orientation: $orientation) {
+            @content;
+        }
 }
