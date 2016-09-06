@@ -70,6 +70,9 @@ $(document).ready(function() {
     $('.overlay').on('click', function() {
         $(".overlay").fadeToggle(200);
         ham_icon.toggleClass('active');
+        if ($('.nav-item .nav-link').hasClass('nav-dark')) {
+            $('.hamburger-icon .line').css('background-color', '#555');
+        }
     });
 
     $('.menu a').on('click', function() {
@@ -93,6 +96,7 @@ $(document).ready(function() {
         } else if ($('.nav-item .nav-link').hasClass('nav-dark')) {
             $('.hamburger-icon .line').css('background-color', '#555');
         } else {
+            // Clicking off overlay on section00
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
     };

@@ -9,6 +9,8 @@ Description: Bootstrap 4 with Sass
 @import "compass";
 // import files
 @import "base/import";
+// functions
+@import "helpers/functions";
 // mixins
 @import "helpers/mixins";
 // variables
@@ -238,6 +240,14 @@ a {
         background-color: rgba(255, 255, 255, 0);
         color: $white;
         margin-bottom: 0;
+        @include device((iphone4), landscape) {
+            margin-left: 20px;
+            margin-top: 20px;
+        };
+        @include device((iphone5), landscape) {
+            margin-left: 20px;
+            margin-top: 30px;
+        };
 
         .text-00 {
             font-family: $font-lato;
@@ -385,11 +395,11 @@ a {
         //@include media(">=phone", "<tablet") {
         //    max-height: 150px;
         //}
-        @include custom(landscape) {
-            max-height: 150px;
+        @include device((iphone6, iphone6-plus), landscape) {
+            max-height: 200px;
         };
-        @include iphone6(landscape) {
-            max-height: 100px;
+        @include device((iphone4, iphone5), landscape) {
+            max-height: 150px;
         };
     }
 
@@ -440,9 +450,24 @@ a {
                     //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
                     //@include between-widths(min-height, 200px, 667, 1200);
                     max-height: 200px;
-                    @include between-widths(max-height, 200px, 0, 666);
-                    @include between-widths(max-height, 150px, 667, 1023);
+                    //@include between-widths(max-height, 200px, 0, 666);
+                    //@include between-widths(max-height, 150px, 667, 1023);
                     //@include between-widths(max-height, 150px, 667, 1200);
+                    //@include device((iphone5), landscape) {
+                    //    max-height: 100px;
+                    //};
+                    @include device( (sm-screen) ) {
+                        max-height: 100px;
+                    };
+                    @include device( (md-screen) ) {
+                        max-height: 150px;
+                    };
+                    @include device((iphone4), landscape) {
+                        max-height: 150px;
+                    };
+                    //@include device( (lg-screen) ) {
+                    //    max-height: 200px;
+                    //};
                 }
 
                 .card-title {

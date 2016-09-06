@@ -1,0 +1,9 @@
+$debug: false;
+
+article {
+    color: black;
+
+    @if ($debug) { // visualizing layout internals
+        border: 1px dotted red;
+    }
+}
