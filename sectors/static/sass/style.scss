@@ -2,19 +2,24 @@
 Theme Name: Bootstrap 4 Sass
 Description: Bootstrap 4 with Sass
 */
-//@import "../../../../bower_components/bootstrap/scss/bootstrap";
+//@import '../../../../bower_components/bootstrap/scss/bootstrap';
 // typography
-@import "base/typography";
+@import 'base/typography';
+
 // compass
-@import "compass";
+@import 'compass';
+
 // import files
-@import "base/import";
+@import 'base/import';
+
 // functions
-@import "helpers/functions";
+@import 'helpers/functions';
+
 // mixins
-@import "helpers/mixins";
+@import 'helpers/mixins';
+
 // variables
-@import "helpers/variables";
+@import 'helpers/variables';
 
 /*
 * -- CONTENTS --
@@ -23,6 +28,7 @@ Description: Bootstrap 4 with Sass
 * Fullpage JS Sections
 
 */
+
 body {
     @include font-smoothing;
 }
@@ -32,10 +38,11 @@ a {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom: 2px solid transparent;
     position: fixed;
     z-index: 1;
+
+    border-bottom: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .navbar .container {
@@ -44,18 +51,19 @@ a {
     .nav-wrapper {
         position: relative;
         z-index: 1;
-        height: 100%;
+
         max-width: 15%;
+        height: 100%;
 
         img {
-            max-height: 100%;
             max-width: 100%;
+            max-height: 100%;
         }
-
     }
 
     .navbar-nav {
         height: 100%;
+
         @include transition(all 0.4s ease);
 
         .nav-item {
@@ -64,163 +72,192 @@ a {
         }
 
         .nav-link {
-            padding: 0;
-            position: relative;
-            display: inline-block;
-            color: $white;
-            text-decoration: none;
-            font-size: 13px;
             font-family: $font-oxygen;
+            font-size: 13px;
             font-weight: bold;
-            text-transform: uppercase;
+
+            position: relative;
+
+            display: inline-block;
+
+            padding: 0;
+
+            text-decoration: none;
             letter-spacing: 2px;
             word-spacing: 1px;
+            text-transform: uppercase;
+
+            color: $white;
 
             &:hover {
                 color: $white;
             }
 
             &:before {
-                content: "";
                 position: absolute;
-                width: 100%;
-                height: 2px;
                 bottom: 0;
                 left: 0;
-                background-color: $white;
+
                 visibility: hidden;
+
+                width: 100%;
+                height: 2px;
+
+                content: '';
+
+                background-color: $white;
+
                 @include transform(scaleX(0));
                 @include transition(all 0.15s ease-in-out 0s);
             }
 
             &:hover:before {
                 visibility: visible;
+
                 @include transform(scaleX(1));
             }
-
         }
 
         .nav-link.nav-dark {
             &:before {
                 background-color: #555;
             }
-
         }
-
     }
 
     #hamburger-wrapper {
         position: relative;
         z-index: 10;
+
         height: 100%;
     }
-
 }
 
 /* VERTICAL CENTER
 ---------------------------------------------------------------------------*/
 .vc-nav {
     height: 100%;
+
     text-align: center;
 
     &:before {
-        content: " ";
         display: inline-block;
-        vertical-align: middle;
+
         height: 100%;
+
+        content: ' ';
+        vertical-align: middle;
     }
 
     > .wrap-nav {
-        max-width: 100%;
         display: inline-block;
+
+        max-width: 100%;
+
         vertical-align: middle;
     }
-
 }
 
 .vc-100 {
-    height: 100%;
-    width: 100%;
-    text-align: center;
     font: 0/0 a;
 
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+
     &:before {
-        content: " ";
         display: inline-block;
-        vertical-align: middle;
+
         height: 100%;
+
+        content: ' ';
+        vertical-align: middle;
     }
 
     > .wrap-100 {
-        max-width: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
+        font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+        display: inline-block;
+
+        max-width: 100%;
+
+        vertical-align: middle;
+    }
 }
 
 .vc-50 {
-    height: 100%;
-    width: 50%;
-    text-align: center;
     font: 0/0 a;
 
+    width: 50%;
+    height: 100%;
+
+    text-align: center;
+
     &:before {
-        content: " ";
         display: inline-block;
-        vertical-align: middle;
+
         height: 100%;
+
+        content: ' ';
+        vertical-align: middle;
     }
 
     > .wrap-50 {
-        max-width: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
+        font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+        display: inline-block;
+
+        max-width: 100%;
+
+        vertical-align: middle;
+    }
 }
 
 @include media-breakpoint-down(sm) {
     .vc-50 {
         width: 100%;
     }
-
 }
+
 
 /* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
 
 /* Background
 --------------------------------------------------*/
-#section00,
-#section01 {
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+#section00, #section01 {
     position: relative;
     z-index: 20;
 
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+
     a {
+        font: normal 400 20px/1 'Josefin Sans', sans-serif;
+
         position: absolute;
+        z-index: 2;
         bottom: 40px;
         left: 50%;
-        z-index: 2;
+
         display: inline-block;
-        @include transform(translate(0, -50%));
-        color: $white;
-        font: normal 400 20px/1 'Josefin Sans', sans-serif;
-        letter-spacing: .1em;
+
         text-decoration: none;
-        @include transition(opacity .3s);
+        letter-spacing: .1em;
+
+        color: $white;
+
+        @include transform(translate(0, -50%));
+        @include transition(opacity 0.3s);
     }
 
     a:hover {
         @include opacity(0.5);
     }
-
 }
 
 /* Section 00
@@ -230,6 +267,7 @@ a {
 
     .auto-height {
         //height: 50vh;
+
     }
 
     .vc-100 {
@@ -237,56 +275,65 @@ a {
     }
 
     .jumbotron {
-        background-color: rgba(255, 255, 255, 0);
-        color: $white;
         margin-bottom: 0;
-        @include device((iphone4), landscape) {
-            margin-left: 20px;
+
+        color: $white;
+        background-color: rgba(255, 255, 255, 0);
+
+        @include device(iphone4, landscape) {
             margin-top: 20px;
-        };
-        @include device((iphone5), landscape) {
             margin-left: 20px;
+        }
+        @include device(iphone5, landscape) {
             margin-top: 30px;
-        };
+            margin-left: 20px;
+        }
 
         .text-00 {
             font-family: $font-lato;
-            //font-size: 6.5rem;
-            @include responsive-font-size (2.1em, 6.5em, 400px, 992px, 0.4em);
             font-weight: 400;
+
             text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
-            &:first-letter {
-            }
+            //font-size: 6.5rem;
+            @include responsive-font-size(2.1em, 6.5em, 400px, 992px, 0.4em);
 
+            &:first-letter {}
         }
 
         .lead-00 {
             font-family: $font-lato;
             font-weight: 300;
+
             //font-size: 2rem;
-            @include responsive-font-size (0.7em, 1.8em, 400px, 992px, 0.2em);
+            @include responsive-font-size(0.7em, 1.8em, 400px, 992px, 0.2em);
         }
 
         small {
-            @include opacity(0.2);
             font-weight: 400;
+
+            @include opacity(0.2);
         }
 
         button {
             font-family: $font-montserrat;
-            text-transform: uppercase;
-            position: relative;
-            border: none;
             font-size: 18px;
+
+            position: relative;
+
+            margin: 0;
+
+            text-transform: uppercase;
+
+            border: none;
+            border: 3px solid transparent;
+            outline: none;
+
             @include responsivePropUp(font-size, 70%, 80%, 90%, 100%, 100%);
             @include transition(color 0.5s, transform 0.2s, background-color 0.2s);
-            outline: none;
             @include border-radius(3px);
-            margin: 0;
-            @include animation-delay(.2s);
+            @include animation-delay(0.2s);
             @include responsivePropUp(padding, 10px, 15px, 20px, 23px, 23px);
-            border: 3px solid transparent;
 
             &:active {
                 @include transform(translateY(3px));
@@ -296,14 +343,14 @@ a {
             &::before {
                 @include border-radius(3px);
             }
-
         }
 
         .btn00 {
-            background-color: transparent;
+            overflow: hidden;
+
             color: $off-white;
             border: none;
-            overflow: hidden;
+            background-color: transparent;
             box-shadow: none;
 
             &:hover {
@@ -318,39 +365,43 @@ a {
                     @include transform-origin(100px 100px);
                     @include transform(scale(1) translate(-10px, -70px));
                 }
-
             }
 
             &::before {
-                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
+
                 width: 100%;
                 height: 100%;
+
+                content: '';
+
                 @include responsivePropUp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white, 3px solid $off-white);
                 @include transition(opacity 0.3s, border 0.3s);
             }
 
             &::after {
-                content: "";
                 position: absolute;
+                z-index: -1;
                 top: 0;
                 left: 0;
+
                 width: 190px;
                 height: 210px;
+
+                content: '';
+
+                border-color: transparent;
                 //background-color: $off-white;
                 background-color: rgba(255, 255, 255, 0.1);
-                border-color: transparent;
+
                 @include border-radius(50%);
                 @include transform(translate(-10px, -70px) scale(0.1));
                 @include opacity(0);
-                z-index: -1;
                 @include transition(transform 0.3s, opacity 0.3s, background-color 0.3s);
             }
-
         }
-
     }
 
     a {
@@ -358,19 +409,21 @@ a {
             position: absolute;
             top: 0;
             left: 50%;
+
+            box-sizing: border-box;
             width: 24px;
             height: 24px;
             margin-left: -12px;
-            border-left: 2px solid $white;
+
+            cursor: pointer;
+
             border-bottom: 2px solid $white;
+            border-left: 2px solid $white;
+
             @include transform(rotate(-45deg));
             @include animation(arrow_down 1.5s infinite);
-            box-sizing: border-box;
-            cursor: pointer;
         }
-
     }
-
 }
 
 @include arrow_down;
@@ -381,41 +434,44 @@ a {
     padding-top: 58px;
 
     .auto-height {
-        @include calc(height, "100vh - 58px");
+        @include calc(height, '100vh - 58px');
     }
 
     .nav-offset {
         //padding-bottom: 58px;
+
     }
 
     #laptop {
         @include animation-duration(1s);
         //@include between-widths(max-height, 150px, 0, 666);
         //@include between-widths(max-height, 200px, 667, 766);
-        //@include media(">=phone", "<tablet") {
+        //@include media('>=phone', '<tablet') {
         //    max-height: 150px;
         //}
         @include device((iphone6, iphone6-plus), landscape) {
             max-height: 200px;
-        };
+        }
         @include device((iphone4, iphone5), landscape) {
             max-height: 150px;
-        };
+        }
     }
 
     .text-01a {
         font-family: $font-lato;
         font-weight: 300;
-        @include responsive-font-size (1.3em, 1.8em, 800px, 1200px, 0.1em);
+
+        @include responsive-font-size(1.3em, 1.8em, 800px, 1200px, 0.1em);
     }
 
     .text-01b {
-        padding-top: 20px;
         font-family: $font-lato;
         font-weight: 300;
-        @include responsive-font-size (1.3em, 1.6em, 400px, 544px, 0.1em);
-    }
 
+        padding-top: 20px;
+
+        @include responsive-font-size(1.3em, 1.6em, 400px, 544px, 0.1em);
+    }
 }
 
 /* Section 02
@@ -450,103 +506,112 @@ a {
                     //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
                     //@include between-widths(min-height, 200px, 667, 1200);
                     max-height: 200px;
+
                     //@include between-widths(max-height, 200px, 0, 666);
                     //@include between-widths(max-height, 150px, 667, 1023);
                     //@include between-widths(max-height, 150px, 667, 1200);
                     //@include device((iphone5), landscape) {
                     //    max-height: 100px;
                     //};
-                    @include device( (sm-screen) ) {
+                    @include device(sm-screen) {
                         max-height: 100px;
-                    };
-                    @include device( (md-screen) ) {
+                    }
+                    @include device(md-screen) {
                         max-height: 150px;
-                    };
-                    @include device((iphone4), landscape) {
+                    }
+                    @include device(iphone4, landscape) {
                         max-height: 150px;
-                    };
+                    }
+
                     //@include device( (lg-screen) ) {
                     //    max-height: 200px;
                     //};
+
                 }
 
                 .card-title {
                     font-family: $font-lato;
+
                     white-space: nowrap;
-                    @include responsive-font-size (1.2em, 2.0em, 768px, 992px, 0.1em);
+
+                    @include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
                 }
 
                 .card-text {
                     font-family: $font-lato;
                     font-weight: 300;
-                    @include responsive-font-size (1.0em, 1.2em, 768px, 992px, 0.1em);
+
+                    @include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
                 }
 
                 #calendar {
-                    @include animation-delay(.2s);
+                    @include animation-delay(0.2s);
                 }
 
                 #rxpad {
-                    @include animation-delay(.4s);
+                    @include animation-delay(0.4s);
                 }
 
                 #clipboard {
-                    @include animation-delay(.1s);
+                    @include animation-delay(0.1s);
                 }
-
             }
-
         }
-
     }
-
 }
 
 /* Section02 on Big Screens */
 @include media-breakpoint-up(sm) {
     #section02 {
         .auto-height {
-            @include calc(height, "100vh - 58px");
+            @include calc(height, '100vh - 58px');
         }
 
         .nav-offset {
             //padding-bottom: 58px;
+
         }
-
     }
-
 }
+
 
 /* scrollable.height(scrollHeight - 58); */
 
 /* Hamburger
 ---------------------------------------------------------------------------*/
-$background: #3d566e;
-$color: #ecf0f1;
-$height-icon: 20px;
-$width-line: 30px;
-$height-line: 4px;
-$transition-time: 0.4s;
-$rotation: 45deg;
-$translateY: ($height-icon / 2);
-$translateX: 0;
-
 .hamburger-icon {
-    width: $width-line;
-    height: $height-icon;
+    $background: #3d566e;
+    $color: #ecf0f1;
+    $height-icon: 20px;
+    $width-line: 30px;
+    $height-line: 4px;
+    $transition-time: 0.4s;
+    $rotation: 45deg;
+    $translateY: $height-icon / 2;
+    $translateX: 0;
+
     position: relative;
     z-index: 100;
+
     display: block;
+
+    width: $width-line;
+    height: $height-icon;
+
     cursor: pointer;
 
     .line {
-        display: block;
-        background: $color;
-        width: $width-line;
-        height: $height-line;
         position: absolute;
         left: 0;
-        @include border-radius(($height-line / 2));
+
+        display: block;
+
+        width: $width-line;
+        height: $height-line;
+
+        background: $color;
+
+        @include border-radius($height-line / 2);
         @include transition(all $transition-time);
 
         &.line-1 {
@@ -560,7 +625,6 @@ $translateX: 0;
         &.line-3 {
             top: 100%;
         }
-
     }
 
     &:hover,
@@ -572,7 +636,6 @@ $translateX: 0;
         .line-3 {
             @include transform(translateY($height-line / 2));
         }
-
     }
 
     &.active {
@@ -587,21 +650,22 @@ $translateX: 0;
         .line-3 {
             @include transform(translateY($translateY * -1) translateX($translateX) rotate($rotation * -1));
         }
-
     }
-
 }
 
 /* Overlay
 ---------------------------------------------------------------------------*/
 .overlay {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
-    z-index: 1;
+
     display: none;
+
     width: 100%;
     height: 100%;
+
     background: rgba(0, 0, 0, 0.7);
 }
 
@@ -616,58 +680,66 @@ $translateX: 0;
     ul {
         li {
             padding: 10px;
+
             list-style: none;
-            @include transition(all .2s linear 0s);
-            @include transition-property(all .2s linear 0s);
+
+            @include transition(all 0.2s linear 0s);
+            @include transition-property(all 0.2s linear 0s);
 
             a {
-                color: $white;
-                font-size: 20px;
                 font-family: $font-oxygen;
+                font-size: 20px;
                 font-weight: bold;
-                text-transform: uppercase;
+
                 letter-spacing: 2px;
                 word-spacing: 1px;
+                text-transform: uppercase;
+
+                color: $white;
 
                 &:hover {
                     //background: #34495e;
-                }
 
+                }
             }
 
             > a {
                 position: relative;
-                color: $white;
+
                 text-decoration: none;
+
+                color: $white;
 
                 &:hover {
                     color: $white;
                 }
 
                 &:before {
-                    content: "";
                     position: absolute;
-                    width: 100%;
-                    height: 2px;
                     bottom: 0;
                     left: 0;
-                    background-color: $white;
+
                     visibility: hidden;
+
+                    width: 100%;
+                    height: 2px;
+
+                    content: '';
+
+                    background-color: $white;
+
                     @include transform(scaleX(0));
                     @include transition(all 0.15s ease-in-out 0s);
                 }
 
                 &:hover:before {
                     visibility: visible;
+
                     @include transform(scaleX(1));
                 }
-
             }
-
         }
-
     }
-
 }
 
 /* RESPONSIVE
@@ -680,40 +752,36 @@ $translateX: 0;
         &:first-letter {
             margin-left: -3px;
         }
-
     }
-
 }
+
 
 @include media-breakpoint-up(sm) {
     .text-00 {
         &:first-letter {
             margin-left: -3px;
         }
-
     }
-
 }
+
 
 @include media-breakpoint-up(md) {
     .text-00 {
         &:first-letter {
             margin-left: -5px;
         }
-
     }
-
 }
+
 
 @include media-breakpoint-up(lg) {
     .text-00 {
         &:first-letter {
             margin-left: -7px;
         }
-
     }
-
 }
+
 
 *,
 *::after,
