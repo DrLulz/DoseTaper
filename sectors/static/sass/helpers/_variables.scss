@@ -29,29 +29,27 @@ $device-list: (
     lg-screen: ( min: 1200px )
 );
 
-$dimensions: (
-    phones: ( min-device-width: 320px, max-device-width: 480px ),
-    phones-l: ( min-width: 321px ),
-    phones-p: ( max-width: 320px ),
-    ipads: ( min-device-width: 768px, max-device-width: 1024px ),
-    ipads-l: ( min-device-width: 768px, max-device-width: 1024px, orientation : landscape),
-    ipads-p: ( min-device-width: 768px, max-device-width: 1024px, orientation : portrait),
-    laptops: ( min-width: 1224px ),
-    lg-screen: ( min-width : 1824px )
-);
+
+
+/* Modular Scale
+---------------------------------------------------------------------------*/
+// http://www.modularscale.com/
+// https://github.com/modularscale/modularscale-sass
+
+// output a list to your terminal to help you find out what values are on your scale.
+//@debug ms-list($start, $end, $ms-base, $ms-ratio);
 
 $ms-base: 1em;
-$ms-ratio: 1.067;
+$ms-ratio: 1.618;
 
 // 1.067, 1.125, 1.2, 1.25, 1.333, 1.414, 1.5, 1.6, 1.618
 // xs: 20em, sm: 30em, md: 46.250em, lg: 61.250em, xl: 81.250em, 4k: 143.750em
+
 //$ms-range:
-//    1.125 20em,
-//    1.2 30em,
-//    1.333 46.250em,
-//    1.414 61.250em
+//    1.2 20em,
+//    1.25 30em,
+//    1.618 61.250em;
 
 $ms-range:
-    1.2 20em,
-    1.25 30em,
-    1.618 61.250em
+    1.5 20em,
+    2.5 61.250em;

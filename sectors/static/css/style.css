@@ -14,6 +14,8 @@ Description: Bootstrap 4 with Sass
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=Oswald:300");
 */
+/* Calls
+---------------------------------------------------------------------------*/
 /* IMPORTS */
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
@@ -642,7 +644,7 @@ pre {
   @media (min-width: 480px) {
     .container {
       max-width: 90vw; } }
-  @media (min-width: 740px) {
+  @media (min-width: 769px) {
     .container {
       max-width: 85vw; } }
   @media (min-width: 980px) {
@@ -991,7 +993,7 @@ pre {
 
   .col-sm-offset-12 {
     margin-left: 100%; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
 
@@ -3034,7 +3036,7 @@ input[type="button"].btn-block {
 @media (min-width: 480px) {
   .navbar-toggleable-xs {
     display: block !important; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .navbar-toggleable-sm {
     display: block !important; } }
 @media (min-width: 980px) {
@@ -4000,7 +4002,7 @@ button.close {
 
   .modal-sm {
     width: 300px; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .modal-lg {
     width: 900px; } }
 .tooltip {
@@ -4375,7 +4377,7 @@ button.close {
 
   .pull-sm-none {
     float: none !important; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .pull-md-left {
     float: left !important; }
 
@@ -4468,7 +4470,7 @@ button.close {
 
   .text-sm-center {
     text-align: center !important; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .text-md-left {
     text-align: left !important; }
 
@@ -4804,11 +4806,11 @@ a.bg-danger:focus, a.bg-danger:hover {
   .hidden-sm-up {
     display: none !important; } }
 
-@media (max-width: 739px) {
+@media (max-width: 768px) {
   .hidden-sm-down {
     display: none !important; } }
 
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .hidden-md-up {
     display: none !important; } }
 
@@ -5184,9 +5186,18 @@ body:before {
   @media (min-width: 30em) {
     body:before {
       content: "sm ≥ 480px (30em)"; } }
-  @media (min-width: 46.25em) {
+  @media (min-width: 35.5em) {
     body:before {
-      content: "md ≥ 740px (46.25em)"; } }
+      content: "iphone5 ≥ 568px (35.5em)"; } }
+  @media (min-width: 41.6875em) {
+    body:before {
+      content: "iphone6 ≥ 667px (41.6875em)"; } }
+  @media (min-width: 46em) {
+    body:before {
+      content: "iphone6p ≥ 736px (46em)"; } }
+  @media (min-width: 48.0625em) {
+    body:before {
+      content: "md ≥ 769px (48.0625em)"; } }
   @media (min-width: 61.25em) {
     body:before {
       content: "lg ≥ 980px (61.25em)"; } }
@@ -5206,31 +5217,28 @@ body:before {
 /* No greater than $max, no less than $min */
 /* Devices
 ---------------------------------------------------------------------------*/
-/*
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    #section00 .jumbotron .text-00 {
-        font-size: 100px;
-    }
-} */
 /* VARIABLES */
+/* Modular Scale
+---------------------------------------------------------------------------*/
 article {
   color: black; }
 
 /*
 * -- CONTENTS --
 * Navbar
-* Vertical Center
+* Vertical Centering
 * Fullpage JS Sections
 
 */
 html, body {
-  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 a {
   outline: none; }
 
+/* Navbar
+---------------------------------------------------------------------------*/
 .navbar {
   position: fixed;
   z-index: 1;
@@ -5247,7 +5255,7 @@ a {
     .navbar .container .nav-wrapper img {
       max-width: 100%;
       max-height: 100%; }
-      @media (max-width: 46.24em) {
+      @media (max-width: 48.0525em) {
         .navbar .container .nav-wrapper img {
           width: auto;
           max-height: 40px; } }
@@ -5308,7 +5316,7 @@ a {
     z-index: 10;
     height: 100%; }
 
-/* VERTICAL CENTER
+/* Vertical Centering
 ---------------------------------------------------------------------------*/
 .vc-nav {
   text-align: center;
@@ -5344,7 +5352,7 @@ a {
   text-align: center;
   width: 50%;
   height: 100%; }
-  @media (max-width: 739px) {
+  @media (max-width: 768px) {
     .vc-50 {
       width: 100%; } }
   .vc-50:before {
@@ -5401,51 +5409,34 @@ a {
   background-image: url(../img/landing_bg.jpg); }
   #section00 .vc-100 {
     text-align: inherit; }
-    @media (max-width: 46.24em) {
+    @media (max-width: 48.0525em) {
       #section00 .vc-100 {
         text-align: center; } }
   #section00 .jumbotron {
     margin-bottom: 0;
     color: #ffffff;
     background-color: transparent; }
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-      #section00 .jumbotron {
-        margin-top: 20px;
-        margin-left: 20px; } }
-    @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
-      #section00 .jumbotron {
-        margin-top: 30px;
-        margin-left: 20px; } }
     #section00 .jumbotron .text-00 {
       font-family: "Lato", Arial, Verdana, sans-serif;
       font-weight: 400;
       text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
-      font-size: 1.99935em;
-      /*             @include device-screens(phones, ipads) {
-                      font-size: 100px;
-                  } */ }
-      @media (min-width: 20em) and (max-width: 30em) {
+      font-size: 2.11723em; }
+      @media (min-width: 20em) and (max-width: 61.25em) {
         #section00 .jumbotron .text-00 {
-          font-size: calc( 1.99935em + 0.3355 * ( ( 100vw - 20em) / 10 ) ); } }
-      @media (min-width: 30em) and (max-width: 61.25em) {
-        #section00 .jumbotron .text-00 {
-          font-size: calc( 2.33484em + 3.88985 * ( ( 100vw - 30em) / 31.25 ) ); } }
+          font-size: calc( 2.11723em + 3.33016 * ( ( 100vw - 20em) / 41.25 ) ); } }
       @media (min-width: 61.25em) {
         #section00 .jumbotron .text-00 {
-          font-size: 6.2247em; } }
+          font-size: 5.4474em; } }
     #section00 .jumbotron .lead-00 {
       font-family: "Lato", Arial, Verdana, sans-serif;
       font-weight: 300;
-      font-size: 1.2em; }
-      @media (min-width: 20em) and (max-width: 30em) {
+      font-size: 1.20017em; }
+      @media (min-width: 20em) and (max-width: 61.25em) {
         #section00 .jumbotron .lead-00 {
-          font-size: calc( 1.2em + 0.05 * ( ( 100vw - 20em) / 10 ) ); } }
-      @media (min-width: 30em) and (max-width: 61.25em) {
-        #section00 .jumbotron .lead-00 {
-          font-size: calc( 1.25em + 0.368 * ( ( 100vw - 30em) / 31.25 ) ); } }
+          font-size: calc( 1.20017em + 0.31017 * ( ( 100vw - 20em) / 41.25 ) ); } }
       @media (min-width: 61.25em) {
         #section00 .jumbotron .lead-00 {
-          font-size: 1.618em; } }
+          font-size: 1.51033em; } }
     #section00 .jumbotron small {
       font-weight: 400;
       opacity: 0.2;
@@ -5479,7 +5470,7 @@ a {
       @media (min-width: 480px) {
         #section00 .jumbotron button {
           font-size: 80%; } }
-      @media (min-width: 740px) {
+      @media (min-width: 769px) {
         #section00 .jumbotron button {
           font-size: 90%; } }
       @media (min-width: 980px) {
@@ -5494,7 +5485,7 @@ a {
       @media (min-width: 480px) {
         #section00 .jumbotron button {
           padding: 15px; } }
-      @media (min-width: 740px) {
+      @media (min-width: 769px) {
         #section00 .jumbotron button {
           padding: 20px; } }
       @media (min-width: 980px) {
@@ -5556,7 +5547,7 @@ a {
         @media (min-width: 480px) {
           #section00 .jumbotron .btn00::before {
             border: 2px solid #e6e6e6; } }
-        @media (min-width: 740px) {
+        @media (min-width: 769px) {
           #section00 .jumbotron .btn00::before {
             border: 3px solid #e6e6e6; } }
         @media (min-width: 980px) {
@@ -5681,75 +5672,59 @@ a {
     height: -webkit-calc(100vh - 58px);
     height: -moz-calc(100vh - 58px);
     height: calc(100vh - 58px); }
+  #section01 .container {
+    max-width: 90vw; }
+  #section01 .nav-offset {
+    /* padding-bottom: 58px; */ }
   #section01 #laptop {
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
     animation-duration: 1s;
     /* IE9 not supported */
     /* https://modernizr.com */ }
-    @media only screen and (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+    @media (max-width: 48.0525em) {
       #section01 #laptop {
-        max-height: 200px; } }
-    @media only screen and (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
-      #section01 #laptop {
-        max-height: 200px; } }
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-      #section01 #laptop {
-        max-height: 150px; } }
-    @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
-      #section01 #laptop {
-        max-height: 150px; } }
+        max-height: calc(70vh - 58px); } }
   #section01 .text-01a {
     font-family: "Lato", Arial, Verdana, sans-serif;
     font-weight: 300;
-    font-size: 1.8em; }
-    @media all and (max-width: 1133px) {
+    font-size: 1.3282em; }
+    @media (min-width: 20em) and (max-width: 61.25em) {
       #section01 .text-01a {
-        font-size: 1.8em; } }
-    @media all and (max-width: 1067px) {
+        font-size: calc( 1.3282em + 0.57094 * ( ( 100vw - 20em) / 41.25 ) ); } }
+    @media (min-width: 61.25em) {
       #section01 .text-01a {
-        font-size: 1.72322em; } }
-    @media all and (max-width: 1002px) {
-      #section01 .text-01a {
-        font-size: 1.64485em; } }
-    @media all and (max-width: 938px) {
-      #section01 .text-01a {
-        font-size: 1.565em; } }
-    @media all and (max-width: 875px) {
-      #section01 .text-01a {
-        font-size: 1.4838em; } }
-    @media all and (max-width: 813px) {
-      #section01 .text-01a {
-        font-size: 1.40137em; } }
-    @media all and (max-width: 751px) {
-      #section01 .text-01a {
-        font-size: 1.31782em; } }
-    @media all and (max-width: 800px) {
-      #section01 .text-01a {
-        font-size: 1.3em; } }
+        font-size: 1.89914em; } }
   #section01 .text-01b {
     font-family: "Lato", Arial, Verdana, sans-serif;
     font-weight: 300;
     padding-top: 20px;
-    font-size: 1.6em; }
-    @media all and (max-width: 510px) {
+    font-size: 1.30155em; }
+    @media (min-width: 20em) and (max-width: 61.25em) {
       #section01 .text-01b {
-        font-size: 1.6em; } }
-    @media all and (max-width: 477px) {
+        font-size: calc( 1.30155em + 0.51255 * ( ( 100vw - 20em) / 41.25 ) ); } }
+    @media (min-width: 61.25em) {
       #section01 .text-01b {
-        font-size: 1.53719em; } }
-    @media all and (max-width: 445px) {
+        font-size: 1.8141em; } }
+    @media (max-width: 29.99em) {
       #section01 .text-01b {
-        font-size: 1.47148em; } }
-    @media all and (max-width: 413px) {
+        font-size: 1.24983em; } }
+  @media (max-width: 29.99em) and (min-width: 20em) and (max-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: calc( 1.24983em + 0.40544 * ( ( 100vw - 20em) / 41.25 ) ); } }
+  @media (max-width: 29.99em) and (min-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: 1.65526em; } }
+
+    @media (min-width: 41.6875em) {
       #section01 .text-01b {
-        font-size: 1.4033em; } }
-    @media all and (max-width: 382px) {
-      #section01 .text-01b {
-        font-size: 1.33074em; } }
-    @media all and (max-width: 400px) {
-      #section01 .text-01b {
-        font-size: 1.3em; } }
+        font-size: 1.38316em; } }
+  @media (min-width: 41.6875em) and (min-width: 20em) and (max-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: calc( 1.38316em + 0.69822 * ( ( 100vw - 20em) / 41.25 ) ); } }
+  @media (min-width: 41.6875em) and (min-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: 2.08138em; } }
 
 /* Section 02
 --------------------------------------------------*/
@@ -5763,7 +5738,7 @@ a {
 @media (min-width: 480px) {
   #section02 .nav-offset {
     padding-bottom: 0; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   #section02 .nav-offset {
     padding-bottom: 58px; } }
 @media (min-width: 980px) {
@@ -5791,42 +5766,10 @@ a {
             max-height: 150px; } }
       #section02 .card-deck-wrapper .card-deck .card .card-title {
         font-family: "Lato", Arial, Verdana, sans-serif;
-        white-space: nowrap;
-        font-size: 2em; }
-        @media all and (max-width: 942px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 2em; } }
-        @media all and (max-width: 890px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 1.80381em; } }
-        @media all and (max-width: 835px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 1.61051em; } }
-        @media all and (max-width: 776px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 1.41798em; } }
-        @media all and (max-width: 713px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 1.22507em; } }
-        @media all and (max-width: 768px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-title {
-            font-size: 1.2em; } }
+        white-space: nowrap; }
       #section02 .card-deck-wrapper .card-deck .card .card-text {
         font-family: "Lato", Arial, Verdana, sans-serif;
-        font-weight: 300;
-        font-size: 1.2em; }
-        @media all and (max-width: 909px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-text {
-            font-size: 1.2em; } }
-        @media all and (max-width: 829px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-text {
-            font-size: 1.13072em; } }
-        @media all and (max-width: 751px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-text {
-            font-size: 1.05857em; } }
-        @media all and (max-width: 768px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-text {
-            font-size: 1em; } }
+        font-weight: 300; }
       #section02 .card-deck-wrapper .card-deck .card #calendar {
         -webkit-animation-delay: 0.2s;
         -moz-animation-delay: 0.2s;
@@ -5996,7 +5939,7 @@ a {
 @media (min-width: 480px) {
   .text-00:first-letter {
     margin-left: -3px; } }
-@media (min-width: 740px) {
+@media (min-width: 769px) {
   .text-00:first-letter {
     margin-left: -5px; } }
 @media (min-width: 980px) {

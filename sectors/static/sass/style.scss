@@ -30,14 +30,14 @@ Description: Bootstrap 4 with Sass
 /*
 * -- CONTENTS --
 * Navbar
-* Vertical Center
+* Vertical Centering
 * Fullpage JS Sections
 
 */
 
 html, body {
-    font-size: 16px;
-
+    //font-size: 16px;
+    //font-size: 62.5%;
     @include font-smoothing;
 }
 
@@ -45,6 +45,8 @@ a {
     outline: none;
 }
 
+/* Navbar
+---------------------------------------------------------------------------*/
 .navbar {
     position: fixed;
     z-index: 1;
@@ -144,7 +146,7 @@ a {
     }
 }
 
-/* VERTICAL CENTER
+/* Vertical Centering
 ---------------------------------------------------------------------------*/
 .vc-nav {
     text-align: center;
@@ -291,15 +293,6 @@ a {
         color: $white;
         background-color: transparent;
 
-        @include device(iphone4, landscape) {
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-        @include device(iphone5, landscape) {
-            margin-top: 30px;
-            margin-left: 20px;
-        }
-
         .text-00 {
             // font: 400 12px $font-lato;
             font-family: $font-lato;
@@ -308,19 +301,9 @@ a {
             text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
             // 6: 2.027, 2.986, 5.61, 7.993
-            @include ms-respond(font-size, 3.8);
+            //@include ms-respond(font-size, 3.8);
+            @include ms-respond(font-size, 1.85);
 
-            //font-size: 6.5rem;
-            //@include responsive-font-size(2.1em, 6.5em, 400px, 992px, 0.4em);
-            //@include mq($until: md) {
-            //    font-size: 12px;
-            //}
-            //@include mq($until: md, $and: "(orientation: landscape)") {
-            //    font-size: 32px;
-            //}
-            /*             @include device-screens(phones, ipads) {
-                            font-size: 100px;
-                        } */
             &:first-letter {}
         }
 
@@ -328,9 +311,7 @@ a {
             font-family: $font-lato;
             font-weight: 300;
 
-            //font-size: 2rem;
-            //@include responsive-font-size(0.7em, 1.8em, 400px, 992px, 0.2em);
-            @include ms-respond(font-size, 1);
+            @include ms-respond(font-size, 0.45);
         }
 
         small {
@@ -461,23 +442,17 @@ a {
         @include calc(height, "100vh - 58px");
     }
 
-    .nav-offset {
-        //padding-bottom: 58px;
-   
+    .container {
+        max-width: 90vw;
+    }
+
+    .nav-offset { /* padding-bottom: 58px; */
     }
 
     #laptop {
         @include animation-duration(1s);
-        //@include between-widths(max-height, 150px, 0, 666);
-        //@include between-widths(max-height, 200px, 667, 766);
-        //@include media('>=phone', '<tablet') {
-        //    max-height: 150px;
-        //}
-        @include device((iphone6, iphone6-plus), landscape) {
-            max-height: 200px;
-        }
-        @include device((iphone4, iphone5), landscape) {
-            max-height: 150px;
+        @include mq($until: md) {
+            max-height: calc(70vh - 58px);
         }
     }
 
@@ -485,7 +460,8 @@ a {
         font-family: $font-lato;
         font-weight: 300;
 
-        @include responsive-font-size(1.3em, 1.8em, 800px, 1200px, 0.1em);
+        //@include responsive-font-size(1.3em, 1.8em, 800px, 1200px, 0.1em);
+        @include ms-respond(font-size, 0.7);
     }
 
     .text-01b {
@@ -494,7 +470,14 @@ a {
 
         padding-top: 20px;
 
-        @include responsive-font-size(1.3em, 1.6em, 400px, 544px, 0.1em);
+        //@include responsive-font-size(1.3em, 1.6em, 400px, 544px, 0.1em);
+        @include ms-respond(font-size, 0.65);
+        @include mq($until: sm) {
+            @include ms-respond(font-size, 0.55);
+        }
+        @include mq($from: iphone6) {
+            @include ms-respond(font-size, 0.8);
+        }
     }
 }
 
@@ -558,14 +541,16 @@ a {
 
                     white-space: nowrap;
 
-                    @include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
+                    //@include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
+               
                 }
 
                 .card-text {
                     font-family: $font-lato;
                     font-weight: 300;
 
-                    @include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
+                    //@include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
+               
                 }
 
                 #calendar {

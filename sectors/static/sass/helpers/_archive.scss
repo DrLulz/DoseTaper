@@ -1,0 +1,82 @@
+@mixin responsive-font-size($min-font-size, $max-font-size, $min-screen-width, $max-screen-width, $font-size-step: 0.1em) {
+    font-size: $max-font-size;
+
+    @if $font-size-step <= 0 {
+        @warn "parameter to responsive-font-size: font-size-step must be greater than 0";
+    }
+    @else {
+        $min-scale-factor: $min-font-size / $min-screen-width / 1em * 1px;
+        $max-scale-factor: $max-font-size / $max-screen-width / 1em * 1px;
+        $screen-width: round($max-screen-width);
+        $font-size: $max-font-size;
+
+        @while $screen-width >= $min-screen-width {
+            $progress: ($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width);
+            $scale-factor: $min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor);
+            $font-size: $screen-width * $scale-factor / 1px * 1em;
+            $screen-width-step: $font-size-step / $scale-factor / 1em * 1px;
+            $screen-width: round($screen-width - $screen-width-step);
+
+            @if $screen-width-step < 1px {
+                $screen-width-step: 1px;
+            }
+
+            @media all and (max-width: $screen-width) {
+                font-size: $font-size;
+            }
+        }
+    }
+
+    @media all and (max-width: $min-screen-width) {
+        font-size: $min-font-size;
+    }
+}
+
+
+/* Sass Map for Media Queries
+---------------------------------------------------------------------------*/
+$dimensions: (
+    phones: ( min-device-width: 320px, max-device-width: 480px ),
+    phones-l: ( min-width: 321px ),
+    phones-p: ( max-width: 320px ),
+    ipads: ( min-device-width: 768px, max-device-width: 1024px ),
+    ipads-l: ( min-device-width: 768px, max-device-width: 1024px, orientation : landscape),
+    ipads-p: ( min-device-width: 768px, max-device-width: 1024px, orientation : portrait),
+    laptops: ( min-width: 1224px ),
+    lg-screen: ( min-width : 1824px )
+);
+
+@mixin device-screens($screens...) {
+    @each $screen in $screens {
+        $map: map-deep-get($dimensions, $screen);
+
+        @if map-has-key($map, min-device-width) {
+            $min: map-get($map, min-device-width);
+            $max: map-get($map, max-device-width);
+
+            //@error $map;
+            @media only screen and (min-device-width: $min) and (max-device-width: $max) {
+                @content;
+            }
+        }
+    }
+}
+/*
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #section00 .jumbotron .text-00 {
+        font-size: 100px;
+    }
+} */
+
+
+@include between-widths(max-height, 150px, 0, 666);
+@mixin between-widths($property, $value, $min, $max) {
+    @media (max-width: #{$max}px) and (min-width: #{$min}px) {
+        #{$property}: $value;
+    }
+}
+@mixin between-heights($property, $value, $min, $max) {
+    @media (max-height: #{$max}px) and (min-height: #{$min}px) {
+        #{$property}: $value;
+    }
+}
