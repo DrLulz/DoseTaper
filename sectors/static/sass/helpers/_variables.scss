@@ -3,23 +3,20 @@
 // colors
 $white: #ffffff;
 $off-white: #e6e6e6;
-
+$slate: #555555;
+$base: rgba(228, 223, 214, 0.71373); //#F8F2ED
+$base-accent: rgb(221, 216, 206); //#DDD8CE
+$transparent: rgba(0, 0, 0, 0);
 
 // font families
-$font-oxygen: 'Oxygen', Arial, Verdana, sans-serif;
-$font-lato: 'Lato', Arial, Verdana, sans-serif;
-$font-montserrat: 'Montserrat', Arial, Verdana, sans-serif;
+$font-oxygen: "Oxygen", Arial, Verdana, sans-serif;
+$font-lato: "Lato", Arial, Verdana, sans-serif;
+$font-montserrat: "Montserrat", Arial, Verdana, sans-serif;
 
 //$font-raleway: 'Raleway', Arial, Verdana, sans-serif;
 //$font-oswald: 'Oswald', Arial, Verdana, sans-serif;
 //$shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 //text-shadow: 0 -2.5px 0 darken($whitefff, 20), 0 4px 6px rgba(204, 204, 192, .4), 0 7px 8px rgba(204, 204, 192, .15);
-
-/* Hamburger
----------------------------------------------------------------------------*/
-
-
-
 $device-list: (
     iphone4: ( min: 320px, max: 480px ),
     iphone5: ( min: 320px, max: 568px ),
@@ -31,3 +28,30 @@ $device-list: (
     md-screen: ( min: 569px, max: 1199px ),
     lg-screen: ( min: 1200px )
 );
+
+$dimensions: (
+    phones: ( min-device-width: 320px, max-device-width: 480px ),
+    phones-l: ( min-width: 321px ),
+    phones-p: ( max-width: 320px ),
+    ipads: ( min-device-width: 768px, max-device-width: 1024px ),
+    ipads-l: ( min-device-width: 768px, max-device-width: 1024px, orientation : landscape),
+    ipads-p: ( min-device-width: 768px, max-device-width: 1024px, orientation : portrait),
+    laptops: ( min-width: 1224px ),
+    lg-screen: ( min-width : 1824px )
+);
+
+$ms-base: 1em;
+$ms-ratio: 1.067;
+
+// 1.067, 1.125, 1.2, 1.25, 1.333, 1.414, 1.5, 1.6, 1.618
+// xs: 20em, sm: 30em, md: 46.250em, lg: 61.250em, xl: 81.250em, 4k: 143.750em
+//$ms-range:
+//    1.125 20em,
+//    1.2 30em,
+//    1.333 46.250em,
+//    1.414 61.250em
+
+$ms-range:
+    1.2 20em,
+    1.25 30em,
+    1.618 61.250em

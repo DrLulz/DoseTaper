@@ -4,22 +4,28 @@ Description: Bootstrap 4 with Sass
 */
 //@import '../../../../bower_components/bootstrap/scss/bootstrap';
 // typography
-@import 'base/typography';
+@import "base/typography";
 
 // compass
-@import 'compass';
+@import "compass";
+
+// import mq definitions
+@import "helpers/mediaq";
 
 // import files
-@import 'base/import';
+@import "base/import";
 
 // functions
-@import 'helpers/functions';
+@import "helpers/functions";
 
 // mixins
-@import 'helpers/mixins';
+@import "helpers/mixins";
 
 // variables
-@import 'helpers/variables';
+@import "helpers/variables";
+
+// settings
+@import "helpers/_settings";
 
 /*
 * -- CONTENTS --
@@ -29,7 +35,9 @@ Description: Bootstrap 4 with Sass
 
 */
 
-body {
+html, body {
+    font-size: 16px;
+
     @include font-smoothing;
 }
 
@@ -42,7 +50,7 @@ a {
     z-index: 1;
 
     border-bottom: 2px solid transparent;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
 }
 
 .navbar .container {
@@ -58,6 +66,11 @@ a {
         img {
             max-width: 100%;
             max-height: 100%;
+
+            @include mq($until: md) {
+                width: auto;
+                max-height: 40px;
+            }
         }
     }
 
@@ -72,20 +85,18 @@ a {
         }
 
         .nav-link {
-            font-family: $font-oxygen;
-            font-size: 13px;
-            font-weight: bold;
+            font: 700 13px / 1.5 $font-oxygen;
+
+            text-decoration: none;
+            letter-spacing: 2px;
+            word-spacing: 1px;
+            text-transform: uppercase;
 
             position: relative;
 
             display: inline-block;
 
             padding: 0;
-
-            text-decoration: none;
-            letter-spacing: 2px;
-            word-spacing: 1px;
-            text-transform: uppercase;
 
             color: $white;
 
@@ -100,7 +111,7 @@ a {
 
                 visibility: hidden;
 
-                width: 100%;
+                width: 98%;
                 height: 2px;
 
                 content: '';
@@ -120,7 +131,7 @@ a {
 
         .nav-link.nav-dark {
             &:before {
-                background-color: #555;
+                background-color: $slate;
             }
         }
     }
@@ -136,90 +147,90 @@ a {
 /* VERTICAL CENTER
 ---------------------------------------------------------------------------*/
 .vc-nav {
-    height: 100%;
-
     text-align: center;
 
+    height: 100%;
+
     &:before {
+        vertical-align: middle;
+
         display: inline-block;
 
         height: 100%;
 
         content: ' ';
-        vertical-align: middle;
     }
 
     > .wrap-nav {
+        vertical-align: middle;
+
         display: inline-block;
 
         max-width: 100%;
-
-        vertical-align: middle;
     }
 }
 
 .vc-100 {
     font: 0/0 a;
 
+    text-align: center;
+
     width: 100%;
     height: 100%;
 
-    text-align: center;
-
     &:before {
+        vertical-align: middle;
+
         display: inline-block;
 
         height: 100%;
 
         content: ' ';
-        vertical-align: middle;
     }
 
     > .wrap-100 {
         font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+        vertical-align: middle;
+
         display: inline-block;
 
         max-width: 100%;
-
-        vertical-align: middle;
     }
 }
 
 .vc-50 {
     font: 0/0 a;
 
+    text-align: center;
+
     width: 50%;
     height: 100%;
 
-    text-align: center;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
 
     &:before {
+        vertical-align: middle;
+
         display: inline-block;
 
         height: 100%;
 
         content: ' ';
-        vertical-align: middle;
     }
 
     > .wrap-50 {
         font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+        vertical-align: middle;
+
         display: inline-block;
 
         max-width: 100%;
-
-        vertical-align: middle;
     }
 }
-
-@include media-breakpoint-down(sm) {
-    .vc-50 {
-        width: 100%;
-    }
-}
-
 
 /* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
@@ -237,7 +248,11 @@ a {
     background-size: cover;
 
     a {
-        font: normal 400 20px/1 'Josefin Sans', sans-serif;
+        font-size: 20px;
+        line-height: 1;
+
+        text-decoration: none;
+        letter-spacing: .1em;
 
         position: absolute;
         z-index: 2;
@@ -245,9 +260,6 @@ a {
         left: 50%;
 
         display: inline-block;
-
-        text-decoration: none;
-        letter-spacing: .1em;
 
         color: $white;
 
@@ -265,20 +277,19 @@ a {
 #section00 {
     background-image: url(../img/landing_bg.jpg);
 
-    .auto-height {
-        //height: 50vh;
-
-    }
-
     .vc-100 {
         text-align: inherit;
+
+        @include mq($until: md) {
+            text-align: center;
+        }
     }
 
     .jumbotron {
         margin-bottom: 0;
 
         color: $white;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: transparent;
 
         @include device(iphone4, landscape) {
             margin-top: 20px;
@@ -290,14 +301,26 @@ a {
         }
 
         .text-00 {
+            // font: 400 12px $font-lato;
             font-family: $font-lato;
             font-weight: 400;
 
             text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
-            //font-size: 6.5rem;
-            @include responsive-font-size(2.1em, 6.5em, 400px, 992px, 0.4em);
+            // 6: 2.027, 2.986, 5.61, 7.993
+            @include ms-respond(font-size, 3.8);
 
+            //font-size: 6.5rem;
+            //@include responsive-font-size(2.1em, 6.5em, 400px, 992px, 0.4em);
+            //@include mq($until: md) {
+            //    font-size: 12px;
+            //}
+            //@include mq($until: md, $and: "(orientation: landscape)") {
+            //    font-size: 32px;
+            //}
+            /*             @include device-screens(phones, ipads) {
+                            font-size: 100px;
+                        } */
             &:first-letter {}
         }
 
@@ -306,7 +329,8 @@ a {
             font-weight: 300;
 
             //font-size: 2rem;
-            @include responsive-font-size(0.7em, 1.8em, 400px, 992px, 0.2em);
+            //@include responsive-font-size(0.7em, 1.8em, 400px, 992px, 0.2em);
+            @include ms-respond(font-size, 1);
         }
 
         small {
@@ -319,11 +343,11 @@ a {
             font-family: $font-montserrat;
             font-size: 18px;
 
+            text-transform: uppercase;
+
             position: relative;
 
             margin: 0;
-
-            text-transform: uppercase;
 
             border: none;
             border: 3px solid transparent;
@@ -434,12 +458,12 @@ a {
     padding-top: 58px;
 
     .auto-height {
-        @include calc(height, '100vh - 58px');
+        @include calc(height, "100vh - 58px");
     }
 
     .nav-offset {
         //padding-bottom: 58px;
-
+   
     }
 
     #laptop {
@@ -526,7 +550,7 @@ a {
                     //@include device( (lg-screen) ) {
                     //    max-height: 200px;
                     //};
-
+               
                 }
 
                 .card-title {
@@ -564,12 +588,12 @@ a {
 @include media-breakpoint-up(sm) {
     #section02 {
         .auto-height {
-            @include calc(height, '100vh - 58px');
+            @include calc(height, "100vh - 58px");
         }
 
         .nav-offset {
             //padding-bottom: 58px;
-
+       
         }
     }
 }
@@ -699,14 +723,14 @@ a {
 
                 &:hover {
                     //background: #34495e;
-
+               
                 }
             }
 
             > a {
-                position: relative;
-
                 text-decoration: none;
+
+                position: relative;
 
                 color: $white;
 
@@ -721,7 +745,7 @@ a {
 
                     visibility: hidden;
 
-                    width: 100%;
+                    width: 98%;
                     height: 2px;
 
                     content: '';

@@ -1,32 +1,35 @@
 /* MIXINS */
-@mixin transition ($args...) {
+@mixin transition($args...) {
     -webkit-transition: $args;
     -moz-transition: $args;
     -o-transition: $args;
     transition: $args;
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin transition-property ($args) {
+@mixin transition-property($args) {
     -webkit-transition-property: $args;
     -moz-transition-property: $args;
     -o-transition-property: $args;
     transition-property: $args;
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin transition-cubic-bezier ($time) {
+@mixin transition-cubic-bezier($time) {
     -webkit-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
     -moz-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
     -o-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
     transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin transform ($args) {
+@mixin transform($args) {
     -webkit-transform: $args;
     -moz-transform: $args;
     -ms-transform: $args;
@@ -34,7 +37,7 @@
     transform: $args;
 }
 
-@mixin transform-origin ($args) {
+@mixin transform-origin($args) {
     -webkit-transform-origin: $args;
     -moz-transform-origin: $args;
     -ms-transform-origin: $args;
@@ -42,38 +45,44 @@
     transform-origin: $args;
 }
 
-@mixin animation ($args) {
+@mixin animation($args) {
     -webkit-animation: $args;
     -moz-animation: $args;
     animation: $args;
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin animation-duration ($args) {
+@mixin animation-duration($args) {
     -webkit-animation-duration: $args;
     -moz-animation-duration: $args;
     animation-duration: $args;
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin animation-delay ($args) {
+@mixin animation-delay($args) {
     -webkit-animation-delay: $args;
     -moz-animation-delay: $args;
     animation-delay: $args;
+
     /* IE9 not supported */
     /* https://modernizr.com */
 }
 
-@mixin opacity ($opacity) {
-    opacity: $opacity;
+@mixin opacity($opacity) {
     $opacity-ie: $opacity * 100;
-    filter: alpha(opacity=$opacity-ie);
+
+    opacity: $opacity;
+
+    filter: alpha(opacity = $opacity-ie);
+
     //IE8
 }
 
-@mixin border-radius ($radius) {
+@mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     border-radius: $radius;
@@ -83,6 +92,38 @@
     #{$property}: -webkit-calc(#{$expression});
     #{$property}: -moz-calc(#{$expression});
     #{$property}: calc(#{$expression});
+}
+
+@mixin rem($property, $values) {
+    $px: ();
+    $rem: ();
+
+    @each $value in $values {
+        @if $value == 0 or $value == auto {
+            $px: append($px, $value);
+            $rem: append($rem, $value);
+        }
+        @else {
+            $unit: unit($value);
+            $val: strip-unit($value);
+
+            @if $unit == "px" {
+                $px: append($px, $value);
+                $rem: append($rem, $val / 10 + rem);
+            }
+            @if $unit == "rem" {
+                $px: append($px, $val * 10 + px);
+                $rem: append($rem, $value);
+            }
+        }
+    }
+    @if $px == $rem {
+        #{$property}: $px;
+    }
+    @else {
+        #{$property}: $px;
+        #{$property}: $rem;
+    }
 }
 
 @mixin font-smoothing {
@@ -105,9 +146,7 @@
             @include transform(rotate(-45deg) translate(-20px, 20px));
             @include opacity(0);
         }
-
     }
-
     @-moz-keyframes arrow_down {
         0% {
             @include transform(rotate(-45deg) translate(0, 0));
@@ -122,9 +161,7 @@
             @include transform(rotate(-45deg) translate(-20px, 20px));
             @include opacity(0);
         }
-
     }
-
     @keyframes arrow_down {
         0% {
             @include transform(rotate(-45deg) translate(0, 0));
@@ -139,22 +176,15 @@
             @include transform(rotate(-45deg) translate(-20px, 20px));
             @include opacity(0);
         }
-
     }
-
 }
 
-@mixin responsive-font-size ($min-font-size, $max-font-size, $min-screen-width, $max-screen-width, $font-size-step:0.1em) {
+@mixin responsive-font-size($min-font-size, $max-font-size, $min-screen-width, $max-screen-width, $font-size-step: 0.1em) {
     font-size: $max-font-size;
-
-    @media all and (max-width:$min-screen-width) {
-        font-size: $min-font-size;
-    }
 
     @if $font-size-step <= 0 {
         @warn "parameter to responsive-font-size: font-size-step must be greater than 0";
     }
-
     @else {
         $min-scale-factor: $min-font-size / $min-screen-width / 1em * 1px;
         $max-scale-factor: $max-font-size / $max-screen-width / 1em * 1px;
@@ -165,25 +195,25 @@
             $progress: ($screen-width - $min-screen-width) / ($max-screen-width - $min-screen-width);
             $scale-factor: $min-scale-factor + $progress * ($max-scale-factor - $min-scale-factor);
             $font-size: $screen-width * $scale-factor / 1px * 1em;
-
-            @media all and (max-width:$screen-width) {
-                font-size: $font-size;
-            }
-
             $screen-width-step: $font-size-step / $scale-factor / 1em * 1px;
+            $screen-width: round($screen-width - $screen-width-step);
 
             @if $screen-width-step < 1px {
                 $screen-width-step: 1px;
             }
 
-            $screen-width: round($screen-width - $screen-width-step);
+            @media all and (max-width: $screen-width) {
+                font-size: $font-size;
+            }
         }
-
     }
 
+    @media all and (max-width: $min-screen-width) {
+        font-size: $min-font-size;
+    }
 }
 
-@mixin responsiveEl ($element, $property, $xs, $sm, $md, $lg) {
+@mixin responsiveEl($element, $property, $xs, $sm, $md, $lg) {
     @include media-breakpoint-up(xs) {
         #{$element} {
             #{$property}: $xs;
@@ -205,8 +235,9 @@
         }
     }
 }
+
 /* 0, 544, 768, 992, 1200 */
-@mixin responsivePropUp ($property, $xs, $sm, $md, $lg, $xl) {
+@mixin responsivePropUp($property, $xs, $sm, $md, $lg, $xl) {
     @include media-breakpoint-up(xs) {
         #{$property}: $xs;
     }
@@ -223,8 +254,9 @@
         #{$property}: $xl;
     }
 }
+
 /* 0, 544, 768, 992, 1200 */
-@mixin responsivePropDn ($property, $xs, $sm, $md, $lg, $xl) {
+@mixin responsivePropDn($property, $xs, $sm, $md, $lg, $xl) {
     @include media-breakpoint-down(xs) {
         #{$property}: $xs;
     }
@@ -241,6 +273,7 @@
         #{$property}: $xl;
     }
 }
+
 /* No greater than $max, no less than $min */
 //@mixin between-widths ($element, $property, $value, $min, $max) {
 //    @media (max-width: $max) and (min-width: $min) {
@@ -249,25 +282,21 @@
 //        }
 //    }
 //}
-@mixin between-widths ($property, $value, $min, $max) {
+
+@mixin between-widths($property, $value, $min, $max) {
     @media (max-width: #{$max}px) and (min-width: #{$min}px) {
         #{$property}: $value;
     }
 }
-@mixin between-heights ($property, $value, $min, $max) {
+
+@mixin between-heights($property, $value, $min, $max) {
     @media (max-height: #{$max}px) and (min-height: #{$min}px) {
         #{$property}: $value;
     }
 }
 
 @mixin retina {
-    @media
-    only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         @content;
     }
 }
@@ -278,34 +307,78 @@
     }
 }
 
-@mixin device ($devices, $orientation: false) {
+/* Devices
+---------------------------------------------------------------------------*/
+@mixin mqu($args...) {
+    $media-type: "only screen";
+    $media-type-key: "media-type";
+    $args: keywords($args);
+    $expr: "";
+
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+
+    @media #{$media-type} #{$expr} {
+        @content;
+    }
+}
+
+@mixin device($devices, $orientation: false) {
     @each $device in $devices {
-        //$val: length();
         $map: map-deep-get($device-list, $device);
+
         @if length($map) == 2 {
-            //$min: map-deep-get($device-list, $device, min);
-            //$max: map-deep-get($device-list, $device, max);
             $min: map-get($map, min);
             $max: map-get($map, max);
-            @include mq(
-                $min-width: $min,
-                $max-width: $max,
-                $orientation: $orientation) {
-                    @content;
-                }
-        } @else {
+
+            @include mqu($min-width: $min, $max-width: $max, $orientation: $orientation) {
+                @content;
+            }
+        }
+        @else {
             @if map-has-key($map, min) {
                 $min: map-get($map, min);
-                @include mq($min-width: $min) {
+
+                @include mqu($min-width: $min) {
                     @content;
                 }
-            } @else if map-has-key($map, max) {
+            }
+            @else if map-has-key($map, max) {
                 $max: map-get($map, max);
-                @include mq($max-width: $max) {
+
+                @include mqu($max-width: $max) {
                     @content;
                 }
             }
         }
-
     }
 }
+
+@mixin device-screens($screens...) {
+    @each $screen in $screens {
+        $map: map-deep-get($dimensions, $screen);
+
+        @if map-has-key($map, min-device-width) {
+            $min: map-get($map, min-device-width);
+            $max: map-get($map, max-device-width);
+
+            //@error $map;
+            @media only screen and (min-device-width: $min) and (max-device-width: $max) {
+                @content;
+            }
+        }
+    }
+}
+/*
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #section00 .jumbotron .text-00 {
+        font-size: 100px;
+    }
+} */
