@@ -444,7 +444,9 @@ a {
 #section01 {
     //padding-top: 58px;
     .auto-height {
-        @include calc(height, "100vh - 58px");
+        height: 100vh;
+
+        //@include calc(height, "100vh - 58px");
     }
 
     .container {
@@ -501,6 +503,12 @@ a {
     .nav-offset {
         //padding-bottom: 58px;
         @include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
+    }
+
+    .auto-height {
+        height: 100vh;
+
+        //@include calc(height, "100vh - 58px");
     }
 
     .card-deck-wrapper {
