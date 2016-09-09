@@ -28,7 +28,7 @@ $(document).ready(function() {
             var landscape = false;
         }
         if (landscape) {
-            var height = deviceWidth - innerWidth;
+            var height = deviceWidth - innerHeight;
         } else {
             var height = deviceHeight - innerHeight;
         }
