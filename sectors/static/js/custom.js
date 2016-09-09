@@ -1,41 +1,48 @@
 // window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
-
-
+   
     $(window).resize(function() {
-        var innerWidth = window.innerWidth;
-        var innerHeight = window.innerHeight;
-
-        var deviceWidth = window.screen.width;
-        var deviceHeight = window.screen.height;
-
-        var outerWidth = window.outerWidth;
-        var outerHeight = window.outerHeight;
-
-        if (innerWidth > innerHeight) {
-            if ($('body').hasClass('portrait')) {
-                $('body').removeClass('portrait').addClass('landscape');
-            } else if (!$('body').hasClass('portrait')) {
-                $('body').addClass('landscape');
-            }
-            var landscape = true;
-        } else {
-            if ($('body').hasClass('landscape')) {
-                $('body').removeClass('landscape').addClass('portrait');
-            } else if (!$('body').hasClass('landscape')) {
-                $('body').addClass('portrait');
-            }
-            var landscape = false;
-        }
-        if (landscape) {
-            var height = deviceWidth - innerHeight;
-        } else {
-            var height = deviceHeight - innerHeight;
-        }
-        //alert(innerWidth + ' x ' + innerHeight);
-        alert(height);
-        $('.auto-height').css({ 'height': innerHeight + "px" });
+        landscape = landscape();
+        alert(landscape);
     });
+
+    /*     $(window).resize(function() {
+            landscape = landscape();
+            alert(landscape);
+
+            var innerWidth = window.innerWidth;
+            var innerHeight = window.innerHeight;
+
+            var deviceWidth = window.screen.width;
+            var deviceHeight = window.screen.height;
+
+            var outerWidth = window.outerWidth;
+            var outerHeight = window.outerHeight;
+
+            if (innerWidth > innerHeight) {
+                if ($('body').hasClass('portrait')) {
+                    $('body').removeClass('portrait').addClass('landscape');
+                } else if (!$('body').hasClass('portrait')) {
+                    $('body').addClass('landscape');
+                }
+                var landscape = true;
+            } else {
+                if ($('body').hasClass('landscape')) {
+                    $('body').removeClass('landscape').addClass('portrait');
+                } else if (!$('body').hasClass('landscape')) {
+                    $('body').addClass('portrait');
+                }
+                var landscape = false;
+            }
+            if (landscape) {
+                var offset = deviceWidth - innerHeight;
+            } else {
+                var offset = deviceHeight - innerHeight;
+            }
+            //alert(innerWidth + ' x ' + innerHeight);
+            //alert(offset);
+            $('.auto-height').css({ 'height': innerHeight + "px" });
+        }); */
     /*     var onresizeTimeout;
         window.onresize = onresize;
 
@@ -150,6 +157,16 @@ $(document).ready(function() {
             // Clicking off overlay on section00
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
+    };
+    var landscape = function() {
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+        if (innerWidth > innerHeight) {
+            var landscape = true;
+        } else {
+            var landscape = false;
+        }
+        return landscape;
     };
     $.fn.extend({
         animateCss: function(animationName) {
