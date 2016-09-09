@@ -7,7 +7,7 @@ $(document).ready(function() {
 
         if (mobile()) {
             if (offset()) {
-                $('.section .active').addClass('offset');
+                $('#fullpage .active').addClass('offset');
                 $('.offset').css({ 'margin-top': offset + 'px' });
             } else {
                 if ($('body').hasClass('offset')) {
