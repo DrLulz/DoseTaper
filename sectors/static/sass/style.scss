@@ -444,8 +444,8 @@ a {
 #section01 {
     //padding-top: 58px;
     .auto-height {
-        height: 100vh;
-
+        //height: 100vh;
+        //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
     }
 
@@ -506,8 +506,8 @@ a {
     }
 
     .auto-height {
-        height: 100vh;
-
+        //height: 100vh;
+        //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
     }
 

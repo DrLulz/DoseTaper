@@ -1,14 +1,14 @@
-window.viewportUnitsBuggyfill.init();
-
-
-
-
+// window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
 
 
     $(window).resize(function() {
-        var viewportWidth = $(window).innerWidth();
-        var viewportHeight = $(window).innerHeight();
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+
+        alert(windowWidth + ' x ' + windowHeight);
+        //var viewportWidth = $(window).innerWidth();
+        //var viewportHeight = $(window).innerHeight();
         if ($(window).width() > $(window).height()) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 $('body').addClass('portrait');
             }
         }
-        alert(viewportWidth + "x" + viewportHeight);
+        //alert(viewportWidth + "x" + viewportHeight);
     });
     /*     var onresizeTimeout;
         window.onresize = onresize;

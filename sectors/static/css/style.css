@@ -5642,8 +5642,6 @@ a {
     filter: alpha(opacity=0); } }
 /* Section 01
 --------------------------------------------------*/
-#section01 .auto-height {
-  height: 100vh; }
 #section01 .container {
   max-width: 90vw; }
 #section01 .nav-offset {
@@ -5719,8 +5717,6 @@ a {
 @media (min-width: 1300px) {
   #section02 .nav-offset {
     padding-bottom: 58px; } }
-#section02 .auto-height {
-  height: 100vh; }
 #section02 .card-deck-wrapper {
   padding-top: 20px; }
   #section02 .card-deck-wrapper .card-deck {
