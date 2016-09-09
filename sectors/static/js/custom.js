@@ -6,7 +6,8 @@ $(document).ready(function() {
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            if (offset()) {
+            var offset = offset();
+            if (offset) {
                 $('#fullpage .active').addClass('offset');
                 $('.offset').css({ 'margin-top': offset + 'px' });
             } else {
