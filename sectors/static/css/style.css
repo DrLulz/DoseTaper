@@ -5370,14 +5370,14 @@ a {
 ---------------------------------------------------------------------------*/
 /* Background
 --------------------------------------------------*/
-#section00, #section01 {
+#section00, #section01, #section02 {
   position: relative;
   z-index: 20;
   height: 100%;
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover; }
-  #section00 a, #section01 a {
+  #section00 a, #section01 a, #section02 a {
     font-size: 20px;
     line-height: 1;
     text-decoration: none;
@@ -5399,7 +5399,7 @@ a {
     transition: opacity 0.3s;
     /* IE9 not supported */
     /* https://modernizr.com */ }
-  #section00 a:hover, #section01 a:hover {
+  #section00 a:hover, #section01 a:hover, #section02 a:hover {
     opacity: 0.5;
     filter: alpha(opacity=50); }
 
