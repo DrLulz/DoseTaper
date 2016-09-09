@@ -7,10 +7,9 @@ $(document).ready(function() {
 
         if (mobile()) {
             if (offset()) {
-                alert(offset());
+                $('.section .active').css({ 'margin-top': offset + 'px' });
                 $('body').addClass('offset');
             } else {
-                alert('no offset');
                 if ($('body').hasClass('offset')) {
                     $('body').removeClass('offset');
                 }
