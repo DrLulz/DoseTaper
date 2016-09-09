@@ -18,7 +18,7 @@ $(document).ready(function() {
             } else {
                 var offset = deviceHeight - innerHeight;
             }
-
+            alert(landscape);
         }
         alert(iOS());
     });
