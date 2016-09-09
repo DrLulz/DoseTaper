@@ -587,7 +587,7 @@ a {
 @include media-breakpoint-up(sm) {
     #section02 {
         .auto-height {
-            @include calc(height, "100vh - 58px");
+            //@include calc(height, "100vh - 58px");
         }
 
         .nav-offset {

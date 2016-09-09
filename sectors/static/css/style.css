@@ -5764,11 +5764,6 @@ a {
         /* https://modernizr.com */ }
 
 /* Section02 on Big Screens */
-@media (min-width: 480px) {
-  #section02 .auto-height {
-    height: -webkit-calc(100vh - 58px);
-    height: -moz-calc(100vh - 58px);
-    height: calc(100vh - 58px); } }
 /* scrollable.height(scrollHeight - 58); */
 /* Hamburger
 ---------------------------------------------------------------------------*/
