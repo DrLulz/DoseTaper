@@ -2,27 +2,20 @@
 $(document).ready(function() {
 
     $(window).resize(function() {
-        var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            var deviceWidth = window.screen.width;
-            var deviceHeight = window.screen.height;
-
-            if (innerWidth > innerHeight) {
-                var landscape = true;
-            } else {
-                var landscape = false;
-            }
-
-            if (landscape) {
-                var offset = deviceWidth - innerHeight;
-            } else {
-                var offset = deviceHeight - innerHeight;
-            }
+            var offset = offset();
             alert(offset);
-            alert(iOS());
+            if (offset) {
+                $('body').addClass('offset');
+            } else {
+                if ($('body').hasClass('offset')) {
+                    $('body').removeClass('offset');
+                }
+            }
+
         }
 
     });
@@ -179,6 +172,25 @@ $(document).ready(function() {
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
     };
+    var offset = function() {
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+        var deviceWidth = window.screen.width;
+        var deviceHeight = window.screen.height;
+
+        if (innerWidth > innerHeight) {
+            var landscape = true;
+        } else {
+            var landscape = false;
+        }
+
+        if (landscape) {
+            var offset = deviceWidth - innerHeight;
+        } else {
+            var offset = deviceHeight - innerHeight;
+        }
+        return offset;
+    };
     var mobile = function() {
         var check = false;
         (function(a) {
@@ -201,7 +213,8 @@ $(document).ready(function() {
         if (!!navigator.platform) {
             while (iDevices.length) {
                 if (navigator.platform === iDevices.pop()) {
-                    return true; }
+                    return true;
+                }
             }
         }
 
