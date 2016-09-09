@@ -322,7 +322,6 @@ a {
 
         button {
             font-family: $font-montserrat;
-            font-size: 18px;
 
             text-transform: uppercase;
 
@@ -334,11 +333,14 @@ a {
             border: 3px solid transparent;
             outline: none;
 
-            @include responsivePropUp(font-size, 70%, 80%, 90%, 100%, 100%);
+            //font-size: 18px;
+            @include ms-respond(font-size, 0.2);
+            //@include responsivePropUp(font-size, 70%, 80%, 90%, 100%, 100%);
             @include transition(color 0.5s, transform 0.2s, background-color 0.2s);
             @include border-radius(3px);
             @include animation-delay(0.2s);
-            @include responsivePropUp(padding, 10px, 15px, 20px, 23px, 23px);
+            //@include responsivePropUp(padding, 10px, 15px, 20px, 23px, 23px);
+            @include ms-respond(padding, 0.1);
 
             &:active {
                 @include transform(translateY(3px));
@@ -357,6 +359,8 @@ a {
             border: none;
             background-color: transparent;
             box-shadow: none;
+
+            @include ms-respond(margin-top, -2.6);
 
             &:hover {
                 color: $off-white;
@@ -377,12 +381,14 @@ a {
                 top: 0;
                 left: 0;
 
-                width: 100%;
-                height: 100%;
+                width: 99%;
+                height: 99%;
 
                 content: '';
 
-                @include responsivePropUp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white, 3px solid $off-white);
+                border: 2px solid $off-white;
+
+                //@include responsivePropUp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white, 3px solid $off-white);
                 @include transition(opacity 0.3s, border 0.3s);
             }
 
@@ -392,8 +398,8 @@ a {
                 top: 0;
                 left: 0;
 
-                width: 190px;
-                height: 210px;
+                width: 200px;
+                height: 200px;
 
                 content: '';
 
@@ -473,7 +479,7 @@ a {
         //@include responsive-font-size(1.3em, 1.6em, 400px, 544px, 0.1em);
         @include ms-respond(font-size, 0.65);
         @include mq($until: sm) {
-            @include ms-respond(font-size, 0.55);
+            @include ms-respond(font-size, 0.5);
         }
         @include mq($from: iphone6) {
             @include ms-respond(font-size, 0.8);
