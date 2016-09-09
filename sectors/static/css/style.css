@@ -5706,64 +5706,66 @@ a {
 --------------------------------------------------*/
 /* Section02 on Big & Small Screens */
 /* Fullpage.js LN 2792 */
-#section02 .iScrollIndicator {
-  border: 0 !important; }
-@media (min-width: 320px) {
-  #section02 .nav-offset {
-    padding-bottom: 0; } }
-@media (min-width: 480px) {
-  #section02 .nav-offset {
-    padding-bottom: 0; } }
-@media (min-width: 769px) {
-  #section02 .nav-offset {
-    padding-bottom: 58px; } }
-@media (min-width: 980px) {
-  #section02 .nav-offset {
-    padding-bottom: 58px; } }
-@media (min-width: 1300px) {
-  #section02 .nav-offset {
-    padding-bottom: 58px; } }
-#section02 .card-deck-wrapper {
-  padding-top: 20px; }
-  #section02 .card-deck-wrapper .card-deck {
-    border-spacing: 0; }
-    #section02 .card-deck-wrapper .card-deck .card {
-      border: none; }
-      #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-        max-height: 200px; }
-        @media only screen and (max-width: 568px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-            max-height: 100px; } }
-        @media only screen and (min-width: 569px) and (max-width: 1199px) {
-          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-            max-height: 150px; } }
-        @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-            max-height: 150px; } }
-      #section02 .card-deck-wrapper .card-deck .card .card-title {
-        font-family: "Lato", Arial, Verdana, sans-serif;
-        white-space: nowrap; }
-      #section02 .card-deck-wrapper .card-deck .card .card-text {
-        font-family: "Lato", Arial, Verdana, sans-serif;
-        font-weight: 300; }
-      #section02 .card-deck-wrapper .card-deck .card #calendar {
-        -webkit-animation-delay: 0.2s;
-        -moz-animation-delay: 0.2s;
-        animation-delay: 0.2s;
-        /* IE9 not supported */
-        /* https://modernizr.com */ }
-      #section02 .card-deck-wrapper .card-deck .card #rxpad {
-        -webkit-animation-delay: 0.4s;
-        -moz-animation-delay: 0.4s;
-        animation-delay: 0.4s;
-        /* IE9 not supported */
-        /* https://modernizr.com */ }
-      #section02 .card-deck-wrapper .card-deck .card #clipboard {
-        -webkit-animation-delay: 0.1s;
-        -moz-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-        /* IE9 not supported */
-        /* https://modernizr.com */ }
+#section02 {
+  padding-top: 58px; }
+  #section02 .iScrollIndicator {
+    border: 0 !important; }
+  @media (min-width: 320px) {
+    #section02 .nav-offset {
+      padding-bottom: 0; } }
+  @media (min-width: 480px) {
+    #section02 .nav-offset {
+      padding-bottom: 0; } }
+  @media (min-width: 769px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
+  @media (min-width: 980px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
+  @media (min-width: 1300px) {
+    #section02 .nav-offset {
+      padding-bottom: 58px; } }
+  #section02 .card-deck-wrapper {
+    padding-top: 20px; }
+    #section02 .card-deck-wrapper .card-deck {
+      border-spacing: 0; }
+      #section02 .card-deck-wrapper .card-deck .card {
+        border: none; }
+        #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+          max-height: 200px; }
+          @media only screen and (max-width: 568px) {
+            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+              max-height: 100px; } }
+          @media only screen and (min-width: 569px) and (max-width: 1199px) {
+            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+              max-height: 150px; } }
+          @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+              max-height: 150px; } }
+        #section02 .card-deck-wrapper .card-deck .card .card-title {
+          font-family: "Lato", Arial, Verdana, sans-serif;
+          white-space: nowrap; }
+        #section02 .card-deck-wrapper .card-deck .card .card-text {
+          font-family: "Lato", Arial, Verdana, sans-serif;
+          font-weight: 300; }
+        #section02 .card-deck-wrapper .card-deck .card #calendar {
+          -webkit-animation-delay: 0.2s;
+          -moz-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+          /* IE9 not supported */
+          /* https://modernizr.com */ }
+        #section02 .card-deck-wrapper .card-deck .card #rxpad {
+          -webkit-animation-delay: 0.4s;
+          -moz-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+          /* IE9 not supported */
+          /* https://modernizr.com */ }
+        #section02 .card-deck-wrapper .card-deck .card #clipboard {
+          -webkit-animation-delay: 0.1s;
+          -moz-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+          /* IE9 not supported */
+          /* https://modernizr.com */ }
 
 /* Section02 on Big Screens */
 @media (min-width: 480px) {
