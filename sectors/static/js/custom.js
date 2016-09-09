@@ -7,6 +7,9 @@ $(document).ready(function() {
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
+            var deviceWidth = window.screen.width;
+            var deviceHeight = window.screen.height;
+
             if (innerWidth > innerHeight) {
                 var landscape = true;
             } else {
@@ -19,6 +22,7 @@ $(document).ready(function() {
                 var offset = deviceHeight - innerHeight;
             }
             alert(offset);
+            alert(iOS());
         }
 
     });
