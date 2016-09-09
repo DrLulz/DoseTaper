@@ -183,7 +183,7 @@ $(document).ready(function() {
         return check;
     };
 
-    function iOS() {
+    var iOS = function() {
 
         var iDevices = [
             'iPad Simulator',
