@@ -6,9 +6,8 @@ $(document).ready(function() {
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            var offset = offset();
-            alert(offset);
-            if (offset) {
+            alert(offset());
+            if (offset()) {
                 $('body').addClass('offset');
             } else {
                 if ($('body').hasClass('offset')) {
