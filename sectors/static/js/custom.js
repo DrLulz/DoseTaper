@@ -1,3 +1,4 @@
+window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
     $('#fullpage').fullpage({
         easing: 'linear',
