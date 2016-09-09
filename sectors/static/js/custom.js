@@ -12,15 +12,15 @@ $(document).ready(function() {
             } else {
                 var landscape = false;
             }
-
+            alert(landscape);
             if (landscape) {
                 var offset = deviceWidth - innerHeight;
             } else {
                 var offset = deviceHeight - innerHeight;
             }
-            alert(landscape);
+            
         }
-        alert(iOS());
+        
     });
 
     /*     $(window).resize(function() {
