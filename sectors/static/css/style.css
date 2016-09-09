@@ -5642,49 +5642,47 @@ a {
     filter: alpha(opacity=0); } }
 /* Section 01
 --------------------------------------------------*/
-#section01 {
-  padding-top: 58px; }
-  #section01 .auto-height {
-    height: -webkit-calc(100vh - 58px);
-    height: -moz-calc(100vh - 58px);
-    height: calc(100vh - 58px); }
-  #section01 .container {
-    max-width: 90vw; }
-  #section01 .nav-offset {
-    /* padding-bottom: 58px; */ }
-  #section01 #laptop {
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
-    /* IE9 not supported */
-    /* https://modernizr.com */ }
-    @media (max-width: 48.0525em) {
-      #section01 #laptop {
-        max-height: calc(70vh - 58px); } }
-  #section01 .text-01a {
-    font-family: "Lato", Arial, Verdana, sans-serif;
-    font-weight: 300;
-    font-size: 1.38958em; }
-    @media (min-width: 20em) and (max-width: 61.25em) {
-      #section01 .text-01a {
-        font-size: calc( 1.38958em + 0.50956 * ( ( 100vw - 20em) / 41.25 ) ); } }
-    @media (min-width: 61.25em) {
-      #section01 .text-01a {
-        font-size: 1.89914em; } }
-  #section01 .text-01b {
-    font-family: "Lato", Arial, Verdana, sans-serif;
-    font-weight: 300;
-    padding-top: 20px;
-    font-size: 1.35731em; }
-    @media (min-width: 20em) and (max-width: 61.25em) {
-      #section01 .text-01b {
-        font-size: calc( 1.35731em + 0.45679 * ( ( 100vw - 20em) / 41.25 ) ); } }
-    @media (min-width: 61.25em) {
-      #section01 .text-01b {
-        font-size: 1.8141em; } }
-    @media (max-width: 29.99em) {
-      #section01 .text-01b {
-        font-size: 1.26491em; } }
+#section01 .auto-height {
+  height: -webkit-calc(100vh - 58px);
+  height: -moz-calc(100vh - 58px);
+  height: calc(100vh - 58px); }
+#section01 .container {
+  max-width: 90vw; }
+#section01 .nav-offset {
+  /* padding-bottom: 58px; */ }
+#section01 #laptop {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  /* IE9 not supported */
+  /* https://modernizr.com */ }
+  @media (max-width: 48.0525em) {
+    #section01 #laptop {
+      max-height: calc(70vh - 58px); } }
+#section01 .text-01a {
+  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-weight: 300;
+  font-size: 1.38958em; }
+  @media (min-width: 20em) and (max-width: 61.25em) {
+    #section01 .text-01a {
+      font-size: calc( 1.38958em + 0.50956 * ( ( 100vw - 20em) / 41.25 ) ); } }
+  @media (min-width: 61.25em) {
+    #section01 .text-01a {
+      font-size: 1.89914em; } }
+#section01 .text-01b {
+  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-weight: 300;
+  padding-top: 20px;
+  font-size: 1.35731em; }
+  @media (min-width: 20em) and (max-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: calc( 1.35731em + 0.45679 * ( ( 100vw - 20em) / 41.25 ) ); } }
+  @media (min-width: 61.25em) {
+    #section01 .text-01b {
+      font-size: 1.8141em; } }
+  @media (max-width: 29.99em) {
+    #section01 .text-01b {
+      font-size: 1.26491em; } }
   @media (max-width: 29.99em) and (min-width: 20em) and (max-width: 61.25em) {
     #section01 .text-01b {
       font-size: calc( 1.26491em + 0.31623 * ( ( 100vw - 20em) / 41.25 ) ); } }
@@ -5692,9 +5690,9 @@ a {
     #section01 .text-01b {
       font-size: 1.58114em; } }
 
-    @media (min-width: 41.6875em) {
-      #section01 .text-01b {
-        font-size: 1.45645em; } }
+  @media (min-width: 41.6875em) {
+    #section01 .text-01b {
+      font-size: 1.45645em; } }
   @media (min-width: 41.6875em) and (min-width: 20em) and (max-width: 61.25em) {
     #section01 .text-01b {
       font-size: calc( 1.45645em + 0.62493 * ( ( 100vw - 20em) / 41.25 ) ); } }
@@ -5706,66 +5704,64 @@ a {
 --------------------------------------------------*/
 /* Section02 on Big & Small Screens */
 /* Fullpage.js LN 2792 */
-#section02 {
-  padding-top: 58px; }
-  #section02 .iScrollIndicator {
-    border: 0 !important; }
-  @media (min-width: 320px) {
-    #section02 .nav-offset {
-      padding-bottom: 0; } }
-  @media (min-width: 480px) {
-    #section02 .nav-offset {
-      padding-bottom: 0; } }
-  @media (min-width: 769px) {
-    #section02 .nav-offset {
-      padding-bottom: 58px; } }
-  @media (min-width: 980px) {
-    #section02 .nav-offset {
-      padding-bottom: 58px; } }
-  @media (min-width: 1300px) {
-    #section02 .nav-offset {
-      padding-bottom: 58px; } }
-  #section02 .card-deck-wrapper {
-    padding-top: 20px; }
-    #section02 .card-deck-wrapper .card-deck {
-      border-spacing: 0; }
-      #section02 .card-deck-wrapper .card-deck .card {
-        border: none; }
-        #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-          max-height: 200px; }
-          @media only screen and (max-width: 568px) {
-            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-              max-height: 100px; } }
-          @media only screen and (min-width: 569px) and (max-width: 1199px) {
-            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-              max-height: 150px; } }
-          @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-            #section02 .card-deck-wrapper .card-deck .card .card-img-top {
-              max-height: 150px; } }
-        #section02 .card-deck-wrapper .card-deck .card .card-title {
-          font-family: "Lato", Arial, Verdana, sans-serif;
-          white-space: nowrap; }
-        #section02 .card-deck-wrapper .card-deck .card .card-text {
-          font-family: "Lato", Arial, Verdana, sans-serif;
-          font-weight: 300; }
-        #section02 .card-deck-wrapper .card-deck .card #calendar {
-          -webkit-animation-delay: 0.2s;
-          -moz-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-          /* IE9 not supported */
-          /* https://modernizr.com */ }
-        #section02 .card-deck-wrapper .card-deck .card #rxpad {
-          -webkit-animation-delay: 0.4s;
-          -moz-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-          /* IE9 not supported */
-          /* https://modernizr.com */ }
-        #section02 .card-deck-wrapper .card-deck .card #clipboard {
-          -webkit-animation-delay: 0.1s;
-          -moz-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-          /* IE9 not supported */
-          /* https://modernizr.com */ }
+#section02 .iScrollIndicator {
+  border: 0 !important; }
+@media (min-width: 320px) {
+  #section02 .nav-offset {
+    padding-bottom: 0; } }
+@media (min-width: 480px) {
+  #section02 .nav-offset {
+    padding-bottom: 0; } }
+@media (min-width: 769px) {
+  #section02 .nav-offset {
+    padding-bottom: 58px; } }
+@media (min-width: 980px) {
+  #section02 .nav-offset {
+    padding-bottom: 58px; } }
+@media (min-width: 1300px) {
+  #section02 .nav-offset {
+    padding-bottom: 58px; } }
+#section02 .card-deck-wrapper {
+  padding-top: 20px; }
+  #section02 .card-deck-wrapper .card-deck {
+    border-spacing: 0; }
+    #section02 .card-deck-wrapper .card-deck .card {
+      border: none; }
+      #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+        max-height: 200px; }
+        @media only screen and (max-width: 568px) {
+          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+            max-height: 100px; } }
+        @media only screen and (min-width: 569px) and (max-width: 1199px) {
+          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+            max-height: 150px; } }
+        @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+          #section02 .card-deck-wrapper .card-deck .card .card-img-top {
+            max-height: 150px; } }
+      #section02 .card-deck-wrapper .card-deck .card .card-title {
+        font-family: "Lato", Arial, Verdana, sans-serif;
+        white-space: nowrap; }
+      #section02 .card-deck-wrapper .card-deck .card .card-text {
+        font-family: "Lato", Arial, Verdana, sans-serif;
+        font-weight: 300; }
+      #section02 .card-deck-wrapper .card-deck .card #calendar {
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+        /* IE9 not supported */
+        /* https://modernizr.com */ }
+      #section02 .card-deck-wrapper .card-deck .card #rxpad {
+        -webkit-animation-delay: 0.4s;
+        -moz-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+        /* IE9 not supported */
+        /* https://modernizr.com */ }
+      #section02 .card-deck-wrapper .card-deck .card #clipboard {
+        -webkit-animation-delay: 0.1s;
+        -moz-animation-delay: 0.1s;
+        animation-delay: 0.1s;
+        /* IE9 not supported */
+        /* https://modernizr.com */ }
 
 /* Section02 on Big Screens */
 @media (min-width: 480px) {

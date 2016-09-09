@@ -442,8 +442,7 @@ a {
 /* Section 01
 --------------------------------------------------*/
 #section01 {
-    padding-top: 58px;
-
+    //padding-top: 58px;
     .auto-height {
         @include calc(height, "100vh - 58px");
     }
@@ -494,8 +493,7 @@ a {
 
 /* Fullpage.js LN 2792 */
 #section02 {
-    padding-top: 58px;
-
+    //padding-top: 58px;
     .iScrollIndicator {
         border: 0 !important;
     }
