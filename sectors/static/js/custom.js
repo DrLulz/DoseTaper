@@ -6,24 +6,35 @@ $(document).ready(function() {
         var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
 
+        var deviceWidth = window.screen.width;
+        var deviceHeight = window.screen.height;
+
         var outerWidth = window.outerWidth;
         var outerHeight = window.outerHeight;
-        //alert(innerWidth + ' x ' + innerHeight);
-        alert(window.screen.height + " vs " + innerHeight);
-        $('.auto-height').css({ 'height': innerHeight + "px" });
+
         if (innerWidth > innerHeight) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
             } else if (!$('body').hasClass('portrait')) {
                 $('body').addClass('landscape');
             }
+            var landscape = true;
         } else {
             if ($('body').hasClass('landscape')) {
                 $('body').removeClass('landscape').addClass('portrait');
             } else if (!$('body').hasClass('landscape')) {
                 $('body').addClass('portrait');
             }
+            var landscape = false;
         }
+        if (landscape) {
+            var height = deviceWidth - innerWidth;
+        } else {
+            var height = deviceHeight - innerHeight;
+        }
+        //alert(innerWidth + ' x ' + innerHeight);
+        alert(height);
+        $('.auto-height').css({ 'height': innerHeight + "px" });
     });
     /*     var onresizeTimeout;
         window.onresize = onresize;
