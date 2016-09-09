@@ -19,8 +19,7 @@ $(document).ready(function() {
                 var offset = deviceHeight - innerHeight;
             }
 
-            var iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
-            alert(iOS);
+            alert(iOS());
         }
     });
 
@@ -183,6 +182,27 @@ $(document).ready(function() {
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
     };
+
+    function iOS() {
+
+        var iDevices = [
+            'iPad Simulator',
+            'iPhone Simulator',
+            'iPod Simulator',
+            'iPad',
+            'iPhone',
+            'iPod'
+        ];
+
+        if (!!navigator.platform) {
+            while (iDevices.length) {
+                if (navigator.platform === iDevices.pop()) {
+                    return true; }
+            }
+        }
+
+        return false;
+    }
     $.fn.extend({
         animateCss: function(animationName) {
             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
