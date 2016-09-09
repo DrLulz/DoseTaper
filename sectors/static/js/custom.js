@@ -7,8 +7,8 @@ $(document).ready(function() {
 
         if (mobile()) {
             if (offset()) {
-                $('.section .active').css({ 'margin-top': offset + 'px' });
-                $('body').addClass('offset');
+                $('.section .active').addClass('offset');
+                $('.offset').css({ 'margin-top': offset + 'px' });
             } else {
                 if ($('body').hasClass('offset')) {
                     $('body').removeClass('offset');
