@@ -444,7 +444,8 @@ a {
 #section01 {
     //padding-top: 58px;
     .auto-height {
-        //height: 100vh;
+        height: 100vh;
+
         //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
     }
@@ -502,11 +503,12 @@ a {
 
     .nav-offset {
         //padding-bottom: 58px;
-        @include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
+        //@include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
     }
 
     .auto-height {
-        //height: 100vh;
+        height: 100vh;
+
         //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
     }

@@ -5,11 +5,9 @@ $(document).ready(function() {
     $(window).resize(function() {
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
-
-        alert(windowWidth + ' x ' + windowHeight);
-        //var viewportWidth = $(window).innerWidth();
-        //var viewportHeight = $(window).innerHeight();
-        if ($(window).width() > $(window).height()) {
+        //alert(windowWidth + ' x ' + windowHeight);
+        $('.auto-height').css({ 'height': windowHeight + "px" });
+        if (windowWidth > windowHeight) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
             } else if (!$('body').hasClass('portrait')) {
@@ -22,7 +20,6 @@ $(document).ready(function() {
                 $('body').addClass('portrait');
             }
         }
-        //alert(viewportWidth + "x" + viewportHeight);
     });
     /*     var onresizeTimeout;
         window.onresize = onresize;
