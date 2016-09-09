@@ -7,8 +7,8 @@ $(document).ready(function() {
 
 
     $(window).resize(function() {
-        var viewportWidth = $(window).width();
-        var viewportHeight = $(window).height();
+        var viewportWidth = $(window).innerWidth();
+        var viewportHeight = $(window).innerHeight();
         if ($(window).width() > $(window).height()) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
