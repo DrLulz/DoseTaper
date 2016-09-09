@@ -6,7 +6,7 @@ $(document).ready(function() {
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         //alert(windowWidth + ' x ' + windowHeight);
-        $('.fp-tableCell').css({ 'height': windowHeight + "px" });
+        $('.auto-height').css({ 'height': windowHeight + "px" });
         if (windowWidth > windowHeight) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
