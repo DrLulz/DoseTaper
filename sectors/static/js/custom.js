@@ -6,10 +6,10 @@ $(document).ready(function() {
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            var offset = offset();
-            if (offset) {
+            var margin = offset();
+            if (margin) {
                 $('#fullpage .active').addClass('offset');
-                $('.offset').css({ 'margin-top': offset + 'px' });
+                $('.offset').css({ 'margin-top': margin + 'px' });
             } else {
                 if ($('body').hasClass('offset')) {
                     $('body').removeClass('offset');
