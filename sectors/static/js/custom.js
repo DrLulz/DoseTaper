@@ -2,7 +2,13 @@
 $(document).ready(function() {
    
     $(window).resize(function() {
-        landscape = landscape();
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+        if (innerWidth > innerHeight) {
+            var landscape = true;
+        } else {
+            var landscape = false;
+        }
         alert(landscape);
     });
 
