@@ -19,8 +19,8 @@ $(document).ready(function() {
                 var offset = deviceHeight - innerHeight;
             }
 
-            alert(iOS());
         }
+        alert(iOS());
     });
 
     /*     $(window).resize(function() {
