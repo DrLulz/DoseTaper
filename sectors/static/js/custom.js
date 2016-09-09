@@ -9,7 +9,7 @@ $(document).ready(function() {
         var outerWidth = window.outerWidth;
         var outerHeight = window.outerHeight;
         //alert(innerWidth + ' x ' + innerHeight);
-        alert(outerHeight - innerHeight);
+        alert(window.screen.availHeight + " vs " + innerHeight);
         $('.auto-height').css({ 'height': innerHeight + "px" });
         if (innerWidth > innerHeight) {
             if ($('body').hasClass('portrait')) {
