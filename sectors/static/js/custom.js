@@ -6,10 +6,11 @@ $(document).ready(function() {
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            alert(offset());
             if (offset()) {
+                alert(offset());
                 $('body').addClass('offset');
             } else {
+                alert('no offset');
                 if ($('body').hasClass('offset')) {
                     $('body').removeClass('offset');
                 }
