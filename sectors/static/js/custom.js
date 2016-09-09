@@ -3,11 +3,15 @@ $(document).ready(function() {
 
 
     $(window).resize(function() {
-        var windowWidth = window.innerWidth;
-        var windowHeight = window.innerHeight;
-        //alert(windowWidth + ' x ' + windowHeight);
-        $('.auto-height').css({ 'height': windowHeight + "px" });
-        if (windowWidth > windowHeight) {
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+
+        var outerWidth = window.outerWidth;
+        var outerHeight = window.outerHeight;
+        //alert(innerWidth + ' x ' + innerHeight);
+        alert(outerHeight - innerHeight);
+        $('.auto-height').css({ 'height': innerHeight + "px" });
+        if (innerWidth > innerHeight) {
             if ($('body').hasClass('portrait')) {
                 $('body').removeClass('portrait').addClass('landscape');
             } else if (!$('body').hasClass('portrait')) {
