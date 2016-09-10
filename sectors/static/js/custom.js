@@ -1,7 +1,7 @@
 // window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
 
-    $(window).resize(function() {
+/*     $(window).resize(function() {
         var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
         var deviceWidth = window.screen.width;
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
         }
 
-    });
+    }); */
 
     var landscape = function(w, h) {
         if (w > h) {
