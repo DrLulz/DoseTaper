@@ -2,16 +2,23 @@
 $(document).ready(function() {
 
     $(window).resize(function() {
+        var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
+        var deviceWidth = window.screen.width;
+        var deviceHeight = window.screen.height;
+
+
         $('.auto-height').css({ 'height': innerHeight + 'px' });
 
         if (mobile()) {
-            var margin = offset();
-            if (margin) {
+
+            var lS = landscape(innerWidth, innerHeight);
+            var oS = offset(lS, deviceWidth, deviceHeight, innerHeight)
+            if ((lS) && (oS)) {
                 if ($('.offset').length) {
                     $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
                 }
-                $('#fullpage .active').addClass('offset').css({ 'margin-top': margin + 'px' });
+                $('#fullpage .active').addClass('offset').css({ 'margin-top': oS + 'px' });
             } else {
                 if ($('.offset').length) {
                     $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
@@ -21,6 +28,24 @@ $(document).ready(function() {
         }
 
     });
+
+    var landscape = function(w, h) {
+        if (w > h) {
+            var landscape = true;
+        } else {
+            var landscape = false;
+        }
+        return landscape;
+    };
+
+    var offset = function(ori, dW, dH, iH) {
+        if (ori) {
+            var offset = dW - iH;
+        } else {
+            var offset = dH - iH;
+        }
+        return offset;
+    };
 
     /*     $(window).resize(function() {
             landscape = landscape();
@@ -174,25 +199,7 @@ $(document).ready(function() {
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
     };
-    var offset = function() {
-        var innerWidth = window.innerWidth;
-        var innerHeight = window.innerHeight;
-        var deviceWidth = window.screen.width;
-        var deviceHeight = window.screen.height;
-
-        if (innerWidth > innerHeight) {
-            var landscape = true;
-        } else {
-            var landscape = false;
-        }
-
-        if (landscape) {
-            var offset = deviceWidth - innerHeight;
-        } else {
-            var offset = deviceHeight - innerHeight;
-        }
-        return offset;
-    };
+    
     var mobile = function() {
         var check = false;
         (function(a) {
