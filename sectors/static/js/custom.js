@@ -117,7 +117,12 @@ $(document).ready(function() {
             fadeScrollbars: true
         },
         /* afterRender: function() {}, */
-        /* afterResize: function() {}, */
+        afterResize: function() {
+            //$('.fp-tableCell:not(#section00 .fp-tableCell) fp-placeholder:first').addClass('GridFolderRow');
+            //if (!$('.fp-placeholder').parent().is(':first-child')) {
+            //    navHeightUpdate();
+            //}
+        },
         onLeave: function(index, nextIndex, direction) {
             // Going to section01
             if (index == 1 && direction == 'down') {
@@ -161,8 +166,9 @@ $(document).ready(function() {
     });
 
 
-    $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
+
     var navHeightUpdate = function() {
+        $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
         //var navHeight = $('.navbar').outerHeight();
         //console.log('Navigation Height = ' + navHeight);
         //$('.fp-placeholder').css('height', navHeight);

@@ -447,14 +447,6 @@ a {
 /* Section 01
 --------------------------------------------------*/
 #section01 {
-    //padding-top: 58px;
-    .auto-height {
-        //height: 100vh;
-        //content: 'viewport-units-buggyfill';
-        //@include calc(height, "100vh - 58px");
-   
-    }
-
     .container {
         display: table;
 
@@ -475,43 +467,6 @@ a {
                 width: 50%;
             }
         }
-
-
-
-
-
-        /*         .vc-100 {
-                    &:before {
-                        //height: calc(100% - 58px);
-                    }
-                }
-        
-                .wrap-100 {
-                    //height: calc(100% - 58px);
-                    height: 100%;
-        
-                    .row {
-                        height: 100%;
-                        margin: 0;
-        
-                        .vc-50 {
-                            @include mq($until: md) {
-                                //height: calc(100% - 58px);
-                                //@include calc(height, "100% - 58px");
-                                height: 100%;
-        
-                                .wrap-50 {
-                                    height: 100%;
-                                }
-                            }
-                        }
-                    }
-                } */
-    }
-
-    .nav-offset {
-        //padding-bottom: 58px;
-   
     }
 
     #laptop {
@@ -532,7 +487,7 @@ a {
         font-family: $font-lato;
         font-weight: 300;
 
-        padding: 10px;
+        padding: 10px 0;
 
         @include ms-respond(font-size, 0.6);
         @include mq($until: sm) {
@@ -554,28 +509,22 @@ a {
 /* Section02 on Big & Small Screens */
 
 /* Fullpage.js LN 2792 */
+/* scrolloverflow.js LN 1678 */
 #section02 {
-    //padding-top: 58px;
     .iScrollIndicator {
         border: 0 !important;
     }
 
-    .nav-offset {
-        //padding-bottom: 58px;
-        //@include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
-   
-    }
+    .container {
+        height: calc(100% - 58px);
 
-    .auto-height {
-        height: 100vh;
-
-        //content: 'viewport-units-buggyfill';
-        //@include calc(height, "100vh - 58px");
-   
+        .card-deck-wrapper {
+            //height: calc(100% - 58px);
+        }
     }
 
     .card-deck-wrapper {
-        //padding-top: 20px;
+        //padding-top: 0.75rem;
         .card-deck {
             border-spacing: 0;
 
@@ -597,7 +546,7 @@ a {
                     //    max-height: 100px;
                     //};
                     @include device(sm-screen) {
-                        max-height: 100px;
+                        max-height: 150px;
                     }
                     @include device(md-screen) {
                         max-height: 150px;
