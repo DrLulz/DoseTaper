@@ -8,6 +8,9 @@ $(document).ready(function() {
         if (mobile()) {
             var margin = offset();
             if (margin) {
+                if ($('.offset').length) {
+                    $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
+                }
                 $('#fullpage .active').addClass('offset').css({ 'margin-top': margin + 'px' });
             } else {
                 if ($('.offset').length) {
