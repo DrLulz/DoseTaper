@@ -8,11 +8,10 @@ $(document).ready(function() {
         if (mobile()) {
             var margin = offset();
             if (margin) {
-                $('#fullpage .active').addClass('offset');
-                $('.offset').css({ 'margin-top': margin + 'px' });
+                $('#fullpage .active').addClass('offset').css({ 'margin-top': margin + 'px' });
             } else {
-                if ($('body').hasClass('offset')) {
-                    $('body').removeClass('offset');
+                if ($('.offset').length) {
+                    $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
                 }
             }
 
