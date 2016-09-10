@@ -163,9 +163,10 @@ $(document).ready(function() {
 
     $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
     var navHeightUpdate = function() {
-        var navHeight = $('.navbar').outerHeight();
-        console.log('Navigation Height = ' + navHeight);
-        $('.fp-placeholder').css('height', navHeight);
+        //var navHeight = $('.navbar').outerHeight();
+        //console.log('Navigation Height = ' + navHeight);
+        //$('.fp-placeholder').css('height', navHeight);
+        $('.fp-placeholder').css('height', 58);
     };
     navHeightUpdate();
 

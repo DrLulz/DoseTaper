@@ -449,24 +449,75 @@ a {
 #section01 {
     //padding-top: 58px;
     .auto-height {
-        height: 100vh;
-
+        //height: 100vh;
         //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
    
     }
 
     .container {
+        display: table;
+
         max-width: 90vw;
+        height: calc(100% - 58px);
+
+        .table-row {
+            display: table-row;
+
+            height: 100%;
+
+            .table-cell {
+                text-align: center;
+                vertical-align: middle;
+
+                display: table-cell;
+
+                width: 50%;
+            }
+        }
+
+
+
+
+
+        /*         .vc-100 {
+                    &:before {
+                        //height: calc(100% - 58px);
+                    }
+                }
+        
+                .wrap-100 {
+                    //height: calc(100% - 58px);
+                    height: 100%;
+        
+                    .row {
+                        height: 100%;
+                        margin: 0;
+        
+                        .vc-50 {
+                            @include mq($until: md) {
+                                //height: calc(100% - 58px);
+                                //@include calc(height, "100% - 58px");
+                                height: 100%;
+        
+                                .wrap-50 {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                } */
     }
 
-    .nav-offset { /* padding-bottom: 58px; */
+    .nav-offset {
+        //padding-bottom: 58px;
+   
     }
 
     #laptop {
         @include animation-duration(1s);
         @include mq($until: md) {
-            max-height: calc(70vh - 58px);
+            max-height: 55vh;
         }
     }
 
@@ -474,7 +525,6 @@ a {
         font-family: $font-lato;
         font-weight: 300;
 
-        //@include responsive-font-size(1.3em, 1.8em, 800px, 1200px, 0.1em);
         @include ms-respond(font-size, 0.7);
     }
 
@@ -482,12 +532,15 @@ a {
         font-family: $font-lato;
         font-weight: 300;
 
-        padding-top: 20px;
+        padding: 10px;
 
-        //@include responsive-font-size(1.3em, 1.6em, 400px, 544px, 0.1em);
-        @include ms-respond(font-size, 0.65);
+        @include ms-respond(font-size, 0.6);
         @include mq($until: sm) {
             @include ms-respond(font-size, 0.5);
+        }
+        @include mq-add-breakpoint(xs-2, 356px);
+        @include mq($until: xs-2) {
+            @include ms-respond(font-size, 0.2);
         }
         @include mq($from: iphone6) {
             @include ms-respond(font-size, 0.8);
