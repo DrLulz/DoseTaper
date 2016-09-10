@@ -236,6 +236,11 @@ a {
 
 /* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
+#fullpage {
+    .fp-tableCell {
+        vertical-align: top !important;
+    }
+}
 
 /* Background
 --------------------------------------------------*/
@@ -448,6 +453,7 @@ a {
 
         //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
+   
     }
 
     .container {
@@ -504,6 +510,7 @@ a {
     .nav-offset {
         //padding-bottom: 58px;
         //@include responsivePropUp(padding-bottom, 0, 0, 58px, 58px, 58px);
+   
     }
 
     .auto-height {
@@ -511,6 +518,7 @@ a {
 
         //content: 'viewport-units-buggyfill';
         //@include calc(height, "100vh - 58px");
+   
     }
 
     .card-deck-wrapper {
@@ -589,6 +597,7 @@ a {
     #section02 {
         .auto-height {
             //@include calc(height, "100vh - 58px");
+       
         }
 
         .nav-offset {

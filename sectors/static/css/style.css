@@ -5368,6 +5368,9 @@ a {
 
 /* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
+#fullpage .fp-tableCell {
+  vertical-align: top !important; }
+
 /* Background
 --------------------------------------------------*/
 #section00, #section01, #section02 {
