@@ -17,8 +17,8 @@ $(document).ready(function() {
             if ((lS) && (oS)) {
                 if ($('.offset').length) {
                     $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
+                    $('#fullpage .active').addClass('offset').css({ 'margin-top': oS + 'px' });
                 }
-                $('#fullpage .active').addClass('offset').css({ 'margin-top': oS + 'px' });
             } else {
                 if ($('.offset').length) {
                     $('#fullpage .active').removeClass('offset').css({ 'margin-top': '' });
@@ -199,7 +199,7 @@ $(document).ready(function() {
             $('.hamburger-icon .line').css('background-color', '#ecf0f1');
         }
     };
-    
+
     var mobile = function() {
         var check = false;
         (function(a) {
