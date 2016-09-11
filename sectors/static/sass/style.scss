@@ -518,76 +518,81 @@ a {
     .container {
         height: calc(100% - 58px);
 
-        .card-deck-wrapper {
-            //height: calc(100% - 58px);
+        @include mq($until: sm) {
+            padding-top: 25px;
         }
-    }
 
-    .card-deck-wrapper {
-        //padding-top: 0.75rem;
-        .card-deck {
-            border-spacing: 0;
+        .card-deck-wrapper {
+            @include mq($from: sm) {
+                padding-top: calc((100vh - 58px) / 4);
+            }
 
-            .card {
-                border: none;
+            .card-deck {
+                text-align: center;
 
-                .card-img-top {
-                    //min-height: 200px;
-                    //@include responsivePropDn(min-height, 200px, 150px, 200px, 200px, 200px);
-                    //max-height: 200px;
-                    //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
-                    //@include between-widths(min-height, 200px, 667, 1200);
-                    max-height: 200px;
+                border-spacing: 0;
 
-                    //@include between-widths(max-height, 200px, 0, 666);
-                    //@include between-widths(max-height, 150px, 667, 1023);
-                    //@include between-widths(max-height, 150px, 667, 1200);
-                    //@include device((iphone5), landscape) {
-                    //    max-height: 100px;
-                    //};
-                    @include device(sm-screen) {
-                        max-height: 150px;
+                .card {
+                    border: none;
+
+                    .card-img-top {
+                        //min-height: 200px;
+                        //@include responsivePropDn(min-height, 200px, 150px, 200px, 200px, 200px);
+                        //max-height: 200px;
+                        //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
+                        //@include between-widths(min-height, 200px, 667, 1200);
+                        max-height: 200px;
+
+                        //@include between-widths(max-height, 200px, 0, 666);
+                        //@include between-widths(max-height, 150px, 667, 1023);
+                        //@include between-widths(max-height, 150px, 667, 1200);
+                        //@include device((iphone5), landscape) {
+                        //    max-height: 100px;
+                        //};
+                        @include device(sm-screen) {
+                            max-height: 150px;
+                        }
+                        @include device(md-screen) {
+                            max-height: 150px;
+                        }
+                        @include device(iphone4, landscape) {
+                            max-height: 150px;
+                        }
+
+                        //@include device( (lg-screen) ) {
+                        //    max-height: 200px;
+                        //};
+                   
                     }
-                    @include device(md-screen) {
-                        max-height: 150px;
+
+                    .card-title {
+                        font-family: $font-lato;
+
+                        white-space: nowrap;
+
+                        //@include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
+                   
                     }
-                    @include device(iphone4, landscape) {
-                        max-height: 150px;
+
+                    .card-text {
+                        font-family: $font-lato;
+                        font-weight: 300;
+
+                        //@include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
+                   
                     }
 
-                    //@include device( (lg-screen) ) {
-                    //    max-height: 200px;
-                    //};
-               
-                }
+                    #calendar {
+                        @include animation-delay(0.2s);
+                    }
 
-                .card-title {
-                    font-family: $font-lato;
+                    #rxpad {
+                        @include animation-delay(0.4s);
+                    }
 
-                    white-space: nowrap;
-
-                    //@include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
-               
-                }
-
-                .card-text {
-                    font-family: $font-lato;
-                    font-weight: 300;
-
-                    //@include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
-               
-                }
-
-                #calendar {
-                    @include animation-delay(0.2s);
-                }
-
-                #rxpad {
-                    @include animation-delay(0.4s);
-                }
-
-                #clipboard {
-                    @include animation-delay(0.1s);
+                    #clipboard {
+                        @include animation-delay(0.1s);
+                    }
                 }
             }
         }
