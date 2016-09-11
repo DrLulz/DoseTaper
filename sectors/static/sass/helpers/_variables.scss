@@ -17,18 +17,6 @@ $font-montserrat: "Montserrat", Arial, Verdana, sans-serif;
 //$font-oswald: 'Oswald', Arial, Verdana, sans-serif;
 //$shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 //text-shadow: 0 -2.5px 0 darken($whitefff, 20), 0 4px 6px rgba(204, 204, 192, .4), 0 7px 8px rgba(204, 204, 192, .15);
-$device-list: (
-    iphone4: ( min: 320px, max: 480px ),
-    iphone5: ( min: 320px, max: 568px ),
-    iphone6: ( min: 375px, max: 667px ),
-    iphone6-plus: ( min: 414px, max: 736px ),
-    ipad-mini: ( min: 768px, max: 1024px ),
-    ipad-air2: ( min: 414px, max: 736px ),
-    sm-screen: ( max: 568px ),
-    md-screen: ( min: 569px, max: 1199px ),
-    lg-screen: ( min: 1200px )
-);
-
 
 
 /* Modular Scale
@@ -42,14 +30,7 @@ $device-list: (
 $ms-base: 1em;
 $ms-ratio: 1.618;
 
-// 1.067, 1.125, 1.2, 1.25, 1.333, 1.414, 1.5, 1.6, 1.618
 // xs: 20em, sm: 30em, md: 46.250em, lg: 61.250em, xl: 81.250em, 4k: 143.750em
-
-//$ms-range:
-//    1.2 20em,
-//    1.25 30em,
-//    1.618 61.250em;
-
 $ms-range:
     1.6 20em,
     2.5 61.250em;

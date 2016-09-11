@@ -80,3 +80,160 @@ $dimensions: (
         #{$property}: $value;
     }
 }
+
+
+/* 0, 544, 768, 992, 1200 */
+@mixin responsivePropUp($property, $xs, $sm, $md, $lg, $xl) {
+    @include media-breakpoint-up(xs) {
+        #{$property}: $xs;
+    }
+    @include media-breakpoint-up(sm) {
+        #{$property}: $sm;
+    }
+    @include media-breakpoint-up(md) {
+        #{$property}: $md;
+    }
+    @include media-breakpoint-up(lg) {
+        #{$property}: $lg;
+    }
+    @include media-breakpoint-up(xl) {
+        #{$property}: $xl;
+    }
+}
+
+/* 0, 544, 768, 992, 1200 */
+@mixin responsivePropDn($property, $xs, $sm, $md, $lg, $xl) {
+    @include media-breakpoint-down(xs) {
+        #{$property}: $xs;
+    }
+    @include media-breakpoint-down(sm) {
+        #{$property}: $sm;
+    }
+    @include media-breakpoint-down(md) {
+        #{$property}: $md;
+    }
+    @include media-breakpoint-down(lg) {
+        #{$property}: $lg;
+    }
+    @include media-breakpoint-down(xl) {
+        #{$property}: $xl;
+    }
+}
+
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+
+/* Devices
+---------------------------------------------------------------------------*/
+@mixin mqu($args...) {
+    $media-type: "only screen";
+    $media-type-key: "media-type";
+    $args: keywords($args);
+    $expr: "";
+
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+
+    @media #{$media-type} #{$expr} {
+        @content;
+    }
+}
+
+@mixin device($devices, $orientation: false) {
+    @each $device in $devices {
+        $map: map-deep-get($device-list, $device);
+
+        @if length($map) == 2 {
+            $min: map-get($map, min);
+            $max: map-get($map, max);
+
+            @include mqu($min-width: $min, $max-width: $max, $orientation: $orientation) {
+                @content;
+            }
+        }
+        @else {
+            @if map-has-key($map, min) {
+                $min: map-get($map, min);
+
+                @include mqu($min-width: $min) {
+                    @content;
+                }
+            }
+            @else if map-has-key($map, max) {
+                $max: map-get($map, max);
+
+                @include mqu($max-width: $max) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+/* No greater than $max, no less than $min */
+//@mixin between-widths ($element, $property, $value, $min, $max) {
+//    @media (max-width: $max) and (min-width: $min) {
+//        #{$element} {
+//            #{$property}: $value;
+//        }
+//    }
+//}
+
+
+
+@mixin responsiveEl($element, $property, $xs, $sm, $md, $lg) {
+    @include media-breakpoint-up(xs) {
+        #{$element} {
+            #{$property}: $xs;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        #{$element} {
+            #{$property}: $sm;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        #{$element} {
+            #{$property}: $md;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        #{$element} {
+            #{$property}: $lg;
+        }
+    }
+}
+
+
+/* Variables
+---------------------------------------------------------------------------*/
+
+$device-list: (
+    iphone4: ( min: 320px, max: 480px ),
+    iphone5: ( min: 320px, max: 568px ),
+    iphone6: ( min: 375px, max: 667px ),
+    iphone6-plus: ( min: 414px, max: 736px ),
+    ipad-mini: ( min: 768px, max: 1024px ),
+    ipad-air2: ( min: 414px, max: 736px ),
+    sm-screen: ( max: 568px ),
+    md-screen: ( min: 569px, max: 1199px ),
+    lg-screen: ( min: 1200px )
+);
