@@ -36,8 +36,6 @@ Description: Bootstrap 4 with Sass
 */
 
 html, body {
-    //font-size: 16px;
-    //font-size: 62.5%;
     @include font-smoothing;
 }
 
@@ -299,14 +297,11 @@ a {
         background-color: transparent;
 
         .text-00 {
-            // font: 400 12px $font-lato;
             font-family: $font-lato;
             font-weight: 400;
 
             text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
-            // 6: 2.027, 2.986, 5.61, 7.993
-            //@include ms-respond(font-size, 3.8);
             @include ms-respond(font-size, 1.85);
 
             &:first-letter {}
@@ -338,13 +333,10 @@ a {
             border: 3px solid transparent;
             outline: none;
 
-            //font-size: 18px;
             @include ms-respond(font-size, 0.2);
-            //@include responsivePropUp(font-size, 70%, 80%, 90%, 100%, 100%);
             @include transition(color 0.5s, transform 0.2s, background-color 0.2s);
             @include border-radius(3px);
             @include animation-delay(0.2s);
-            //@include responsivePropUp(padding, 10px, 15px, 20px, 23px, 23px);
             @include ms-respond(padding, 0.1);
 
             &:active {
@@ -393,7 +385,6 @@ a {
 
                 border: 2px solid $off-white;
 
-                //@include responsivePropUp(border, 1px solid $off-white, 2px solid $off-white, 3px solid $off-white, 3px solid $off-white, 3px solid $off-white);
                 @include transition(opacity 0.3s, border 0.3s);
             }
 
@@ -409,7 +400,6 @@ a {
                 content: '';
 
                 border-color: transparent;
-                //background-color: $off-white;
                 background-color: rgba(255, 255, 255, 0.1);
 
                 @include border-radius(50%);
@@ -516,17 +506,51 @@ a {
     }
 
     .container {
+        max-width: 95vw;
         height: calc(100% - 58px);
 
-        @include mq($until: sm) {
-            padding-top: 25px;
+        @include mq($until: iphone5) {
+            padding-top: 30px;
         }
 
         .card-deck-wrapper {
-            @include mq($from: sm) {
-                padding-top: calc((100vh - 58px) / 4);
-            }
+/*             .card-columns {
+                @include media-breakpoint-only(xs) {
+                    @include card-columns(1, 1.25rem);
+                }
+                @include media-breakpoint-only(sm) {
+                    @include card-columns(1, 1.25rem);
+                }
+                @include media-breakpoint-only(md) {
+                    @include card-columns(3, 1.25rem);
+                }
+                @include media-breakpoint-only(lg) {
+                    @include card-columns(3, 1.25rem);
+                }
+                @include media-breakpoint-only(xl) {
+                    @include card-columns(3, 1.25rem);
+                }
 
+                .card {
+                    display: inline-block;
+
+                    width: 100%; // Don't let them exceed the column width
+               
+                }
+            } */
+            /*             .card-columns {
+                            @include mq($until: iphone5) {
+                                -webkit-column-count: 1;
+                                -moz-column-count: 1;
+                                column-count: 1;
+                            }
+
+                            @include mq($from: iphone5) {
+                                -webkit-column-count: 3;
+                                -moz-column-count: 3;
+                                column-count: 3;
+                            }
+                        } */
             .card-deck {
                 text-align: center;
 
@@ -535,34 +559,22 @@ a {
                 .card {
                     border: none;
 
+                    @include mq($until: iphone5) {
+                        display: block;
+
+                        width: inherit;
+                    }
+                    @include mq($from: xs, $and: "(orientation: landscape)") {
+                        margin-bottom: 0;
+                    }
+
                     .card-img-top {
-                        //min-height: 200px;
-                        //@include responsivePropDn(min-height, 200px, 150px, 200px, 200px, 200px);
-                        //max-height: 200px;
-                        //@include responsivePropDn(max-height, 200px, 150px, 200px, 200px, 200px);
-                        //@include between-widths(min-height, 200px, 667, 1200);
-                        max-height: 200px;
-
-                        //@include between-widths(max-height, 200px, 0, 666);
-                        //@include between-widths(max-height, 150px, 667, 1023);
-                        //@include between-widths(max-height, 150px, 667, 1200);
-                        //@include device((iphone5), landscape) {
-                        //    max-height: 100px;
-                        //};
-                        @include device(sm-screen) {
-                            max-height: 150px;
+                        @include ms-respond(max-width, 3);
+                        @include ms-respond(max-height, 3);
+                        @include mq($until: iphone5, $and: "(orientation: portrait)") {
+                            @include ms-respond(max-width, 3.5);
+                            @include ms-respond(max-height, 3.5);
                         }
-                        @include device(md-screen) {
-                            max-height: 150px;
-                        }
-                        @include device(iphone4, landscape) {
-                            max-height: 150px;
-                        }
-
-                        //@include device( (lg-screen) ) {
-                        //    max-height: 200px;
-                        //};
-                   
                     }
 
                     .card-title {
@@ -570,16 +582,39 @@ a {
 
                         white-space: nowrap;
 
-                        //@include responsive-font-size(1.2em, 2em, 768px, 992px, 0.1em);
-                   
+                        @include mq($until: iphone5) {
+                            @include ms-respond(font-size, 1);
+                        }
+                        @include mq($from: iphone5) {
+                            @include ms-respond(font-size, 0);
+                        }
+                        @include mq($from: iphone6) {
+                            @include ms-respond(font-size, 0.45);
+                        }
+                        @include mq($from: iphone6p) {
+                            @include ms-respond(font-size, 0.6);
+                        }
+                        @include mq($from: md) {
+                            @include ms-respond(font-size, 0.65);
+                        }
+                        @include mq($from: lg) {
+                            @include ms-respond(font-size, 0.8);
+                        }
+                        @include mq($from: xl) {
+                            @include ms-respond(font-size, 1);
+                        }
                     }
 
                     .card-text {
                         font-family: $font-lato;
                         font-weight: 300;
 
-                        //@include responsive-font-size(1em, 1.2em, 768px, 992px, 0.1em);
-                   
+                        @include mq($until: iphone5) {
+                            @include ms-respond(font-size, 0);
+                        }
+                        @include mq($from: iphone6p) {
+                            @include ms-respond(font-size, 0.4);
+                        }
                     }
 
                     #calendar {
@@ -598,24 +633,6 @@ a {
         }
     }
 }
-
-/* Section02 on Big Screens */
-@include media-breakpoint-up(sm) {
-    #section02 {
-        .auto-height {
-            //@include calc(height, "100vh - 58px");
-       
-        }
-
-        .nav-offset {
-            //padding-bottom: 58px;
-       
-        }
-    }
-}
-
-
-/* scrollable.height(scrollHeight - 58); */
 
 /* Hamburger
 ---------------------------------------------------------------------------*/

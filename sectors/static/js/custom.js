@@ -2,8 +2,29 @@
 $(document).ready(function() {
 
 
+    // Hack to enable iScroll when setting height of .card-wrapper with js
+    $(window).resize(function() {
+        //columns();
+        if ($(window).width() > 567) {
+            var height = window.innerHeight - 58;
+            $('#section02 .container').css({ 'height': height + 'px' });
+        } else {
+            $('#section02 .container').css({ 'height': '' });
+        }
+    });
 
-
+/*     var columns = function() {
+        if ($(window).width() < 568) {
+            if (!$('.card-deck').hasClass('card-columns')) {
+                $('.card-deck').addClass('card-columns');
+            }
+        } else {
+            if ($('.card-deck').hasClass('card-columns')) {
+                $('.card-deck').removeClass('card-columns');
+            }
+        }
+    };
+    columns(); */
     /*     $(window).resize(function() {
             var innerWidth = window.innerWidth;
             var innerHeight = window.innerHeight;
@@ -118,6 +139,7 @@ $(document).ready(function() {
         },
         /* afterRender: function() {}, */
         afterResize: function() {
+            //$.fn.fullpage.reBuild();
             //$('.fp-tableCell:not(#section00 .fp-tableCell) fp-placeholder:first').addClass('GridFolderRow');
             //if (!$('.fp-placeholder').parent().is(':first-child')) {
             //    navHeightUpdate();
@@ -156,7 +178,7 @@ $(document).ready(function() {
             }
             // Going to section02
             if (index == 2 && direction == 'down') {
-                if ($(window).width() > 543) {
+                if (!$(window).width() < 568) {
                     $('#calendar').animateCss('fadeInUpBig');
                     $('#rxpad').animateCss('fadeInUpBig');
                     $('#clipboard').animateCss('fadeInUpBig');
@@ -260,3 +282,4 @@ $(document).ready(function() {
 });
 
 /* flexibility - https://github.com/jonathantneal/flexibility */
+//$('#section02 .container').css('height', '100%').css('height', '-=58px');
