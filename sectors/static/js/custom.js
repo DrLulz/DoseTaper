@@ -11,18 +11,8 @@ $(document).ready(function() {
 
     // determines whether full-screen mode (Boolean)
     // window.navigator.standalone
-    /*     alert(window.navigator.standalone);
-        if (window.navigator.standalone) {
-            var landscape = orientation();
-            var width = window.screen.availWidth;
-            var height = window.screen.availHeight;
-            if (landscape) {
-                //$('[id^=section0] .container').css({ 'height': width + 'px' });
-                $('#fullpage').css({ 'height': width + 'px' });
-            } else {
-                $('#fullpage').css({ 'height': height + 'px' });
-            }
-        } */
+    // alert(window.navigator.standalone);
+
 
     // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
@@ -31,6 +21,9 @@ $(document).ready(function() {
             $('#section02 .container').css({ 'height': height + 'px' });
         } else {
             $('#section02 .container').css({ 'height': '' });
+        }
+        if (window.navigator.standalone) {
+            webapp();
         }
     });
 
@@ -94,9 +87,20 @@ $(document).ready(function() {
         }
     });
 
-    if (window.navigator.standalone) {
+
+    var webapp = function() {
+        var landscape = orientation();
+        var width = window.screen.availWidth;
         var height = window.screen.availHeight;
-        $('#fullpage').css({ 'height': height + 'px' });
+        if (landscape) {
+            //$('[id^=section0] .container').css({ 'height': width + 'px' });
+            $('#fullpage').css({ 'height': width + 'px' });
+        } else {
+            $('#fullpage').css({ 'height': height + 'px' });
+        }
+    };
+    if (window.navigator.standalone) {
+        webapp();
     }
 
     var navHeightUpdate = function() {
