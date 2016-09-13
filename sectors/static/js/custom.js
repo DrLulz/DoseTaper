@@ -1,18 +1,29 @@
 // window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
 
-    // height without top UI
-    // alert(window.screen.availHeight);
+
+    /* Webapp
+    ---------------------------------------------------------------------------*/
+    // height / width without top UI
+    // window.screen.availHeight
     // window.screen.availWidth
 
     // determines whether full-screen mode (Boolean)
     // window.navigator.standalone
 
+    if (window.navigator.standalone) {
+        var landscape = orientation();
+        var width = window.screen.availWidth;
+        var height = window.screen.availHeight;
+        if (landscape) {
+            $('[id^=section0] .container').css({ 'height': width + 'px' });
+        } else {
+            $('[id^=section0] .container').css({ 'height': height + 'px' });
+        }
+    }
+
     // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
-        alert(window.screen.availHeight);
-        alert(window.screen.availWidth);
-        alert(window.navigator.standalone);
         if ($(window).width() > 567) {
             var height = window.innerHeight - 58;
             $('#section02 .container').css({ 'height': height + 'px' });
@@ -139,4 +150,24 @@ $(document).ready(function() {
             });
         }
     });
+
+    var orientation = function(w, h) {
+        if (w > h) {
+            if ($('body').hasClass('portrait')) {
+                $('body').removeClass('portrait').addClass('landscape');
+            } else if (!$('body').hasClass('portrait')) {
+                $('body').addClass('landscape');
+            }
+            var landscape = true;
+        } else {
+            if ($('body').hasClass('landscape')) {
+                $('body').removeClass('landscape').addClass('portrait');
+            } else if (!$('body').hasClass('landscape')) {
+                $('body').addClass('portrait');
+            }
+            var landscape = false;
+        }
+        return landscape;
+    };
+
 });
