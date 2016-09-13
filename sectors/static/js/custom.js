@@ -11,6 +11,8 @@ $(document).ready(function() {
     // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
         alert(window.screen.availHeight);
+        alert(window.screen.availWidth);
+        alert(window.navigator.standalone);
         if ($(window).width() > 567) {
             var height = window.innerHeight - 58;
             $('#section02 .container').css({ 'height': height + 'px' });
