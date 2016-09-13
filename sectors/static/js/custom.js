@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
     // height without top UI
-    alert(window.screen.availHeight);
+    // alert(window.screen.availHeight);
     // window.screen.availWidth
 
     // determines whether full-screen mode (Boolean)
@@ -10,6 +10,7 @@ $(document).ready(function() {
 
     // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
+        alert(window.screen.availHeight);
         if ($(window).width() > 567) {
             var height = window.innerHeight - 58;
             $('#section02 .container').css({ 'height': height + 'px' });
