@@ -85,11 +85,9 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        if (window.navigator.standalone) {
-            webapp();
-        }
-    });
-    var webapp = function() {
+        /*         if (window.navigator.standalone) {
+                    webapp();
+                } */
         var landscape = orientation();
         var width = window.screen.availWidth;
         var height = window.screen.availHeight;
@@ -99,6 +97,9 @@ $(document).ready(function() {
         } else {
             $('#section00').css({ 'height': height + 'px' });
         }
+    });
+    var webapp = function() {
+
     };
 
     var navHeightUpdate = function() {
