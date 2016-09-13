@@ -22,6 +22,7 @@ $(document).ready(function() {
         } else {
             $('#section02 .container').css({ 'height': '' });
         }
+        orientation();
     });
 
 
@@ -43,15 +44,15 @@ $(document).ready(function() {
         /* afterRender: function() {}, */
         afterResize: function() {
             //$.fn.fullpage.reBuild();
-            var landscape = orientation();
-            var width = window.screen.availWidth;
-            var height = window.screen.availHeight;
-            if (landscape) {
-                //$('[id^=section0] .container').css({ 'height': width + 'px' });
-                $('#section00').css({ 'height': width + 'px' });
-            } else {
-                $('#section00').css({ 'height': height + 'px' });
-            }
+            /* var landscape = orientation();
+                        var width = window.screen.availWidth;
+                        var height = window.screen.availHeight;
+                        if (landscape) {
+                            //$('[id^=section0] .container').css({ 'height': width + 'px' });
+                            $('#section00').css({ 'height': width + 'px' });
+                        } else {
+                            $('#section00').css({ 'height': height + 'px' });
+                        } */
         },
         onLeave: function(index, nextIndex, direction) {
             // Going to section01
