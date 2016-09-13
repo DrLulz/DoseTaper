@@ -101,7 +101,15 @@ $(document).ready(function() {
         }
     });
     var webapp = function() {
-        orientation(window.innerWidth, window.innerHeight);
+        var landscape = orientation(window.innerWidth, window.innerHeight);
+        var width = window.screen.availWidth;
+        var height = window.screen.availHeight;
+        if (landscape) {
+            //$('[id^=section0] .container').css({ 'height': width + 'px' });
+            $('#section00').css({ 'height': width + 'px' });
+        } else {
+            $('#section00').css({ 'height': height + 'px' });
+        }
     };
 
     var navHeightUpdate = function() {
