@@ -17,9 +17,9 @@ $(document).ready(function() {
         var height = window.screen.availHeight;
         if (landscape) {
             //$('[id^=section0] .container').css({ 'height': width + 'px' });
-            $('#section00 .container').css({ 'height': width + 'px' });
+            $('#fullpage').css({ 'height': width + 'px' });
         } else {
-            $('#section00 .container').css({ 'height': height + 'px' });
+            $('#fullpage').css({ 'height': height + 'px' });
         }
     }
 
