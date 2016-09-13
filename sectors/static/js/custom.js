@@ -94,9 +94,9 @@ $(document).ready(function() {
         var height = window.screen.availHeight;
         if (landscape) {
             //$('[id^=section0] .container').css({ 'height': width + 'px' });
-            $('#fullpage').css({ 'height': width + 'px' });
+            $('.section').css({ 'height': width + 'px' });
         } else {
-            $('#fullpage').css({ 'height': height + 'px' });
+            $('.section').css({ 'height': height + 'px' });
         }
     };
     if (window.navigator.standalone) {
