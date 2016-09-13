@@ -16,9 +16,10 @@ $(document).ready(function() {
         var width = window.screen.availWidth;
         var height = window.screen.availHeight;
         if (landscape) {
-            $('[id^=section0] .container').css({ 'height': width + 'px' });
+            //$('[id^=section0] .container').css({ 'height': width + 'px' });
+            $('#section00 .container').css({ 'height': width + 'px' });
         } else {
-            $('[id^=section0] .container').css({ 'height': height + 'px' });
+            $('#section00 .container').css({ 'height': height + 'px' });
         }
     }
 
