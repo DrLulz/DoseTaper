@@ -14,17 +14,6 @@ $(document).ready(function() {
     // alert(window.navigator.standalone);
 
 
-    // Hack to enable iScroll when setting height of .card-wrapper with js
-    $(window).resize(function() {
-        if ($(window).width() > 567) {
-            var height = window.innerHeight - 58;
-            $('#section02 .container').css({ 'height': height + 'px' });
-        } else {
-            $('#section02 .container').css({ 'height': '' });
-        }
-    });
-
-
     $('#fullpage').fullpage({
         easing: 'linear',
         anchors: ['00', '01', '02'],
@@ -41,18 +30,7 @@ $(document).ready(function() {
             fadeScrollbars: true
         },
         /* afterRender: function() {}, */
-        afterResize: function() {
-            //$.fn.fullpage.reBuild();
-            /* var landscape = orientation();
-                        var width = window.screen.availWidth;
-                        var height = window.screen.availHeight;
-                        if (landscape) {
-                            //$('[id^=section0] .container').css({ 'height': width + 'px' });
-                            $('#section00').css({ 'height': width + 'px' });
-                        } else {
-                            $('#section00').css({ 'height': height + 'px' });
-                        } */
-        },
+        /* afterResize: function() {$.fn.fullpage.reBuild();}, */
         onLeave: function(index, nextIndex, direction) {
             // Going to section01
             if (index == 1 && direction == 'down') {
@@ -95,20 +73,29 @@ $(document).ready(function() {
         }
     });
 
+    // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
+        if ($(window).width() > 567) {
+            var height = window.innerHeight - 58;
+            $('#section02 .container').css({ 'height': height + 'px' });
+        } else {
+            $('#section02 .container').css({ 'height': '' });
+        }
         if (window.navigator.standalone) {
             webapp();
         }
+
     });
+
     var webapp = function() {
         var landscape = orientation(window.innerWidth, window.innerHeight);
         var width = window.screen.availWidth;
         var height = window.screen.availHeight;
         if (landscape) {
             //$('[id^=section0] .container').css({ 'height': width + 'px' });
-            $('#section00').css({ 'height': width + 'px' });
+            $('.fp-tableCell').css({ 'height': width + 'px' });
         } else {
-            $('#section00').css({ 'height': height + 'px' });
+            $('.fp-tableCell').css({ 'height': height + 'px' });
         }
     };
 
