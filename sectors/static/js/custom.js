@@ -1,6 +1,12 @@
 // window.viewportUnitsBuggyfill.init();
 $(document).ready(function() {
 
+    // height without top UI
+    alert(window.screen.availHeight);
+    // window.screen.availWidth
+
+    // determines whether full-screen mode (Boolean)
+    // window.navigator.standalone
 
     // Hack to enable iScroll when setting height of .card-wrapper with js
     $(window).resize(function() {
