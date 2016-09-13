@@ -22,7 +22,6 @@ $(document).ready(function() {
         } else {
             $('#section02 .container').css({ 'height': '' });
         }
-        orientation();
     });
 
 
@@ -96,15 +95,14 @@ $(document).ready(function() {
         }
     });
 
-    /*     $(window).resize(function() {
-                     if (window.navigator.standalone) {
-                        webapp();
-                    }
-
-        });
-        var webapp = function() {
-
-        }; */
+    $(window).resize(function() {
+        if (window.navigator.standalone) {
+            webapp();
+        }
+    });
+    var webapp = function() {
+        orientation(window.innerWidth, window.innerHeight);
+    };
 
     var navHeightUpdate = function() {
         $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
