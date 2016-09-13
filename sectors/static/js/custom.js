@@ -81,21 +81,21 @@ $(document).ready(function() {
         } else {
             $('#section02 .container').css({ 'height': '' });
         }
-        if (window.navigator.standalone) {
+/*         if (window.navigator.standalone) {
             webapp();
-        }
+        } */
 
     });
 
-    var webapp = function() {
+     var webapp = function() {
         var landscape = orientation(window.innerWidth, window.innerHeight);
         var width = window.screen.availWidth;
         var height = window.screen.availHeight;
         if (landscape) {
             //$('[id^=section0] .container').css({ 'height': width + 'px' });
-            $('.fp-tableCell').css({ 'height': width + 'px' });
+            $('#section00 .container.vc-100').css({ 'height': width + 'px' });
         } else {
-            $('.fp-tableCell').css({ 'height': height + 'px' });
+            $('#section00 .container.vc-100').css({ 'height': height + 'px' });
         }
     };
 
