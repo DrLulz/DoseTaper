@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     // determines whether full-screen mode (Boolean)
     // window.navigator.standalone
-
+    alert(window.navigator.standalone);
     if (window.navigator.standalone) {
         var landscape = orientation();
         var width = window.screen.availWidth;
