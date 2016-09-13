@@ -1,9 +1,5 @@
 // window.viewportUnitsBuggyfill.init();
 
-if (window.navigator.standalone) {
-    var height = window.screen.availHeight;
-    $('#fullpage').css({ 'height': height + 'px' });
-}
 $(document).ready(function() {
 
 
@@ -97,6 +93,11 @@ $(document).ready(function() {
             }
         }
     });
+
+    if (window.navigator.standalone) {
+        var height = window.screen.availHeight;
+        $('#fullpage').css({ 'height': height + 'px' });
+    }
 
     var navHeightUpdate = function() {
         $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
