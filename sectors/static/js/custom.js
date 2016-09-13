@@ -81,13 +81,13 @@ $(document).ready(function() {
         } else {
             $('#section02 .container').css({ 'height': '' });
         }
-/*         if (window.navigator.standalone) {
+         if (window.navigator.standalone) {
             webapp();
-        } */
+        }
 
     });
 
-     var webapp = function() {
+      function webapp() {
         var landscape = orientation(window.innerWidth, window.innerHeight);
         var width = window.screen.availWidth;
         var height = window.screen.availHeight;
