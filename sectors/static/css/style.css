@@ -4863,7 +4863,7 @@ a.bg-danger:focus, a.bg-danger:hover {
     display: none !important; } }
 
 /*!
- * fullPage 2.8.1
+ * fullPage 2.8.6
  * https://github.com/alvarotrigo/fullPage.js
  * MIT licensed
  *
@@ -4897,8 +4897,7 @@ html.fp-enabled,
 .fp-slide {
   float: left; }
 
-.fp-slide,
-.fp-slidesContainer {
+.fp-slide, .fp-slidesContainer {
   height: 100%;
   display: block; }
 
@@ -4911,8 +4910,7 @@ html.fp-enabled,
   /* Safari<=6 Android<=4.3 */
   transition: all 0.3s ease-out; }
 
-.fp-section.fp-table,
-.fp-slide.fp-table {
+.fp-section.fp-table, .fp-slide.fp-table {
   display: table;
   table-layout: fixed;
   width: 100%; }
@@ -4958,8 +4956,7 @@ html.fp-enabled,
     border-color: transparent transparent transparent #fff; }
 
 .fp-scrollable {
-  /* overflow: scroll; */
-  overflow: hidden; }
+  overflow: scroll; }
 
 .fp-notransition {
   -webkit-transition: none !important;
@@ -5322,8 +5319,18 @@ a {
 
 /* Fullpage JS Sections
 ---------------------------------------------------------------------------*/
-#fullpage .fp-tableCell {
-  vertical-align: top !important; }
+#fullpage {
+  /*     &.loader {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+  
+        background-color: purple;
+      } */ }
+  #fullpage .fp-tableCell {
+    vertical-align: top !important; }
+    #fullpage .fp-tableCell .fp-placeholder {
+      background-color: #323232; }
 
 /* Background
 --------------------------------------------------*/
@@ -5333,6 +5340,9 @@ a {
   height: 100%;
   background-repeat: no-repeat;
   background-position: 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover; }
   #section00 a, #section01 a, #section02 a {
     font-size: 20px;

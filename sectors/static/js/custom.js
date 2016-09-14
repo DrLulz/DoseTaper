@@ -1,7 +1,14 @@
 // window.viewportUnitsBuggyfill.init();
+/* $(window).load(function() {      //Do the code in the {}s when the window has loaded 
+  //$(".loader").fadeOut("fast");  //Fade out the #loader div
+  $(".loader").animate({ backgroundColor: "transparent" }, 1000);
 
+  if ( $( 'html' ).hasClass( 'fp-enabled' ) ) {
+
+  $.fn.fullpage.destroy();
+}
+}); */
 $(document).ready(function() {
-
 
     /* Webapp
     ---------------------------------------------------------------------------*/
@@ -16,14 +23,16 @@ $(document).ready(function() {
 
     $('#fullpage').fullpage({
         easing: 'linear',
-        anchors: ['00', '01', '02'],
-        sectionsColor: ['rgba(255, 255, 255, 0)', '#FFF', '#FFF'],
+        anchors: ['00', '01', '02', '03'],
+        sectionsColor: ['rgba(255, 255, 255, 0)', '#FFF', '#FFF', '#FFF'],
+        //sectionsColor: ['#323232', '#323232', '#323232', '#323232'],
         //css3: false,
         //autoScrolling: false,
         //verticalCentered: true,
         //fitToSection: true,
         //normalScrollElements: '.card-deck',
         scrollOverflow: true,
+        //paddingTop: '3em',
         //continuousVertical: true,
         //responsiveHeight: 900,
         scrollOverflowOptions: {
@@ -81,29 +90,29 @@ $(document).ready(function() {
         } else {
             $('#section02 .container').css({ 'height': '' });
         }
-         if (window.navigator.standalone) {
-            webapp();
-        }
-
     });
-
-      function webapp() {
-        var landscape = orientation(window.innerWidth, window.innerHeight);
-        var width = window.screen.availWidth;
-        var height = window.screen.availHeight;
-        if (landscape) {
-            //$('[id^=section0] .container').css({ 'height': width + 'px' });
-            $('#section00 .container.vc-100').css({ 'height': width + 'px' });
-        } else {
-            $('#section00 .container.vc-100').css({ 'height': height + 'px' });
-        }
-    };
 
     var navHeightUpdate = function() {
         $('.fp-tableCell:not(#section00 .fp-tableCell)').prepend($('<div class="fp-placeholder"></div>'));
         $('.fp-placeholder').css('height', 58);
     };
     navHeightUpdate();
+
+    /*       function webapp() {
+            var landscape = orientation(window.innerWidth, window.innerHeight);
+            var width = window.screen.availWidth;
+            var height = window.screen.availHeight;
+            if (landscape) {
+                //$('[id^=section0] .container').css({ 'height': width + 'px' });
+                $('#section00 .container.vc-100').css({ 'height': width + 'px' });
+                }
+                else {
+                    $('#section00 .container.vc-100').css({ 'height': height + 'px' });
+                }
+                }; */
+
+
+
 
     var ham_icon = $('.hamburger-icon');
     ham_icon.click(function() {
@@ -158,23 +167,23 @@ $(document).ready(function() {
         }
     });
 
-    var orientation = function(w, h) {
-        if (w > h) {
-            if ($('body').hasClass('portrait')) {
-                $('body').removeClass('portrait').addClass('landscape');
-            } else if (!$('body').hasClass('portrait')) {
-                $('body').addClass('landscape');
+    /*     var orientation = function(w, h) {
+            if (w > h) {
+                if ($('body').hasClass('portrait')) {
+                    $('body').removeClass('portrait').addClass('landscape');
+                } else if (!$('body').hasClass('portrait')) {
+                    $('body').addClass('landscape');
+                }
+                var landscape = true;
+            } else {
+                if ($('body').hasClass('landscape')) {
+                    $('body').removeClass('landscape').addClass('portrait');
+                } else if (!$('body').hasClass('landscape')) {
+                    $('body').addClass('portrait');
+                }
+                var landscape = false;
             }
-            var landscape = true;
-        } else {
-            if ($('body').hasClass('landscape')) {
-                $('body').removeClass('landscape').addClass('portrait');
-            } else if (!$('body').hasClass('landscape')) {
-                $('body').addClass('portrait');
-            }
-            var landscape = false;
-        }
-        return landscape;
-    };
+            return landscape;
+        }; */
 
 });
