@@ -1,0 +1,31 @@
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="nav-wrapper pull-xs-left">
+            <a href="#" class="vc-nav"><img class="wrap-nav" src="{{ url_for('static', filename='img/logo.png') }}"></a>
+        </div>
+        <div class="nav navbar-nav pull-xs-right hidden-sm-down">
+            <li class="nav-item vc-nav">
+                <a class="nav-link wrap-nav" href="#">Login</a>
+                <a class="nav-link wrap-nav" href="#">Disclaimer</a>
+            </li>
+        </div>
+        <div id="hamburger-wrapper" class="nav navbar-nav pull-xs-right hidden-md-up vc-nav">
+            <a class="hamburger-icon wrap-nav" title="Menu">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </a>
+        </div>
+        <div class="overlay">
+            <div class="menu vc-nav">
+                <ul class="overlay-ul wrap-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- overlay -->
+    </div>
+</nav>

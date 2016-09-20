@@ -25,13 +25,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    {#
-    <link rel="apple-touch-startup-image" href="{{ url_for('static', filename='img/webapp/ios_startup.png') }}"> 
-    <link rel="apple-touch-startup-image" href="{{ url_for('static', filename='img/webapp/ios_startup@2x.png') }}" sizes="640x920">
-    <link rel="apple-touch-startup-image" href="{{ url_for('static', filename='img/webapp/ios_startup-large@2x.png') }}" sizes="640x1096">
-    <link rel="apple-touch-startup-image" href="{{ url_for('static', filename='img/webapp/ios_startup-6@2x.png') }}" sizes="750x1294">
-    <link rel="apple-touch-startup-image" href="{{ url_for('static', filename='img/webapp/ios_startup-6-plus@3x.png') }}" sizes="1242x2148">
-    #}
 
     {% if title %}
         <title>{{ title }}</title>
@@ -40,8 +33,8 @@
     {% endif %}
 
     {# CSS #}
-    {#<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">#}
-    <link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    {#<link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">#}
 
 </head>
 

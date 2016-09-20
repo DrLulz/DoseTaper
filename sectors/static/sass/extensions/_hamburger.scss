@@ -1,0 +1,191 @@
+/* Hamburger Icon
+---------------------------------------------------------------------------*/
+#ham_icon {
+    $background: #3d566e;
+    $color: #ecf0f1;
+    $height-icon: 20px;
+    $width-line: 30px;
+    $height-line: 4px;
+    $transition-time: 0.4s;
+    $rotation: 45deg;
+    $translateY: $height-icon / 2;
+    $translateX: 0;
+
+    position: relative;
+    z-index: 100;
+
+    //z-index: 10001;
+    //display: block;
+    width: $width-line;
+    height: $height-icon;
+
+    cursor: pointer;
+
+    .line {
+        position: absolute;
+        left: 0;
+
+        display: block;
+
+        width: $width-line;
+        height: $height-line;
+
+        background: $color;
+
+        @include border-radius($height-line / 2);
+        @include transition(all $transition-time);
+
+        &.line-1 {
+            top: 0;
+        }
+
+        &.line-2 {
+            top: 50%;
+        }
+
+        &.line-3 {
+            top: 100%;
+        }
+
+        &.line-dark {
+            background: $slate;
+
+            @include transition(all $transition-time);
+        }
+
+        &.line-active {
+            background: $color;
+
+            @include transition(all $transition-time);
+        }
+    }
+
+    &:hover,
+    &:focus {
+        .line-1 {
+            @include transform(translateY($height-line / 2 * -1));
+        }
+
+        .line-3 {
+            @include transform(translateY($height-line / 2));
+        }
+    }
+
+    &.active {
+        .line-1 {
+            @include transform(translateY($translateY) translateX($translateX) rotate($rotation));
+        }
+
+        .line-2 {
+            @include opacity(0);
+        }
+
+        .line-3 {
+            @include transform(translateY($translateY * -1) translateX($translateX) rotate($rotation * -1));
+        }
+    }
+}
+
+/* Overlay
+---------------------------------------------------------------------------*/
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    overflow: scroll;
+
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* .overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+
+    .overlay-ul {
+        padding: 0;
+    }
+
+    ul {
+        li {
+            padding: 10px;
+
+            list-style: none;
+
+            @include transition(all 0.2s linear 0s);
+            @include transition-property(all 0.2s linear 0s);
+
+            a {
+                font-family: $font-oxygen;
+                font-size: 20px;
+                font-weight: bold;
+
+                letter-spacing: 2px;
+                word-spacing: 1px;
+                text-transform: uppercase;
+
+                color: $white;
+
+                &:hover {
+                    //background: #34495e;
+                }
+            }
+
+            > a {
+                text-decoration: none;
+
+                position: relative;
+
+                color: $white;
+
+                &:hover {
+                    color: $white;
+                }
+
+                &:before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+
+                    visibility: hidden;
+
+                    width: 98%;
+                    height: 2px;
+
+                    content: '';
+
+                    background-color: $white;
+
+                    @include transform(scaleX(0));
+                    @include transition(all 0.15s ease-in-out 0s);
+                }
+
+                &:hover:before {
+                    visibility: visible;
+
+                    @include transform(scaleX(1));
+                }
+            }
+        }
+    }
+} */
