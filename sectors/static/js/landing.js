@@ -61,7 +61,7 @@ $(document).ready(function() {
     var overlay = $('.overlay');
     ham.add(overlay).click(function(e) {
         e.preventDefault();
-        //$('.overlay-inner').viewportDimensions();
+        $('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
         ham.toggleClass('active');
         $('.ham-icon > .line').toggleClass('line-active');
