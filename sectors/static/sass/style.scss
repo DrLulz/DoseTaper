@@ -1,12 +1,19 @@
-// imports
-@import "base/typography";
+// compass
 @import "compass";
 @import "extensions/mediaq";
+
+// base
 @import "base/import";
+@import "base/typography";
+
+//helpers
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/variables";
 @import "helpers/_settings";
+
+// extensions
+//@import "extensions/mediaq";
 @import "extensions/_vertical_center";
 @import "extensions/_hamburger";
 
@@ -23,6 +30,12 @@ html, body {
     a {
         outline: none;
     }
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -121,95 +134,288 @@ html, body {
     .content {
         height: 100%;
         padding-top: 120px;
+    }
 
-        .container {
-            height: 100%;
-            padding-bottom: 120px;
+    .container {
+        height: 100%;
+        padding-bottom: 120px;
 
-            color: $off-white;
+        color: $off-white;
 
-            .vc-100 {
-                text-align: inherit;
+        .vc-100 {
+            text-align: inherit;
 
-                @include mq($until: md) {
-                    text-align: center;
-                }
-            }
-        }
-
-        .heading {
-            font-family: $font-lato;
-            font-weight: 400;
-
-            padding-bottom: 10px;
-
-            text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
-
-            @include ms-respond(font-size, 7.5);
-
-            small {
-                @include opacity(0.2);
-            }
-        }
-
-        .subheading {
-            font-family: $font-lato;
-            font-weight: 300;
-
-            padding-bottom: 20px;
-
-            @include ms-respond(font-size, 2.3);
-        }
-
-        button {
-            font-family: $font-lato;
-            font-weight: 400;
-
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-
-            position: relative;
-
-            overflow: hidden;
-
-            cursor: pointer;
-
-            color: $off-white;
-            border: 3px solid $off-white;
-            border-radius: 5px;
-            outline: none;
-            background: transparent;
-
-            @include ms-respond(padding-top, 0.4);
-            @include ms-respond(padding-bottom, 0.4);
-            @include ms-respond(padding-left, 1.4);
-            @include ms-respond(padding-right, 1.4);
-            @include ms-respond(font-size, 0);
-            @include transition(all 0.5s ease);
-            @include transform(translate(0, 0));
-
-            a {
-                text-decoration: none;
-            }
-
-            &:hover {
-                color: $off-white;
-                border: 3px solid transparent;
-                background: rgba(255, 255, 255, 0.1);
-
-                @include transition(all 0.35s ease);
-
-                > a {
-                    @include transition(all 0.35s ease);
-                }
+            @include mq($until: md) {
+                text-align: center;
             }
         }
     }
+
+    .heading {
+        font-family: $font-lato;
+        font-weight: 400;
+
+        padding-bottom: 10px;
+
+        text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
+
+        @include ms-respond(font-size, 7.5);
+
+        small {
+            @include opacity(0.2);
+        }
+    }
+
+    .subheading {
+        font-family: $font-lato;
+        font-weight: 300;
+
+        padding-bottom: 20px;
+
+        @include ms-respond(font-size, 2.3);
+    }
+
+    button {
+        font-family: $font-lato;
+        font-weight: 400;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        position: relative;
+
+        overflow: hidden;
+
+        cursor: pointer;
+
+        color: $off-white;
+        border: 3px solid $off-white;
+        border-radius: 5px;
+        outline: none;
+        background: transparent;
+
+        @include ms-respond(padding-top, 0.4);
+        @include ms-respond(padding-bottom, 0.4);
+        @include ms-respond(padding-left, 1.4);
+        @include ms-respond(padding-right, 1.4);
+        @include ms-respond(font-size, 0);
+        @include transition(all 0.5s ease);
+        @include transform(translate(0, 0));
+
+        a {
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: $off-white;
+            border: 3px solid transparent;
+            background: rgba(255, 255, 255, 0.1);
+
+            @include transition(all 0.35s ease);
+
+            > a {
+                @include transition(all 0.35s ease);
+            }
+        }
+    }
+
+    .a-down {
+        font-size: 20px;
+        line-height: 1;
+
+        text-decoration: none;
+        letter-spacing: .1em;
+
+        position: absolute;
+        z-index: 2;
+        bottom: 40px;
+        left: 50%;
+
+        display: inline-block;
+
+        color: $white;
+
+        @include transform(translate(0, -50%));
+        @include transition(opacity 0.3s);
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            box-sizing: border-box;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+
+            cursor: pointer;
+
+            border-bottom: 2px solid $white;
+            border-left: 2px solid $white;
+
+            @include transform(rotate(-45deg));
+            @include animation(arrow_down 1.5s infinite);
+        }
+    }
+
+    .a-down:hover {
+        @include opacity(0.5);
+    }
 }
+
+@include arrow_down;
 
 #section01 {
     .content {
         height: 100%;
         padding-top: 60px;
+    }
+
+    .container {
+        display: table;
+
+        max-width: 90vw;
+        height: 100%;
+
+        .table-row {
+            display: table-row;
+
+            height: 100%;
+
+            .table-cell {
+                text-align: center;
+                vertical-align: middle;
+
+                display: table-cell;
+
+                width: 50%;
+            }
+        }
+    }
+
+    #laptop {
+        @include mq($until: md) {
+            max-height: 55vh;
+        }
+    }
+
+    .text-01a {
+        font-family: $font-lato;
+        font-weight: 300;
+
+        @include ms-respond(font-size, 2.5);
+    }
+
+    .text-01b {
+        font-family: $font-lato;
+        font-weight: 300;
+
+        margin-top: 10px;
+
+        @include mq(xs, iphone6) {
+            @include ms-respond(font-size, 1.2);
+        }
+        @include mq($from: iphone6) {
+            @include ms-respond(font-size, 2.5);
+        }
+    }
+}
+
+//div.iScrollVerticalScrollbar.iScrollLoneScrollbar
+#section02 {
+    .fp-scrollable {
+        overflow: hidden;
+
+        .iScrollVerticalScrollbar {
+            top: 60px !important;
+
+            .iScrollIndicator {
+                border: 0 !important;
+            }
+        }
+    }
+
+    .content {
+        height: 100%;
+        padding-top: 60px;
+    }
+
+    .container {
+        display: table;
+
+        width: 100%;
+        max-width: 95vw;
+        height: 100%;
+
+        @include mq($until: iphone6) {
+            padding-top: 20px;
+        }
+
+        .table-row {
+            display: table-row;
+
+            height: 100%;
+
+            .table-cell {
+                text-align: center;
+                vertical-align: middle;
+
+                display: table-cell;
+            }
+        }
+
+        .card-deck {
+            text-align: center;
+
+            border-spacing: 0;
+
+            .card {
+                border: none;
+                background-color: transparent;
+
+                @include mq($until: iphone6) {
+                    display: block;
+
+                    width: inherit;
+                }
+
+                .card-img-top {
+                    @include ms-respond(height, 10);
+                    @include mq($until: iphone6) {
+                        @include ms-respond(height, 17);
+                    }
+                }
+
+                .card-title {
+                    font-family: $font-lato;
+
+                    white-space: nowrap;
+
+                    @include ms-respond(font-size, 3);
+                    @include mq($until: iphone6) {
+                        margin-bottom: 0.2rem;
+                    }
+                }
+
+                .card-text {
+                    font-family: $font-lato;
+                    font-weight: 300;
+
+                    @include ms-respond(font-size, 0.8);
+                }
+
+                #calendar {
+                    @include animation-delay(0.2s);
+                }
+
+                #rxpad {
+                    @include animation-delay(0.4s);
+                }
+
+                #clipboard {
+                    @include animation-delay(0.1s);
+                }
+            }
+        }
     }
 }

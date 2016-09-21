@@ -10,14 +10,63 @@
                         <button class="">Get Started</button>
                     </div>
                 </div>
+                <a class="a-down" href="#01"><span></span>&nbsp;</a>
             </div>
         </div>
     </div>
+    <!-- section00 -->
     <div id="section01" class="section">
         <div class="content">
-            <h1>DoseTaper.com</h1>
+            <div class="container">
+                <div class="table-row">
+                    <div class="table-cell">
+                        <img id="laptop" class="img-fluid center-block" data-src="{{ url_for('static', filename='img/laptop.png') }}">
+                        <div class="text-01b hidden-md-up">Input the details of your taper.</div>
+                    </div>
+                    <div class="table-cell hidden-sm-down">
+                        <div class="text-01a">Input the details of your taper.</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- section01 -->
+    <div id="section02" class="section">
+        <div class="content">
+            <div class="container">
+                <div class="table-row">
+                    <div class="card-deck table-cell">
+                        <div class="card">
+                            <img id="calendar" class="card-img-top img-fluid center-block" data-src="{{ url_for('static', filename='img/calendar.svg') }}">
+                            <div class="card-block">
+                                <h4 class="card-title">PDF Calendar</h4>
+                                <p class="card-text">Print a calendar for your patient.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img id="rxpad" class="card-img-top img-fluid center-block" data-src="{{ url_for('static', filename='img/rxpad.svg') }}">
+                            <div class="card-block">
+                                <h4 class="card-title">Rx Calculation</h4>
+                                <p class="card-text">DoseTaper calculates the Rx.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img id="clipboard" class="card-img-top img-fluid center-block" data-src="{{ url_for('static', filename='img/clipboard.svg') }}">
+                            <div class="card-block">
+                                <h4 class="card-title">Copy / Paste</h4>
+                                <p class="card-text">Copy to clipbord in one click.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card-deck -->
+                </div>
+                <!-- vc-100 -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- content -->
+    </div>
+    <!-- section02 -->
 </div>
 <!-- fullpage -->
 {% endblock %}

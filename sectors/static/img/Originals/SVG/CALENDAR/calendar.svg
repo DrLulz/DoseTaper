@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="15.53125"
-     inkscape:cx="15.5"
+     inkscape:cx="4.0714285"
      inkscape:cy="16"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
@@ -46,7 +46,7 @@
      inkscape:window-y="1"
      inkscape:window-maximized="1"
      units="px"
-     showborder="true" />
+     showborder="false" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -65,7 +65,7 @@
      inkscape:label="Dates"
      transform="translate(1.335144e-5,-2209.2498)">
     <rect
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15490201;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#afafaf;stroke-width:0.15490201;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4729-3"
        width="30.845102"
        height="30.078362"

@@ -96,12 +96,72 @@
     bottom: 0;
     left: 0;
 
-    display: none;
+    visibility: hidden;
     overflow: scroll;
 
     width: 100%;
 
+    opacity: 0;
     background: rgba(0, 0, 0, 0.7);
+
+    .overlay-inner {
+        vertical-align: middle;
+
+        display: table-cell;
+
+        width: 100vw;
+        height: 100vh;
+
+        .overlay-item {
+            text-align: center;
+
+            margin: 7px auto;
+            padding: 5px;
+
+            a {
+                font-family: $font-oxygen;
+                font-size: 20px;
+                font-weight: bold;
+
+                text-decoration: none;
+                letter-spacing: 2px;
+                word-spacing: 1px;
+                text-transform: uppercase;
+
+                position: relative;
+
+                color: $white;
+            }
+
+            a:hover {
+                color: $white;
+            }
+
+            a:before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                visibility: hidden;
+
+                width: 98%;
+                height: 2px;
+
+                content: "";
+
+                background-color: $white;
+
+                @include transition(all 0.15s ease-in-out 0s);
+                @include transform(scaleX(0));
+            }
+
+            a:hover:before {
+                visibility: visible;
+
+                @include transform(scaleX(1));
+            }
+        }
+    }
 }
 
 /* .overlay {

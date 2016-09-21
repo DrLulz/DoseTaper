@@ -223,3 +223,13 @@ $('#ham_icon').on('click', function(event) {
         }
     });
 });
+
+
+
+    function visible() {
+        return this.css('visibility', 'visible');
+    };
+
+    function invisible() {
+        return this.css('visibility', 'hidden');
+    };
