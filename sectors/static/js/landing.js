@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    alert(mobile());
-    if (mobile()) {
+
+    if (mobile) {
         $('img#logo.svg').css({ width: '42px', padding: '0' });
     }
     /* Fullpage
@@ -35,7 +35,9 @@ $(document).ready(function() {
                     backgroundColor: 'transparent',
                     borderBottomColor: 'transparent'
                 });
-                $('#logo').animate({ padding: 10 });
+                if (!mobile) {
+                    $('#logo').animate({ padding: 10 });
+                }
                 $('.nav-link, .nav-link:hover').animate({ color: '#FFF' }).toggleClass('nav-dark');
                 $('.ham-icon > .line').removeClass('line-dark');
             }

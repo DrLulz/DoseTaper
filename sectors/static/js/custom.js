@@ -5,3 +5,4 @@ function mobile() {
     })(navigator.userAgent || navigator.vendor || window.opera);
     return check;
 };
+var mobile = mobile();
