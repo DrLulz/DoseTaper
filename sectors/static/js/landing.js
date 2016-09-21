@@ -1,6 +1,6 @@
 $(document).ready(function() {
+    alert(mobile);
     if (mobile) {
-        alert(mobile);
         $('img#logo.svg').css({ width: '42px', padding: '0' });
     }
     /* Fullpage
