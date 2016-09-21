@@ -85,7 +85,8 @@ $.fn.toggleMenu = function() {
     if (this.css('opacity') == 0) {
         this.visibilityToggle().animateOpacity();
     } else {
-        this.animateOpacity().visibilityToggle();
+        //this.animateOpacity().visibilityToggle();
+        this.visibilityToggle();
     }
 };
 
