@@ -59,7 +59,8 @@ $(document).ready(function() {
     ---------------------------------------------------------------------------*/
     var ham = $('#ham_icon');
     var overlay = $('.overlay');
-    ham.add(overlay).click(function(e) {
+    var overlay_inner = $('.overlay-inner');
+    ham.add(overlay).add(overlay_inner).click(function(e) {
         e.preventDefault();
         $('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
@@ -85,8 +86,7 @@ $.fn.toggleMenu = function() {
     if (this.css('opacity') == 0) {
         this.visibilityToggle().animateOpacity();
     } else {
-        //this.animateOpacity().visibilityToggle();
-        this.visibilityToggle();
+        this.animateOpacity().visibilityToggle();
     }
 };
 
