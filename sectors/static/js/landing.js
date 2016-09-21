@@ -59,10 +59,9 @@ $(document).ready(function() {
     ---------------------------------------------------------------------------*/
     var ham = $('#ham_icon');
     var overlay = $('.overlay');
-    var overlay_inner = $('.overlay-inner');
-    ham.add(overlay).add(overlay_inner).click(function(e) {
+    ham.add(overlay).click(function(e) {
         e.preventDefault();
-        $('.overlay-inner').viewportDimensions();
+        //$('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
         ham.toggleClass('active');
         $('.ham-icon > .line').toggleClass('line-active');
