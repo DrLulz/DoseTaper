@@ -5252,19 +5252,16 @@ article {
   position: fixed;
   z-index: 1;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   visibility: hidden;
   overflow: scroll;
   width: 100%;
+  height: 100%;
   opacity: 0;
   background: rgba(0, 0, 0, 0.7); }
   .overlay .overlay-inner {
     vertical-align: middle;
-    display: table-cell;
-    width: 100vw;
-    height: 100vh; }
+    display: table-cell; }
     .overlay .overlay-inner .overlay-item {
       text-align: center;
       margin: 7px auto;
@@ -5309,91 +5306,6 @@ article {
         -o-transform: scaleX(1);
         transform: scaleX(1); }
 
-/* .overlay {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    display: none;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.menu {
-    width: 100%;
-    height: 100%;
-
-    .overlay-ul {
-        padding: 0;
-    }
-
-    ul {
-        li {
-            padding: 10px;
-
-            list-style: none;
-
-            @include transition(all 0.2s linear 0s);
-            @include transition-property(all 0.2s linear 0s);
-
-            a {
-                font-family: $font-oxygen;
-                font-size: 20px;
-                font-weight: bold;
-
-                letter-spacing: 2px;
-                word-spacing: 1px;
-                text-transform: uppercase;
-
-                color: $white;
-
-                &:hover {
-                    //background: #34495e;
-                }
-            }
-
-            > a {
-                text-decoration: none;
-
-                position: relative;
-
-                color: $white;
-
-                &:hover {
-                    color: $white;
-                }
-
-                &:before {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-
-                    visibility: hidden;
-
-                    width: 98%;
-                    height: 2px;
-
-                    content: '';
-
-                    background-color: $white;
-
-                    @include transform(scaleX(0));
-                    @include transition(all 0.15s ease-in-out 0s);
-                }
-
-                &:hover:before {
-                    visibility: visible;
-
-                    @include transform(scaleX(1));
-                }
-            }
-        }
-    }
-} */
 /*
 / -- CONTENTS --
 / Global

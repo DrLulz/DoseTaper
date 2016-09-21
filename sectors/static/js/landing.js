@@ -61,6 +61,7 @@ $(document).ready(function() {
     var overlay = $('.overlay');
     ham.add(overlay).click(function(e) {
         e.preventDefault();
+        $('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
         ham.toggleClass('active');
         $('.ham-icon > .line').toggleClass('line-active');
@@ -97,4 +98,8 @@ $.fn.visibilityToggle = function() {
 $.fn.animateOpacity = function() {
     var value = (this.css('opacity') == 0) ? '1' : '0';
     return this.animate({ opacity: value }, 200);
+};
+
+$.fn.viewportDimensions = function() {
+    return this.height(window.innerHeight).width(window.innerWidth);
 };
