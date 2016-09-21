@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-    if (mobile) {
-        $('img#logo.svg').css({ width: '42px', padding: '0' });
-    }
     /* Fullpage
     ---------------------------------------------------------------------------*/
     $('#fullpage').fullpage({

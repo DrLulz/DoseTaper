@@ -6,3 +6,7 @@ function mobile() {
     return check;
 };
 var mobile = mobile();
+
+if (mobile) {
+    $('img#logo.svg').css({ width: '42px', padding: '0' });
+}
