@@ -8,7 +8,7 @@ $(document).ready(function() {
         scrollOverflow: true,
         scrollOverflowOptions: { fadeScrollbars: true },
         verticalCentered: false,
-        normalScrollElements: '.overlay',
+        normalScrollElements: '.overlay, .overlay-inner',
         onLeave: function(index, nextIndex, direction) {
 
 
