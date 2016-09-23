@@ -29,8 +29,7 @@
 html {
     @include font-smoothing;
 
-    text-rendering: optimizeLegibility;
-
+    //text-rendering: optimizeLegibility;
     a {
         outline: none;
     }
