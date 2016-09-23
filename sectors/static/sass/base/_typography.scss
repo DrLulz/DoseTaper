@@ -8,17 +8,27 @@
 //@import url(http://fonts.googleapis.com/css?family=Martel:300,400);
 
 @font-face {
-  font-family: 'WhitneyHTF-Book';
+    font-family: 'Whitney HTF';
+    font-weight: normal;
+    font-style: normal;
 
-  src: url('../../fonts/WhitneyHTF-Book.woff2') format('woff2'),
-       url('../../fonts/WhitneyHTF-Book.woff') format('woff'),
-       url('../../fonts/WhitneyHTF-Book.ttf')  format('truetype');
+    src: url('WhitneyHTF-Book.eot');
+    src: url('WhitneyHTF-Book.eot?#iefix') format('embedded-opentype'),
+        url('WhitneyHTF-Book.woff2') format('woff2'),
+        url('WhitneyHTF-Book.woff') format('woff'),
+        url('WhitneyHTF-Book.ttf') format('truetype'),
+        url('WhitneyHTF-Book.svg#WhitneyHTF-Book') format('svg');
 }
 
 @font-face {
-  font-family: 'WhitneyHTF-BookCondensed';
+    font-family: 'WhitneyHTF-BookCondensed';
+    font-weight: normal;
+    font-style: normal;
 
-  src: url('../../fonts/WhitneyHTF-BookCondensed.woff2') format('woff2'),
-       url('../../fonts/WhitneyHTF-BookCondensed.woff') format('woff'),
-       url('../../fonts/WhitneyHTF-BookCondensed.ttf')  format('truetype');
+    src: url('WhitneyHTF-BookCondensed.eot');
+    src: url('WhitneyHTF-BookCondensed.eot?#iefix') format('embedded-opentype'),
+        url('WhitneyHTF-BookCondensed.woff2') format('woff2'),
+        url('WhitneyHTF-BookCondensed.woff') format('woff'),
+        url('WhitneyHTF-BookCondensed.ttf') format('truetype'),
+        url('WhitneyHTF-BookCondensed.svg#WhitneyHTF-BookCondensed') format('svg');
 }
