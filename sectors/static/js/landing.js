@@ -3,30 +3,20 @@ $(document).ready(function() {
     /* Fullpage
     ---------------------------------------------------------------------------*/
     $('#fullpage').fullpage({
-        anchors: ['00', '01', '02'],
-        sectionsColor: ['#393939', '#FDFDFD', '#FDFDFD'],
+        anchors: ['00', '01', '02', '03'],
+        sectionsColor: ['#393939', '#FDFDFD', '#FDFDFD', '#FDFDFD'],
         scrollOverflow: true,
         scrollOverflowOptions: { fadeScrollbars: true },
         verticalCentered: false,
         normalScrollElements: '.overlay, .overlay-inner',
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function(i, nextIndex, d) {
+            //var leavingSection = $(this);
+            //console.log('index = ' + index);
+            //console.log('nextIndex = ' + nextIndex);
+            //console.log('direction = ' + direction);
+            //console.log('leavingSection = ' + leavingSection);
 
-
-            // Going to section01
-            if (index == 1 && direction == 'down') {
-                $('.navbar').animate({
-                    height: 60,
-                    backgroundColor: 'rgb(248, 242, 237)',
-                    borderBottomColor: 'rgb(221, 216, 206)'
-                });
-                $('#logo').animate({ padding: 0 });
-                $('.nav-link, .nav-link:hover').animate({ color: '#555' }).toggleClass('nav-dark');
-                $('.ham-icon > .line').addClass('line-dark');
-            }
-
-
-            // Going to section00
-            if (index == 2 && direction == 'up') {
+            if (nextIndex == 1) {
                 $('.navbar').animate({
                     height: 120,
                     backgroundColor: 'transparent',
@@ -39,9 +29,23 @@ $(document).ready(function() {
                 $('.ham-icon > .line').removeClass('line-dark');
             }
 
+            if (!(nextIndex == 1) && !(i == 2 || i == 3 || i == 4)) {
+                $('.navbar').animate({
+                    height: 60,
+                    backgroundColor: 'rgb(248, 242, 237)',
+                    borderBottomColor: 'rgb(221, 216, 206)'
+                });
+                $('#logo').animate({ padding: 0 });
+                $('.nav-link, .nav-link:hover').animate({ color: '#555' }).toggleClass('nav-dark');
+                $('.ham-icon > .line').addClass('line-dark');
+            }
 
+            // Going to section00
+            if (i == 2 && d == 'up') {}
+            // Going to section01
+            if (i == 1 && d == 'down') {}
             // Going to section02
-            if (index == 2 && direction == 'down') {}
+            if (i == 2 && d == 'down') {}
         }
     });
 
@@ -60,7 +64,7 @@ $(document).ready(function() {
     var ham = $('#ham_icon');
     var overlay = $('.overlay');
     ham.add(overlay).click(function(e) {
-        e.preventDefault();
+        //e.preventDefault();
         $('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
         ham.toggleClass('active');

@@ -1,5 +1,5 @@
 // compass
-@import "compass";
+//@import "compass";
 @import "extensions/mediaq";
 
 // base
@@ -10,12 +10,13 @@
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/variables";
-@import "helpers/_settings";
+@import "helpers/settings";
 
 // extensions
 //@import "extensions/mediaq";
-@import "extensions/_vertical_center";
-@import "extensions/_hamburger";
+@import "extensions/vertical_center";
+@import "extensions/hamburger";
+@import "extensions/login";
 
 /*
 / -- CONTENTS --
@@ -24,18 +25,31 @@
 /
 */
 
-html, body {
+//html *
+html {
     @include font-smoothing;
+
+    text-rendering: optimizeLegibility;
 
     a {
         outline: none;
     }
 }
 
-*,
-*::after,
-*::before {
+/* body {
+    @include font-smoothing;
+
+    text-rendering: optimizeLegibility;
+
+    a {
+        outline: none;
+    }
+} */
+
+*, *:after, *:before {
     box-sizing: border-box;
+
+    //mozm webkit
 }
 
 .navbar {
@@ -321,7 +335,6 @@ html, body {
     }
 }
 
-//div.iScrollVerticalScrollbar.iScrollLoneScrollbar
 #section02 {
     .fp-scrollable {
         overflow: hidden;
@@ -380,6 +393,8 @@ html, body {
                 }
 
                 .card-img-top {
+                    border-radius: 0;
+
                     @include ms-respond(height, 10);
                     @include mq($until: iphone6) {
                         @include ms-respond(height, 17);
@@ -390,6 +405,10 @@ html, body {
                     font-family: $font-lato;
 
                     white-space: nowrap;
+
+                    margin: 0;
+
+                    color: #505050;
 
                     @include ms-respond(font-size, 3);
                     @include mq($until: iphone6) {
@@ -416,6 +435,78 @@ html, body {
                     @include animation-delay(0.1s);
                 }
             }
+        }
+    }
+}
+
+#section03 {
+    .fp-scrollable {
+        overflow: hidden;
+
+        .iScrollVerticalScrollbar {
+            top: 60px !important;
+
+            .iScrollIndicator {
+                border: 0 !important;
+            }
+        }
+    }
+
+    .content {
+        height: 100%;
+        padding-top: 60px;
+
+        p {
+            font-family: $font-default;
+            line-height: 1.7;
+
+            text-align: justify;
+            vertical-align: baseline;
+            text-indent: 3em;
+            letter-spacing: 0.015em;
+            word-spacing: 0.1em;
+
+            color: #555;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+
+            @include ms-respond(font-size, 1);
+        }
+
+        .p-block {
+            p:last-child {
+                margin-bottom: 1.5em;
+            }
+        }
+
+        h1, h3 {
+            font-family: WhitneyHTF-BookCondensed;
+            font-weight: 600;
+            line-height: 1;
+
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+
+            margin: 0.5em 0;
+
+            @include ms-respond(font-size, 5);
+        }
+
+        h3 {
+            @include ms-respond(font-size, 3);
+        }
+    }
+
+    .container {
+        width: 66.66667%;
+        margin-left: 16.666667%;
+
+        @include mq($until: md) {
+            width: initial;
+            margin: auto;
         }
     }
 }

@@ -1,11 +1,11 @@
-{% set navigation = [('#', 'Login'), ('#', 'Disclaimer')] %}
+{% set navigation = [('#', 'Login', 'login-nav'), ('#03', 'Disclaimer', '')] %}
 <nav class="navbar navbar-fixed-top">
     <div class="container">
-        <a class="pull-xs-left img" href="#"><img id="logo" class="svg" src="{{ url_for('static', filename='img/logo.svg') }}"></a>
+        <a class="pull-xs-left img" href="#00"><img id="logo" class="svg" src="{{ url_for('static', filename='img/logo.svg') }}"></a>
         <div class="nav navbar-nav pull-xs-right hidden-sm-down">
             <div class="nav-item vc-nav">
                 {% for item in navigation %}
-                <a class="nav-link wrap-nav" href="{{ item.0 }}">{{ item.1 }}</a> {% endfor %}
+                <a class="nav-link wrap-nav {{ item.2 }}" href="{{ item.0 }}">{{ item.1 }}</a> {% endfor %}
             </div>
         </div>
         <div id="ham_nav" class="nav navbar-nav pull-xs-right hidden-md-up vc-nav">
@@ -18,12 +18,13 @@
         <div class="overlay">
             <div class="overlay-inner">
                 {% for item in navigation %}
-                    <div class="overlay-item">
+                    <div class="overlay-item {{ item.2 }}">
                         <a href="{{ item.0 }}">{{ item.1 }}</a>
                     </div>
                 {% endfor %}
             </div>
         </div>
         <!-- overlay -->
+        {% include 'login.html' %}
     </div>
 </nav>

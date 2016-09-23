@@ -3,11 +3,28 @@
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Oxygen:700);
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import 'https://fonts.googleapis.com/css?family=PT+Sans';
+//@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Martel:300,400);
 
-/*
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
-@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic");
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
-@import url("https://fonts.googleapis.com/css?family=Oswald:300");
-*/
+@font-face {
+  font-family: 'WhitneyHTF-Book';
+
+  src: url('../../fonts/WhitneyHTF-Book.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/WhitneyHTF-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/WhitneyHTF-Book.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/WhitneyHTF-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/WhitneyHTF-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/WhitneyHTF-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'WhitneyHTF-BookCondensed';
+
+  src: url('../../fonts/WhitneyHTF-BookCondensed.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/WhitneyHTF-BookCondensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/WhitneyHTF-BookCondensed.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/WhitneyHTF-BookCondensed.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/WhitneyHTF-BookCondensed.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/WhitneyHTF-BookCondensed.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
