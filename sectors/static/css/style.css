@@ -5119,13 +5119,13 @@ table {
   font-family: 'WhitneyHTF-Book';
   src: url("../../fonts/WhitneyHTF-Book.eot");
   /* IE9 Compat Modes */
-  src: url("../../fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"), url("../../fonts/WhitneyHTF-Book.woff2") format("woff2"), url("../../fonts/WhitneyHTF-Book.woff") format("woff"), url("../../fonts/WhitneyHTF-Book.ttf") format("truetype"), url("../../fonts/WhitneyHTF-Book.svg#svgFontName") format("svg");
+  src: url("../../fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"), url("../../fonts/WhitneyHTF-Book.woff2") format("woff2"), url("../../fonts/WhitneyHTF-Book.woff") format("woff"), url("../../fonts/WhitneyHTF-Book.ttf") format("truetype"), url("../../fonts/WhitneyHTF-Book.svg#WhitneyHTF-Book") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'WhitneyHTF-BookCondensed';
   src: url("../../fonts/WhitneyHTF-BookCondensed.eot");
   /* IE9 Compat Modes */
-  src: url("../../fonts/WhitneyHTF-BookCondensed.eot?#iefix") format("embedded-opentype"), url("../../fonts/WhitneyHTF-BookCondensed.woff2") format("woff2"), url("../../fonts/WhitneyHTF-BookCondensed.woff") format("woff"), url("../../fonts/WhitneyHTF-BookCondensed.ttf") format("truetype"), url("../../fonts/WhitneyHTF-BookCondensed.svg#svgFontName") format("svg");
+  src: url("../../fonts/WhitneyHTF-BookCondensed.eot?#iefix") format("embedded-opentype"), url("../../fonts/WhitneyHTF-BookCondensed.woff2") format("woff2"), url("../../fonts/WhitneyHTF-BookCondensed.woff") format("woff"), url("../../fonts/WhitneyHTF-BookCondensed.ttf") format("truetype"), url("../../fonts/WhitneyHTF-BookCondensed.svg#WhitneyHTF-BookCondensed") format("svg");
   /* Legacy iOS */ }
 /* MIXINS */
 /* VARIABLES */
