@@ -4,31 +4,30 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen:700);
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic,700italic);
 @import 'https://fonts.googleapis.com/css?family=PT+Sans';
-//@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-//@import url(http://fonts.googleapis.com/css?family=Martel:300,400);
+@import 'https://fonts.googleapis.com/css?family=Raleway';
 
 @font-face {
-    font-family: 'Whitney HTF';
+    font-family: 'Whitney-HTF';
     font-weight: normal;
     font-style: normal;
 
-    src: url('../../fonts/WhitneyHTF-Book.eot');
-    src: url('../../fonts/WhitneyHTF-Book.eot?#iefix') format('embedded-opentype'),
-        url('../../fonts/WhitneyHTF-Book.woff2') format('woff2'),
-        url('../../fonts/WhitneyHTF-Book.woff') format('woff'),
-        url('../../fonts/WhitneyHTF-Book.ttf') format('truetype'),
-        url('../../fonts/WhitneyHTF-Book.svg#WhitneyHTF-Book') format('svg');
+    src: url('../fonts/WhitneyHTF-Book.eot');
+    src: url('../fonts/WhitneyHTF-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/WhitneyHTF-Book.woff2') format('woff2'),
+        url('../fonts/WhitneyHTF-Book.woff') format('woff'),
+        url('../fonts/WhitneyHTF-Book.ttf') format('truetype'),
+        url('../fonts/WhitneyHTF-Book.svg#WhitneyHTF-Book') format('svg');
 }
 
 @font-face {
-    font-family: 'WhitneyHTF-BookCondensed';
+    font-family: 'Whitney-HTFC';
     font-weight: normal;
     font-style: normal;
 
-    src: url('../../fonts/WhitneyHTF-BookCondensed.eot');
-    src: url('../../fonts/WhitneyHTF-BookCondensed.eot?#iefix') format('embedded-opentype'),
-        url('../../fonts/WhitneyHTF-BookCondensed.woff2') format('woff2'),
-        url('../../fonts/WhitneyHTF-BookCondensed.woff') format('woff'),
-        url('../../fonts/WhitneyHTF-BookCondensed.ttf') format('truetype'),
-        url('../../fonts/WhitneyHTF-BookCondensed.svg#WhitneyHTF-BookCondensed') format('svg');
+    src: url('../fonts/WhitneyHTF-BookCondensed.eot');
+    src: url('../fonts/WhitneyHTF-BookCondensed.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/WhitneyHTF-BookCondensed.woff2') format('woff2'),
+        url('../fonts/WhitneyHTF-BookCondensed.woff') format('woff'),
+        url('../fonts/WhitneyHTF-BookCondensed.ttf') format('truetype'),
+        url('../fonts/WhitneyHTF-BookCondensed.svg#WhitneyHTF-BookCondensed') format('svg');
 }

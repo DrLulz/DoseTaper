@@ -16,7 +16,7 @@ $primary-font: $font-pt-sans;
 // variables - z-index
 
 $header-zindex: 2;
-$modal-zindex: 3;
+$modal-zindex: 200;
 
 // variables - header
 
@@ -337,17 +337,11 @@ xsigin/signup popup
     @include transform(translateY(-30px));
     @include transition-property(transform);
     @include transition-duration(0.3s);
-    @include MQ(S) {
-        margin: 4em auto;
-
-        .cd-switcher a {
-            line-height: 70px;
-
-            height: 70px;
-        }
-    }
 
     .cd-switcher {
+        margin-bottom: 0;
+        padding-left: 0;
+
         @include clearfix;
 
         li {
@@ -383,34 +377,20 @@ xsigin/signup popup
             }
         }
     }
+
+    @include MQ(S) {
+        margin: 4em auto;
+
+        .cd-switcher a {
+            line-height: 70px;
+
+            height: 70px;
+        }
+    }
 }
 
 .cd-form {
     padding: 1.4em;
-
-    @include MQ(S) {
-        padding: 2em;
-
-        .fieldset {
-            margin: 2em 0;
-
-            &:first-child {
-                margin-top: 0;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        input.has-padding {
-            padding: 16px 20px 16px 50px;
-        }
-
-        input[type=submit] {
-            padding: 16px 0;
-        }
-    }
 
     .fieldset {
         position: relative;
@@ -566,7 +546,7 @@ xsigin/signup popup
             /* triangle */
             content: '';
 
-            @include triangle(up, rgba($red, 0.9), 16px);
+            @include triangle(16px, rgba($red, 0.9), up);
         }
 
         &.is-visible {
@@ -575,6 +555,30 @@ xsigin/signup popup
             opacity: 1;
 
             @include transition(opacity 0.2s 0, visibility 0 0);
+        }
+    }
+
+    @include MQ(S) {
+        padding: 2em;
+
+        .fieldset {
+            margin: 2em 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        input.has-padding {
+            padding: 16px 20px 16px 50px;
+        }
+
+        input[type=submit] {
+            padding: 16px 0;
         }
     }
 }
@@ -587,6 +591,7 @@ xsigin/signup popup
     padding: 1.4em 1.4em 0;
 
     @include font-size(14px);
+
     @include MQ(S) {
         padding: 2em 2em 0;
     }
@@ -600,6 +605,7 @@ xsigin/signup popup
     left: 0;
 
     width: 100%;
+    margin: 0;
 
     @include font-size(14px);
 

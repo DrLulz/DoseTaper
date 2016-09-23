@@ -8,7 +8,7 @@ $(document).ready(function() {
         scrollOverflow: true,
         scrollOverflowOptions: { fadeScrollbars: true },
         verticalCentered: false,
-        normalScrollElements: '.overlay, .overlay-inner',
+        normalScrollElements: '.overlay, .overlay-inner, .cd-user-modal',
         onLeave: function(i, nextIndex, d) {
             //var leavingSection = $(this);
             //console.log('index = ' + index);
