@@ -9,6 +9,7 @@
 @import "helpers/settings";
 
 // extensions
+@import "extensions/mod_scale";
 @import "extensions/mediaq";
 @import "extensions/vertical_center";
 @import "extensions/hamburger";
@@ -20,9 +21,17 @@
 / Navbar
 /
 */
+:root {
+    @include rem-baseline;
+}
 
-//html *
-html {
+html, body {
+    font-family: $sans-serif;
+
+    /*     letter-spacing: 0.015em;
+        word-spacing: 0.1em; */
+    color: $slate;
+
     @include font-smoothing;
 
     //text-rendering: optimizeLegibility;
@@ -36,24 +45,13 @@ html {
     }
 }
 
-/* body {
-    @include font-smoothing;
-
-    text-rendering: optimizeLegibility;
-
-    a {
-        outline: none;
-    }
-} */
-
 *, *:after, *:before {
-    box-sizing: border-box;
-
-    //mozm webkit
+    @include box-sizing(border-box);
 }
 
 .navbar {
     height: 120px;
+    padding: 0.7rem 1rem;
 
     border-bottom: 2px solid transparent;
     background-color: transparent;
@@ -77,8 +75,6 @@ html {
                 margin-top: 2px;
 
                 > .nav-link {
-                    font: 700 13px / 1.5 $font-oxygen;
-
                     text-decoration: none;
                     letter-spacing: 2px;
                     word-spacing: 1px;
@@ -90,6 +86,12 @@ html {
                     padding: 0;
 
                     color: $white;
+
+                    font: {
+                        size: 13px;
+                        family: $font-oxygen;
+                        weight: 700;
+                    };
 
                     &:hover {
                         color: $white;
@@ -150,11 +152,17 @@ html {
         padding-top: 120px;
     }
 
+    .content * {
+        color: $white;
+
+        font: {
+            family: $sans-serif;
+        };
+    }
+
     .container {
         height: 100%;
         padding-bottom: 120px;
-
-        color: $off-white;
 
         .vc-100 {
             text-align: inherit;
@@ -166,55 +174,40 @@ html {
     }
 
     .heading {
-        font-family: $font-lato;
-        font-weight: 400;
-
         padding-bottom: 10px;
 
         text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
-        @include ms-respond(font-size, 7.5);
+        @include ms-respond(font-size, 8);
 
         small {
-            color: $off-white;
-
             @include opacity(0.2);
         }
     }
 
     .subheading {
-        font-family: $font-lato;
         font-weight: 300;
 
         padding-bottom: 20px;
 
-        @include ms-respond(font-size, 2.3);
+        @include ms-respond(font-size, 2.2);
     }
 
     button {
-        font-family: $font-lato;
-        font-weight: 400;
-
         letter-spacing: 0.1em;
         text-transform: uppercase;
 
-        position: relative;
-
         overflow: hidden;
 
-        cursor: pointer;
-
-        color: $off-white;
-        border: 3px solid $off-white;
+        border: 3px solid $white;
         border-radius: 5px;
         outline: none;
         background: transparent;
 
-        @include ms-respond(padding-top, 0.4);
-        @include ms-respond(padding-bottom, 0.4);
-        @include ms-respond(padding-left, 1.4);
-        @include ms-respond(padding-right, 1.4);
-        @include ms-respond(font-size, 0);
+        @include ms-respond(padding-top, 0.2);
+        @include ms-respond(padding-bottom, 0.2);
+        @include ms-respond(padding-left, 1.6);
+        @include ms-respond(padding-right, 1.6);
         @include transition(all 0.5s ease);
         @include transform(translate(0, 0));
 
@@ -223,9 +216,9 @@ html {
         }
 
         &:hover {
-            color: $off-white;
+            color: $white;
             border: 3px solid transparent;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba($white, 0.1);
 
             @include transition(all 0.35s ease);
 
@@ -240,7 +233,7 @@ html {
         line-height: 1;
 
         text-decoration: none;
-        letter-spacing: .1em;
+        letter-spacing: 0.1em;
 
         position: absolute;
         z-index: 2;
@@ -248,8 +241,6 @@ html {
         left: 50%;
 
         display: inline-block;
-
-        color: $white;
 
         @include transform(translate(0, -50%));
         @include transition(opacity 0.3s);
@@ -259,7 +250,6 @@ html {
             top: 0;
             left: 50%;
 
-            box-sizing: border-box;
             width: 24px;
             height: 24px;
             margin-left: -12px;
@@ -269,6 +259,7 @@ html {
             border-bottom: 2px solid $white;
             border-left: 2px solid $white;
 
+            @include box-sizing(border-box);
             @include transform(rotate(-45deg));
             @include animation(arrow_down 1.5s infinite);
         }
@@ -316,23 +307,21 @@ html {
     }
 
     .text-01a {
-        font-family: $font-lato;
         font-weight: 300;
 
-        @include ms-respond(font-size, 2.5);
+        @include ms-respond(font-size, 3);
     }
 
     .text-01b {
-        font-family: $font-lato;
         font-weight: 300;
 
         margin-top: 10px;
 
-        @include mq(xs, iphone6) {
-            @include ms-respond(font-size, 1.2);
+        @include mq(xs, md) {
+            @include ms-respond(font-size, 3.6);
         }
-        @include mq($from: iphone6) {
-            @include ms-respond(font-size, 2.5);
+        @include mq(xs, iphone6, $and: "(orientation: portrait)") {
+            @include ms-respond(font-size, 1.9);
         }
     }
 }
@@ -387,34 +376,47 @@ html {
                 .card-img-top {
                     border-radius: 0;
 
-                    @include ms-respond(height, 10);
-
-                    @include mq($until: iphone6) {
-                        @include ms-respond(height, 17);
+                    @include mq($from: xs) {
+                        @include ms-respond(height, 20);
+                    }
+                    @include mq($from: sm) {
+                        @include ms-respond(height, 22);
+                    }
+                    @include mq($from: iphone5) {
+                        @include ms-respond(height, 24);
+                    }
+                    @include mq($from: iphone6) {
+                        @include ms-respond(height, 22);
+                    }
+                    @include mq($from: md) {
+                        @include ms-respond(height, 14);
+                    }
+                    @include mq($from: lg) {
+                        @include ms-respond(height, 12.2);
+                    }
+                    @include mq($until: md, $and: "(orientation: landscape)") {
+                        @include ms-respond(height, 18);
                     }
                 }
 
                 .card-title {
-                    font-family: $font-lato;
+                    font-family: 'Farsan', cursive;
 
                     white-space: nowrap;
 
-                    margin: 0;
+                    margin: 0.2em 0 0 0;
 
-                    color: #505050;
-
-                    @include ms-respond(font-size, 3);
-
-                    @include mq($until: iphone6) {
-                        margin-bottom: 0.2rem;
-                    }
+                    @include ms-respond(font-size, 4);
                 }
 
                 .card-text {
-                    font-family: $font-lato;
                     font-weight: 300;
 
-                    @include ms-respond(font-size, 0.8);
+                    @include ms-respond(font-size, 1.5);
+
+                    @include mq($until: iphone6) {
+                        margin-bottom: 0.2em;
+                    }
                 }
 
                 #calendar {
@@ -461,19 +463,20 @@ html {
         padding-top: 60px;
 
         p {
-            font-family: $font-whitney;
-            line-height: 1.7;
+            line-height: 1.5;
 
             text-align: justify;
-            vertical-align: baseline;
             text-indent: 3em;
-            letter-spacing: 0.015em;
-            word-spacing: 0.1em;
+            letter-spacing: 0.025em;
+            word-spacing: 0;
 
-            color: #555;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+            //font-family: $font-whitney;
+            @include ms-respond(font-size, 1.8);
 
-            @include ms-respond(font-size, 1);
+            font: {
+                family: $sans-serif;
+                weight: 300;
+            };
         }
 
         .p-block {
@@ -483,8 +486,9 @@ html {
         }
 
         h1, h3 {
-            font-family: $font-whitney-c;
-            font-weight: 600;
+            //font-family: $font-whitney-c;
+            font-family: 'Playball', cursive;
+            //font-weight: 600;
             line-height: 1;
 
             margin-bottom: 0.5em;
@@ -492,17 +496,17 @@ html {
 
         h1 {
             text-align: center;
-            text-decoration: underline;
 
+            //text-decoration: underline;
             margin: 0.5em 0;
 
             border: none;
 
-            @include ms-respond(font-size, 5);
+            @include ms-respond(font-size, 6);
         }
 
         h3 {
-            @include ms-respond(font-size, 3);
+            @include ms-respond(font-size, 4);
         }
     }
 

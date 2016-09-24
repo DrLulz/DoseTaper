@@ -1,0 +1,34 @@
+/* Modular Scale
+---------------------------------------------------------------------------*/
+// http://www.modularscale.com/
+// https://github.com/modularscale/modularscale-sass
+
+// output a list to your terminal to help you find out what values are on your scale.
+//@debug ms-list($start, $end, $ms-base, $ms-ratio);
+
+$ms-base: 1.6rem;
+$ms-ratio: 1.414;
+
+// xs: 20em (320), sm: 30em (480), md: 48.063em (769), lg: 61.250em (980), xl: 81.250em (1300), 4k: 156.250em (2500)
+//$ms-range:
+//    1.1 20em,
+//    1.25 61.250em;
+
+$ms-fluid: false;
+/* $ms-range:
+    1.067 20em,
+    1.125 30em,
+    1.200 35.500em,
+    1.250 41.688em,
+    1.333 46.000em,
+    1.414 48.063em,
+    1.500 61.250em,
+    1.600 81.250em,
+    1.618 156.250em; */
+
+$ms-range:
+    1.125 30em,
+    1.200 48.063em,
+    1.250 61.250em,
+    1.333 81.250em,
+    1.414 156.250em;

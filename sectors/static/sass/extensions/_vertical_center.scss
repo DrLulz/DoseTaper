@@ -17,7 +17,8 @@
     }
 
     > .wrap-100 {
-        font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        //font: 16px/1 $sans-serif;
+        font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         vertical-align: middle;
 
@@ -50,7 +51,8 @@
     }
 
     > .wrap-50 {
-        font: 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        //font: 16px/1 $sans-serif;
+        font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         vertical-align: middle;
 

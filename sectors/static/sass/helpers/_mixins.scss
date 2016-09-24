@@ -1,4 +1,3 @@
-/* MIXINS */
 @mixin transition($args...) {
     -webkit-transition: $args;
     -moz-transition: $args;
@@ -6,7 +5,6 @@
     transition: $args;
 
     /* IE9 not supported */
-    /* https://modernizr.com */
 }
 
 @mixin transition-property($args) {
@@ -16,7 +14,6 @@
     transition-property: $args;
 
     /* IE9 not supported */
-    /* https://modernizr.com */
 }
 
 @mixin transition-cubic-bezier($time) {
@@ -26,7 +23,6 @@
     transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
 
     /* IE9 not supported */
-    /* https://modernizr.com */
 }
 
 @mixin transform($args) {
@@ -51,7 +47,6 @@
     animation: $args;
 
     /* IE9 not supported */
-    /* https://modernizr.com */
 }
 
 @mixin animation-duration($args) {
@@ -60,16 +55,20 @@
     animation-duration: $args;
 
     /* IE9 not supported */
-    /* https://modernizr.com */
 }
 
-@mixin animation-delay($args) {
-    -webkit-animation-delay: $args;
-    -moz-animation-delay: $args;
-    animation-delay: $args;
+@mixin box-sizing($args) {
+    -webkit-box-sizing: $args;
+    -moz-box-sizing: $args;
+    box-sizing: $args;
 
     /* IE9 not supported */
-    /* https://modernizr.com */
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
 @mixin opacity($opacity) {
@@ -92,38 +91,6 @@
     #{$property}: -webkit-calc(#{$expression});
     #{$property}: -moz-calc(#{$expression});
     #{$property}: calc(#{$expression});
-}
-
-@mixin rem($property, $values) {
-    $px: ();
-    $rem: ();
-
-    @each $value in $values {
-        @if $value == 0 or $value == auto {
-            $px: append($px, $value);
-            $rem: append($rem, $value);
-        }
-        @else {
-            $unit: unit($value);
-            $val: strip-unit($value);
-
-            @if $unit == "px" {
-                $px: append($px, $value);
-                $rem: append($rem, $val / 10 + rem);
-            }
-            @if $unit == "rem" {
-                $px: append($px, $val * 10 + px);
-                $rem: append($rem, $value);
-            }
-        }
-    }
-    @if $px == $rem {
-        #{$property}: $px;
-    }
-    @else {
-        #{$property}: $px;
-        #{$property}: $rem;
-    }
 }
 
 @mixin font-smoothing {
@@ -178,4 +145,3 @@
         }
     }
 }
-

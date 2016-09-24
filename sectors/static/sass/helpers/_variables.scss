@@ -2,6 +2,7 @@
 
 // colors
 $white: #ffffff;
+$black: #000000;
 $off-white: #e6e6e6;
 $off-white-sec: #FDFDFD;
 $slate: #555555;
@@ -9,44 +10,14 @@ $base: rgba(228, 223, 214, 0.71373); //#F8F2ED
 $base-accent: rgb(221, 216, 206); //#DDD8CE
 $transparent: rgba(0, 0, 0, 0);
 
-// font families
-$font-oxygen: "Oxygen", sans-serif;
+// fonts
 //$font-lato: "Lato", "Arial", "Helvetica", "Lucida Grande", "Gill Sans", "Verdana", sans-serif;
-$font-lato: "Lato", sans-serif;
 //font-family: 'Whitney SSm A', 'Whitney SSm B', system, -apple-system, BlinkMacSystemFont, Avenir, sans-serif
-//$font-default: 'Whitney-HTF', 'Lato', sans-serif;
+$font-oxygen: 'Oxygen', sans-serif;
+$font-lato: 'Lato', sans-serif;
 $font-whitney: 'Whitney-HTF', 'Lato', sans-serif;
 $font-whitney-c: 'Whitney-HTFC', 'Lato', sans-serif;
 $font-pt-sans: 'PT Sans', sans-serif;
 
-//$font-raleway: 'Raleway', Arial, Verdana, sans-serif;
-//$font-oswald: 'Oswald', Arial, Verdana, sans-serif;
-//$shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+$sans-serif: $font-lato;
 
-$font-default: 'Open Sans', sans-serif;
-
-
-/* Modular Scale
----------------------------------------------------------------------------*/
-// http://www.modularscale.com/
-// https://github.com/modularscale/modularscale-sass
-
-// output a list to your terminal to help you find out what values are on your scale.
-//@debug ms-list($start, $end, $ms-base, $ms-ratio);
-
-$ms-base: 1em;
-$ms-ratio: 1.618;
-
-// xs: 20em (320), sm: 30em (480), md: 48.063em (769), lg: 61.250em (980), xl: 81.250em (1300), 4k: 156.250em (2500)
-//$ms-range:
-//    1.6 20em,
-//    2.5 61.250em;
-
-//$ms-fluid: false;
-$ms-range:
-    1.1 20em,
-    1.13 30em,
-    1.2 48.063em,
-    1.25 61.250em,
-    1.3 81.250em,
-    1.414 156.250em,

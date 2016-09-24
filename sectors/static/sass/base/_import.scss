@@ -1,12 +1,21 @@
-/* IMPORTS */
+// reset
 @import '../../../../../bower_components/marx/scss/marx';
+
+//core
 @import "../../../../../bower_components/bootstrap/scss/bootstrap";
-@import "../../../../../bower_components/fullpage.js/jquery.fullPage";
-//@import "../../../../../bower_components/animate-sass/animate";
-@import "../../../../../bower_components/sass-mq/mq";
-@import '../../../../../bower_components/modular-scale/stylesheets/modular-scale';
 @import '../../../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
+//sass
+@import '../../../../../bower_components/modular-scale/stylesheets/modular-scale';
+@import "../../../../../bower_components/sass-mq/mq";
+@import "../../../../../bower_components/sass-rem/rem";
+
+// jquery
+@import "../../../../../bower_components/fullpage.js/jquery.fullPage";
+
+
+
+//@import "../../../../../bower_components/animate-sass/animate";
 
 /* @import "../css/fa/css/font-awesome.min.css"; */
 /* @import url(animate.css); */

@@ -39,7 +39,7 @@ $mq-static-breakpoint: desktop;
 // right corner of your site during development, add the breakpoints
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
 // $mq-show-breakpoints: (xs, sm, iphone5, iphone6, iphone6p, md, lg, xl, fk);
-// $mq-show-breakpoints: (xs, sm, md, lg, xl, fk);
+//$mq-show-breakpoints: (xs, sm, md, lg, xl, fk);
 
 // Adding custom breakpoints
 // @include mq-add-breakpoint(tvscreen, 1920px);

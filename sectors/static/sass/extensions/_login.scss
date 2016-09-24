@@ -130,7 +130,7 @@ img {
 input, textarea {
     font-family: $primary-font;
 
-    @include font-size(16px);
+    @include rem(font-size, 16px);
 
     &::-ms-clear {
         display: none;
@@ -407,7 +407,7 @@ xsigin/signup popup
     }
 
     label {
-        @include font-size(14px);
+        @include rem(font-size, 14px);
 
         &.image-replace {
             white-space: nowrap;
@@ -432,7 +432,6 @@ xsigin/signup popup
         }
 
         &.cd-username {
-            //background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-username.svg");
             background-image: url(../img/cd-icon-username.svg);
         }
 
@@ -501,6 +500,8 @@ xsigin/signup popup
     }
 
     .hide-password {
+        @include rem(font-size, 14px);
+
         position: absolute;
         top: 0;
         right: 0;
@@ -513,12 +514,13 @@ xsigin/signup popup
         border-left: 1px solid $color-3;
 
         @include center(y);
-        @include font-size(14px);
     }
 
     .cd-error-message {
         /* prevent click and touch events */
         pointer-events: none;
+
+        @include rem(font-size, 13px);
 
         position: absolute;
         z-index: 2;
@@ -534,7 +536,6 @@ xsigin/signup popup
         color: #FFF;
         background: rgba($red, 0.9);
 
-        @include font-size(13px);
         @include border-radius;
         @include transition(opacity 0.2s 0, visibility 0 0.2s);
 
@@ -588,9 +589,9 @@ xsigin/signup popup
 
     text-align: center;
 
-    padding: 1.4em 1.4em 0;
+    @include rem(font-size, 14px);
 
-    @include font-size(14px);
+    padding: 1.4em 1.4em 0;
 
     @include MQ(S) {
         padding: 2em 2em 0;
@@ -600,14 +601,14 @@ xsigin/signup popup
 .cd-form-bottom-message {
     text-align: center;
 
+    @include rem(font-size, 14px);
+
     position: absolute;
     bottom: -30px;
     left: 0;
 
     width: 100%;
     margin: 0;
-
-    @include font-size(14px);
 
     a {
         text-decoration: underline;
@@ -631,7 +632,6 @@ xsigin/signup popup
     width: 40px;
     height: 40px;
 
-    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-close.svg") no-repeat center center;
     background: url(../img/cd-icon-close.svg) no-repeat center center;
 
     @include MQ(L) {
