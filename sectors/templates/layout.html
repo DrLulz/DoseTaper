@@ -45,7 +45,7 @@
 
     {# JS #}
     <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
-    {% if request.url_rule.endpoint == "main.index" %}
+    {% if request.url_rule.endpoint == "initial.index" %}
         <script src="{{ url_for('static', filename='js/landing.min.js') }}"></script>
     {% endif %}
 

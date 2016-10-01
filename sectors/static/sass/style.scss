@@ -21,34 +21,37 @@
 / Navbar
 /
 */
+
 :root {
     @include rem-baseline;
 }
 
 html, body {
-    font-family: $sans-serif;
-
-    /*     letter-spacing: 0.015em;
-        word-spacing: 0.1em; */
-    color: $slate;
+    color: $dark-grey;
 
     @include font-smoothing;
 
-    //text-rendering: optimizeLegibility;
+    font: {
+        family: $sans-serif;
+        weight: 300;
+    };
+
     a {
         outline: none;
     }
 
-    ::selection {
-        color: #343434;
-        background-color: #D7D2CD;
+     ::selection {
+        color: $off-white;
+        background-color: $blueberry;
     }
 }
 
 *, *:after, *:before {
     @include box-sizing(border-box);
 }
-
+#fp-nav ul li a span {
+    background: $light-grey;
+}
 .navbar {
     height: 120px;
     padding: 0.7rem 1rem;
@@ -89,7 +92,7 @@ html, body {
 
                     font: {
                         size: 13px;
-                        family: $font-oxygen;
+                        family: $font-nav;
                         weight: 700;
                     };
 
@@ -122,7 +125,7 @@ html, body {
                     }
 
                     &.nav-dark:before {
-                        background-color: $slate;
+                        background-color: $dark-grey;
                     }
                 }
             }
@@ -174,13 +177,18 @@ html, body {
     }
 
     .heading {
+        font-family: $font-dt;
+        line-height: 1;
+
         padding-bottom: 10px;
 
         text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
 
-        @include ms-respond(font-size, 8);
+        @include ms-respond(font-size, 7.5);
 
-        small {
+        span {
+            font-family: $font-dt;
+
             @include opacity(0.2);
         }
     }
@@ -188,12 +196,14 @@ html, body {
     .subheading {
         font-weight: 300;
 
-        padding-bottom: 20px;
+        padding-bottom: 22px;
 
         @include ms-respond(font-size, 2.2);
     }
 
     button {
+        font-weight: 400;
+
         letter-spacing: 0.1em;
         text-transform: uppercase;
 
@@ -204,10 +214,10 @@ html, body {
         outline: none;
         background: transparent;
 
-        @include ms-respond(padding-top, 0.2);
-        @include ms-respond(padding-bottom, 0.2);
-        @include ms-respond(padding-left, 1.6);
-        @include ms-respond(padding-right, 1.6);
+        @include ms-respond(padding-top, 0);
+        @include ms-respond(padding-bottom, 0);
+        @include ms-respond(padding-left, 1);
+        @include ms-respond(padding-right, 1);
         @include transition(all 0.5s ease);
         @include transform(translate(0, 0));
 
@@ -307,20 +317,16 @@ html, body {
     }
 
     .text-01a {
-        font-weight: 300;
-
         @include ms-respond(font-size, 3);
     }
 
     .text-01b {
-        font-weight: 300;
-
         margin-top: 10px;
 
         @include mq(xs, md) {
             @include ms-respond(font-size, 3.6);
         }
-        @include mq(xs, iphone6, $and: "(orientation: portrait)") {
+        @include mq(xs, sm_med, $and: "(orientation: portrait)") {
             @include ms-respond(font-size, 1.9);
         }
     }
@@ -382,10 +388,10 @@ html, body {
                     @include mq($from: sm) {
                         @include ms-respond(height, 22);
                     }
-                    @include mq($from: iphone5) {
+                    @include mq($from: sm_plus) {
                         @include ms-respond(height, 24);
                     }
-                    @include mq($from: iphone6) {
+                    @include mq($from: sm_med) {
                         @include ms-respond(height, 22);
                     }
                     @include mq($from: md) {
@@ -400,21 +406,26 @@ html, body {
                 }
 
                 .card-title {
-                    font-family: 'Farsan', cursive;
+                    font-family: $font-card;
 
                     white-space: nowrap;
 
-                    margin: 0.2em 0 0 0;
+                    margin: 0.2em 0 0.4em 0;
 
                     @include ms-respond(font-size, 4);
+
+                    @include mq($until: sm_med) {
+                        margin-bottom: 0.2em;
+                    }
                 }
 
                 .card-text {
+                    font-family: $sans-serif;
                     font-weight: 300;
 
                     @include ms-respond(font-size, 1.5);
 
-                    @include mq($until: iphone6) {
+                    @include mq($until: sm_med) {
                         margin-bottom: 0.2em;
                     }
                 }
@@ -431,7 +442,7 @@ html, body {
                     @include animation-delay(0.1s);
                 }
 
-                @include mq($until: iphone6) {
+                @include mq($until: sm_med) {
                     display: block;
 
                     width: inherit;
@@ -439,7 +450,7 @@ html, body {
             }
         }
 
-        @include mq($until: iphone6) {
+        @include mq($until: sm_med) {
             padding-top: 20px;
         }
     }
@@ -470,8 +481,7 @@ html, body {
             letter-spacing: 0.025em;
             word-spacing: 0;
 
-            //font-family: $font-whitney;
-            @include ms-respond(font-size, 1.8);
+            @include ms-respond(font-size, 1.6);
 
             font: {
                 family: $sans-serif;
@@ -486,9 +496,7 @@ html, body {
         }
 
         h1, h3 {
-            //font-family: $font-whitney-c;
-            font-family: 'Playball', cursive;
-            //font-weight: 600;
+            font-family: $font-cursive;
             line-height: 1;
 
             margin-bottom: 0.5em;
@@ -497,7 +505,6 @@ html, body {
         h1 {
             text-align: center;
 
-            //text-decoration: underline;
             margin: 0.5em 0;
 
             border: none;

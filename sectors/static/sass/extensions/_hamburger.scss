@@ -46,7 +46,7 @@
         }
 
         &.line-dark {
-            background: $slate;
+            background: $dark-grey;
 
             @include transition(all $transition-time);
         }

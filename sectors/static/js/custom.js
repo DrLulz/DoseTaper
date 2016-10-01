@@ -9,6 +9,8 @@ var mobile = mobile();
 
 if (mobile) {
     $('img#logo.svg').css({ width: '42px', padding: '0' });
+    $('#section00 .content').css({ 'padding-top': '0'});
+    $('#section00 .container').css({ 'padding-bottom': '0'});
 }
 
 

@@ -1,23 +1,60 @@
-/* VARIABLES */
 
-// colors
+/* COLORS
+--------------------------------------------------*/
 $white: #ffffff;
-$black: #000000;
-$off-white: #e6e6e6;
-$off-white-sec: #FDFDFD;
-$slate: #555555;
-$base: rgba(228, 223, 214, 0.71373); //#F8F2ED
-$base-accent: rgb(221, 216, 206); //#DDD8CE
-$transparent: rgba(0, 0, 0, 0);
+$black: #000000; // #121212 #1c1c1c #282828
+//$background: #FDFDFD;
 
-// fonts
-//$font-lato: "Lato", "Arial", "Helvetica", "Lucida Grande", "Gill Sans", "Verdana", sans-serif;
-//font-family: 'Whitney SSm A', 'Whitney SSm B', system, -apple-system, BlinkMacSystemFont, Avenir, sans-serif
-$font-oxygen: 'Oxygen', sans-serif;
+$off-white: #f7f7f7; // #eeeeee
+//$white-tan: #F8F2ED;
+//$white-khaki: #DDD8CE;
+
+$dark-grey: #5C5C5C; // #666666 #444444 #606060 #303030 #3a3a3a #404040 #333435
+$light-grey: #e4e4e4; // #e4e4e4 #a9a8a8 #767676 #a8a8a8 #E6E1DC
+
+$red: #D76666; // #870000 #df5f5f #990000 #800000 #af5f5f #660000 #800000 #D70000 #DA4939 #FF0000
+//$orange: #DC9656; // #E8BF6A #DFAF5F #FFC66D #FFAF00 #af5f00 #ff8700 #CC7833
+//$yellow: #ffdf5f; // #ffff00
+//$green: #a9b899; // #A5C261 #87AF5F #5fff00 #87af5f #005f00 #519F50 #008700 #A5C261 #144212 #A6E22E #8DA993 #9FB89C #9AB297
+//$grey-green: #a9b899;
+//$blue: #5A647E; // #6D9CBE #8787ff #dfdfff #005fdf #D0D0FF #2F33AB
+//$grey-blue: #959EA9; // #959EA9 #A5ACAB
+$blueberry: #6b7a8f;
+//$purple: #5f5f87; // #870087 #967EFB
+
+/*
+$brown: #af875f;
+$citrus: #f7c331;
+$apple-core: #dcc7aa;
+$apricot: #f7882f;
+$beige: #ffaf87;
+$teal: #87d7af;
+$fusha: #df5f87;
+$light-brown: #dfaf5f; // #BC9458, #FFC66D, #E8BF6A
+$transparent: rgba(0, 0, 0, 0);
+ */
+
+/* FONTS
+--------------------------------------------------*/
 $font-lato: 'Lato', sans-serif;
-$font-whitney: 'Whitney-HTF', 'Lato', sans-serif;
-$font-whitney-c: 'Whitney-HTFC', 'Lato', sans-serif;
-$font-pt-sans: 'PT Sans', sans-serif;
+$font-oxygen: 'Oxygen', sans-serif;
+$font-asimov: 'AsimovPrintBItal', sans-serif;
+$font-damion: 'Damion', cursive;
+$font-oswald: 'Oswald', sans-serif;
+$font-averia: 'Averia Sans Libre', cursive;
 
 $sans-serif: $font-lato;
+//$font-dt: $font-averia;
+$font-dt: $font-asimov;
+$font-nav: $font-oxygen;
+$font-card: $font-oswald;
+$font-cursive: $font-damion;
 
+
+/* LOGIN
+---------------------------------------------------------------------------*/
+$font-login: $font-lato;
+$login-text: $dark-grey;
+$login-error: $red;
+$login-btn: #b5b7b8;
+$login-btn-hover: #9AB297;

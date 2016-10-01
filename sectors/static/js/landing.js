@@ -8,7 +8,11 @@ $(document).ready(function() {
         scrollOverflow: true,
         scrollOverflowOptions: { fadeScrollbars: true },
         verticalCentered: false,
+        //bigSectionsDestination: top,
+        navigation: true,
         normalScrollElements: '.overlay, .overlay-inner, .cd-user-modal',
+        //css3: false,
+        scrollingSpeed: 1000,
         onLeave: function(i, nextIndex, d) {
             //var leavingSection = $(this);
             //console.log('index = ' + index);
@@ -25,18 +29,18 @@ $(document).ready(function() {
                 if (!mobile) {
                     $('#logo').animate({ padding: 10 });
                 }
-                $('.nav-link, .nav-link:hover').animate({ color: '#FFF' }).toggleClass('nav-dark');
+                $('.nav-link, .nav-link:hover').animate({ color: '#FFFFFF' }).toggleClass('nav-dark');
                 $('.ham-icon > .line').removeClass('line-dark');
             }
 
             if (!(nextIndex == 1) && !(i == 2 || i == 3 || i == 4)) {
                 $('.navbar').animate({
                     height: 60,
-                    backgroundColor: 'rgb(248, 242, 237)',
-                    borderBottomColor: 'rgb(221, 216, 206)'
+                    backgroundColor: '#F8F2ED',
+                    borderBottomColor: '#DDD8CE'
                 });
                 $('#logo').animate({ padding: 0 });
-                $('.nav-link, .nav-link:hover').animate({ color: '#555' }).toggleClass('nav-dark');
+                $('.nav-link, .nav-link:hover').animate({ color: '#5C5C5C' }).toggleClass('nav-dark');
                 $('.ham-icon > .line').addClass('line-dark');
             }
 
@@ -64,7 +68,6 @@ $(document).ready(function() {
     var ham = $('#ham_icon');
     var overlay = $('.overlay');
     ham.add(overlay).click(function(e) {
-        //e.preventDefault();
         $('.overlay-inner').viewportDimensions();
         overlay.toggleMenu();
         ham.toggleClass('active');
