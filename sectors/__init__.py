@@ -9,7 +9,8 @@ from utils import get_instance_folder_path
 #from data.models import db, User, Role
 #import errors
 
-from sectors.initial.controllers import initial
+from sectors.intro.controllers import intro
+from sectors.main.controllers import main
 #from project.admin.controllers import admin
 #from project.user.controllers import user
 #from project.results.controllers import results
@@ -23,7 +24,8 @@ app = Flask(__name__,
 				instance_relative_config=True,
 				template_folder='templates')
 
-app.register_blueprint(initial, url_prefix='/')
+app.register_blueprint(intro, url_prefix='/')
+app.register_blueprint(main, url_prefix='/initiate')
 
 '''
 configure_app(app)

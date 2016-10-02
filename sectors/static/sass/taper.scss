@@ -1,0 +1,42 @@
+$white-tan: #F8F2ED;
+$white-khaki: #DDD8CE;
+$dark-grey: #5C5C5C;
+
+.navbar {
+    height: 60px;
+
+    border-bottom-color: $white-khaki;
+    background-color: $white-tan;
+
+    .container {
+        #logo {
+            padding: 0;
+        }
+
+        .nav {
+            .nav-item {
+                > .nav-link {
+                    color: $dark-grey;
+
+                    &:hover {
+                        color: $dark-grey;
+                    }
+
+                    &:before {
+                        background-color: $dark-grey;
+                    }
+                }
+            }
+        }
+    }
+
+    #ham_icon {
+        .line {
+            background: $dark-grey;
+        }
+    }
+}
+
+#taper {
+    padding-top: 60px;
+}

@@ -6,8 +6,8 @@ $black: #000000; // #121212 #1c1c1c #282828
 //$background: #FDFDFD;
 
 $off-white: #f7f7f7; // #eeeeee
-//$white-tan: #F8F2ED;
-//$white-khaki: #DDD8CE;
+$white-tan: #F8F2ED;
+$white-khaki: #DDD8CE;
 
 $dark-grey: #5C5C5C; // #666666 #444444 #606060 #303030 #3a3a3a #404040 #333435
 $light-grey: #e4e4e4; // #e4e4e4 #a9a8a8 #767676 #a8a8a8 #E6E1DC
@@ -36,16 +36,16 @@ $transparent: rgba(0, 0, 0, 0);
 
 /* FONTS
 --------------------------------------------------*/
+//$font-asimov: 'AsimovPrintBItal', sans-serif;
+//$font-averia: 'Averia Sans Libre', cursive;
+
 $font-lato: 'Lato', sans-serif;
 $font-oxygen: 'Oxygen', sans-serif;
-$font-asimov: 'AsimovPrintBItal', sans-serif;
 $font-damion: 'Damion', cursive;
 $font-oswald: 'Oswald', sans-serif;
-$font-averia: 'Averia Sans Libre', cursive;
 
+$font-dt: $font-oswald;
 $sans-serif: $font-lato;
-//$font-dt: $font-averia;
-$font-dt: $font-asimov;
 $font-nav: $font-oxygen;
 $font-card: $font-oswald;
 $font-cursive: $font-damion;

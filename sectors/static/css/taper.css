@@ -1,0 +1,19 @@
+.navbar {
+  height: 60px;
+  border-bottom-color: #DDD8CE;
+  background-color: #F8F2ED; }
+  .navbar .container #logo {
+    padding: 0; }
+  .navbar .container .nav .nav-item > .nav-link {
+    color: #5C5C5C; }
+    .navbar .container .nav .nav-item > .nav-link:hover {
+      color: #5C5C5C; }
+    .navbar .container .nav .nav-item > .nav-link:before {
+      background-color: #5C5C5C; }
+  .navbar #ham_icon .line {
+    background: #5C5C5C; }
+
+#taper {
+  padding-top: 60px; }
+
+/*# sourceMappingURL=taper.css.map */

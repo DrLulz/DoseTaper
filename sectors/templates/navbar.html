@@ -1,7 +1,7 @@
 {% set navigation = [('#', 'Login', 'login-nav'), ('#03', 'Disclaimer', '')] %}
 <nav class="navbar navbar-fixed-top">
     <div class="container">
-        <a class="pull-xs-left img" href="#00"><img id="logo" class="svg" src="{{ url_for('static', filename='img/logo.svg') }}"></a>
+        <a class="pull-xs-left img" href="{{ url_for('intro.index') }}"><img id="logo" class="svg" src="{{ url_for('static', filename='img/logo.svg') }}"></a>
         <div class="nav navbar-nav pull-xs-right hidden-sm-down">
             <div class="nav-item vc-nav">
                 {% for item in navigation %}

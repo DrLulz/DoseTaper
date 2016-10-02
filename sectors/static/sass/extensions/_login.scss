@@ -35,6 +35,7 @@
     width: 100% * $percentage;
 }
 
+@include mq-add-breakpoint(mobile, 737px);
 
 /* STYLE
 ---------------------------------------------------------------------------*/
@@ -151,7 +152,7 @@ input, textarea {
         }
     }
 
-    @include mq($from: sm_plus) {
+    @include mq($from: mobile) {
         margin: 4em auto;
 
         .cd-switcher a {
@@ -336,7 +337,7 @@ input, textarea {
         }
     }
 
-    @include mq($from: sm_plus) {
+    @include mq($from: mobile) {
         padding: 2em;
 
         .fieldset {
@@ -370,7 +371,7 @@ input, textarea {
 
     padding: 1.4em 1.4em 0;
 
-    @include mq($from: sm_plus) {
+    @include mq($from: mobile) {
         padding: 2em 2em 0;
     }
 }
