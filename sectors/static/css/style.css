@@ -9453,6 +9453,8 @@ body {
     position: relative;
     z-index: 10;
     height: 100%; }
+  .navbar .cd-switcher {
+    font-size: 1.6rem; }
 
 .section {
   height: 100%;
