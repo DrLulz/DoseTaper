@@ -1,5 +1,9 @@
 {% set navigation = [('#', 'Login', 'login-nav'), ('#03', 'Disclaimer', '')] %}
-<nav class="navbar navbar-fixed-top">
+{% if request.url_rule.endpoint == "intro.index" %}
+    <nav class="navbar navbar-fixed-top">
+{% else %}
+    <nav class="navbar nav-default navbar-fixed-top">
+{% endif %}
     <div class="container">
         {% if request.url_rule.endpoint == "intro.index" %}
             <a class="float-xs-left img" href="#00"><img id="logo" class="svg" src="{{ url_for('static', filename='img/logo.svg') }}"></a>
