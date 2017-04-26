@@ -10,7 +10,7 @@ from utils import get_instance_folder_path
 #import errors
 
 from sectors.intro.controllers import intro
-from sectors.main.controllers import main
+from sectors.taper.controllers import taper
 #from project.admin.controllers import admin
 #from project.user.controllers import user
 #from project.results.controllers import results
@@ -25,7 +25,7 @@ app = Flask(__name__,
 				template_folder='templates')
 
 app.register_blueprint(intro, url_prefix='/')
-app.register_blueprint(main, url_prefix='/initiate')
+app.register_blueprint(taper, url_prefix='/initiate')
 
 '''
 configure_app(app)

@@ -34,9 +34,9 @@
 
     {# CSS #}
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    {#<link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">#}
-    {% if request.url_rule.endpoint == "main.index" %}
-        <link href="{{ url_for('static', filename='css/taper.css') }}" rel="stylesheet">
+    {% if request.url_rule.endpoint == "taper.index" %}
+        {#<link href="{{ url_for('static', filename='css/taper.css') }}" rel="stylesheet">#}
+        <link href="{{ url_for('static', filename='css/pickadate.css') }}" rel="stylesheet">
     {% endif %}
 
 </head>
@@ -49,7 +49,10 @@
     {# JS #}
     <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
     {% if request.url_rule.endpoint == "intro.index" %}
-        <script src="{{ url_for('static', filename='js/landing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/intro.min.js') }}"></script>
+    {% endif %}
+    {% if request.url_rule.endpoint == "taper.index" %}
+        <script src="{{ url_for('static', filename='js/taper.min.js') }}"></script>
     {% endif %}
 
     {#{% include 'footer.html' %}#}

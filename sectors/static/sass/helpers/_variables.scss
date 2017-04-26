@@ -43,8 +43,10 @@ $font-lato: 'Lato', sans-serif;
 $font-oxygen: 'Oxygen', sans-serif;
 $font-damion: 'Damion', cursive;
 $font-oswald: 'Oswald', sans-serif;
+$font-contrail: 'Contrail One', cursive;
+$font-roboto: 'Roboto', sans-serif;
 
-$font-dt: $font-oswald;
+$font-dt: $font-contrail;
 $sans-serif: $font-lato;
 $font-nav: $font-oxygen;
 $font-card: $font-oswald;
@@ -58,3 +60,30 @@ $login-text: $dark-grey;
 $login-error: $red;
 $login-btn: #b5b7b8;
 $login-btn-hover: #9AB297;
+
+
+
+$float-labels: (
+    base-height             : 0px,
+    base-padding            : 7px,
+    border-radius           : 0px,
+    border-width            : 3px,
+    margin-bottom           : 0px,
+    color-background        : transparent,
+    color-background-active : transparent,
+    color-background-focus  : transparent,
+    color-border            : #cbc4c6,
+    color-border-active     : #A8A8A8,
+    //color-border-active     : transparent,
+    color-border-focus      : #f18292,
+    color-placeholder       : #cbc4c6,
+    color-required          : #f18292,
+    color-text              : #696969,
+    color-text-focus        : #cbc4c6,
+    line-height             : 1.5em,
+    font-size               : 62px,
+    font-size-small         : 22px,
+    font-weight             : 400,
+    transition-easing       : ease-in-out,
+    transition-speed        : 0.2s,
+);
