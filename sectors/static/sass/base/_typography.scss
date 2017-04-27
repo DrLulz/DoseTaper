@@ -161,10 +161,50 @@
     font-style: normal;
 
     src: url('../fonts/contrail-one-v6-latin-regular.eot');
-    src: local('Damion'),
+    src: local('Contrail One'),
          url('../fonts/contrail-one-v6-latin-regular.eot?#iefix') format('embedded-opentype'),
          url('../fonts/contrail-one-v6-latin-regular.woff2') format('woff2'),
          url('../fonts/contrail-one-v6-latin-regular.woff') format('woff'),
          url('../fonts/contrail-one-v6-latin-regular.ttf') format('truetype'),
          url('../fonts/contrail-one-v6-latin-regular.svg#Damion') format('svg');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: local('FontAwesome'),
+         url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontawesome-webfont.woff2') format('woff2'),
+         url('../fonts/fontawesome-webfont.woff') format('woff'),
+         url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+         url('../fonts/fontawesome-webfont.svg#Damion') format('svg');
+}
+/* 
+@font-face {
+  font-family: 'Timmana';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/timmana-v1-latin-regular.eot');
+  src: local('Timmana'),
+       url('../fonts/timmana-v1-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/timmana-v1-latin-regular.woff2') format('woff2'),
+       url('../fonts/timmana-v1-latin-regular.woff') format('woff'),
+       url('../fonts/timmana-v1-latin-regular.ttf') format('truetype'),
+       url('../fonts/timmana-v1-latin-regular.svg#Timmana') format('svg');
+} */
+
+@font-face {
+  font-family: 'Farsan';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/farsan-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Farsan'), local('Farsan-Regular'),
+       url('../fonts/farsan-v1-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/farsan-v1-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/farsan-v1-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/farsan-v1-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/farsan-v1-latin-regular.svg#Farsan') format('svg'); /* Legacy iOS */
 }

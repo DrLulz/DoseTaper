@@ -19,7 +19,12 @@ $(document).ready(function() {
     } else {
         $('.picker__frame').css({ 'top': '15%'});
     }
-
+    
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_minimal-grey',
+        radioClass: 'iradio_minimal-grey'
+        //increaseArea: '20%' // optional
+    });
 
 /*     $(window).resize(function() {
         if ($(window).width() > 768) {
