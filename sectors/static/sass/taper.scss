@@ -1,6 +1,8 @@
 $white-tan: #f8f2ed;
 $white-khaki: #ddd8ce;
 $dark-grey: #5c5c5c;
+$font-opensans: "Open Sans", sans-serif;
+$font-contrail: 'Contrail One', cursive;
 @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:400,400i,600,600i,700,700i';
 
 
@@ -172,7 +174,7 @@ body#bumper {
 
   .phase-num {
     //['#81A2BE', '#DC9656', '#8F9D6A', '#B294BB', '#CC6666']
-    font-family: 'Contrail One', cursive;
+    font-family: $font-contrail;
     //margin: 2.5em 0;
 
     //text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
@@ -216,12 +218,12 @@ body#bumper {
   }
 
   label.fl-label {
-    font-family: 'Contrail One', cursive;
+    font-family: $font-contrail;
     @include ms-respond(font-size, 1.5);
   }
 
   input.fl-input {
-    font-family: 'Contrail One', cursive;
+    font-family: $font-contrail;
     font-weight: 300;
     border-top: 2px transparent;
     border-right: 2px transparent;
@@ -234,43 +236,33 @@ body#bumper {
 
 .taper-params {
   padding: 3em 1.5em;
-
   .cal-param {
-    position: relative;
     padding: 0;
-
-    .fa-cal-wrapper {
-      width: 10%;
-      float: left;
-      position: absolute ;
-      height: 100%;
-
-      .fa-calendar {
-        @include ms-respond(font-size, 4.5);
-        //float: left;
-        //margin-right: 1rem;
-        //display: inline-block;
-        //width: 100%;
-      }
+    input[type="text"] {
+        padding: 5px;
+        background-color: transparent;
+        font-family: $font-opensans;
+        font-weight: 600;
+        @include ms-respond(font-size, 3);
+        border: none;
+        text-indent: 10px;
+        display: inline-block;
     }
-
-    .date-input-wrapper {
-        float: right;
-        width: 90%;
-        #input_date {
-          //font-size: 40px;
-          @include ms-respond(font-size, 2);
-          //@include ms-respond(width, 14);
-          width: 100%;
-          text-align: center;
-          //border: none;
-          text-indent: 1rem;
-          //font-family: 'Farsan', cursive;
-          font-family: "Open Sans", sans-serif;
-        }
+    .date-wrapper {
+        text-align: center;
+        white-space: nowrap;
     }
-
-
+    .input-group {
+        text-align: center;
+    }
+    .input-group-addon {
+        padding: 0.75rem 0rem 1rem 1rem;
+        @include ms-respond(font-size, 3);
+        background-color: transparent;
+        border: none;
+        width: initial;
+        display: inline-block;
+    }
   }
 
   .med-param {
@@ -283,8 +275,8 @@ body#bumper {
         padding: 0;
         list-style: none;
         font-size: 13px;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 700;
+        font-family: $font-opensans;
+        font-weight: 600;
         letter-spacing: 0.05rem;
         //word-spacing: 1px;
         text-transform: uppercase;
