@@ -1,0 +1,11 @@
+# https://github.com/morishitter/stylefmt#stylelint-rules-that-stylefmt-can-handle
+{
+    "rules": {
+        "indentation": [
+            3,
+                {
+                    "indentClosingBrace": true
+                }
+        ]
+    }
+}

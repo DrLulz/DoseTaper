@@ -2,7 +2,54 @@ $(document).ready(function() {
     $( 'form#nl_taper' ).floatlabels({
         style: 1,
     });
-    $('#input_date').pickadate({
+
+    var $date_icon = $( '.input-group-addon' ),
+        $date_field = $( '#input_date' ).pickadate({
+            format: 'mmmm dd, yyyy',
+            today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
+            clear: '',
+            close: '<i class="fa fa-times" aria-hidden="true"></i>',
+            onStart: function () {
+                var date = new Date();
+                this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
+            },
+            onClose: function() {
+                $('.date-wrapper').removeClass('date-hover');
+            },
+        }),
+        picker_open_close = $date_field.pickadate( 'picker' )
+    $date_icon.
+        on( 'click', function( event ) {
+            if ( picker_open_close.get( 'open' ) ) {
+                picker_open_close.close()
+            }
+            else {
+                picker_open_close.open()
+            }
+            event.stopPropagation()
+        }).
+        on( 'mousedown', function(event) {
+            event.preventDefault()
+        })
+
+  
+
+/*     var $date_icon = $( '.input-group-addon' ),
+        $date_field = $( '#input_date' ).pickadate({
+            format: 'mmmm dd, yyyy',
+            today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
+            clear: '',
+            close: '<i class="fa fa-times" aria-hidden="true"></i>',
+            onStart: function () {
+                var date = new Date();
+                this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
+            },
+            onClose: function() {
+                $('.date-wrapper').removeClass('date-hover');
+            },
+        }); */
+    
+/*     $('#input_date').pickadate({
         format: 'mmmm dd, yyyy',
         today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
         clear: '',
@@ -12,8 +59,11 @@ $(document).ready(function() {
             this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
         },
         onRender: function() {},
-        onClose: function() {},
-    });
+        onClose: function() {
+            $('.date-wrapper').removeClass('date-hover');
+        },
+        onStop: function() {},
+    }); */
 
     if (mobile) {
         $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
@@ -23,16 +73,24 @@ $(document).ready(function() {
     }
     
     $('input').iCheck({
-        checkboxClass: 'icheckbox_minimal-grey',
-        radioClass: 'iradio_minimal-grey',
+        checkboxClass: 'icheckbox_flat-grey',
+        radioClass: 'iradio_flat-grey',
         increaseArea: '20%' // optional
     });
 
+    // Taper start date, grow/shrink input box to text
     $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
-
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     });
+    
+    // Taper start date, red on hover
+    $('.date-wrapper').mouseover(function() {
+        $(this).addClass('date-hover');
+    }).mouseout(function(){
+        $(this).removeClass('date-hover');
+    });
+
 });
 
 //(function($){
