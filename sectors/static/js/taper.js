@@ -32,39 +32,6 @@ $(document).ready(function() {
             event.preventDefault()
         })
 
-  
-
-/*     var $date_icon = $( '.input-group-addon' ),
-        $date_field = $( '#input_date' ).pickadate({
-            format: 'mmmm dd, yyyy',
-            today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
-            clear: '',
-            close: '<i class="fa fa-times" aria-hidden="true"></i>',
-            onStart: function () {
-                var date = new Date();
-                this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
-            },
-            onClose: function() {
-                $('.date-wrapper').removeClass('date-hover');
-            },
-        }); */
-    
-/*     $('#input_date').pickadate({
-        format: 'mmmm dd, yyyy',
-        today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
-        clear: '',
-        close: '<i class="fa fa-times" aria-hidden="true"></i>',
-        onStart: function () {
-            var date = new Date();
-            this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
-        },
-        onRender: function() {},
-        onClose: function() {
-            $('.date-wrapper').removeClass('date-hover');
-        },
-        onStop: function() {},
-    }); */
-
     if (mobile) {
         $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
         $('.picker__box').css({ 'border-radius': '0', 'border-bottom-width': '0'});
@@ -72,11 +39,21 @@ $(document).ready(function() {
         $('.picker__frame').css({ 'top': '15%'});
     }
     
-    $('input').iCheck({
+    $('.checkbox:not(.noiCheck)').iCheck({
         checkboxClass: 'icheckbox_flat-grey',
         radioClass: 'iradio_flat-grey',
-        increaseArea: '20%' // optional
+        increaseArea: '20%',
+        ifChecked: function () {
+            console.log($(this).next());
+        },
     });
+    $('.checkbox:not(.noiCheck)').
+        on('ifChecked', function(event){
+            $(this).parent().next().addClass('checked');
+        }).
+        on('ifUnchecked', function(event){
+            $(this).parent().next().removeClass('checked');
+        });
 
     // Taper start date, grow/shrink input box to text
     $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
@@ -89,6 +66,40 @@ $(document).ready(function() {
         $(this).addClass('date-hover');
     }).mouseout(function(){
         $(this).removeClass('date-hover');
+    });
+
+
+    if ($(window).width() > 649 && $(window).width() < 980) {
+        var one  = $( '.row-1' ).html();
+        var two  = $( '.row-2' ).html();
+        $( '.size-param tbody' ).detach();
+        $( '.size-param table' ).append($('<tr/>', {class: 'row-0', html: one + two})).html();
+    }
+    
+    $(window).resize(function() {
+        var width = $(window).width();
+        console.log(width);
+        var table = $( '.size-param table' );
+        var tbody = $( '.size-param tbody' );
+        var one  = $( '.row-1' ).html();
+        var two  = $( '.row-2' ).html();
+
+        if ( width > 649 && width < 980) {
+            if ( !$( '.row-0' ).length ) {
+                console.log('! .row-0');
+                tbody.detach();
+                table.append($('<tr/>', {class: 'row-0', html: one + two})).html();
+                }
+            
+        } else if (width < 650 || width > 779) {
+            if ( $( '.row-0' ).length ) {
+                var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
+                var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
+                tbody.detach();
+                table.append($('<tr/>', {class: 'row-1', html: tr_one}));
+                table.append($('<tr/>', {class: 'row-2', html: tr_two}));
+                }
+        }
     });
 
 });
@@ -164,3 +175,10 @@ $.fn.autoGrowInput = function(o) {
 };
 
 //})(jQuery);
+
+
+/* $('<div/>', {
+    id: someID,
+    className: 'foobar',
+    html: content
+}); */

@@ -9326,6 +9326,10 @@ body#bumper {
           padding: 1px; }
   .fl-form .taper-params .med-param {
     padding: 0; }
+    .fl-form .taper-params .med-param .rx-row {
+      text-align: center; }
+      .fl-form .taper-params .med-param .rx-row .rx-col {
+        display: inline-block; }
     .fl-form .taper-params .med-param .rx-list {
       float: left;
       margin: 0;
@@ -9336,12 +9340,43 @@ body#bumper {
       font-weight: 700;
       letter-spacing: 0.05rem;
       text-transform: uppercase; }
+      @media (max-width: 61.24em) {
+        .fl-form .taper-params .med-param .rx-list {
+          padding: 1rem; } }
       .fl-form .taper-params .med-param .rx-list label {
         margin: 0;
         padding-left: 1rem;
         vertical-align: middle; }
         .fl-form .taper-params .med-param .rx-list label:hover {
           cursor: pointer; }
+        .fl-form .taper-params .med-param .rx-list label.checked {
+          color: #dc9656; }
+  .fl-form .taper-params .size-param {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05rem; }
+    .fl-form .taper-params .size-param table {
+      margin: 0 auto;
+      border: none; }
+    .fl-form .taper-params .size-param td,
+    .fl-form .taper-params .size-param th {
+      border: none;
+      white-space: nowrap;
+      padding: 0.25rem 1rem; }
+    .fl-form .taper-params .size-param ul {
+      list-style: none;
+      list-style-position: inside;
+      margin: 0;
+      padding: 0; }
+    .fl-form .taper-params .size-param label {
+      margin: 0;
+      padding-left: 0.5rem;
+      vertical-align: middle; }
+      .fl-form .taper-params .size-param label:hover {
+        cursor: pointer; }
+      .fl-form .taper-params .size-param label.checked {
+        color: #cc6666; }
 .fl-form .phase {
   position: relative; }
   @media (min-width: 48.0625em) {

@@ -132,6 +132,14 @@ body#bumper {
       .med-param {
          padding: 0;
 
+         .rx-row {
+            text-align: center;
+
+            .rx-col {
+               display: inline-block;
+            }
+         }
+
          .rx-list {
             float: left;
             //padding-right: 60px;
@@ -145,13 +153,21 @@ body#bumper {
             letter-spacing: 0.05rem;
             //word-spacing: 1px;
             text-transform: uppercase;
+            @include mq($until: lg) {
+               padding: 1rem;
+            }
 
             label {
                margin: 0;
                padding-left: 1rem;
                vertical-align: middle;
+
                &:hover {
-                cursor: pointer;
+                  cursor: pointer;
+               }
+
+               &.checked {
+                  color: $orange;
                }
             }
 
@@ -166,6 +182,49 @@ body#bumper {
       /* Sizes
       --------------------------------------------------*/
       .size-param {
+         font-size: 16px;
+         font-family: $font-opensans;
+         font-weight: 700;
+         letter-spacing: 0.05rem;
+
+         table {
+            margin: 0 auto;
+            border: none;
+            //border: 1px solid orange;
+         }
+
+         tr {
+            //border: 1px dashed red;
+         }
+
+         td,
+         th {
+            border: none;
+            //border: 1px dashed grey;
+            white-space: nowrap;
+            padding: 0.25rem 1rem;
+         }
+
+         ul {
+            list-style: none;
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+         }
+
+         label {
+            margin: 0;
+            padding-left: 0.5rem;
+            vertical-align: middle;
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            &.checked {
+               color: $red;
+            }
+         }
       }
    }
 
