@@ -102,6 +102,7 @@ $.fn.autoGrowInput = function(o) {
         var val = '';
         var input = $(this);
         var testSubject = $('<tester/>').css({
+            id: 'tester',
             position: 'absolute',
             top: -9999,
             left: -9999,
@@ -135,6 +136,7 @@ $.fn.autoGrowInput = function(o) {
                 input.width(newWidth);
             }
             //console.log('viewportW()', verge.viewportW());
+            console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
             console.log('testerWidth', testerWidth);
             console.log('o.comfortZone', o.comfortZone);
             console.log('minWidth', minWidth);
