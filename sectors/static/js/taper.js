@@ -145,7 +145,7 @@ $.fn.autoGrowInput = function(o) {
             // Animate width
             if (isValidWidthChange) {
                 input.width(newWidth);
-                console.log('portrait', portrait);
+/*                 console.log('portrait', portrait);
                 console.log('initial_view', localStorage.getItem('initial_view'))
                 if (!localStorage.getItem('initial_view')) {
                     //console.log('first time here')
@@ -161,7 +161,7 @@ $.fn.autoGrowInput = function(o) {
                     //console.log('not first time here')
                     //localStorage.removeItem('initial_view');
                     input.width(newWidth);
-                }
+                } */
 
 
 
@@ -258,7 +258,7 @@ function checkbox_resize() {
     html: content
 }); */
 
-$(window).bind('beforeunload', function(){
+/* $(window).bind('beforeunload', function(){
     //save info somewhere
     //return 'are you sure you want to leave?';
     localStorage.removeItem('initial_view');
@@ -267,4 +267,4 @@ $(window).bind('beforeunload', function(){
 $(window).load(function () {
     localStorage.removeItem('initial_view');
     //localStorage.setItem('initial_view', 'true');
-});
+}); */
