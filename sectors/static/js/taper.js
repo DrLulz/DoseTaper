@@ -162,6 +162,8 @@ $.fn.autoGrowInput = function(o) {
                 console.log('testerWidth', testerWidth)
             } else {
                 console.log('testerWidth != js testerWidth')
+                console.log('testerWidth', testerWidth)
+                console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
             }
             //console.log('o.comfortZone', o.comfortZone);
             //console.log('minWidth', minWidth);
