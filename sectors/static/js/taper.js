@@ -147,7 +147,7 @@ $.fn.autoGrowInput = function(o) {
 
                 if (!localStorage.getItem('initial_view')) {
                     console.log('first time here')
-                    localStorage.setItem('initial_view', 'true');
+                    //localStorage.setItem('initial_view', 'true');
                     if (portrait) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
@@ -258,4 +258,8 @@ $(window).bind('beforeunload', function(){
     //save info somewhere
     //return 'are you sure you want to leave?';
     localStorage.removeItem('initial_view');
+});
+
+$(window).load(function () {
+    localStorage.setItem('initial_view', 'true');
 });
