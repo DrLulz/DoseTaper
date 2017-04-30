@@ -15,31 +15,11 @@ $(document).ready(function() {
         $('.picker__frame').css({ 'top': '15%'});
     }
     
-/*     if (mobile) {
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-        if (iOS) {
-            if (!localStorage.getItem('reload')) {
-                localStorage.setItem('reload', 'true');
-                location.reload();
-            } else {
-                localStorage.removeItem('reload');
-            }
-        }
-    } */
     // Taper start date, grow/shrink input box to text
     $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
     });
-/*     if (mobile) {
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-        if (iOS) {
-            console.log('iOS');
-            //window.dispatchEvent(new Event('resize'));
-        }
-    } */
     
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
@@ -130,8 +110,8 @@ $.fn.autoGrowInput = function(o) {
 
             // Enter new content into testSubject
             var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            //testSubject.html(escaped);
-            testSubject.html(val);
+            testSubject.html(escaped);
+            //testSubject.html(val);
 
             // Calculate new width + whether to change
             //var testerWidth = testSubject.width();
@@ -146,43 +126,8 @@ $.fn.autoGrowInput = function(o) {
             // Animate width
             if (isValidWidthChange) {
                 input.width(newWidth);
-/*                 console.log('portrait', portrait);
-                console.log('initial_view', localStorage.getItem('initial_view'))
-                if (!localStorage.getItem('initial_view')) {
-                    //console.log('first time here')
-                    //localStorage.setItem('initial_view', 'true');
-
-                    if (portrait == 1) {
-                        input.width(currentWidth - verge.viewportW() + o.comfortZone);
-                    } else {
-                        input.width(newWidth);
-                    }
-                    localStorage.setItem('initial_view', 'true');
-                } else {
-                    //console.log('not first time here')
-                    //localStorage.removeItem('initial_view');
-                    input.width(newWidth);
-                } */
-
-
-
             }
-            //console.log('viewportW()', verge.viewportW());
-            //if (testerWidth === document.getElementById('tester').offsetWidth) {
-            //    console.log('testerWidth', testerWidth)
-            //} else {
-            //    console.log('testerWidth != js testerWidth')
-            //    console.log('testerWidth', testerWidth)
-            //    console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
-            //}
-            //console.log('o.comfortZone', o.comfortZone);
-            //console.log('minWidth', minWidth);
-            //console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
-            //console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
-            //console.log('newWidth', newWidth);
-            //console.log('o.maxWidth', o.maxWidth);
-            //console.log('currentWidth', currentWidth);
-            //console.log('');
+
 
         };   
 
@@ -269,3 +214,60 @@ $(window).load(function () {
     localStorage.removeItem('initial_view');
     //localStorage.setItem('initial_view', 'true');
 }); */
+
+/*     if (mobile) {
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+        if (iOS) {
+            if (!localStorage.getItem('reload')) {
+                localStorage.setItem('reload', 'true');
+                location.reload();
+            } else {
+                localStorage.removeItem('reload');
+            }
+        }
+    } */
+
+            //console.log('viewportW()', verge.viewportW());
+            //if (testerWidth === document.getElementById('tester').offsetWidth) {
+            //    console.log('testerWidth', testerWidth)
+            //} else {
+            //    console.log('testerWidth != js testerWidth')
+            //    console.log('testerWidth', testerWidth)
+            //    console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
+            //}
+            //console.log('o.comfortZone', o.comfortZone);
+            //console.log('minWidth', minWidth);
+            //console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
+            //console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
+            //console.log('newWidth', newWidth);
+            //console.log('o.maxWidth', o.maxWidth);
+            //console.log('currentWidth', currentWidth);
+            //console.log('');
+
+/*                 console.log('portrait', portrait);
+                console.log('initial_view', localStorage.getItem('initial_view'))
+                if (!localStorage.getItem('initial_view')) {
+                    //console.log('first time here')
+                    //localStorage.setItem('initial_view', 'true');
+
+                    if (portrait == 1) {
+                        input.width(currentWidth - verge.viewportW() + o.comfortZone);
+                    } else {
+                        input.width(newWidth);
+                    }
+                    localStorage.setItem('initial_view', 'true');
+                } else {
+                    //console.log('not first time here')
+                    //localStorage.removeItem('initial_view');
+                    input.width(newWidth);
+                } */
+
+/*     if (mobile) {
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+        if (iOS) {
+            console.log('iOS');
+            //window.dispatchEvent(new Event('resize'));
+        }
+    } */
