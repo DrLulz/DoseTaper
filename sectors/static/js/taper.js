@@ -265,5 +265,6 @@ $(window).bind('beforeunload', function(){
 });
 
 $(window).load(function () {
+    localStorage.removeItem('initial_view');
     //localStorage.setItem('initial_view', 'true');
 });
