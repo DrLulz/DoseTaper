@@ -101,7 +101,8 @@ body#bumper {
                }
             }
 
-            input[type="text"] {
+            //input[type="text"]
+            #input_date {
                padding: 5px;
                background-color: transparent;
                font-family: $font-opensans;
@@ -110,6 +111,8 @@ body#bumper {
                border: none;
                text-indent: 10px;
                display: inline-block;
+               vertical-align: middle;
+               outline: none;
                //max-width: 100%;
                //box-sizing: border-box;
             }

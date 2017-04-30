@@ -9276,7 +9276,7 @@ body#bumper {
       .fl-form .taper-params .cal-param .date-wrapper:hover #input_date,
       .fl-form .taper-params .cal-param .date-wrapper:hover .input-group-addon {
         cursor: pointer; }
-      .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+      .fl-form .taper-params .cal-param .date-wrapper #input_date {
         padding: 5px;
         background-color: transparent;
         font-family: "Open Sans", sans-serif;
@@ -9284,21 +9284,23 @@ body#bumper {
         font-size: 2.41632rem;
         border: none;
         text-indent: 10px;
-        display: inline-block; }
+        display: inline-block;
+        vertical-align: middle;
+        outline: none; }
         @media (min-width: 30em) and (max-width: 48.063em) {
-          .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+          .fl-form .taper-params .cal-param .date-wrapper #input_date {
             font-size: 2.41632rem; } }
         @media (min-width: 48.063em) and (max-width: 61.25em) {
-          .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+          .fl-form .taper-params .cal-param .date-wrapper #input_date {
             font-size: 3.02869rem; } }
         @media (min-width: 61.25em) and (max-width: 81.25em) {
-          .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+          .fl-form .taper-params .cal-param .date-wrapper #input_date {
             font-size: 3.49386rem; } }
         @media (min-width: 81.25em) and (max-width: 156.25em) {
-          .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+          .fl-form .taper-params .cal-param .date-wrapper #input_date {
             font-size: 4.37548rem; } }
         @media (min-width: 156.25em) {
-          .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
+          .fl-form .taper-params .cal-param .date-wrapper #input_date {
             font-size: 5.37889rem; } }
       .fl-form .taper-params .cal-param .date-wrapper .input-group-addon {
         padding: 0.75rem 0rem 1rem 1rem;

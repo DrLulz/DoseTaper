@@ -16,10 +16,10 @@ $(document).ready(function() {
     }
     
     // Taper start date, grow/shrink input box to text
-    $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
-    $(window).resize(function() {
-        $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
-    });
+    //$("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
+    //$(window).resize(function() {
+    //    $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
+    //});
     
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
@@ -37,17 +37,22 @@ $(document).ready(function() {
 
 
 function date_picker() {
+    var update_span = function () {
+        $('#input_date').text(picker_open_close.get());
+    };
     var $date_icon = $( '.input-group-addon' ),
         $date_field = $( '#input_date' ).pickadate({
             format: 'mmmm dd, yyyy',
             today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
             clear: '',
             close: '<i class="fa fa-times" aria-hidden="true"></i>',
+            //containerHidden: '#hidden_input_date',
             onStart: function () {
                 var date = new Date();
                 this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
             },
             onClose: function() {
+                update_span();
                 $('.date-wrapper').removeClass('date-hover');
             },
         }),
@@ -65,6 +70,8 @@ function date_picker() {
         on( 'mousedown', function(event) {
             event.preventDefault()
         })
+    console.log(picker_open_close.get());
+    update_span();
 }; // datepicker()
 
 
