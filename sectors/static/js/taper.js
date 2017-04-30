@@ -69,7 +69,7 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
-    
+
     //console.log('FIRE: autoGrowInput()');
     console.log('viewportW()', verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
@@ -118,6 +118,7 @@ $.fn.autoGrowInput = function(o) {
                 if (isValidWidthChange) {
                     input.width(newWidth);
                 }
+                console.log('input', input)
                 console.log('isValidWidthChange', isValidWidthChange)
                 console.log('testerWidth', testerWidth)
                 console.log('newWidth', newWidth)
