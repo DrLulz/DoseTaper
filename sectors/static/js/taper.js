@@ -130,7 +130,8 @@ $.fn.autoGrowInput = function(o) {
 
             // Enter new content into testSubject
             var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            testSubject.html(escaped);
+            //testSubject.html(escaped);
+            testSubject.html(val);
 
             // Calculate new width + whether to change
             //var testerWidth = testSubject.width();
