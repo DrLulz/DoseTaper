@@ -25,6 +25,9 @@ $(document).ready(function() {
                 localStorage.setItem('reload', 'true');
                 console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
                 //location.reload();
+            } else {
+                localStorage.removeItem('reload');
+                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             }
         }
 
