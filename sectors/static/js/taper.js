@@ -105,18 +105,10 @@ $.fn.autoGrowInput = function(o) {
                 var orientation = 'portrait';
             }
         }
-    } else {
-        //var orientation = 0;
     }
 
     console.log('orientation', orientation)
-    if (orientation == 'portrait') {
-        console.log('mobile portrait')
-        //o = $.extend({ maxWidth: 185, minWidth: 0, comfortZone: 70 }, o);
-        o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
-    } else {
-        o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
-    };
+    o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
 
     this.filter('input:text').each(function(){
 
@@ -156,6 +148,10 @@ $.fn.autoGrowInput = function(o) {
             if (isValidWidthChange) {
                 console.log('WIDTH CHANGED');
                 input.width(newWidth);
+                if (orientation) {
+                    input.width(currentWidth - verge.viewportW() + o.comfortZone)
+                }
+
             }
             console.log('viewportW()', verge.viewportW());
             if (testerWidth === document.getElementById('tester').offsetWidth) {
@@ -185,18 +181,7 @@ $.fn.autoGrowInput = function(o) {
         $(this).bind('change', check);
         check();
         $(window).load(check());
-        if (mobile) {
-            var deviceAgent = navigator.userAgent.toLowerCase();
-            var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-            if (iOS) {
-                console.log('iOS');
-                $( '#input_date' ).val();
-                //$('tester').remove();
-                //testSubject.insertAfter(input);
-                //window.dispatchEvent(new Event('resize'));
-                //check();
-            }
-        }
+
 
     });
     return this;
