@@ -7,6 +7,9 @@ $(document).ready(function() {
     /* datepicker (pickadate)
     ---------------------------------------------------------------------------*/
     date_picker();
+    if (mobile) {
+        date_picker();
+    }
 
     if (mobile) {
         $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
