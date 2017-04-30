@@ -146,6 +146,7 @@ $.fn.autoGrowInput = function(o) {
             if (isValidWidthChange) {
                 input.width(newWidth);
                 console.log('portrait', portrait);
+                console.log('initial_view', localStorage.getItem('initial_view'))
                 if (!localStorage.getItem('initial_view')) {
                     //console.log('first time here')
                     //localStorage.setItem('initial_view', 'true');
