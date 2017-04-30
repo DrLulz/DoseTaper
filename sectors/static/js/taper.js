@@ -101,8 +101,7 @@ $.fn.autoGrowInput = function(o) {
         var minWidth = o.minWidth || $(this).width();
         var val = '';
         var input = $(this);
-        var testSubject = $('<tester/>').css({
-            id: 'tester',
+        var testSubject = $('<tester/>').attr('id', 'tester').css({
             position: 'absolute',
             top: -9999,
             left: -9999,
