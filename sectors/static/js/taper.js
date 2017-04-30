@@ -36,9 +36,9 @@ $(document).ready(function() {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
+            window.dispatchEvent(new Event('resize'));
         }
-    } 
+    }
     
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
@@ -138,11 +138,13 @@ $.fn.autoGrowInput = function(o) {
                     input.width(newWidth);
                 }
                 //console.log('input', input)
-                //console.log('isValidWidthChange', isValidWidthChange)
-                console.log('testSubject', testSubject)
+                
+                //console.log('testSubject', testSubject)
                 console.log('testerWidth', testerWidth)
-                //console.log('newWidth', newWidth)
-                //console.log('input.width()', currentWidth)
+                console.log('newWidth', newWidth)
+                console.log('minWidth', minWidth)
+                console.log('o.maxWidth', o.maxWidth)
+                console.log('currentWidth', currentWidth)
 
             };            
 
