@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
     } */
     // Taper start date, grow/shrink input box to text
-    //$("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
+    $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     });
@@ -133,21 +133,22 @@ $.fn.autoGrowInput = function(o) {
             if (isValidWidthChange) {
                 input.width(newWidth);
             }
-            console.log('viewportW()', verge.viewportW());
-
-            //console.log('input', input)
-            
-            //console.log('testSubject', testSubject)
+            //console.log('viewportW()', verge.viewportW());
             console.log('testerWidth', testerWidth);
             console.log('o.comfortZone', o.comfortZone);
             console.log('minWidth', minWidth);
             console.log('testerWidth + o.comfortZone', (testerWidth + o.comfortZone));
             console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
             console.log('newWidth', newWidth);
-            console.log('');
-            console.log('o.maxWidth', o.maxWidth);
+            //console.log('o.maxWidth', o.maxWidth);
             console.log('currentWidth', currentWidth);
             console.log('');
+            console.log('testSubject.width', testSubject.width())
+            console.log('testSubject.fontSize', testSubject.fontSize())
+            console.log('testSubject.fontFamily', testSubject.fontFamily())
+            console.log('testSubject.fontWeight', testSubject.fontWeight())
+            console.log('testSubject.letterSpacing', testSubject.letterSpacing())
+            console.log('testSubject.whiteSpace', testSubject.whiteSpace())
 
         };   
 
