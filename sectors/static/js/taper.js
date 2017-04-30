@@ -15,23 +15,18 @@ $(document).ready(function() {
         $('.picker__frame').css({ 'top': '15%'});
     }
     
-    if (mobile) {
+/*     if (mobile) {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             if (!localStorage.getItem('reload')) {
-                /* set reload locally and then reload the page */
                 localStorage.setItem('reload', 'true');
-                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
                 location.reload();
             } else {
                 localStorage.removeItem('reload');
-                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             }
         }
-
-    }
+    } */
     // Taper start date, grow/shrink input box to text
     $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     $(window).resize(function() {
@@ -137,7 +132,8 @@ $.fn.autoGrowInput = function(o) {
                 }
                 //console.log('input', input)
                 //console.log('isValidWidthChange', isValidWidthChange)
-                //console.log('testerWidth', testerWidth)
+                console.log('testSubject', testSubject)
+                console.log('testerWidth', testerWidth)
                 //console.log('newWidth', newWidth)
                 //console.log('input.width()', currentWidth)
 
