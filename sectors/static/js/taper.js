@@ -7,9 +7,6 @@ $(document).ready(function() {
     /* datepicker (pickadate)
     ---------------------------------------------------------------------------*/
     date_picker();
-    if (mobile) {
-        date_picker();
-    }
 
     if (mobile) {
         $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
@@ -86,7 +83,7 @@ $.fn.autoGrowInput = function(o) {
     }, o);
 
     this.filter('input:text').each(function(){
-
+        console.log('$(this).width()', $(this).width());
         var minWidth = o.minWidth || $(this).width(),
             val = '',
             input = $(this),
