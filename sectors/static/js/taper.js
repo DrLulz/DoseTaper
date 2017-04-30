@@ -156,6 +156,7 @@ $.fn.autoGrowInput = function(o) {
         //});
         $(this).bind('change', check);
         check();
+        $(window).load(check());
         if (mobile) {
             var deviceAgent = navigator.userAgent.toLowerCase();
             var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
@@ -171,7 +172,7 @@ $.fn.autoGrowInput = function(o) {
     });
     return this;
 }; // autoGrowInput()
-$("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
+
 
 function checkboxes() {
     $('.checkbox:not(.noiCheck)').iCheck({
