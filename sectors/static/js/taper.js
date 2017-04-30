@@ -117,7 +117,7 @@ $.fn.autoGrowInput = function(o) {
                 if (isValidWidthChange) {
                     input.width(newWidth);
                 }
-
+                console.log('isValidWidthChange', isValidWidthChange)
                 console.log('testerWidth', testerWidth)
                 console.log('newWidth', newWidth)
                 console.log('input.width()', currentWidth)
