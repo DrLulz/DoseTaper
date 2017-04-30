@@ -135,8 +135,7 @@ $.fn.autoGrowInput = function(o) {
                 input.width(newWidth);
             }
             //console.log('viewportW()', verge.viewportW());
-            console.log('js testerWidth', document.getElementById('tester').offsetWidth)
-            console.log('testerWidth', testerWidth);
+            console.log('testerWidth, js testerWidth', testerWidth, document.getElementById('tester').offsetWidth);
             //console.log('o.comfortZone', o.comfortZone);
             //console.log('minWidth', minWidth);
             console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
