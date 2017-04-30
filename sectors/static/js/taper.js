@@ -20,6 +20,7 @@ $(document).ready(function() {
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
             console.log('iOS');
+            location.reload();
         }
 
     }
