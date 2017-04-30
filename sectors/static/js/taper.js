@@ -32,6 +32,13 @@ $(document).ready(function() {
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     });
+    if (mobile) {
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+        if (iOS) {
+            $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
+        }
+    } 
     
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
