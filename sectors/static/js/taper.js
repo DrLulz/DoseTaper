@@ -254,3 +254,8 @@ function checkbox_resize() {
     html: content
 }); */
 
+$(window).bind('beforeunload', function(){
+    //save info somewhere
+    //return 'are you sure you want to leave?';
+    localStorage.removeItem('initial_view');
+});
