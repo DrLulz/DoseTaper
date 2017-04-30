@@ -121,6 +121,7 @@ body#bumper {
                border: none;
                width: initial;
                display: inline-block;
+               color: rgba(0, 0, 0, 0.54);
 
                .fa-calendar-o:before {
                   padding: 1px;
@@ -136,6 +137,9 @@ body#bumper {
 
          .rx-row {
             text-align: center;
+            @include mq($until: sm) {
+               padding: 1.5rem 0;
+            }
 
             .rx-col {
                display: inline-block;
@@ -157,6 +161,9 @@ body#bumper {
             text-transform: uppercase;
             @include mq($until: lg) {
                padding: 1rem;
+            }
+            @include mq($until: sm) {
+               padding: 0 1rem;
             }
 
             label {
@@ -193,6 +200,9 @@ body#bumper {
             margin: 0 auto;
             border: none;
             //border: 1px solid orange;
+              @include mq($from: lg) {
+                 float: left;
+              }
          }
 
          tr {

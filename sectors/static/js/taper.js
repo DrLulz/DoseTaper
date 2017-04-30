@@ -145,40 +145,40 @@ $.fn.autoGrowInput = function(o) {
             // Animate width
             if (isValidWidthChange) {
                 input.width(newWidth);
-                /* 
-                                if (!localStorage.getItem('initial_view')) {
-                                    console.log('first time here')
-                                    //localStorage.setItem('initial_view', 'true');
-                                    if (portrait) {
-                                        input.width(currentWidth - verge.viewportW() + o.comfortZone);
-                                    } else {
-                                        input.width(newWidth);
-                                    }   
-                                } else {
-                                    console.log('not first time here')
-                                    //localStorage.removeItem('initial_view');
-                                    input.width(newWidth);
-                                } */
+
+                if (!localStorage.getItem('initial_view')) {
+                    //console.log('first time here')
+                    //localStorage.setItem('initial_view', 'true');
+                    if (portrait) {
+                        input.width(currentWidth - verge.viewportW() + o.comfortZone);
+                    } else {
+                        input.width(newWidth);
+                    }   
+                } else {
+                    //console.log('not first time here')
+                    //localStorage.removeItem('initial_view');
+                    input.width(newWidth);
+                }
 
 
 
             }
-            console.log('viewportW()', verge.viewportW());
-            if (testerWidth === document.getElementById('tester').offsetWidth) {
-                console.log('testerWidth', testerWidth)
-            } else {
-                console.log('testerWidth != js testerWidth')
-                console.log('testerWidth', testerWidth)
-                console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
-            }
+            //console.log('viewportW()', verge.viewportW());
+            //if (testerWidth === document.getElementById('tester').offsetWidth) {
+            //    console.log('testerWidth', testerWidth)
+            //} else {
+            //    console.log('testerWidth != js testerWidth')
+            //    console.log('testerWidth', testerWidth)
+            //    console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
+            //}
             //console.log('o.comfortZone', o.comfortZone);
             //console.log('minWidth', minWidth);
-            console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
+            //console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
             //console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
             //console.log('newWidth', newWidth);
             //console.log('o.maxWidth', o.maxWidth);
-            console.log('currentWidth', currentWidth);
-            console.log('');
+            //console.log('currentWidth', currentWidth);
+            //console.log('');
 
         };   
 

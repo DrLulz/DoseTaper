@@ -9306,7 +9306,8 @@ body#bumper {
         background-color: transparent;
         border: none;
         width: initial;
-        display: inline-block; }
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.54); }
         @media (min-width: 30em) and (max-width: 48.063em) {
           .fl-form .taper-params .cal-param .date-wrapper .input-group-addon {
             font-size: 2.41632rem; } }
@@ -9328,6 +9329,9 @@ body#bumper {
     padding: 0; }
     .fl-form .taper-params .med-param .rx-row {
       text-align: center; }
+      @media (max-width: 29.99em) {
+        .fl-form .taper-params .med-param .rx-row {
+          padding: 1.5rem 0; } }
       .fl-form .taper-params .med-param .rx-row .rx-col {
         display: inline-block; }
     .fl-form .taper-params .med-param .rx-list {
@@ -9343,6 +9347,9 @@ body#bumper {
       @media (max-width: 61.24em) {
         .fl-form .taper-params .med-param .rx-list {
           padding: 1rem; } }
+      @media (max-width: 29.99em) {
+        .fl-form .taper-params .med-param .rx-list {
+          padding: 0 1rem; } }
       .fl-form .taper-params .med-param .rx-list label {
         margin: 0;
         padding-left: 1rem;
@@ -9359,6 +9366,9 @@ body#bumper {
     .fl-form .taper-params .size-param table {
       margin: 0 auto;
       border: none; }
+      @media (min-width: 61.25em) {
+        .fl-form .taper-params .size-param table {
+          float: left; } }
     .fl-form .taper-params .size-param td,
     .fl-form .taper-params .size-param th {
       border: none;
