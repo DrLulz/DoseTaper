@@ -32,14 +32,14 @@ $(document).ready(function() {
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     });
-    if (mobile) {
+/*     if (mobile) {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
             console.log('iOS');
             //window.dispatchEvent(new Event('resize'));
         }
-    }
+    } */
     
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
@@ -93,68 +93,63 @@ $.fn.autoGrowInput = function(o) {
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
 
-    o = $.extend({
-        //maxWidth: 1000,
-        maxWidth: verge.viewportW(),
-        minWidth: 0,
-        comfortZone: 70
-    }, o);
+    //maxWidth: 1000,
+    o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
 
     this.filter('input:text').each(function(){
-        //console.log('$(this).width()', $(this).width());
-        var minWidth = o.minWidth || $(this).width(),
-            val = '',
-            input = $(this),
-            testSubject = $('<tester/>').css({
-                position: 'absolute',
-                top: -9999,
-                left: -9999,
-                width: 'auto',
-                fontSize: input.css('fontSize'),
-                fontFamily: input.css('fontFamily'),
-                fontWeight: input.css('fontWeight'),
-                letterSpacing: input.css('letterSpacing'),
-                whiteSpace: 'nowrap'
-            }),
-            check = function() {
 
-                if (val === (val = input.val())) {return;}
+        var minWidth = o.minWidth || $(this).width();
+        var val = '';
+        var input = $(this);
+        var testSubject = $('<tester/>').css({
+            position: 'absolute',
+            top: -9999,
+            left: -9999,
+            width: 'auto',
+            fontSize: input.css('fontSize'),
+            fontFamily: input.css('fontFamily'),
+            fontWeight: input.css('fontWeight'),
+            letterSpacing: input.css('letterSpacing'),
+            whiteSpace: 'nowrap'
+        });
+        var check = function() {
 
-                // Enter new content into testSubject
-                var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                testSubject.html(escaped);
+            if (val === (val = input.val())) {return;}
 
-                // Calculate new width + whether to change
-                var testerWidth = testSubject.width(),
-                    // if testerWidth plus comfortZone is greater or equal to minWidth 
-                        // newWidth is equal to testerWidth + comfortZone
-                        // else newWidth is equal to minWidth
-                    newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
-                    currentWidth = input.width(),
-                    isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
-                                         || (newWidth > minWidth && newWidth < o.maxWidth);
+            // Enter new content into testSubject
+            var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            testSubject.html(escaped);
 
-                // Animate width
-                if (isValidWidthChange) {
-                    input.width(newWidth);
-                }
-                console.log('viewportW()', verge.viewportW());
+            // Calculate new width + whether to change
+            var testerWidth = testSubject.width();
+            // if testerWidth plus comfortZone is greater or equal to minWidth 
+                // newWidth is equal to testerWidth + comfortZone
+                // else newWidth is equal to minWidth
+            var newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth;
+            var currentWidth = input.width();
+            var isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth) || (newWidth > minWidth && newWidth < o.maxWidth);
 
-                //console.log('input', input)
-                
-                //console.log('testSubject', testSubject)
-                console.log('testerWidth', testerWidth);
-                console.log('o.comfortZone', o.comfortZone);
-                console.log('minWidth', minWidth);
-                console.log('testerWidth + o.comfortZone', (testerWidth + o.comfortZone));
-                console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
-                console.log('newWidth', newWidth);
-                console.log('');
-                console.log('o.maxWidth', o.maxWidth);
-                console.log('currentWidth', currentWidth);
-                console.log('');
+            // Animate width
+            if (isValidWidthChange) {
+                input.width(newWidth);
+            }
+            console.log('viewportW()', verge.viewportW());
 
-            };            
+            //console.log('input', input)
+            
+            //console.log('testSubject', testSubject)
+            console.log('testerWidth', testerWidth);
+            console.log('o.comfortZone', o.comfortZone);
+            console.log('minWidth', minWidth);
+            console.log('testerWidth + o.comfortZone', (testerWidth + o.comfortZone));
+            console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
+            console.log('newWidth', newWidth);
+            console.log('');
+            console.log('o.maxWidth', o.maxWidth);
+            console.log('currentWidth', currentWidth);
+            console.log('');
+
+        };   
 
         testSubject.insertAfter(input);
 
@@ -164,6 +159,15 @@ $.fn.autoGrowInput = function(o) {
         //});
         $(this).bind('change', check);
         check();
+        if (mobile) {
+            var deviceAgent = navigator.userAgent.toLowerCase();
+            var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+            if (iOS) {
+                console.log('iOS');
+                //window.dispatchEvent(new Event('resize'));
+                check();
+            }
+        }
 
     });
     return this;
