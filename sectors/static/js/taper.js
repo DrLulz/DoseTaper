@@ -69,13 +69,14 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
-    console.log('FIRE: autoGrowInput()')
+    console.log('FIRE: autoGrowInput()');
+    console.log(verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
 
     o = $.extend({
-        maxWidth: 100,
+        maxWidth: 1000,
         minWidth: 0,
         comfortZone: 70
     }, o);
