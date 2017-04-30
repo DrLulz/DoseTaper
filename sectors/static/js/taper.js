@@ -135,22 +135,16 @@ $.fn.autoGrowInput = function(o) {
                 input.width(newWidth);
             }
             //console.log('viewportW()', verge.viewportW());
-            console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
+            console.log('js testerWidth', document.getElementById('tester').offsetWidth)
             console.log('testerWidth', testerWidth);
-            console.log('o.comfortZone', o.comfortZone);
-            console.log('minWidth', minWidth);
-            console.log('testerWidth + o.comfortZone', (testerWidth + o.comfortZone));
-            console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
-            console.log('newWidth', newWidth);
+            //console.log('o.comfortZone', o.comfortZone);
+            //console.log('minWidth', minWidth);
+            console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
+            //console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
+            //console.log('newWidth', newWidth);
             //console.log('o.maxWidth', o.maxWidth);
             console.log('currentWidth', currentWidth);
             console.log('');
-            console.log('testSubject.width', testSubject.width())
-            console.log('testSubject.fontSize', testSubject.css('fontSize'))
-            console.log('testSubject.fontFamily', testSubject.css('fontFamily'))
-            console.log('testSubject.fontWeight', testSubject.css('fontWeight'))
-            console.log('testSubject.letterSpacing', testSubject.css('letterSpacing'))
-            console.log('testSubject.whiteSpace', testSubject.css('whiteSpace'))
 
         };   
 
