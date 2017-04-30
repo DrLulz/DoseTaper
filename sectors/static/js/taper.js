@@ -145,10 +145,10 @@ $.fn.autoGrowInput = function(o) {
             console.log('');
             console.log('testSubject.width', testSubject.width())
             console.log('testSubject.fontSize', testSubject.css('fontSize'))
-            //console.log('testSubject.fontFamily', testSubject.fontFamily())
-            //console.log('testSubject.fontWeight', testSubject.fontWeight())
-            //console.log('testSubject.letterSpacing', testSubject.letterSpacing())
-            //console.log('testSubject.whiteSpace', testSubject.whiteSpace())
+            console.log('testSubject.fontFamily', testSubject.css('fontFamily'))
+            console.log('testSubject.fontWeight', testSubject.css('fontWeight'))
+            console.log('testSubject.letterSpacing', testSubject.css('letterSpacing'))
+            console.log('testSubject.whiteSpace', testSubject.css('whiteSpace'))
 
         };   
 
