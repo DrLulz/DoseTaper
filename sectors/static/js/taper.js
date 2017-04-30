@@ -98,7 +98,8 @@ $.fn.autoGrowInput = function(o) {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            console.log('iOS');
+            console.log('verge.viewportW()', verge.viewportW());
+            console.log('verge.viewportH()', verge.viewportH());
             if (verge.viewportW() > verge.viewportH()) {
                 var portrait = 0;
             } else {
@@ -107,7 +108,6 @@ $.fn.autoGrowInput = function(o) {
         }
     }
 
-    console.log('orientation', orientation)
     o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
 
     this.filter('input:text').each(function(){
