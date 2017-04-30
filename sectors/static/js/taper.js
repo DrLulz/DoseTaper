@@ -36,6 +36,7 @@ $(document).ready(function() {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
+            console.log('iOS');
             window.dispatchEvent(new Event('resize'));
         }
     }
