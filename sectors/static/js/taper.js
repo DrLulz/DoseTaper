@@ -15,6 +15,14 @@ $(document).ready(function() {
         $('.picker__frame').css({ 'top': '15%'});
     }
     
+    if (mobile) {
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+        if (iOS) {
+            console.log('iOS');
+        }
+
+    }
     // Taper start date, grow/shrink input box to text
     $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     $(window).resize(function() {
@@ -108,20 +116,21 @@ $.fn.autoGrowInput = function(o) {
                 testSubject.html(escaped);
 
                 // Calculate new width + whether to change
-                var testerWidth = testSubject.width();
-                var newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth;
-                var currentWidth = input.width();
-                var isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth) || (newWidth > minWidth && newWidth < o.maxWidth);
+                var testerWidth = testSubject.width(),
+                    newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
+                    currentWidth = input.width(),
+                    isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
+                                         || (newWidth > minWidth && newWidth < o.maxWidth);
 
                 // Animate width
                 if (isValidWidthChange) {
                     input.width(newWidth);
                 }
-                console.log('testSubject', testSubject)
-                console.log('isValidWidthChange', isValidWidthChange)
-                console.log('testerWidth', testerWidth)
-                console.log('newWidth', newWidth)
-                console.log('input.width()', currentWidth)
+                //console.log('input', input)
+                //console.log('isValidWidthChange', isValidWidthChange)
+                //console.log('testerWidth', testerWidth)
+                //console.log('newWidth', newWidth)
+                //console.log('input.width()', currentWidth)
 
             };            
 
