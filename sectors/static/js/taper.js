@@ -171,7 +171,7 @@ $.fn.autoGrowInput = function(o) {
     });
     return this;
 }; // autoGrowInput()
-
+$("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
 
 function checkboxes() {
     $('.checkbox:not(.noiCheck)').iCheck({
