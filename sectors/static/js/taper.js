@@ -155,7 +155,7 @@ $.fn.autoGrowInput = function(o) {
                     }   
                 } else {
                     console.log('not first time here')
-                    localStorage.removeItem('initial_view');
+                    //localStorage.removeItem('initial_view');
                     input.width(newWidth);
                 }
 
