@@ -165,6 +165,7 @@ $.fn.autoGrowInput = function(o) {
             var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
             if (iOS) {
                 console.log('iOS');
+                $( '#input_date' ).val();
                 //$('tester').remove();
                 //testSubject.insertAfter(input);
                 //window.dispatchEvent(new Event('resize'));
