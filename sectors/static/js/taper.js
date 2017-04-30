@@ -136,7 +136,7 @@ function checkboxes() {
     $('.checkbox:not(.noiCheck)').iCheck({
         checkboxClass: 'icheckbox_flat-grey',
         radioClass: 'iradio_flat-grey',
-        increaseArea: '20%',
+        //increaseArea: '20%',
         ifChecked: function () {
             console.log($(this).next());
         },
