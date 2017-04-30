@@ -94,7 +94,27 @@ $.fn.autoGrowInput = function(o) {
     //    longDate = date.toLocaleString('en-us', options);
 
     //maxWidth: 1000,
-    o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
+    if (mobile) {
+        var deviceAgent = navigator.userAgent.toLowerCase();
+        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
+        if (iOS) {
+            console.log('iOS');
+            if (verge.viewportW() > verge.viewportH()) {
+                var orientation = 'landscape';
+            } else {
+                var orientation = 'portrait';
+            }
+        }
+    } else {
+        //var orientation = 0;
+    }
+
+
+    if (orientation == 'portrait') {
+        o = $.extend({ maxWidth: 185, minWidth: 0, comfortZone: 70 }, o);
+    } else {
+        o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
+    };
 
     this.filter('input:text').each(function(){
 
