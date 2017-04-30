@@ -100,7 +100,7 @@ $.fn.autoGrowInput = function(o) {
             }),
             check = function() {
 
-                if (val === (val = input.val())) {return;}
+                //if (val === (val = input.val())) {return;}
 
                 // Enter new content into testSubject
                 var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
