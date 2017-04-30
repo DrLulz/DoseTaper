@@ -109,7 +109,7 @@ $.fn.autoGrowInput = function(o) {
         //var orientation = 0;
     }
 
-
+    console.log('orientation', orientation)
     if (orientation == 'portrait') {
         o = $.extend({ maxWidth: 185, minWidth: 0, comfortZone: 70 }, o);
     } else {
