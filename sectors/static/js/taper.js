@@ -98,8 +98,6 @@ $.fn.autoGrowInput = function(o) {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            console.log('verge.viewportW()', verge.viewportW());
-            console.log('verge.viewportH()', verge.viewportH());
             if (verge.viewportW() > verge.viewportH()) {
                 var portrait = 0;
             } else {
@@ -148,10 +146,15 @@ $.fn.autoGrowInput = function(o) {
             if (isValidWidthChange) {
 
                 var initial_view = localStorage.getItem('initial_view');
+                console.log('initial_view', initial_view)
                 if ( !initial_view ) {
+                    console.log('initial_view = 0')
+                    localStorage.setItem('initial', '1');
+                    
                     input.width(newWidth);
                 } else {
-                    localStorage.setItem('initial', '1');
+                    console.log('initial_view = 1')
+                    
                     if (portrait) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
