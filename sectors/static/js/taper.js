@@ -19,8 +19,17 @@ $(document).ready(function() {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            console.log('iOS');
-            location.reload();
+            /* if my var reload isn't set locally.. in the first time it will be true */
+            if (!localStorage.getItem("reload")) {
+                /* set reload locally and then reload the page */
+                localStorage.setItem("reload", "true");
+                location.reload();
+            }
+            /* after reload clear the localStorage */
+            else {
+                localStorage.removeItem("reload");
+                // localStorage.clear(); // an option
+            }
         }
 
     }
