@@ -157,7 +157,7 @@ $.fn.autoGrowInput = function(o) {
                 console.log('WIDTH CHANGED');
                 input.width(newWidth);
             }
-            //console.log('viewportW()', verge.viewportW());
+            console.log('viewportW()', verge.viewportW());
             if (testerWidth === document.getElementById('tester').offsetWidth) {
                 console.log('testerWidth', testerWidth)
             } else {
