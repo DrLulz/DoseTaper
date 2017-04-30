@@ -107,14 +107,14 @@ $.fn.autoGrowInput = function(o) {
                 // Calculate new width + whether to change
                 var testerWidth = testSubject.width(),
                     newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
-                    currentWidth = input.width(),
-                    isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
-                                         || (newWidth > minWidth && newWidth < o.maxWidth);
+                    currentWidth = input.width(); //,
+                    //isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
+                    //                     || (newWidth > minWidth && newWidth < o.maxWidth);
 
                 // Animate width
-                if (isValidWidthChange) {
-                    input.width(newWidth);
-                }
+                //if (isValidWidthChange) {
+                input.width(newWidth);
+                //}
 
             };            
 
