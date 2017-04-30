@@ -69,7 +69,7 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
-
+    console.log('FIRE: autoGrowInput()')
     //var options = {year: "numeric", month: "long", day: "numeric"};
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
