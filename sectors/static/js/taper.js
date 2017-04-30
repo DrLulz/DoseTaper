@@ -145,13 +145,12 @@ $.fn.autoGrowInput = function(o) {
             // Animate width
             if (isValidWidthChange) {
                 input.width(newWidth);
-
+                console.log('portrait', portrait);
                 if (!localStorage.getItem('initial_view')) {
                     //console.log('first time here')
                     //localStorage.setItem('initial_view', 'true');
 
                     if (portrait) {
-                        console.log('portrait')
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
                         input.width(newWidth);
