@@ -123,7 +123,6 @@ $.fn.autoGrowInput = function(o) {
             // Calculate new width + whether to change
             //var testerWidth = testSubject.width();
             var testerWidth = $( 'tester' ).width();
-            $( '#tester' ).css({width: testerWidth});
             // if testerWidth plus comfortZone is greater or equal to minWidth 
                 // newWidth is equal to testerWidth + comfortZone
                 // else newWidth is equal to minWidth
