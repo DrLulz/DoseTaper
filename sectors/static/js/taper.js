@@ -145,20 +145,21 @@ $.fn.autoGrowInput = function(o) {
             // Animate width
             if (isValidWidthChange) {
 
-                var initial_view = localStorage.getItem('initial_view');
-                console.log('initial_view', initial_view)
-                if ( !initial_view ) { // never been here
+                if (!localStorage.getItem('initial_view')) {
                     console.log('first time here')
+                    localStorage.setItem('initial_view', 'true');
                     if (portrait) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
                         input.width(newWidth);
-                    }     
-                    localStorage.setItem('initial', '1');
+                    }   
                 } else {
                     console.log('not first time here')
+                    localStorage.removeItem('initial_view');
                     input.width(newWidth);
                 }
+
+
 
             }
             console.log('viewportW()', verge.viewportW());
