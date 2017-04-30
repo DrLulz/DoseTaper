@@ -119,6 +119,8 @@ $.fn.autoGrowInput = function(o) {
                 }
 
                 console.log('testerWidth', testerWidth)
+                console.log('newWidth', newWidth)
+                console.log('input.width()', currentWidth)
 
             };            
 
