@@ -155,7 +155,8 @@ $.fn.autoGrowInput = function(o) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
                         input.width(newWidth);
-                    }   
+                    }
+                    localStorage.setItem('initial_view', 'true');
                 } else {
                     //console.log('not first time here')
                     //localStorage.removeItem('initial_view');
@@ -264,5 +265,5 @@ $(window).bind('beforeunload', function(){
 });
 
 $(window).load(function () {
-    localStorage.setItem('initial_view', 'true');
+    //localStorage.setItem('initial_view', 'true');
 });
