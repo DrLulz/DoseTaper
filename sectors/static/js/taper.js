@@ -126,6 +126,9 @@ $.fn.autoGrowInput = function(o) {
 
                 // Calculate new width + whether to change
                 var testerWidth = testSubject.width(),
+                    // if testerWidth plus comfortZone is greater or equal to minWidth 
+                        // newWidth is equal to testerWidth + comfortZone
+                        // else newWidth is equal to minWidth
                     newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
                     currentWidth = input.width(),
                     isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
@@ -141,8 +144,12 @@ $.fn.autoGrowInput = function(o) {
                 
                 //console.log('testSubject', testSubject)
                 console.log('testerWidth', testerWidth);
-                console.log('newWidth', newWidth);
+                console.log('o.comfortZone', o.comfortZone);
                 console.log('minWidth', minWidth);
+                console.log('testerWidth + o.comfortZone', (testerWidth + o.comfortZone));
+                console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
+                console.log('newWidth', newWidth);
+                console.log('');
                 console.log('o.maxWidth', o.maxWidth);
                 console.log('currentWidth', currentWidth);
                 console.log('');
