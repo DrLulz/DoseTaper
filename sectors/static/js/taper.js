@@ -111,6 +111,7 @@ $.fn.autoGrowInput = function(o) {
 
     console.log('orientation', orientation)
     if (orientation == 'portrait') {
+        console.log('mobile portrait')
         o = $.extend({ maxWidth: 185, minWidth: 0, comfortZone: 70 }, o);
     } else {
         o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
