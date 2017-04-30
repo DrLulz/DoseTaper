@@ -15,12 +15,6 @@ $(document).ready(function() {
         $('.picker__frame').css({ 'top': '15%'});
     }
     
-    // Taper start date, grow/shrink input box to text
-    //$("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
-    //$(window).resize(function() {
-    //    $("input.autogrow").autoGrowInput({minWidth: 30, comfortZone: 20});
-    //});
-    
     // Taper start date, red on hover
     $('.date-wrapper').mouseover(function() {
         $(this).addClass('date-hover');
@@ -46,7 +40,8 @@ function date_picker() {
             today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
             clear: '',
             close: '<i class="fa fa-times" aria-hidden="true"></i>',
-            //containerHidden: '#hidden_input_date',
+            formatSubmit: 'mm/dd/yyyy',
+            hiddenName: true,
             onStart: function () {
                 var date = new Date();
                 this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
@@ -70,88 +65,8 @@ function date_picker() {
         on( 'mousedown', function(event) {
             event.preventDefault()
         })
-    console.log(picker_open_close.get());
     update_span();
 }; // datepicker()
-
-
-$.fn.autoGrowInput = function(o) {
-    //var options = {year: "numeric", month: "long", day: "numeric"};
-    //var date = new Date(),
-    //    longDate = date.toLocaleString('en-us', options);
-
-    //maxWidth: 1000,
-    if (mobile) {
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-        if (iOS) {
-            if (verge.viewportW() > verge.viewportH()) {
-                var portrait = 0;
-            } else {
-                var portrait = 1;
-            }
-        }
-    }
-
-    o = $.extend({ maxWidth: verge.viewportW(), minWidth: 0, comfortZone: 70 }, o);
-
-    this.filter('input:text').each(function(){
-
-        var minWidth = o.minWidth || $(this).width();
-        var val = '';
-        var input = $(this);
-        var testSubject = $('<tester/>').attr('id', 'tester').css({
-            position: 'absolute',
-            top: -9999,
-            left: -9999,
-            width: 'auto',
-            fontSize: input.css('fontSize'),
-            fontFamily: input.css('fontFamily'),
-            fontWeight: input.css('fontWeight'),
-            letterSpacing: input.css('letterSpacing'),
-            whiteSpace: 'nowrap'
-        });
-        var check = function() {
-
-            if (val === (val = input.val())) {return;}
-
-            // Enter new content into testSubject
-            var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            testSubject.html(escaped);
-            //testSubject.html(val);
-
-            // Calculate new width + whether to change
-            //var testerWidth = testSubject.width();
-            var testerWidth = $( 'tester' ).width();
-            // if testerWidth plus comfortZone is greater or equal to minWidth 
-                // newWidth is equal to testerWidth + comfortZone
-                // else newWidth is equal to minWidth
-            var newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth;
-            var currentWidth = input.width();
-            var isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth) || (newWidth > minWidth && newWidth < o.maxWidth);
-
-            // Animate width
-            if (isValidWidthChange) {
-                input.width(newWidth);
-            }
-
-
-        };   
-
-        testSubject.insertAfter(input);
-
-        //$(this).bind('keyup keydown blur update', check);
-        //$(this).bind('keyup load blur update change', check).bind('keydown', function() {
-        //    setTimeout(check);
-        //});
-        $(this).bind('change', check);
-        check();
-        $(window).load(check());
-
-
-    });
-    return this;
-}; // autoGrowInput()
 
 
 function checkboxes() {
@@ -202,79 +117,3 @@ function checkbox_resize() {
         }
     });
 };
-
-
-
-/* $('<div/>', {
-    id: someID,
-    className: 'foobar',
-    html: content
-}); */
-
-/* $(window).bind('beforeunload', function(){
-    //save info somewhere
-    //return 'are you sure you want to leave?';
-    localStorage.removeItem('initial_view');
-});
-
-$(window).load(function () {
-    localStorage.removeItem('initial_view');
-    //localStorage.setItem('initial_view', 'true');
-}); */
-
-/*     if (mobile) {
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-        if (iOS) {
-            if (!localStorage.getItem('reload')) {
-                localStorage.setItem('reload', 'true');
-                location.reload();
-            } else {
-                localStorage.removeItem('reload');
-            }
-        }
-    } */
-
-            //console.log('viewportW()', verge.viewportW());
-            //if (testerWidth === document.getElementById('tester').offsetWidth) {
-            //    console.log('testerWidth', testerWidth)
-            //} else {
-            //    console.log('testerWidth != js testerWidth')
-            //    console.log('testerWidth', testerWidth)
-            //    console.log('document.getElementById("tester").offsetWidth', document.getElementById('tester').offsetWidth)
-            //}
-            //console.log('o.comfortZone', o.comfortZone);
-            //console.log('minWidth', minWidth);
-            //console.log('testerWidth + o.comfortZone = newWidth', (testerWidth + o.comfortZone));
-            //console.log('(testerWidth + o.comfortZone) >= minWidth', ((testerWidth + o.comfortZone) >= minWidth))
-            //console.log('newWidth', newWidth);
-            //console.log('o.maxWidth', o.maxWidth);
-            //console.log('currentWidth', currentWidth);
-            //console.log('');
-
-/*                 console.log('portrait', portrait);
-                console.log('initial_view', localStorage.getItem('initial_view'))
-                if (!localStorage.getItem('initial_view')) {
-                    //console.log('first time here')
-                    //localStorage.setItem('initial_view', 'true');
-
-                    if (portrait == 1) {
-                        input.width(currentWidth - verge.viewportW() + o.comfortZone);
-                    } else {
-                        input.width(newWidth);
-                    }
-                    localStorage.setItem('initial_view', 'true');
-                } else {
-                    //console.log('not first time here')
-                    //localStorage.removeItem('initial_view');
-                    input.width(newWidth);
-                } */
-
-/*     if (mobile) {
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
-        if (iOS) {
-            console.log('iOS');
-            //window.dispatchEvent(new Event('resize'));
-        }
-    } */
