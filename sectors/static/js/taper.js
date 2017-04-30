@@ -147,20 +147,17 @@ $.fn.autoGrowInput = function(o) {
 
                 var initial_view = localStorage.getItem('initial_view');
                 console.log('initial_view', initial_view)
-                if ( !initial_view ) {
-                    console.log('initial_view = 0')
-                    localStorage.setItem('initial', '1');
-                    
-                    input.width(newWidth);
-                } else {
-                    console.log('initial_view = 1')
-                    
+                if ( !initial_view ) { // never been here
+                    console.log('first time here')
                     if (portrait) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
                         input.width(newWidth);
-                    }
-
+                    }     
+                    localStorage.setItem('initial', '1');
+                } else {
+                    console.log('not first time here')
+                    input.width(newWidth);
                 }
 
             }
