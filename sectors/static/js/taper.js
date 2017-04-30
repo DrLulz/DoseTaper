@@ -165,9 +165,9 @@ $.fn.autoGrowInput = function(o) {
             if (iOS) {
                 console.log('iOS');
                 $('tester').remove();
-                testSubject.insertAfter(input);
+                //testSubject.insertAfter(input);
                 //window.dispatchEvent(new Event('resize'));
-                check();
+                //check();
             }
         }
 
