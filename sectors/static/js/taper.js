@@ -153,6 +153,7 @@ $.fn.autoGrowInput = function(o) {
 
             // Animate width
             if (isValidWidthChange) {
+                console.log('WIDTH CHANGED');
                 input.width(newWidth);
             }
             //console.log('viewportW()', verge.viewportW());
