@@ -19,15 +19,15 @@ $(document).ready(function() {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
-            console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
+            //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             if (!localStorage.getItem('reload')) {
                 /* set reload locally and then reload the page */
                 localStorage.setItem('reload', 'true');
-                //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
+                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
                 location.reload();
             } else {
-                //localStorage.removeItem('reload');
-                //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
+                localStorage.removeItem('reload');
+                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             }
         }
 
