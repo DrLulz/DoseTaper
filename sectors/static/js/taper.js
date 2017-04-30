@@ -23,11 +23,11 @@ $(document).ready(function() {
             if (!localStorage.getItem('reload')) {
                 /* set reload locally and then reload the page */
                 localStorage.setItem('reload', 'true');
-                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
-                //location.reload();
+                //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
+                location.reload();
             } else {
-                localStorage.removeItem('reload');
-                console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
+                //localStorage.removeItem('reload');
+                //console.log('localStorage.getItem("reload")', localStorage.getItem('reload'));
             }
         }
 
