@@ -69,6 +69,7 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
+    
     //console.log('FIRE: autoGrowInput()');
     console.log('viewportW()', verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
@@ -83,7 +84,7 @@ $.fn.autoGrowInput = function(o) {
     }, o);
 
     this.filter('input:text').each(function(){
-        console.log('$(this).width()', $(this).width());
+        //console.log('$(this).width()', $(this).width());
         var minWidth = o.minWidth || $(this).width(),
             val = '',
             input = $(this),

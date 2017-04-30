@@ -9284,7 +9284,8 @@ body#bumper {
         font-size: 2.41632rem;
         border: none;
         text-indent: 10px;
-        display: inline-block; }
+        display: inline-block;
+        box-sizing: border-box; }
         @media (min-width: 30em) and (max-width: 48.063em) {
           .fl-form .taper-params .cal-param .date-wrapper input[type="text"] {
             font-size: 2.41632rem; } }
