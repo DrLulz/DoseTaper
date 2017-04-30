@@ -37,7 +37,7 @@ $(document).ready(function() {
         var iOS = deviceAgent.match(/(iPad|iPhone|iPod)/i);
         if (iOS) {
             console.log('iOS');
-            window.dispatchEvent(new Event('resize'));
+            //window.dispatchEvent(new Event('resize'));
         }
     }
     
@@ -89,9 +89,6 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
-
-    //console.log('FIRE: autoGrowInput()');
-    console.log('viewportW()', verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
@@ -138,14 +135,17 @@ $.fn.autoGrowInput = function(o) {
                 if (isValidWidthChange) {
                     input.width(newWidth);
                 }
+                console.log('viewportW()', verge.viewportW());
+
                 //console.log('input', input)
                 
                 //console.log('testSubject', testSubject)
-                console.log('testerWidth', testerWidth)
-                console.log('newWidth', newWidth)
-                console.log('minWidth', minWidth)
-                console.log('o.maxWidth', o.maxWidth)
-                console.log('currentWidth', currentWidth)
+                console.log('testerWidth', testerWidth);
+                console.log('newWidth', newWidth);
+                console.log('minWidth', minWidth);
+                console.log('o.maxWidth', o.maxWidth);
+                console.log('currentWidth', currentWidth);
+                console.log('');
 
             };            
 
