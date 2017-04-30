@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
     } */
     // Taper start date, grow/shrink input box to text
-    $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
+    //$("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     $(window).resize(function() {
         $("input.autogrow").autoGrowInput({minWidth:30,comfortZone:20});
     });
