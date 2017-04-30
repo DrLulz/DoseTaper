@@ -70,7 +70,7 @@ function date_picker() {
 
 $.fn.autoGrowInput = function(o) {
     //console.log('FIRE: autoGrowInput()');
-    console.log(verge.viewportW());
+    console.log('viewportW()', verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
@@ -100,7 +100,7 @@ $.fn.autoGrowInput = function(o) {
             }),
             check = function() {
 
-                //if (val === (val = input.val())) {return;}
+                if (val === (val = input.val())) {return;}
 
                 // Enter new content into testSubject
                 var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -117,6 +117,8 @@ $.fn.autoGrowInput = function(o) {
                 if (isValidWidthChange) {
                     input.width(newWidth);
                 }
+
+                console.log('testerWidth', testerWidth)
 
             };            
 
