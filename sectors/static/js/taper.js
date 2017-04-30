@@ -69,14 +69,15 @@ function date_picker() {
 
 
 $.fn.autoGrowInput = function(o) {
-    console.log('FIRE: autoGrowInput()');
+    //console.log('FIRE: autoGrowInput()');
     console.log(verge.viewportW());
     //var options = {year: "numeric", month: "long", day: "numeric"};
     //var date = new Date(),
     //    longDate = date.toLocaleString('en-us', options);
 
     o = $.extend({
-        maxWidth: 1000,
+        //maxWidth: 1000,
+        maxWidth: verge.viewportW(),
         minWidth: 0,
         comfortZone: 70
     }, o);
@@ -108,14 +109,14 @@ $.fn.autoGrowInput = function(o) {
                 // Calculate new width + whether to change
                 var testerWidth = testSubject.width(),
                     newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
-                    currentWidth = input.width(); //,
-                    //isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
-                    //                     || (newWidth > minWidth && newWidth < o.maxWidth);
+                    currentWidth = input.width(),
+                    isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
+                                         || (newWidth > minWidth && newWidth < o.maxWidth);
 
                 // Animate width
-                //if (isValidWidthChange) {
-                input.width(newWidth);
-                //}
+                if (isValidWidthChange) {
+                    input.width(newWidth);
+                }
 
             };            
 
