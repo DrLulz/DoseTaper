@@ -150,7 +150,7 @@ $.fn.autoGrowInput = function(o) {
                     //console.log('first time here')
                     //localStorage.setItem('initial_view', 'true');
 
-                    if (portrait) {
+                    if (portrait == 1) {
                         input.width(currentWidth - verge.viewportW() + o.comfortZone);
                     } else {
                         input.width(newWidth);
