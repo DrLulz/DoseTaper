@@ -75,7 +75,7 @@ $.fn.autoGrowInput = function(o) {
     //    longDate = date.toLocaleString('en-us', options);
 
     o = $.extend({
-        maxWidth: 1000,
+        maxWidth: 100,
         minWidth: 0,
         comfortZone: 70
     }, o);
