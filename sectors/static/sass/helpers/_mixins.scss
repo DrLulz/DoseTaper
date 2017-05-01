@@ -145,3 +145,69 @@
         }
     }
 }
+
+
+
+
+$colors-list: (
+    1: ( p: #404d5b, num: #81A2BE, bgn: #e8e8e8, lab: #81A2BE, txt: #696969, bdn: #cbc4c6, bda: #A8A8A8, bdf: #81A2BE),
+    2: ( p: #404d5b, num: #DC9656, bgn: #d0d6d6, lab: #DC9656, txt: #696969, bdn: #cbc4c6, bda: #A8A8A8, bdf: #DC9656), 
+    3: ( p: #404d5b, num: #8F9D6A, bgn: #f0efee, lab: #8F9D6A, txt: #696969, bdn: #cbc4c6, bda: #A8A8A8, bdf: #8F9D6A),
+    4: ( p: #404d5b, num: #B294BB, bgn: #f9f7f6, lab: #B294BB, txt: #696969, bdn: #cbc4c6, bda: #A8A8A8, bdf: #B294BB),
+    5: ( p: #ffffff, num: #CC6666, bgn: #6C6C6C, lab: #CC6666, txt: #A09C9C, bdn: #cbc4c6, bda: #A8A8A8, bdf: #CC6666),
+    6: ( p: #ffffff, num: #ffdf5f, bgn: #2f3238, lab: #ffdf5f, txt: #b5b5b5, bdn: #cbc4c6, bda: #A8A8A8, bdf: #ffdf5f)
+);
+
+@mixin phase-colors() {
+    @for $i from 1 through length($colors-list) {
+
+        $map: map-deep-get($colors-list, $i);
+        $p:   map-get($map, p);
+        $num: map-get($map, num);
+        $bgn: map-get($map, bgn);
+        $lab: map-get($map, lab);
+        $txt: map-get($map, txt);
+        $bdn: map-get($map, bdn);
+        $bda: map-get($map, bda);
+        $bdf: map-get($map, bdf);
+
+        .phase:nth-of-type( #{length($colors-list)}n + #{$i}) {
+            background-color: $bgn;
+            .phase-label {
+                color: $p;}
+            .phase-num {
+                color: $num;}
+            
+            label.fl-label {
+                color: lighten($lab, 0.5);}
+
+            input.fl-input {
+                color: $txt;
+                border: 3px solid $bdn;
+
+                &::placeholder {
+                    color: $lab;
+                }
+                &:-moz-placeholder {
+                    color: $lab;
+                }
+                &::-moz-placeholder {
+                    color: $lab;
+                }
+                &:-ms-input-placeholder {
+                    color: $lab;
+                }
+                &::-webkit-input-placeholder {
+                    color: $lab;
+                }
+            }
+            .fl-is-active input.fl-input {
+                border-color: $bda;
+            }
+            .fl-has-focus input.fl-input {
+                border-color: $bdf;    
+            }
+        }
+
+    }
+}

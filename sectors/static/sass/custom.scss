@@ -451,6 +451,12 @@ body {
     }
   }
 
+  .container {
+    @include mq($until: md) {
+        max-width: 85%;
+    }    
+  }
+
   .content {
     height: 100%;
     padding-top: 60px;

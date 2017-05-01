@@ -8,12 +8,16 @@ $orange: #dc9656;
 $green: #8f9d6a;
 $purple: #b294bb;
 $red: #cc6666;
+$taper-params: #404d5b;
+$light-label: #a8a8a8;
+$light-text: #696969;
 
 // http://www.color-hex.com/color/c5d3c3
 $date-hover: $red;
 $font-opensans: "Open Sans", sans-serif;
 $font-contrail: 'Contrail One', cursive;
 @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:400,400i,600,600i,700,700i';
+@import 'https://fonts.googleapis.com/css?family=Bangers';
 
 .navbar.nav-default {
    height: 60px;
@@ -64,6 +68,10 @@ body#bumper {
 
 #nl_taper {
    margin-top: 60px;
+   section {
+    margin: 0 -15px;
+    width: initial;
+   }
 }
 
 
@@ -71,12 +79,16 @@ body#bumper {
 /* Taper Paramaters
 ---------------------------------------------------------------------------*/
 
+
+
 /* Date, Medication, Sizes
 --------------------------------------------------*/
 
 .fl-form {
    .taper-params {
-      padding: 3em 1.5em;
+      padding: 5em 1.5em;
+      color: $taper-params;
+      background-color: #f9f7f6;
 
       /* Date
       --------------------------------------------------*/
@@ -124,7 +136,8 @@ body#bumper {
                border: none;
                width: initial;
                display: inline-block;
-               color: rgba(0, 0, 0, 0.54);
+               //color: rgba(0, 0, 0, 0.54);
+               color: $taper-params;
 
                .fa-calendar-o:before {
                   padding: 1px;
@@ -203,9 +216,9 @@ body#bumper {
             margin: 0 auto;
             border: none;
             //border: 1px solid orange;
-              @include mq($from: lg) {
-                 float: left;
-              }
+            @include mq($from: lg) {
+               float: left;
+            }
          }
 
          tr {
@@ -242,17 +255,57 @@ body#bumper {
          }
       }
    }
+}
 
+
+
+
+
+
+/* Phases
+---------------------------------------------------------------------------*/
+// label.fl-label
+$colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
+
+//@for $i from 1 through length($colors) {
+//    .phase:nth-of-type( #{length($colors)}n + #{$i}) .phase-num {
+//        color: nth($colors, $i)
+//    }
+//}
+
+@include phase-colors();
+
+
+.fl-form {
    .phase {
       position: relative;
       @include mq($from: md) {
          padding: 2em 0;
       }
 
+      .phase-label {
+        position: relative;
+        font-family: 'Bangers', cursive;
+        @include ms-respond(font-size, 1.5);
+        top: -10px;
+        @include mq($until: md) {
+            top: 5px;
+        }
+        
+        //background: #e8e8e8;
+        //color: rgba(64, 77, 91, 0.3);
+        //text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
+        //::-moz-selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
+        //::selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
+
+        left: 15px;
+        opacity: 0.3;
+      }
+
       .phase-num {
          //['#81A2BE', '#DC9656', '#8F9D6A', '#B294BB', '#CC6666']
          font-family: $font-contrail;
-         color: #81a2be;
+         //color: #81a2be;
          text-align: center;
          position: absolute;
 
@@ -301,6 +354,7 @@ body#bumper {
       }
    }
 }
+
 
 /* Date Picker PopUp
 --------------------------------------------------*/
