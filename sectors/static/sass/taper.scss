@@ -288,6 +288,7 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
         font-family: 'Bangers', cursive;
         @include ms-respond(font-size, 1.5);
         top: -10px;
+        width: 50%;
         @include mq($until: md) {
             top: 5px;
         }

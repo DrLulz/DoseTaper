@@ -9564,6 +9564,7 @@ body#bumper {
     font-family: 'Bangers', cursive;
     font-size: 1.90919rem;
     top: -10px;
+    width: 50%;
     left: 15px;
     opacity: 0.3; }
     @media (min-width: 30em) and (max-width: 48.063em) {
