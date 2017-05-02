@@ -9889,7 +9889,10 @@ input, textarea {
 /
 */
 :root {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: #303030;
+  background-image: url(../img/dark-stripes.png);
+  background-repeat: repeat; }
 
 html,
 body {

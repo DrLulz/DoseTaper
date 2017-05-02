@@ -7,12 +7,15 @@
 
 :root {
   @include rem-baseline;
+    //background-color: #232323;
+  background-color: #303030;
+  background-image: url(../img/dark-stripes.png);
+  background-repeat:repeat;
 }
 
 html,
 body {
   color: $dark-grey;
-  //background-color: #232323;
   background-color: #303030;
   background-image: url(../img/dark-stripes.png);
   background-repeat:repeat;
