@@ -47,14 +47,27 @@
 
     {% block container %}{% endblock %}
 
+
     {# JS #}
+
     <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
+
+
+
+    {# INTRO #}
+    
     {% if request.url_rule.endpoint == "intro.index" %}
         <script src="{{ url_for('static', filename='js/intro.min.js') }}"></script>
     {% endif %}
+
+    
+
+    {# TAPER #}
+
     {% if request.url_rule.endpoint == "taper.index" %}
         <script src="{{ url_for('static', filename='js/taper.min.js') }}"></script>
     {% endif %}
+
 
     {#{% include 'footer.html' %}#}
 </body>

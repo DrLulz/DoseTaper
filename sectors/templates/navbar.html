@@ -1,8 +1,8 @@
 {% set navigation = [('#', 'Login', 'login-nav'), ('#03', 'Disclaimer', '')] %}
 {% if request.url_rule.endpoint == "intro.index" %}
-    <nav class="navbar navbar-fixed-top">
+    <nav id="navigation" class="navbar navbar-fixed-top">
 {% else %}
-    <nav class="navbar nav-default navbar-fixed-top">
+    <nav id="navigation" class="navbar nav-default navbar-fixed-top">
 {% endif %}
     <div class="container">
         {% if request.url_rule.endpoint == "intro.index" %}

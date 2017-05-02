@@ -27,8 +27,41 @@ $(document).ready(function() {
     checkboxes();
     checkbox_resize();
 
+    /* headroom js
+    ---------------------------------------------------------------------------*/
+    $('nav').headroom({
+        'tolerance': 5,
+        'offset': 205,
+        'classes': {
+            'initial'  : 'animated',
+            'pinned'   : 'slideDown',
+            'unpinned' : 'slideUp'
+            }
+        });
+    
+    $( '.phase' ).last().addDelete();
 });
 
+
+$.fn.addDelete = function() {
+    
+    this.append($('<div/>', {class: 'phase-add-delete v-align', html: '<div class="phase-del"></div><div class="phase-add"></div>'}));
+    
+    $('.phase-add, .phase-del').
+        on( 'mouseover', function() {
+            $(this).filter(':not(:animated)').animate({
+                width: '100%'
+            },'fast');
+        }).
+        on( 'mouseout', function() {
+            $(this).animate({
+                width: '80%'
+            },'fast');
+        });
+
+
+
+};
 
 function date_picker() {
     var update_span = function () {
@@ -79,6 +112,20 @@ function checkboxes() {
         },
     });
     $('.checkbox:not(.noiCheck)').
+        on('ifChecked', function(event){
+            $(this).parent().next().addClass('checked');
+        }).
+        on('ifUnchecked', function(event){
+            $(this).parent().next().removeClass('checked');
+        });
+
+    $('.checkbox.qod:not(.noiCheck)').iCheck({
+        checkboxClass: 'icheckbox_futurico',
+        radioClass: 'iradio_futurico',
+        increaseArea: '20%',
+        ifChecked: function () {},
+    });
+    $('.checkbox.qod:not(.noiCheck)').
         on('ifChecked', function(event){
             $(this).parent().next().addClass('checked');
         }).

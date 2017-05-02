@@ -62,18 +62,135 @@ $font-contrail: 'Contrail One', cursive;
    -webkit-transform: translateY(-50%);
 }
 
-body#bumper {
-   background-color: #f9f7f6;
-}
-
 #nl_taper {
-   margin-top: 60px;
+   padding-top: 60px;
+
    section {
-    margin: 0 -15px;
-    width: initial;
+      margin: 0 -15px;
+      width: initial;
    }
 }
 
+
+/* HIDE NAVBAR ON SCROLL
+-------------------------------------------------*/
+.headroom--not-top:not(.slideUp) {
+   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.animated {
+   -webkit-animation-duration: .5s;
+   -moz-animation-duration: .5s;
+   -o-animation-duration: .5s;
+   animation-duration: .5s;
+   -webkit-animation-fill-mode: both;
+   -moz-animation-fill-mode: both;
+   -o-animation-fill-mode: both;
+   animation-fill-mode: both;
+}
+
+
+/* slideDown
+-------------------------------------------------*/
+
+@-webkit-keyframes slideDown {
+   0% {
+      -webkit-transform: translateY(-100%);
+   }
+
+   100% {
+      -webkit-transform: translateY(0);
+   }
+}
+
+@-moz-keyframes slideDown {
+   0% {
+      -moz-transform: translateY(-100%);
+   }
+
+   100% {
+      -moz-transform: translateY(0);
+   }
+}
+
+@-o-keyframes slideDown {
+   0% {
+      -o-transform: translateY(-100%);
+   }
+
+   100% {
+      -o-transform: translateY(0);
+   }
+}
+
+@keyframes slideDown {
+   0% {
+      transform: translateY(-100%);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}
+
+.animated.slideDown {
+   -webkit-animation-name: slideDown;
+   -moz-animation-name: slideDown;
+   -o-animation-name: slideDown;
+   animation-name: slideDown;
+}
+
+
+/* slideUp
+-------------------------------------------------*/
+
+@-webkit-keyframes slideUp {
+   0% {
+      -webkit-transform: translateY(0);
+   }
+
+   100% {
+      -webkit-transform: translateY(-100%);
+   }
+}
+
+@-moz-keyframes slideUp {
+   0% {
+      -moz-transform: translateY(0);
+   }
+
+   100% {
+      -moz-transform: translateY(-100%);
+   }
+}
+
+@-o-keyframes slideUp {
+   0% {
+      -o-transform: translateY(0);
+   }
+
+   100% {
+      -o-transform: translateY(-100%);
+   }
+}
+
+@keyframes slideUp {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(-100%);
+   }
+}
+
+.animated.slideUp {
+   -webkit-animation-name: slideUp;
+   -moz-animation-name: slideUp;
+   -o-animation-name: slideUp;
+   animation-name: slideUp;
+}
 
 
 /* Taper Paramaters
@@ -265,7 +382,7 @@ body#bumper {
 /* Phases
 ---------------------------------------------------------------------------*/
 // label.fl-label
-$colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
+$colors: #81a2be, #dc9656, #8f9d6a, #b294bb, #cc6666;
 
 //@for $i from 1 through length($colors) {
 //    .phase:nth-of-type( #{length($colors)}n + #{$i}) .phase-num {
@@ -275,7 +392,6 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
 
 @include phase-colors();
 
-
 .fl-form {
    .phase {
       position: relative;
@@ -284,23 +400,45 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
       }
 
       .phase-label {
-        position: relative;
-        font-family: 'Bangers', cursive;
-        @include ms-respond(font-size, 1.5);
-        top: -10px;
-        width: 50%;
-        @include mq($until: md) {
-            top: 5px;
-        }
-        
-        //background: #e8e8e8;
-        //color: rgba(64, 77, 91, 0.3);
-        //text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
-        //::-moz-selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
-        //::selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
+         position: absolute;
+         font-family: 'Bangers', cursive;
+         @include ms-respond(font-size, 1.5);
+         top: 10px;
+         left: 15px;
+         opacity: 0.3;
+         width: 20%;
 
-        left: 15px;
-        opacity: 0.3;
+         //background: #e8e8e8;
+         //color: rgba(64, 77, 91, 0.3);
+         //text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
+         //::-moz-selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
+         //::selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
+      }
+
+      .phase-qod {
+         position: absolute;
+         font-family: 'Bangers', cursive;
+         @include ms-respond(font-size, 1.5);
+         top: 10px;
+         right: 15px;
+         opacity: 0.3;
+
+         label {
+            line-height: 1;
+            vertical-align: middle;
+            margin: 0;
+            padding-left: 0.25rem;
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            &.checked {
+               //color: rgba(64, 77, 91, 0.3);
+               color: green;
+               text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
+            }
+         }
       }
 
       .phase-num {
@@ -309,6 +447,7 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
          //color: #81a2be;
          text-align: center;
          position: absolute;
+         padding-right: 0;
 
          p {
             line-height: 1.5;
@@ -319,6 +458,10 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
             margin-bottom: -12px;
             padding-bottom: 3px;
          }
+      }
+
+      .phase-spacer {
+         float: right;
       }
 
       .phase-params {
@@ -464,3 +607,69 @@ $colors: #81A2BE, #DC9656, #8F9D6A, #B294BB, #CC6666;
    }
 }
 
+/* 
+---------------------------------------------------------------------------*/
+.phase-add-delete {
+   height: 100px;
+   width: 60px;
+   @include mq($until: md) {
+      height: 80px;
+      width: 50px;
+   }
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   color: #f9f7f6;
+   @include ms-respond(font-size, 2);
+   text-align: center;
+   line-height: 0;
+
+   .phase-del {
+      background-color: $red;
+      height: 50%;
+      width: 80%;
+      float: right;
+      position: relative;
+      -webkit-transition: left .1s;
+      -moz-transition: left .1s;
+      transition: left .1s;
+
+      &:after {
+         content: '\f00d';
+         font-family: 'FontAwesome';
+         position: absolute;
+         top: 50%;
+         right: 0;
+         left: 3px;
+      }
+
+      &:hover:after {
+         left: 0;
+      }
+   }
+
+   .phase-add {
+      background-color: $blue;
+      height: 50%;
+      //width: 50px;
+      width: 80%;
+      float: right;
+      position: relative;
+      -webkit-transition: left .1s;
+      -moz-transition: left .1s;
+      transition: left .1s;
+
+      &:after {
+         content: '\f067';
+         font-family: 'FontAwesome';
+         position: absolute;
+         top: 50%;
+         right: 0;
+         left: 3px;
+      }
+
+      &:hover:after {
+         left: 0;
+      }
+   }
+}

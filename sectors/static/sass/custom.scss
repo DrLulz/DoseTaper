@@ -12,6 +12,10 @@
 html,
 body {
   color: $dark-grey;
+  //background-color: #232323;
+  background-color: #303030;
+  background-image: url(../img/dark-stripes.png);
+  background-repeat:repeat;
 
   @include font-smoothing;
 
@@ -28,6 +32,11 @@ body {
     color: $off-white;
     background-color: $blueberry;
   }
+
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
 }
 
 *,
