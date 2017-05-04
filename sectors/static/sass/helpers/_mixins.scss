@@ -6,6 +6,13 @@
     /* IE9 not supported */
 }
 
+@mixin transition--duration($args) {
+    -webkit-transition-duration: $args;
+    -moz-transition-duration: $args;
+    transition-duration: $args;
+    /* IE9 not supported */
+}
+
 @mixin transition-property($args) {
     -webkit-transition-property: $args;
     -moz-transition-property: $args;
@@ -49,6 +56,21 @@
     -webkit-animation-duration: $args;
     -moz-animation-duration: $args;
     animation-duration: $args;
+    /* IE9 not supported */
+}
+
+@mixin animation--delay($args) {
+    -webkit-animation-delay: $args;
+    -moz-animation-delay: $args;
+    animation-delay: $args;
+    /* IE9 not supported */
+}
+
+@mixin appearance--css3($args) {
+    -webkit-appearance: $args;
+    -moz-appearance: $args;
+    -o-appearance: $args;
+    appearance: $args;
     /* IE9 not supported */
 }
 

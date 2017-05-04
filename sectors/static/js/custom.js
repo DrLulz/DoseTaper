@@ -1,3 +1,10 @@
+var xs = 320,
+    sm = 480,
+    md = 769,
+    lg = 980,
+    xl = 1300,
+    fk = 2500;
+
 var mobile = mobile();
 
 if (mobile) {
@@ -45,6 +52,12 @@ jQuery(document).ready(function($) {
 
     //open modal
     $main_nav.on('click', function(event) {
+
+        // HACK: need to fix overlay on login when on taper.html
+        if ($('#navigation').hasClass('slideDown')) {
+            $('#navigation').removeClass('slideDown');
+        }
+
         $form_modal.addClass('is-visible');
         login_selected();
 /*         if ($(event.target).is($main_nav)) {

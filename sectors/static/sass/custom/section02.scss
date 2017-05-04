@@ -1,0 +1,122 @@
+#section02 {
+  .fp-scrollable {
+    overflow: hidden;
+
+    .iScrollVerticalScrollbar {
+      top: 60px !important;
+
+      .iScrollIndicator {
+        border: 0 !important;
+      }
+    }
+  }
+
+  .content {
+    height: 100%;
+    padding-top: 60px;
+  }
+
+  .container {
+    display: table;
+    width: 100%;
+    max-width: 95vw;
+    height: 100%;
+
+    @include mq($until: sm_med) {
+      padding-top: 20px;
+    }
+
+    .table-row {
+      display: table-row;
+      height: 100%;
+
+      .table-cell {
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+      }
+    }
+
+    .card-deck {
+      //text-align: center;
+      //border-spacing: 0;
+      //border-spacing: 0;
+      //table-layout: fixed;
+
+      .card {
+        //position: relative;
+        //margin-bottom: 0.75rem;
+        width: 1%;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: transparent;
+
+        @include mq($until: sm_med) {
+          display: block;
+          width: inherit;
+        }
+
+        .card-img-top {
+          border-radius: 0;
+
+          @include mq($from: xs) {
+            @include ms-respond(height, 20);
+          }
+          @include mq($from: sm) {
+            @include ms-respond(height, 22);
+          }
+          @include mq($from: sm_plus) {
+            @include ms-respond(height, 24);
+          }
+          @include mq($from: sm_med) {
+            @include ms-respond(height, 22);
+          }
+          @include mq($from: md) {
+            @include ms-respond(height, 14);
+          }
+          @include mq($from: lg) {
+            @include ms-respond(height, 12.2);
+          }
+          @include mq($until: md, $and: "(orientation: landscape)") {
+            @include ms-respond(height, 18);
+          }
+        }
+
+        .card-title {
+          font-family: $font-card;
+          white-space: nowrap;
+          margin: 0.2em 0 0.4em 0;
+
+          @include ms-respond(font-size, 4);
+
+          @include mq($until: sm_med) {
+            margin-bottom: 0.2em;
+          }
+        }
+
+        .card-text {
+          font-family: $sans-serif;
+          font-weight: 300;
+
+          @include ms-respond(font-size, 1.5);
+
+          @include mq($until: sm_med) {
+            margin-bottom: 0.2em;
+          }
+        }
+
+        #calendar {
+          @include animation--delay(0.2s);
+        }
+
+        #rxpad {
+          @include animation--delay(0.4s);
+        }
+
+        #clipboard {
+          @include animation--delay(0.1s);
+        }
+      }
+    }
+  }
+}

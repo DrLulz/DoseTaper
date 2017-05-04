@@ -108,7 +108,7 @@ input, textarea {
     @include border-radius(0.25em);
     @include transform(translateY(-30px));
     @include transition-property(transform);
-    @include transition-duration(0.3s);
+    @include transition--duration(0.3s);
 
     .cd-switcher {
         margin-bottom: 0;
@@ -235,7 +235,7 @@ input, textarea {
         &.has-border {
             border: 1px solid $light-grey;
 
-            @include appearance(none);
+            @include appearance--css3(none);
 
             &:focus {
                 border-color: darken($light-grey, 10%);
@@ -267,7 +267,7 @@ input, textarea {
             border: none;
             background: $login-btn;
 
-            @include appearance(none);
+            @include appearance--css3(none);
 
             &:hover, &:focus {
                 color: $white;

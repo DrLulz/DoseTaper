@@ -1,0 +1,61 @@
+:root {
+   @include rem-baseline;
+   background-color: lighten(#f8f2ed, 2%);
+}
+
+html,
+body {
+   color: $dark-grey;
+   background-color: lighten(#f8f2ed, 2%);
+
+   @include font-smoothing;
+
+   font: {
+      family: $sans-serif;
+      weight: 300;
+   }
+
+   a {
+      outline: none;
+   }
+
+   ::selection {
+      color: $off-white;
+      background-color: $blueberry;
+   }
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+*,
+*:after,
+*:before {
+   @include box-sizing(border-box);
+}
+
+.wrapper {
+   width: 100%;
+   margin: auto;
+   min-height: 100%;
+   overflow: hidden;
+}
+
+footer {
+   background-color: #303030;
+   background-image: url(../img/dark-stripes.png);
+   background-repeat: repeat;
+   padding: 0 0 32000px 0;
+   margin: 0 0 -32000px 0;
+
+   .row {
+      padding: 2rem;
+   }
+}
+
+.section {
+   height: 100%;
+   background-position: 50%;
+   background-size: cover;
+}

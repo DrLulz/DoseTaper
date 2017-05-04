@@ -52,7 +52,7 @@
         }
 
         &.line-active {
-            background: $color;
+            background: $color !important;
 
             @include transition(all $transition-time);
         }

@@ -1,0 +1,45 @@
+#section01 {
+  .content {
+    height: 100%;
+    padding-top: 60px;
+  }
+
+  .container {
+    display: table;
+    max-width: 90vw;
+    height: 100%;
+
+    .table-row {
+      display: table-row;
+      height: 100%;
+
+      .table-cell {
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        width: 50%;
+      }
+    }
+  }
+
+  #laptop {
+    @include mq($until: md) {
+      max-height: 55vh;
+    }
+  }
+
+  .text-01a {
+    @include ms-respond(font-size, 3);
+  }
+
+  .text-01b {
+    margin-top: 10px;
+
+    @include mq(xs, md) {
+      @include ms-respond(font-size, 3.6);
+    }
+    @include mq(xs, sm_med, $and: "(orientation: portrait)") {
+      @include ms-respond(font-size, 1.9);
+    }
+  }
+}

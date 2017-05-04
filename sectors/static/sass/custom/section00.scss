@@ -1,0 +1,122 @@
+#section00 {
+  background-image: url(../img/section00_bg.jpg);
+
+  .content {
+    height: 100%;
+    padding-top: 120px;
+  }
+
+  .content * {
+    color: $white;
+
+    font: {
+      family: $sans-serif;
+    }
+  }
+
+  .container {
+    height: 100%;
+    padding-bottom: 120px;
+
+    .vc-100 {
+      text-align: inherit;
+
+      @include mq($until: md) {
+        text-align: center;
+      }
+    }
+  }
+
+  .heading {
+    font-family: $font-dt;
+    line-height: 1;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px rgba(42, 43, 61, 0.5);
+
+    @include ms-respond(font-size, 7.5);
+
+    span {
+      font-family: $font-dt;
+
+      @include opacity(0.2);
+    }
+  }
+
+  .subheading {
+    font-weight: 300;
+    padding-bottom: 22px;
+
+    @include ms-respond(font-size, 2.2);
+  }
+
+  button {
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: 3px solid $white;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+
+    @include ms-respond(padding-top, 0);
+    @include ms-respond(padding-bottom, 0);
+    @include ms-respond(padding-left, 1);
+    @include ms-respond(padding-right, 1);
+    @include transition(all 0.5s ease);
+    @include transform(translate(0, 0));
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: $white;
+      border: 3px solid transparent;
+      background: rgba($white, 0.1);
+
+      @include transition(all 0.35s ease);
+
+      > a {
+        @include transition(all 0.35s ease);
+      }
+    }
+  }
+
+  .a-down {
+    font-size: 20px;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    position: absolute;
+    z-index: 2;
+    bottom: 40px;
+    left: 50%;
+    display: inline-block;
+
+    @include transform(translate(0, -50%));
+    @include transition(opacity 0.3s);
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      cursor: pointer;
+      border-bottom: 2px solid $white;
+      border-left: 2px solid $white;
+
+      @include box-sizing(border-box);
+      @include transform(rotate(-45deg));
+      @include animation(arrow_down 1.5s infinite);
+    }
+  }
+
+  .a-down:hover {
+    @include opacity(0.5);
+  }
+}
+
+@include arrow_down;

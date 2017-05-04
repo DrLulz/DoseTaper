@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $( 'form#nl_taper' ).floatlabels({
+    $( '#nl_taper form' ).floatlabels({
         style: 1,
     });
 
@@ -16,10 +16,10 @@ $(document).ready(function() {
     }
     
     // Taper start date, red on hover
-    $('.date-wrapper').mouseover(function() {
-        $(this).addClass('date-hover');
+    $('.cal-wrapper').mouseover(function() {
+        $(this).addClass('cal-hover');
     }).mouseout(function(){
-        $(this).removeClass('date-hover');
+        $(this).removeClass('cal-hover');
     });
 
     /* checkboxes (iCheck)
@@ -39,15 +39,77 @@ $(document).ready(function() {
             }
         });
     
-    $( '.phase' ).last().addDelete();
+    $( '.phase' ).last().taperControls();
+
+    $('.phase').each(function(i, obj) {
+        $(obj).qodControls(i);
+    });
+
+
+    paramsSize();
+
+    //$('.taper-params').children().each(function () {
+        //$(this).addClass('height-150');
+        //$('.taper-params .col-lg-4 .row').css({'padding': '50px 0'});
+    //});
 });
 
 
-$.fn.addDelete = function() {
+$.fn.qodControls = function(i) {
+    var n = i + 1;
+    // var controls = $('<div/>', { class: 'phase-add-delete v-align' }).
+    //var controls = $('<div/>', { class: 'phase-qod-wrapper' }).
+    //    append( $('<div>', {class: 'phase-qod'}) );
+    var input = $('<input/>', { class: 'checkbox qod', id: 'qod_' + n, type: 'checkbox', name: 'qod_' + n});
+    var label = $('<label/>', { for: 'qod_' + n, unselectable: 'on', html: 'Q.O.D.'});
+
+    var controls = $('<div/>', { class: 'phase-qod-wrapper' }).
+        append( $('<div>', {class: 'phase-qod'}).append(input).append(label) );
+
+    this.append(controls);
     
-    this.append($('<div/>', {class: 'phase-add-delete v-align', html: '<div class="phase-del"></div><div class="phase-add"></div>'}));
+/*     $(this).bind('click', function() {
+        setTimeout(check);
+    }); */
+/*     $('.phase-qod').
+        on( 'mouseover', function() {
+            $(this).filter(':not(:animated)').animate({
+                width: '100%'
+            },'fast');
+        }).
+        on( 'mouseout', function() {
+            $(this).animate({
+                width: '80%'
+            },'fast');
+        }); */
+};
+
+function paramsSize () {
+    if ($(window).width() < lg) {
+        $('.med-wrapper, .size-wrapper').removeClass('v-align');
+    }
+    $(window).resize(function() {
+        var width = $(window).width();
+        if (width < lg) {
+            $('.med-wrapper, .size-wrapper').removeClass('v-align');
+        } else if (width > lg) {
+            $('.med-wrapper, .size-wrapper').addClass('v-align');
+        }
+    });
+};
+
+$.fn.taperControls = function() {
+    // var controls = $('<div/>', { class: 'phase-add-delete v-align' }).
+    var controls = $('<div/>', { class: 'phase-add-delete' }).
+        append( $('<div>', {class: 'phase-del'}) ).
+        append( $('<div>', {class: 'phase-add'}) ).
+        append( $('<div>', {class: 'taper-calc'}) );
+
+    this.append(controls);
+
+    //this.append($('<div/>', {class: 'phase-add-delete v-align', html: '<div class="phase-del"></div><div class="phase-add"></div>'}));
     
-    $('.phase-add, .phase-del').
+    $('.phase-add, .phase-del, .taper-calc').
         on( 'mouseover', function() {
             $(this).filter(':not(:animated)').animate({
                 width: '100%'
@@ -58,9 +120,6 @@ $.fn.addDelete = function() {
                 width: '80%'
             },'fast');
         });
-
-
-
 };
 
 function date_picker() {
@@ -81,7 +140,7 @@ function date_picker() {
             },
             onClose: function() {
                 update_span();
-                $('.date-wrapper').removeClass('date-hover');
+                $('.cal-wrapper').removeClass('cal-hover');
             },
         }),
         picker_open_close = $date_field.pickadate( 'picker' )

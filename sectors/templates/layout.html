@@ -43,33 +43,37 @@
 </head>
 
 <body>
-    {% include 'navbar.html' %}
+    <div class="wrapper">
+        
+        {% include 'navbar.html' %}
 
-    {% block container %}{% endblock %}
+        {% block container %}{% endblock %}
 
+        {# JS #}
 
-    {# JS #}
-
-    <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
-
-
-
-    {# INTRO #}
-    
-    {% if request.url_rule.endpoint == "intro.index" %}
-        <script src="{{ url_for('static', filename='js/intro.min.js') }}"></script>
-    {% endif %}
-
-    
-
-    {# TAPER #}
-
-    {% if request.url_rule.endpoint == "taper.index" %}
-        <script src="{{ url_for('static', filename='js/taper.min.js') }}"></script>
-    {% endif %}
+        <script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
 
 
-    {#{% include 'footer.html' %}#}
+
+        {# INTRO #}
+        
+        {% if request.url_rule.endpoint == "intro.index" %}
+            <script src="{{ url_for('static', filename='js/intro.min.js') }}"></script>
+        {% endif %}
+
+        
+
+        {# TAPER #}
+
+        {% if request.url_rule.endpoint == "taper.index" %}
+            <script src="{{ url_for('static', filename='js/taper.min.js') }}"></script>
+        {% endif %}
+
+        {% if request.url_rule.endpoint != "intro.index" %}
+            {% include 'footer.html' %}
+        {% endif %}
+
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,103 @@
+#fp-nav ul li a span {
+  background: $light-grey;
+}
+
+.navbar {
+  height: 120px;
+  padding: 0.7rem 1rem;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+
+  /*   &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &.navbar-fixed-top {
+    top: 0;
+    border-radius: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  } */
+
+  .container {
+    height: 100%;
+
+    .img {
+      height: 100%;
+
+      .svg {
+        height: 100%;
+        padding: 10px;
+      }
+    }
+
+    .nav {
+      display: initial;
+      height: 100%;
+
+      .nav-item {
+        margin-top: 2px;
+
+        > .nav-link {
+          text-decoration: none;
+          letter-spacing: 2px;
+          word-spacing: 1px;
+          text-transform: uppercase;
+          position: relative;
+          height: initial;
+          margin-left: 1rem;
+          padding: 0;
+          color: $white;
+
+          font: {
+            size: 13px;
+            family: $font-nav;
+            weight: 700;
+          }
+
+          &:hover {
+            color: $white;
+          }
+
+          &:before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+            width: 98%;
+            height: 2px;
+            content: "";
+            background-color: $white;
+
+            @include transition(all 0.15s ease-in-out 0s);
+            @include transform(scaleX(0));
+          }
+
+          &:hover:before {
+            visibility: visible;
+
+            @include transform(scaleX(1));
+          }
+
+          &.nav-dark:before {
+            background-color: $dark-grey;
+          }
+        }
+      }
+    }
+  }
+
+  #ham_nav {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+  }
+
+  .cd-switcher {
+    font-size: 1.6rem;
+  }
+}
