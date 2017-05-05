@@ -40,48 +40,30 @@ $(document).ready(function() {
         });
     
     $( '.phase' ).last().taperControls();
+    paramsSize();
 
-    $('.phase').each(function(i, obj) {
-        $(obj).qodControls(i);
+    /* 
+    ---------------------------------------------------------------------------*/
+    $('.phase-qod').on('click', function(e) {
+        $(this).toggleClass('active');
+
+        var value = ($(this).children().val() == 0) ? '1' : '0';
+        $(this).children().val(value);
+
+        e.preventDefault();
     });
 
 
-    paramsSize();
-
-    //$('.taper-params').children().each(function () {
-        //$(this).addClass('height-150');
-        //$('.taper-params .col-lg-4 .row').css({'padding': '50px 0'});
-    //});
 });
 
 
-$.fn.qodControls = function(i) {
-    var n = i + 1;
-    // var controls = $('<div/>', { class: 'phase-add-delete v-align' }).
-    //var controls = $('<div/>', { class: 'phase-qod-wrapper' }).
-    //    append( $('<div>', {class: 'phase-qod'}) );
-    var input = $('<input/>', { class: 'checkbox qod', id: 'qod_' + n, type: 'checkbox', name: 'qod_' + n});
-    var label = $('<label/>', { for: 'qod_' + n, unselectable: 'on', html: 'Q.O.D.'});
+$.fn.reconstitute = function() {
 
-    var controls = $('<div/>', { class: 'phase-qod-wrapper' }).
-        append( $('<div>', {class: 'phase-qod'}).append(input).append(label) );
-
-    this.append(controls);
-    
-/*     $(this).bind('click', function() {
-        setTimeout(check);
-    }); */
-/*     $('.phase-qod').
-        on( 'mouseover', function() {
-            $(this).filter(':not(:animated)').animate({
-                width: '100%'
-            },'fast');
-        }).
-        on( 'mouseout', function() {
-            $(this).animate({
-                width: '80%'
-            },'fast');
-        }); */
+    /* initialize qod
+    --------------------------------------------------*/
+    this.find('').on('click', function() {
+        alert(1);
+    });
 };
 
 function paramsSize () {
@@ -101,9 +83,9 @@ function paramsSize () {
 $.fn.taperControls = function() {
     // var controls = $('<div/>', { class: 'phase-add-delete v-align' }).
     var controls = $('<div/>', { class: 'phase-add-delete' }).
-        append( $('<div>', {class: 'phase-del'}) ).
-        append( $('<div>', {class: 'phase-add'}) ).
-        append( $('<div>', {class: 'taper-calc'}) );
+        append( $('<div>', {id: 'del', class: 'phase-del'}) ).
+        append( $('<div>', {id: 'add', class: 'phase-add'}) ).
+        append( $('<div>', {id: 'calc', class: 'taper-calc'}) );
 
     this.append(controls);
 

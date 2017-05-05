@@ -1,6 +1,6 @@
 {% extends 'layout.html' %} {% block container %}
 <div id="nl_taper">
-    <form>
+    <form id="nl_form" method="POST" role="form">
         <div class="container-fluid">
             <section class="row taper-params">
 
@@ -16,7 +16,7 @@
                         <div class="cal-param col-lg-12">
                             <div class="cal-wrapper">
                                 <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
-                                <span id="input_date" name="date" contenteditable="false"></span>
+                                <span id="input_date" name="date" contenteditable="false" unselectable="on"></span>
                             </div>
                         </div>
                     </div>

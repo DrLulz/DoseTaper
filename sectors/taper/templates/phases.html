@@ -1,17 +1,13 @@
-<div class="row phase">
+<div id="p1" data-id="1" class="row phase">
     <div class="phase-label" unselectable="on">Phase 1</div>
 
-    {#
+
     <div class="phase-qod-wrapper">
         <div class="phase-qod">
+            <input id="nl_qod_1" class="" type="hidden" name="nl_qod_1" value="0">
         </div>
     </div>
-    
-    <div class="phase-qod">
-        <input class="checkbox qod" id="qod_1" type="checkbox" name="qod_1">
-        <label class="" for="qod_1" unselectable="on">Q.O.D.</label>
-    </div>
-    #}
+
 
     <div class="col-xs-2 phase-num v-align">
         <p unselectable="on">1</p>
@@ -33,8 +29,14 @@
 
 
 
-<div class="row phase">
+<div id="p2" data-id="2" class="row phase">
     <div class="phase-label" unselectable="on">Phase 2</div>
+
+    <div class="phase-qod-wrapper">
+        <div class="phase-qod">
+            <input id="nl_qod_2" class="" type="hidden" name="nl_qod_2" value="0">
+        </div>
+    </div>
 
     <div class="col-xs-2 phase-num v-align">
         <p unselectable="on">2</p>

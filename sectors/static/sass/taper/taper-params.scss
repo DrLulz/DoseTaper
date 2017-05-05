@@ -44,6 +44,13 @@
             display: inline-block;
             vertical-align: middle;
             outline: none;
+            
+            // Disable text selection
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
          }
 
          .input-group-addon {
@@ -68,7 +75,7 @@
       padding: 0;
 
       @include mq($from: lg) {
-         height: 140px;
+         height: 110px;
       }
 
       .med-wrapper {
@@ -138,7 +145,7 @@
       user-select: none;
 
       @include mq($from: lg) {
-         height: 140px;
+         height: 110px;
       }
 
       table {

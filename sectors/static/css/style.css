@@ -9363,7 +9363,12 @@ input, textarea {
         text-indent: 10px;
         display: inline-block;
         vertical-align: middle;
-        outline: none; }
+        outline: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none; }
         @media (min-width: 30em) and (max-width: 48.063em) {
           .taper-params .cal-param .cal-wrapper #input_date {
             font-size: 2.41632rem; } }
@@ -9408,7 +9413,7 @@ input, textarea {
     padding: 0; }
     @media (min-width: 61.25em) {
       .taper-params .med-param {
-        height: 140px; } }
+        height: 110px; } }
     .taper-params .med-param .med-wrapper {
       text-align: center; }
       @media (max-width: 29.99em) {
@@ -9456,7 +9461,7 @@ input, textarea {
     user-select: none; }
     @media (min-width: 61.25em) {
       .taper-params .size-param {
-        height: 140px; } }
+        height: 110px; } }
     .taper-params .size-param table {
       margin: 0 auto;
       border: none; }
@@ -9706,38 +9711,7 @@ input, textarea {
     border-color: #ffdf5f; }
 
 .phase {
-  position: relative;
-   /*    .phase-qod {
-      position: absolute;
-      font-family: 'Bangers', cursive;
-      @include ms-respond(font-size, 1.5);
-      top: 10px;
-      right: 15px;
-      opacity: 0.3;
-
-      // Disable text selection
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-
-      label {
-         line-height: 1;
-         vertical-align: middle;
-         margin: 0;
-         padding-left: 0.25rem;
-
-         &:hover {
-            cursor: pointer;
-         }
-
-         &.checked {
-            color: green;
-            text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
-         }
-      }
-   } */ }
+  position: relative; }
   @media (max-width: 48.0525em) {
     .phase {
       height: 216px; } }
@@ -9779,30 +9753,63 @@ input, textarea {
   .phase .phase-qod-wrapper {
     position: absolute;
     right: 0;
-    top: 0; }
+    top: 0;
+    color: rgba(219, 219, 219, 0.8);
+    text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
+    text-align: center;
+    line-height: 0; }
     @media (max-width: 48.0525em) {
       .phase .phase-qod-wrapper {
         height: 54px;
-        width: 97.2px; } }
+        width: 108px; } }
     @media (min-width: 48.0625em) {
       .phase .phase-qod-wrapper {
         height: 45px;
-        width: 67.5px; } }
+        width: 90px; } }
     @media (min-width: 61.25em) {
       .phase .phase-qod-wrapper {
         height: 50px;
-        width: 75px; } }
+        width: 150px; } }
     .phase .phase-qod-wrapper .phase-qod {
       position: relative;
       background-color: #dc9656;
+      color: white;
       height: 100%;
-      width: 80%;
       float: right;
+      cursor: pointer;
       -webkit-transition: width .2s;
       -moz-transition: width .2s;
       transition: width .2s; }
+      @media (max-width: 48.0525em) {
+        .phase .phase-qod-wrapper .phase-qod {
+          width: 77.76px; } }
+      @media (min-width: 48.0625em) {
+        .phase .phase-qod-wrapper .phase-qod {
+          width: 54px; } }
+      @media (min-width: 61.25em) {
+        .phase .phase-qod-wrapper .phase-qod {
+          width: 60px; } }
+      .phase .phase-qod-wrapper .phase-qod:after {
+        content: 'Q.O.D.';
+        font-family: "Contrail One", cursive;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 3px;
+        font-size: 2rem;
+        -webkit-transition: font-size .1s linear;
+        -moz-transition: font-size .1s linear;
+        transition: font-size .1s linear; }
       .phase .phase-qod-wrapper .phase-qod:hover {
         width: 100%; }
+        .phase .phase-qod-wrapper .phase-qod:hover:after {
+          font-size: 2.8rem;
+          left: 0px; }
+      .phase .phase-qod-wrapper .phase-qod.active {
+        width: 100%; }
+        .phase .phase-qod-wrapper .phase-qod.active:after {
+          font-size: 2.8rem;
+          left: 0px; }
   .phase .phase-num {
     font-family: "Contrail One", cursive;
     text-align: center;
@@ -9943,7 +9950,7 @@ input, textarea {
       position: absolute;
       top: 50%;
       right: 0;
-      left: 4px; }
+      left: 2px; }
     .phase-add-delete .phase-del:hover:after,
     .phase-add-delete .phase-add:hover:after,
     .phase-add-delete .taper-calc:hover:after {

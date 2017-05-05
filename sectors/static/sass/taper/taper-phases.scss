@@ -36,78 +36,85 @@ $grow-ratio-sm: 1.8;
       -ms-user-select: none;
       -o-user-select: none;
       user-select: none;
-
-      //background: #e8e8e8;
-      //color: rgba(64, 77, 91, 0.3);
-      //text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
-      //::-moz-selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
-      //::selection { background: #6b7a8f; color: #e8e8e8; text-shadow: none; }
    }
 
    .phase-qod-wrapper {
       position: absolute;
       right: 0;
       top: 0;
+      color: rgba(219, 219, 219, 0.8);
+      text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
+      text-align: center;
+      line-height: 0;
 
       @include mq($until: md) {
          height: $control-sm;
-         width: $control-sm * $grow-ratio-sm;
+         width: $control-sm * 2;
       }
       @include mq($from: md) {
          height: $control-md;
-         width: $control-md * $grow-ratio;
+         width: $control-md * 2;
       }
       @include mq($from: lg) {
          height: $control-lg;
-         width: $control-lg * $grow-ratio;
+         width: $control-lg * 3;
       }
 
       .phase-qod {
          position: relative;
          background-color: $orange;
+         color: white;
          height: 100%;
-         width: 80%;
          float: right;
+         cursor: pointer;
+
+         @include mq($until: md) {
+            width: ($control-sm * $grow-ratio-sm) * 0.8;
+         }
+         @include mq($from: md) {
+            width: ($control-md * $grow-ratio) * 0.8;
+         }
+         @include mq($from: lg) {
+            width: ($control-lg * $grow-ratio) * 0.8;
+         }
+
+         // transition
          -webkit-transition: width .2s;
          -moz-transition: width .2s;
          transition: width .2s;
 
+         &:after {
+            content: 'Q.O.D.';
+            font-family: $font-contrail;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 3px;
+            font-size: 2rem;
+            -webkit-transition: font-size .1s linear;
+            -moz-transition: font-size .1s linear;
+            transition: font-size .1s linear;
+         }
+
          &:hover {
             width: 100%;
+
+            &:after {
+               font-size: 2.8rem;
+               left: 0px;
+            }
+         }
+
+         &.active {
+            width: 100%;
+
+            &:after {
+               font-size: 2.8rem;
+               left: 0px;
+            }
          }
       }
    }
-   /*    .phase-qod {
-      position: absolute;
-      font-family: 'Bangers', cursive;
-      @include ms-respond(font-size, 1.5);
-      top: 10px;
-      right: 15px;
-      opacity: 0.3;
-
-      // Disable text selection
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-
-      label {
-         line-height: 1;
-         vertical-align: middle;
-         margin: 0;
-         padding-left: 0.25rem;
-
-         &:hover {
-            cursor: pointer;
-         }
-
-         &.checked {
-            color: green;
-            text-shadow: 1px 4px 6px #e8e8e8, 0 0 0 #c2c2c2, 1px 4px 6px #e8e8e8;
-         }
-      }
-   } */
 
    .phase-num {
       font-family: $font-contrail;
@@ -170,7 +177,7 @@ $grow-ratio-sm: 1.8;
       }
    }
 }
-$icon-left-initial: 4px;
+$icon-left-initial: 2px;
 $icon-left-hover: 0;
 
 .phase-add-delete {
