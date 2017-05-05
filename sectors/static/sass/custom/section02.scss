@@ -107,14 +107,20 @@
 
         #calendar {
           @include animation--delay(0.2s);
+          @include animation-duration(1s);
+          //@include animation-timing-function(ease-in);
         }
 
         #rxpad {
           @include animation--delay(0.4s);
+          @include animation-duration(1s);
+          //@include animation-timing-function(ease-in);
         }
 
         #clipboard {
           @include animation--delay(0.1s);
+          @include animation-duration(1s);
+          //@include animation-timing-function(ease-in);
         }
       }
     }

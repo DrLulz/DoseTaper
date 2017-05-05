@@ -1,7 +1,31 @@
-$(function() {
+/* f(x)
+---------------------------------------------------------------------------*/
+function isDays(evt, element) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if ((charCode < 48 || charCode > 57) && (charCode != 8))
+        return false;
+    return true;
+} 
+
+function isDose(evt, element) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if ((charCode != 46 || $(element).val().indexOf('.') != -1) && // “.” CHECK DOT, AND ONLY ONE.
+        (charCode < 48 || charCode > 57) && (charCode != 8))
+        return false;
     
+    else if (($(element).val().indexOf('.') != -1) && 
+        (charCode != 53 || $(element).val().substring($(element).val().indexOf('.'), $(element).val().indexOf('.').length).length>1) && (charCode != 8))
+        return false;
+
+    return true;
+} 
+
+/* Dynamic Phases
+---------------------------------------------------------------------------*/
+$(function() {    
     $('#add').click( function () {
-        console.log('hello');
+
+        // increment phase number
         var newid = 1;
         $.each($('.phase'), function() {
             if (parseInt($(this).data('id')) > newid) {
@@ -10,68 +34,101 @@ $(function() {
         });
         newid++;
 
-        console.log(newid);
-    /* 
-        var $phase = $("<div></div>", {
-            id: "p"+newid,
-            "data-id": newid,
-            "class": "row phase col-sm-10 col-sm-offset-1"
+        var n = newid,
+            p = 'p' + newid;
+
+        var $phase = $('<div/>', {
+            id: p,
+            'data-id': n,
+            'class': 'row phase animated slideInRight'
         });
 
+        var label = $('<div/>', { class: 'phase-label',  unselectable: 'on',  html: 'Phase ' + n });
+        label.appendTo($phase);
 
-        var p_head = $("<div class='col-sm-4 col-phase'><div class='row'><span class='title col-sm-4'>Phase " + newid + "</span><span class='values col-sm-7'><span id='p" + newid + "_dose_h'>0 mg</span>  x  <span id='p" + newid + "_days_h'>0 days</span></span></div></div>");
-        p_head.appendTo($phase);
+        var qod = $('<div/>', { class: 'phase-qod-wrapper' }).
+            append($('<div/>', { class: 'phase-qod' }).
+                append($('<input/>', { class: 'phase-qod',  id: 'nl_qod_' + n,  name: 'nl_qod_' + n,  type: 'hidden',  value: '0' }) ));
+        qod.appendTo($phase);
 
-        if ($("#toggle_slider").prop("checked") == true) {
-            var dose_slide = '';
-            var days_slide = '';
-            var dose_input = ' hidden';
-            var days_input = ' hidden';
-            } 
-        else {
-            var dose_slide = ' hidden';
-            var days_slide = ' hidden';
-            var dose_input = '';
-            var days_input = '';
-            }
+        var num = $('<div/>', { class: 'col-xs-2 phase-num v-align' }).
+            append($('<p/>', { unselectable: 'on',  html: n }));
+        num.appendTo($phase);
 
-        var p_dose = $("<div class='col-sm-4 opt-select'><div>Dose</div><input id='p" + newid + "_dose_v' type='tel' class='form-control" + dose_input + "' name='p" + newid + "_dose_v' value='0 mg'></div>");
-        p_dose.appendTo($phase);
+        //$('<div class="col-xs-2 col-md-1 phase-spacer"></div>').appendTo($phase);
+        $('<div/>', { class: 'col-xs-2 col-md-1 phase-spacer' }).appendTo($phase);
 
-        //var p_days = $("<div class='col-sm-4 opt-select'><div class='mobile-duration'>Duration: <span id='p" + newid + "_weeks_v'>0</span><span> weeks</span>, <span id='p" + newid + "_wkday_v'>0</span><span> days</span></div><input id='p" + newid + "_days_v' type='tel' class='form-control col-xs-4" + days_input + "' name='p" + newid + "_days_v' value='0 days'></div>");
-        var p_days = $("<div class='col-sm-4 opt-select'><input id='nl_qod_" + newid + "' class='qod' type='checkbox' name='nl_qod_" + newid + "' value='1' tabindex='-1'/><label class='qod-label'>q.o.d.</label><div class='mobile-duration'>Duration: <span id='p" + newid + "_weeks_v'>0</span><span> weeks</span>, <span id='p" + newid + "_wkday_v'>0</span><span> days</span></div><input id='p" + newid + "_days_v' type='tel' class='form-control col-xs-4" + days_input + "' name='p" + newid + "_days_v' value='0 days'></div>");
-        p_days.appendTo($phase);
+        var params = $('<div/>', { class: 'col-xs-8 col-md-9 phase-params' });
+        var row = $('<div/>', { class: 'row' });
 
-        var p_js = $(" <script> var p"+newid+"_dose = $('#p"+newid+"_dose_v'); p"+newid+"_dose.keypress(function (event) { return isDose(event, this) }); p"+newid+"_dose.on('change', function() { var value = parseFloat($(this).val()); var output = value + ' mg'; $(this).val(output); $('#p"+newid+"_dose_h').html(output); }); var p"+newid+"_days = $('#p"+newid+"_days_v'); p"+newid+"_days.keypress(function (event) { return isDays(event, this) }); p"+newid+"_days.on('change', function() { var value = parseFloat($(this).val()); var output = value + ' days'; $(this).val(output); $('#p"+newid+"_days_h').html(output); $('#p"+newid+"_weeks_v').html(Math.floor(parseInt(value, 10) / 7)); $('#p"+newid+"_wkday_v').html(parseInt(value, 10) % 7); }); </script>");
-        p_js.appendTo($phase);
+        var dose = $('<div/>', { class: 'col-md-6 dose-param' }).
+            append($('<label/>', { class: 'param-label',  for: p + '_dose',  html: 'Dose' })).
+            append($('<input/>', { class: 'param-input',  type: 'tel',  id: p + '_dose', name: p + '_dose'}));
 
-        var p_in = $("<script>$('[id$=" + newid + "_dose_v], [id$=" + newid + "_days_v]').each(function () {var $this = $(this);$this.focus(function (e) {$this.data('" + newid + "_values', $this.val());$this.val('');});$this.blur(function (e) {if ($this.val() == '') {$this.val($this.data('" + newid + "_values'));}});});</script>");
-        p_in.appendTo($phase);
+        var days = $('<div/>', { class: 'col-md-6 days-param' }).
+            append($('<label/>', { id: p + '_days_label',  class: 'param-label',  for: p + '_days',  html: 'Days' })).
+            append($('<input/>', { class: 'param-input',  type: 'tel',  id: p + '_days', name: p + '_days'}));
+
+        dose.appendTo(row);
+        days.appendTo(row);
+        row.appendTo(params);
+        params.appendTo($phase);
+
 
         
-        $phase.appendTo($('#phases'));
-
+        $phase.appendTo( $('#nl_form .container-fluid') );
+        
         $('html, body').animate({
             scrollTop: $phase.offset().top
         }, 500);
-     */
 
     });
 
-
-
-    /* 
-    $("#del_phase").click( function () {    
-        var $phase = $( ".phase" ).not(":nth-child(1)").not(":nth-child(2)").not(":nth-child(3)").last();
-        var $second = $('phase:nth-last-child(2)');
+    $('#del').click( function () {
+        var $phase = $( '.phase' ).slice(2).last();
         $phase.slideToggle('fast', 'linear', function(){ $phase.remove(); });
     });
 
 
-    $('#phases').on('keydown', '[id$=_days_v]:last', function(e) {
+    $('#nl_form').on('keydown', '[id$=_days]:last', function(e) {
         if (e.which == 9) {
-            $('#add_phase').trigger('click');
+            $('#add').trigger('click');
             //$("#del_phase").trigger("click");
         }
-    }); */
+    });
+});
+
+
+
+
+jQuery(function($){
+    var p1_dose = $('#p1_dose');
+    p1_dose.keypress(function (event) {
+        return isDose(event, this)
+    });
+
+    p1_dose.on('change', function() {
+        var value = parseFloat($(this).val());
+        var output = value + ' mg';
+        $(this).val(output);
+    }); 
+
+    var p1_days = $('#p1_days');
+    p1_days.keypress(function (event) {
+        return isDays(event, this)
+    });
+    p1_days.on('change', function() {
+        var value = parseFloat($(this).val());
+        var output = value + ' days';
+        $(this).val(output);
+        var weeks = Math.floor(parseInt(value, 10) / 7);
+        var days = parseInt(value, 10) % 7;
+
+        if (weeks != 0) {
+            var display = weeks + ' Weeks, ' + days + ' Days';
+        } else {
+            var display = 'Days ' + days;
+        }
+        $('#p1_days_label').html(display);
+    }); 
 });

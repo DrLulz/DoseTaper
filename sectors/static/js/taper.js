@@ -1,71 +1,5 @@
-$(document).ready(function() {
-
-    $( '#nl_taper form' ).floatlabels({
-        style: 1,
-    });
-
-    /* datepicker (pickadate)
-    ---------------------------------------------------------------------------*/
-    date_picker();
-
-    if (mobile) {
-        $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
-        $('.picker__box').css({ 'border-radius': '0', 'border-bottom-width': '0'});
-    } else {
-        $('.picker__frame').css({ 'top': '15%'});
-    }
-    
-    // Taper start date, red on hover
-    $('.cal-wrapper').mouseover(function() {
-        $(this).addClass('cal-hover');
-    }).mouseout(function(){
-        $(this).removeClass('cal-hover');
-    });
-
-    /* checkboxes (iCheck)
-    ---------------------------------------------------------------------------*/
-    checkboxes();
-    checkbox_resize();
-
-    /* headroom js
-    ---------------------------------------------------------------------------*/
-    $('nav').headroom({
-        'tolerance': 5,
-        'offset': 205,
-        'classes': {
-            'initial'  : 'animated',
-            'pinned'   : 'slideDown',
-            'unpinned' : 'slideUp'
-            }
-        });
-    
-    $( '.phase' ).last().taperControls();
-    paramsSize();
-
-    /* 
-    ---------------------------------------------------------------------------*/
-    $('.phase-qod').on('click', function(e) {
-        $(this).toggleClass('active');
-
-        var value = ($(this).children().val() == 0) ? '1' : '0';
-        $(this).children().val(value);
-
-        e.preventDefault();
-    });
-
-
-});
-
-
-$.fn.reconstitute = function() {
-
-    /* initialize qod
-    --------------------------------------------------*/
-    this.find('').on('click', function() {
-        alert(1);
-    });
-};
-
+/* f(x)
+---------------------------------------------------------------------------*/
 function paramsSize () {
     if ($(window).width() < lg) {
         $('.med-wrapper, .size-wrapper').removeClass('v-align');
@@ -80,16 +14,15 @@ function paramsSize () {
     });
 };
 
+$.fn.reconstitute = function() {};
+
 $.fn.taperControls = function() {
-    // var controls = $('<div/>', { class: 'phase-add-delete v-align' }).
     var controls = $('<div/>', { class: 'phase-add-delete' }).
         append( $('<div>', {id: 'del', class: 'phase-del'}) ).
         append( $('<div>', {id: 'add', class: 'phase-add'}) ).
         append( $('<div>', {id: 'calc', class: 'taper-calc'}) );
 
     this.append(controls);
-
-    //this.append($('<div/>', {class: 'phase-add-delete v-align', html: '<div class="phase-del"></div><div class="phase-add"></div>'}));
     
     $('.phase-add, .phase-del, .taper-calc').
         on( 'mouseover', function() {
@@ -102,7 +35,7 @@ $.fn.taperControls = function() {
                 width: '80%'
             },'fast');
         });
-};
+}; // taperControls()
 
 function date_picker() {
     var update_span = function () {
@@ -142,7 +75,6 @@ function date_picker() {
     update_span();
 }; // datepicker()
 
-
 function checkboxes() {
     $('.checkbox:not(.noiCheck)').iCheck({
         checkboxClass: 'icheckbox_flat-grey',
@@ -173,7 +105,7 @@ function checkboxes() {
         on('ifUnchecked', function(event){
             $(this).parent().next().removeClass('checked');
         });
-};
+}; // checkboxes()
 
 function checkbox_resize() {
     if ( $(window).width() > 649 && $(window).width() < 980) {
@@ -204,4 +136,89 @@ function checkbox_resize() {
                 }
         }
     });
-};
+}; // checkbox_resize()
+
+
+
+/* taper js
+---------------------------------------------------------------------------*/
+
+
+/* floating labels
+--------------------------------------------------*/
+$( '#nl_taper form' ).floatlabels({
+    customEvent  : null,
+    customLabel  : null,
+    exclude      : '.no-label',
+    inputRegex   : /email|number|password|search|tel|text|url/,
+    prioritize   : 'label',
+    requiredClass: 'required',
+    style        : 1,
+    transform    : 'input, select, textarea',
+});
+
+
+
+/* datepicker (pickadate)
+--------------------------------------------------*/
+date_picker();
+
+// snap popup to bottom on mobile browsers
+if (mobile) {
+    $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
+    $('.picker__box').css({ 'border-radius': '0', 'border-bottom-width': '0'});
+} else {
+    $('.picker__frame').css({ 'top': '15%'});
+}
+
+// Taper start date, hover color
+$('.cal-wrapper').mouseover(function() {
+    $(this).addClass('cal-hover');
+}).mouseout(function(){
+    $(this).removeClass('cal-hover');
+});
+
+
+
+/* checkboxes (iCheck)
+--------------------------------------------------*/
+checkboxes();
+checkbox_resize();
+
+
+
+/* headroom js
+--------------------------------------------------*/
+$('nav').headroom({
+    'tolerance': 5,
+    'offset': 205,
+    'classes': {
+        'initial'  : 'animated',
+        'pinned'   : 'slideDown',
+        'unpinned' : 'slideUp'
+        }
+    });
+
+
+
+/* add controls to last phase
+--------------------------------------------------*/
+$( '.phase' ).last().taperControls();
+
+
+
+/* resize taper params on large screens
+--------------------------------------------------*/
+paramsSize();
+
+
+/* Q.O.D. behavior
+--------------------------------------------------*/
+$('.phase-qod').on('click', function(e) {
+    $(this).toggleClass('active');
+
+    var value = ($(this).children().val() == 0) ? '1' : '0';
+    $(this).children().val(value);
+
+    e.preventDefault();
+});

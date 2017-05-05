@@ -13,24 +13,28 @@
         <p unselectable="on">1</p>
     </div>
     <div class="col-xs-2 col-md-1 phase-spacer"></div>
+    
     <div class="col-xs-8 col-md-9 phase-params">
         <div class="row">
             <div class="col-md-6 dose-param">
-                <label class="param-label" for="input_dose">Dose</label>
-                <input class="param-input" type="text" id="input_dose" name="dose">
+                <label class="param-label" for="p1_dose">Dose</label>
+                <input class="param-input" id="p1_dose" name="p1_dose" type="tel" value="">
             </div>
             <div class="col-md-6 days-param">
-                <label class="param-label" for="input_days">Days</label>
-                <input class="param-input" type="text" id="input_days" name="days">
+                <label id="p1_days_label" class="param-label" for="p1_days">Days</label>
+                <input class="param-input" id="p1_days" name="p1_days" type="tel" value="">
             </div>
         </div>
     </div>
 </div>
 
 
+{#  --- PHASE 2 ---  #}
+
 
 <div id="p2" data-id="2" class="row phase">
     <div class="phase-label" unselectable="on">Phase 2</div>
+
 
     <div class="phase-qod-wrapper">
         <div class="phase-qod">
@@ -38,19 +42,21 @@
         </div>
     </div>
 
+
     <div class="col-xs-2 phase-num v-align">
         <p unselectable="on">2</p>
     </div>
     <div class="col-xs-2 col-md-1 phase-spacer"></div>
+    
     <div class="col-xs-8 col-md-9 phase-params">
         <div class="row">
             <div class="col-md-6 dose-param">
-                <label class="param-label" for="input_dose">Dose</label>
-                <input class="param-input" type="text" id="input_dose" name="dose">
+                <label class="param-label" for="p2_dose">Dose</label>
+                <input class="param-input" id="p2_dose" name="p2_dose" type="tel" value="">
             </div>
             <div class="col-md-6 days-param">
-                <label class="param-label" for="input_days">Days</label>
-                <input class="param-input" type="text" id="input_days" name="days">
+                <label class="param-label" for="p2_days">Days</label>
+                <input class="param-input" id="p2_days" name="p2_days" type="tel" name="days">
             </div>
         </div>
     </div>

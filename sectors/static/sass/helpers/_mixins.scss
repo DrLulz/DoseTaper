@@ -66,6 +66,12 @@
     /* IE9 not supported */
 }
 
+@mixin animation-timing-function($args) {
+    -webkit-animation-timing-function: $args;
+    animation-timing-function: $args;
+    /* IE9 not supported */ 
+}
+
 @mixin appearance--css3($args) {
     -webkit-appearance: $args;
     -moz-appearance: $args;
