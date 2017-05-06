@@ -14,6 +14,7 @@ $.fn.reconstitute = function() {};
 ---------------------------------------------------------------------------*/
 
 function doseParam(){
+    console.log('doseParam');
      $( '.dose-param' ).floatlabels({
         customEvent  : null,
         customLabel  : null,
@@ -28,6 +29,7 @@ function doseParam(){
 doseParam();
 
 function daysParam(){
+    console.log('daysParam')
      $( '.days-param' ).floatlabels({
         // This function is run immediately after an element has been transformed by float-labels.
         //customEvent: function( el ) {},

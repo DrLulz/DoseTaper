@@ -76,7 +76,7 @@ $.fn.daysInput = function() {
         return isDays(event, $(this))
     });
 
-    this.on('change', function() {
+    this.on('change blur', function() {
         var value = parseFloat($(this).val()) || '';
         var output = value + ' days';
         if (value == '') {
