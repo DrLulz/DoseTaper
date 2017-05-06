@@ -1,7 +1,6 @@
 /* Fullpage
 ---------------------------------------------------------------------------*/
-var animation_name = 'animated fadeInUpBig';
-var animation_end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+var intro_animation = 'animated fadeInUpBig';
 
 $('#fullpage').fullpage({
     anchors: ['00', '01', '02', '03'],
@@ -51,16 +50,16 @@ $('#fullpage').fullpage({
         if (i == 2 && d == 'up') {}
         // Going to section01
         if (i == 1 && d == 'down') {
-            $('#laptop').addClass(animation_name)
+            $('#laptop').addClass(intro_animation)
                 .one(animation_end, function(){ 
-                    $(this).removeClass(animation_name);
+                    $(this).removeClass(intro_animation);
             });
         }
         // Going to section02
         if (i == 2 && d == 'down') {
-            $('#calendar, #rxpad, #clipboard').addClass(animation_name)
+            $('#calendar, #rxpad, #clipboard').addClass(intro_animation)
                 .one(animation_end, function(){ 
-                    $(this).removeClass(animation_name);
+                    $(this).removeClass(intro_animation);
             });
         }
     }

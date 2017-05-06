@@ -219,6 +219,9 @@ $colors-list: (
                 &:-ms-input-placeholder {
                     color: $lab;
                 }
+                &::-ms-input-placeholder {
+                    color: $lab;
+                }
                 &::-webkit-input-placeholder {
                     color: $lab;
                 }

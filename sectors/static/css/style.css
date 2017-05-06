@@ -6081,6 +6081,70 @@ body {
   -webkit-animation-name: fadeInUpBig;
   animation-name: fadeInUpBig; }
 
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
+@keyframes slideInLeft {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  100% {
+    transform: translate3d(0, 0, 0); } }
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft; }
+
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  100% {
+    transform: translate3d(0, 0, 0); } }
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight; }
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0); } }
+@keyframes slideOutLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    transform: translate3d(-100%, 0, 0); } }
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft; }
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0); } }
+@keyframes slideOutRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    transform: translate3d(100%, 0, 0); } }
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight; }
+
 /* @import "../css/fa/css/font-awesome.min.css"; */
 /* @import url(animate.css); */
 /* @font-face {
@@ -9616,6 +9680,8 @@ input, textarea {
       color: #81A2BE; }
     .phase:nth-of-type(6n + 1) input.fl-input:-ms-input-placeholder {
       color: #81A2BE; }
+    .phase:nth-of-type(6n + 1) input.fl-input::-ms-input-placeholder {
+      color: #81A2BE; }
     .phase:nth-of-type(6n + 1) input.fl-input::-webkit-input-placeholder {
       color: #81A2BE; }
   .phase:nth-of-type(6n + 1) .fl-is-active input.fl-input {
@@ -9641,6 +9707,8 @@ input, textarea {
     .phase:nth-of-type(6n + 2) input.fl-input::-moz-placeholder {
       color: #DC9656; }
     .phase:nth-of-type(6n + 2) input.fl-input:-ms-input-placeholder {
+      color: #DC9656; }
+    .phase:nth-of-type(6n + 2) input.fl-input::-ms-input-placeholder {
       color: #DC9656; }
     .phase:nth-of-type(6n + 2) input.fl-input::-webkit-input-placeholder {
       color: #DC9656; }
@@ -9668,6 +9736,8 @@ input, textarea {
       color: #8F9D6A; }
     .phase:nth-of-type(6n + 3) input.fl-input:-ms-input-placeholder {
       color: #8F9D6A; }
+    .phase:nth-of-type(6n + 3) input.fl-input::-ms-input-placeholder {
+      color: #8F9D6A; }
     .phase:nth-of-type(6n + 3) input.fl-input::-webkit-input-placeholder {
       color: #8F9D6A; }
   .phase:nth-of-type(6n + 3) .fl-is-active input.fl-input {
@@ -9693,6 +9763,8 @@ input, textarea {
     .phase:nth-of-type(6n + 4) input.fl-input::-moz-placeholder {
       color: #B294BB; }
     .phase:nth-of-type(6n + 4) input.fl-input:-ms-input-placeholder {
+      color: #B294BB; }
+    .phase:nth-of-type(6n + 4) input.fl-input::-ms-input-placeholder {
       color: #B294BB; }
     .phase:nth-of-type(6n + 4) input.fl-input::-webkit-input-placeholder {
       color: #B294BB; }
@@ -9720,6 +9792,8 @@ input, textarea {
       color: #CC6666; }
     .phase:nth-of-type(6n + 5) input.fl-input:-ms-input-placeholder {
       color: #CC6666; }
+    .phase:nth-of-type(6n + 5) input.fl-input::-ms-input-placeholder {
+      color: #CC6666; }
     .phase:nth-of-type(6n + 5) input.fl-input::-webkit-input-placeholder {
       color: #CC6666; }
   .phase:nth-of-type(6n + 5) .fl-is-active input.fl-input {
@@ -9745,6 +9819,8 @@ input, textarea {
     .phase:nth-of-type(6n + 6) input.fl-input::-moz-placeholder {
       color: #ffdf5f; }
     .phase:nth-of-type(6n + 6) input.fl-input:-ms-input-placeholder {
+      color: #ffdf5f; }
+    .phase:nth-of-type(6n + 6) input.fl-input::-ms-input-placeholder {
       color: #ffdf5f; }
     .phase:nth-of-type(6n + 6) input.fl-input::-webkit-input-placeholder {
       color: #ffdf5f; }
@@ -9798,9 +9874,10 @@ input, textarea {
     right: 0;
     top: 0;
     color: rgba(219, 219, 219, 0.8);
-    text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
+    text-shadow: 1px 4px 6px #a8a8a8, 0px 0px 0px #000, 1px 4px 6px #a8a8a8;
     text-align: center;
-    line-height: 0; }
+    line-height: 0;
+    z-index: 1; }
     @media (max-width: 48.0525em) {
       .phase .phase-qod-wrapper {
         height: 54px;
@@ -9815,14 +9892,22 @@ input, textarea {
         width: 150px; } }
     .phase .phase-qod-wrapper .phase-qod {
       position: relative;
-      background-color: #dc9656;
+      background-color: #a8a8a8;
       color: white;
       height: 100%;
       float: right;
       cursor: pointer;
-      -webkit-transition: width .2s;
-      -moz-transition: width .2s;
-      transition: width .2s; }
+      -webkit-transition: width .2s, background-color .2s;
+      -moz-transition: width .2s, background-color .2s;
+      transition: width .2s, background-color .2s;
+      /*          &:hover {
+                  width: 100%;
+      
+                  &:after {
+                     font-size: 2.8rem;
+                     left: 0px;
+                  }
+               } */ }
       @media (max-width: 48.0525em) {
         .phase .phase-qod-wrapper .phase-qod {
           width: 77.76px; } }
@@ -9843,13 +9928,10 @@ input, textarea {
         -webkit-transition: font-size .1s linear;
         -moz-transition: font-size .1s linear;
         transition: font-size .1s linear; }
-      .phase .phase-qod-wrapper .phase-qod:hover {
-        width: 100%; }
-        .phase .phase-qod-wrapper .phase-qod:hover:after {
-          font-size: 2.8rem;
-          left: 0px; }
       .phase .phase-qod-wrapper .phase-qod.active {
-        width: 100%; }
+        width: 100%;
+        background-color: #dc9656;
+        text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656; }
         .phase .phase-qod-wrapper .phase-qod.active:after {
           font-size: 2.8rem;
           left: 0px; }
@@ -10013,7 +10095,9 @@ input, textarea {
 
 :root {
   font-size: 62.5%;
-  background-color: #fbf7f4; }
+  background-color: #303030;
+  background-image: url(../img/dark-stripes.png);
+  background-repeat: repeat; }
 
 html,
 body {

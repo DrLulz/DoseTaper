@@ -1,6 +1,8 @@
 :root {
    @include rem-baseline;
-   background-color: lighten(#f8f2ed, 2%);
+   background-color: #303030;
+   background-image: url(../img/dark-stripes.png);
+   background-repeat: repeat;
 }
 
 html,

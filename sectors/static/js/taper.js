@@ -1,43 +1,51 @@
 /* f(x)
 ---------------------------------------------------------------------------*/
-function paramsSize () {
-    if ($(window).width() < lg) {
-        $('.med-wrapper, .size-wrapper').removeClass('v-align');
-    }
-    $(window).resize(function() {
-        var width = $(window).width();
-        if (width < lg) {
-            $('.med-wrapper, .size-wrapper').removeClass('v-align');
-        } else if (width > lg) {
-            $('.med-wrapper, .size-wrapper').addClass('v-align');
-        }
-    });
-};
+
 
 $.fn.reconstitute = function() {};
 
-$.fn.taperControls = function() {
-    var controls = $('<div/>', { class: 'phase-add-delete' }).
-        append( $('<div>', {id: 'del', class: 'phase-del'}) ).
-        append( $('<div>', {id: 'add', class: 'phase-add'}) ).
-        append( $('<div>', {id: 'calc', class: 'taper-calc'}) );
 
-    this.append(controls);
-    
-    $('.phase-add, .phase-del, .taper-calc').
-        on( 'mouseover', function() {
-            $(this).filter(':not(:animated)').animate({
-                width: '100%'
-            },'fast');
-        }).
-        on( 'mouseout', function() {
-            $(this).animate({
-                width: '80%'
-            },'fast');
-        });
-}; // taperControls()
 
-function date_picker() {
+
+
+
+
+/* floating labels
+---------------------------------------------------------------------------*/
+
+function doseParam(){
+     $( '.dose-param' ).floatlabels({
+        customEvent  : null,
+        customLabel  : null,
+        exclude      : '.no-label',
+        inputRegex   : /email|number|password|search|tel|text|url/,
+        prioritize   : 'label',
+        requiredClass: 'required',
+        style        : 1,
+        transform    : 'input, select, textarea',
+    });
+};
+doseParam();
+
+function daysParam(){
+     $( '.days-param' ).floatlabels({
+        // This function is run immediately after an element has been transformed by float-labels.
+        //customEvent: function( el ) {},
+        // This function lets you modify a label text; it must return a string.
+        //customLabel : function( labelEl, el ) {console.log( labelEl.text );},
+        exclude      : '.no-label',
+        inputRegex   : /email|number|password|search|tel|text|url/,
+        prioritize   : 'label',
+        requiredClass: 'required',
+        style        : 1,
+        transform    : 'input, select, textarea',
+    });
+};
+daysParam();
+
+/* datepicker (pickadate)
+---------------------------------------------------------------------------*/
+function datePicker() {
     var update_span = function () {
         $('#input_date').text(picker_open_close.get());
     };
@@ -74,8 +82,28 @@ function date_picker() {
         })
     update_span();
 }; // datepicker()
+datePicker();
 
-function checkboxes() {
+// snap popup to bottom on mobile browsers
+if (mobile) {
+    $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
+    $('.picker__box').css({ 'border-radius': '0', 'border-bottom-width': '0'});
+} else {
+    $('.picker__frame').css({ 'top': '15%'});
+}
+
+// Taper start date, hover color
+$('.cal-wrapper').mouseover(function() {
+    $(this).addClass('cal-hover');
+}).mouseout(function(){
+    $(this).removeClass('cal-hover');
+});
+
+
+
+/* checkboxes (iCheck)
+---------------------------------------------------------------------------*/
+function checkBoxes() {
     $('.checkbox:not(.noiCheck)').iCheck({
         checkboxClass: 'icheckbox_flat-grey',
         radioClass: 'iradio_flat-grey',
@@ -106,8 +134,11 @@ function checkboxes() {
             $(this).parent().next().removeClass('checked');
         });
 }; // checkboxes()
+checkBoxes();
 
-function checkbox_resize() {
+
+
+function checkboxResize() {
     if ( $(window).width() > 649 && $(window).width() < 980) {
         $( '.row-1' ).append($( '.row-2' ).children()).removeClass('row-1').addClass('row-0');
         $( '.row-2' ).remove();
@@ -137,58 +168,12 @@ function checkbox_resize() {
         }
     });
 }; // checkbox_resize()
-
-
-
-/* taper js
----------------------------------------------------------------------------*/
-
-
-/* floating labels
---------------------------------------------------*/
-$( '#nl_taper form' ).floatlabels({
-    customEvent  : null,
-    customLabel  : null,
-    exclude      : '.no-label',
-    inputRegex   : /email|number|password|search|tel|text|url/,
-    prioritize   : 'label',
-    requiredClass: 'required',
-    style        : 1,
-    transform    : 'input, select, textarea',
-});
-
-
-
-/* datepicker (pickadate)
---------------------------------------------------*/
-date_picker();
-
-// snap popup to bottom on mobile browsers
-if (mobile) {
-    $('.picker__frame').css({ 'bottom': '0', 'margin-bottom': '0', 'top': 'auto'});
-    $('.picker__box').css({ 'border-radius': '0', 'border-bottom-width': '0'});
-} else {
-    $('.picker__frame').css({ 'top': '15%'});
-}
-
-// Taper start date, hover color
-$('.cal-wrapper').mouseover(function() {
-    $(this).addClass('cal-hover');
-}).mouseout(function(){
-    $(this).removeClass('cal-hover');
-});
-
-
-
-/* checkboxes (iCheck)
---------------------------------------------------*/
-checkboxes();
-checkbox_resize();
+checkboxResize();
 
 
 
 /* headroom js
---------------------------------------------------*/
+---------------------------------------------------------------------------*/
 $('nav').headroom({
     'tolerance': 5,
     'offset': 205,
@@ -202,23 +187,64 @@ $('nav').headroom({
 
 
 /* add controls to last phase
---------------------------------------------------*/
-$( '.phase' ).last().taperControls();
+---------------------------------------------------------------------------*/
+$.fn.initialControls = function() {
+    var controls = $('<div/>', { class: 'phase-add-delete animated slideInRight' }).
+        append( $('<div>', {id: 'del', class: 'phase-del'}) ).
+        append( $('<div>', {id: 'add', class: 'phase-add'}) ).
+        append( $('<div>', {id: 'calc', class: 'taper-calc'}) );
+
+    this.append(controls);
+    
+    $('.phase-add, .phase-del, .taper-calc').
+        on( 'mouseover', function() {
+            $(this).filter(':not(:animated)').animate({
+                width: '100%'
+            },'fast');
+        }).
+        on( 'mouseout', function() {
+            $(this).animate({
+                width: '80%'
+            },'fast');
+        });
+}; // taperControls()
+$( '.phase' ).last().initialControls();
+
 
 
 
 /* resize taper params on large screens
---------------------------------------------------*/
+---------------------------------------------------------------------------*/
+function paramsSize() {
+    if ($(window).width() < lg) {
+        $('.med-wrapper, .size-wrapper').removeClass('v-align');
+    }
+    $(window).resize(function() {
+        var width = $(window).width();
+        if (width < lg) {
+            $('.med-wrapper, .size-wrapper').removeClass('v-align');
+        } else if (width > lg) {
+            $('.med-wrapper, .size-wrapper').addClass('v-align');
+        }
+    });
+}; // paramsSize()
 paramsSize();
 
 
+
 /* Q.O.D. behavior
---------------------------------------------------*/
-$('.phase-qod').on('click', function(e) {
-    $(this).toggleClass('active');
+---------------------------------------------------------------------------*/
+function phaseQod() {
+    $('[id$=_taper]').on('click', '.phase-qod', function(e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
 
-    var value = ($(this).children().val() == 0) ? '1' : '0';
-    $(this).children().val(value);
+        $(this).toggleClass('active');
+        var value = ($(this).children().val() == 0) ? '1' : '0';
+        $(this).children().val(value);
 
-    e.preventDefault();
-});
+
+        e.preventDefault();
+    });
+}; // phaseQod()
+phaseQod();

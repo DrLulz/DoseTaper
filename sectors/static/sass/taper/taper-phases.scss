@@ -43,9 +43,11 @@ $grow-ratio-sm: 1.8;
       right: 0;
       top: 0;
       color: rgba(219, 219, 219, 0.8);
-      text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
+      //text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
+      text-shadow: 1px 4px 6px #a8a8a8, 0px 0px 0px #000, 1px 4px 6px #a8a8a8;
       text-align: center;
       line-height: 0;
+      z-index: 1;
 
       @include mq($until: md) {
          height: $control-sm;
@@ -62,7 +64,8 @@ $grow-ratio-sm: 1.8;
 
       .phase-qod {
          position: relative;
-         background-color: $orange;
+         //background-color: $orange;
+         background-color: rgb(168, 168, 168);
          color: white;
          height: 100%;
          float: right;
@@ -79,9 +82,9 @@ $grow-ratio-sm: 1.8;
          }
 
          // transition
-         -webkit-transition: width .2s;
-         -moz-transition: width .2s;
-         transition: width .2s;
+         -webkit-transition: width .2s, background-color .2s;
+         -moz-transition: width .2s, background-color .2s;
+         transition: width .2s, background-color .2s;
 
          &:after {
             content: 'Q.O.D.';
@@ -96,17 +99,19 @@ $grow-ratio-sm: 1.8;
             transition: font-size .1s linear;
          }
 
-         &:hover {
+/*          &:hover {
             width: 100%;
 
             &:after {
                font-size: 2.8rem;
                left: 0px;
             }
-         }
+         } */
 
          &.active {
             width: 100%;
+            background-color: $orange;
+            text-shadow: 1px 4px 6px #dc9656, 0px 0px 0px #000, 1px 4px 6px #dc9656;
 
             &:after {
                font-size: 2.8rem;

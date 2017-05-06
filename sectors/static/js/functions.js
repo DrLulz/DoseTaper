@@ -7,6 +7,7 @@ var xs = 320,
     xl = 1300,
     fk = 2500;
 
+var animation_end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
 
 
