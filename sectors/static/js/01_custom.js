@@ -125,18 +125,6 @@ $form_signup.find('input[type="submit"]').on('click', function(event) {
 
 /* fastclick for standalone apps
 ---------------------------------------------------------------------------*/
-if (isIos() && isRunningStandalone()) {
-    // Initialize Fast Click
-    // Even with the latest webkit updates, unfortunatley iOS standalone apps still have the 350ms click delay,
-    // so we need to bring in fastclick to alleviate this.
-    // See http://stackoverflow.com/questions/39951945/ios-standalone-app-300ms-click-delay
-    if ('addEventListener' in document) {
-        document.addEventListener('DOMContentLoaded', function () {
-            FastClick.attach(document.body);
-        }, false);
-    }
-}
-
 isIos = function () {
     // Reference: http://stackoverflow.com/questions/9038625/detect-if-device-is-ios#answer-9039885
     return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -152,3 +140,15 @@ isRunningStandalone = function () {
 
     return isRunningiOSStandalone || isRunningAndroidStandalone;
 };
+
+if (isIos() && isRunningStandalone()) {
+    // Initialize Fast Click
+    // Even with the latest webkit updates, unfortunatley iOS standalone apps still have the 350ms click delay,
+    // so we need to bring in fastclick to alleviate this.
+    // See http://stackoverflow.com/questions/39951945/ios-standalone-app-300ms-click-delay
+    if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function () {
+            FastClick.attach(document.body);
+        }, false);
+    }
+}

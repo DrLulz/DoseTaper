@@ -39,7 +39,7 @@ function phaseAddControls(phase) {
 $.fn.onFocus = function() {
     this.focus(function (e) {
         var number = $(this).val().replace(/[^0-9\.]/g, '');
-        $(this).data('initial_values', $(this).val());
+        $(this).data('initial_value', $(this).val());
         $(this).data('initial_number', number);
         if (number != '') { $(this).val(number); } else { $(this).val(''); };
     });
@@ -50,7 +50,7 @@ $.fn.onBlur = function() {
         if ($(this).val() == '') {
             $(this).val('');
         } else if ($(this).val() == $(this).data('initial_number')) {
-            $(this).val($(this).data('initial_values'));
+            $(this).val($(this).data('initial_value'));
         };
     });
 };
@@ -141,9 +141,10 @@ $(function() {
             append($('<p/>', { unselectable: 'on',  html: n }));
         num.appendTo($phase);
 
-        $('<div/>', { class: 'col-xs-2 col-md-1 phase-spacer' }).appendTo($phase);
+        //$('<div/>', { class: 'col-xs-2 col-md-1 phase-spacer' }).appendTo($phase);
 
-        var params = $('<div/>', { class: 'col-xs-8 col-md-9 phase-params' });
+        //var params = $('<div/>', { class: 'col-xs-8 col-md-9 phase-params' });
+        var params = $('<div/>', { class: 'col-xs-8 pull-xs-2 col-md-9 pull-md-1 phase-params' });
         var row = $('<div/>', { class: 'row' });
 
         // dose

@@ -1,12 +1,100 @@
 /* f(x)
 ---------------------------------------------------------------------------*/
+// Fired once when document is ready
+//$(document).one('ready', function () {
+//      doSomething();
+//});
+
+$(document).ready(function(){
+    var substringMatcher = function(strs) {
+      return function findMatches(q, cb) {
+        var matches, substringRegex;
+
+        // an array that will be populated with substring matches
+        matches = [];
+
+        // regex used to determine if a string contains the substring `q`
+        substrRegex = new RegExp(q, 'i');
+
+        // iterate through the pool of strings and for any string that
+        // contains the substring `q`, add it to the `matches` array
+        $.each(strs, function(i, str) {
+          if (substrRegex.test(str)) {
+            matches.push(str);
+          }
+        });
+
+        cb(matches);
+      };
+    };
+
+    var meds = ['Prednisone', 'Methylprednisolone'];
+
+    // https://github.com/twitter/typeahead.js/issues/1159
+
+    var rx_typeahead = $('#taper_med').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 0
+    },
+    {
+        name: 'prescription',
+        source: substringMatcher(meds)
+    }).bind('focus', function () {
+        //console.log('focus', $(this).val())
+        $(this).data('initial_value', $(this).val());
+        rx_typeahead.typeahead('val','');
+    }).bind('blur', function () {
+        var saved_value = $(this).data('initial_value');
+        var new_value   = $(this).val();
+        //console.log('saved_value', saved_value)
+        //console.log('new_value', new_value)
+        if (new_value) {
+            rx_typeahead.typeahead('val', new_value);
+        } else {
+            rx_typeahead.typeahead('val', saved_value);
+        }
+    });
+
+});
+
+$('.typeahead')
+    //.typeahead(/* pass in your datasets and initialize the typeahead */)
+    .on('typeahead:opened', onOpened)
+    .on('typeahead:selected', onSelected)
+    .on('typeahead:autocompleted', onAutocompleted);
+
+    function onOpened($e) {
+        console.log('ON onSelected()')
+    }
+
+    function onSelected($e, rx_name) {
+        //console.log('$e', $e.target)
+        //console.log('rx_name', rx_name)
+        $('.meds').not('#' + rx_name).hide();
+        $('#' + rx_name).show();
+        $e.target.blur();
+    }
+
+    function onAutocompleted($e, rx_name) {
+        //console.log('rx_name', rx_name)
+        $('.meds').not('#' + rx_name).hide();
+        $('#' + rx_name).show();
+        $e.target.blur();
+    }
+
+$('[id$=_form]').on('keydown', '.twitter-typeahead #taper_med', function(e) {
+    if(e.which == 13 || e.which == 9) {
+        e.preventDefault();
+        $('.tt-selectable').first().click();
+        //$(this).blur();
+    }
+});
 
 
-$.fn.reconstitute = function() {};
 
 
-
-
+//$.fn.reconstitute = function() {};
 
 
 
@@ -14,7 +102,7 @@ $.fn.reconstitute = function() {};
 ---------------------------------------------------------------------------*/
 
 function doseParam(){
-    console.log('doseParam');
+    //console.log('doseParam');
      $( '.dose-param' ).floatlabels({
         customEvent  : null,
         customLabel  : null,
@@ -29,7 +117,7 @@ function doseParam(){
 doseParam();
 
 function daysParam(){
-    console.log('daysParam')
+    //console.log('daysParam')
      $( '.days-param' ).floatlabels({
         // This function is run immediately after an element has been transformed by float-labels.
         //customEvent: function( el ) {},
@@ -60,7 +148,8 @@ function datePicker() {
             formatSubmit: 'mm/dd/yyyy',
             hiddenName: true,
             onStart: function () {
-                var date = new Date();
+                //var date = new Date();
+                var date = new Date(2016,11,31);
                 this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
             },
             onClose: function() {
@@ -141,9 +230,20 @@ checkBoxes();
 
 
 function checkboxResize() {
-    if ( $(window).width() > 649 && $(window).width() < 980) {
-        $( '.row-1' ).append($( '.row-2' ).children()).removeClass('row-1').addClass('row-0');
-        $( '.row-2' ).remove();
+    // < 1175 go to 2 rows
+    // 650 to 
+    // < 650 go to 2 rows
+
+    // < 980 = 1
+
+    // < 650 = 2
+
+    if ( $(window).width() < 733 || $(window).width() > 779 ) {
+        var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
+        var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
+        $( '.size-param table' ).append($('<tr/>', {class: 'row-1', html: tr_one}));
+        $( '.size-param table' ).append($('<tr/>', {class: 'row-2', html: tr_two}));
+        $( '.row-0' ).remove();
     };
 
     $(window).resize(function() {
@@ -153,13 +253,16 @@ function checkboxResize() {
         var one  = $( '.row-1' );
         var two  = $( '.row-2' );
         
-        if ( width > 649 && width < 980) {
+        // one row
+         //if ( width > 732 && width < 980) {
+        if ( width > 1155 || (width < 980 && width > 732) ) {
             if ( ! zero.length ) {
                 one.append(two.children()).removeClass('row-1').addClass('row-0');
                 two.remove();
                 }
-            
-        } else if (width < 650 || width > 779) {
+        // two rows
+        } else if (width < 733 || width > 779) {
+        //if (width < 730 || width > 779) {
             if ( zero.length ) {
                 var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
                 var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
@@ -230,7 +333,7 @@ function paramsSize() {
         }
     });
 }; // paramsSize()
-paramsSize();
+//paramsSize();
 
 
 

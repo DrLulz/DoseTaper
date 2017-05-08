@@ -9437,125 +9437,235 @@ input, textarea {
 /* Taper Paramaters
 ---------------------------------------------------------------------------*/
 .taper-params {
-  padding: 3rem 1.5rem;
+  padding: 3rem 6.5rem;
   color: #404d5b;
   background-color: #f9f7f6;
-  /* Date
-     --------------------------------------------------*/
+  position: relative;
+  z-index: 100;
   /* Medication
      --------------------------------------------------*/
+   /*
+   .med-param {
+      padding: 0;
+
+      @include mq($from: lg) {
+         height: 110px;
+      }
+
+      .med-wrapper {
+         text-align: center;
+         @include mq($until: sm) {
+            padding: 1.5rem 0;
+         }
+
+         .med-col {
+            display: inline-block;
+         }
+      }
+
+      .med-list {
+         //float: left; // NEW
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         font-size: 16px;
+         font-family: $font-opensans;
+         font-weight: 700;
+         letter-spacing: 0.05rem;
+         text-transform: uppercase;
+         @include mq($until: lg) {
+            padding: 1rem;
+         }
+         @include mq($until: sm) {
+            padding: 0 1rem;
+         }
+
+         label {
+            margin: 0;
+            padding-left: 1rem;
+            vertical-align: middle;
+
+            // Disable text selection
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            &.checked {
+               color: $orange;
+            }
+         }
+      }
+   }
+   */
   /* Sizes
      --------------------------------------------------*/ }
-  .taper-params .cal-param {
-    padding: 0; }
-    @media (min-width: 61.25em) {
-      .taper-params .cal-param {
-        height: 60px; } }
-    .taper-params .cal-param .cal-wrapper {
-      text-align: center;
-      white-space: nowrap; }
-      .taper-params .cal-param .cal-wrapper.cal-hover #input_date,
-      .taper-params .cal-param .cal-wrapper.cal-hover .input-group-addon {
-        color: #cc6666; }
-      .taper-params .cal-param .cal-wrapper:hover #input_date,
-      .taper-params .cal-param .cal-wrapper:hover .input-group-addon {
-        cursor: pointer; }
-      .taper-params .cal-param .cal-wrapper #input_date {
-        padding: 5px;
-        background-color: transparent;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 700;
-        font-size: 2.41632rem;
-        border: none;
-        text-indent: 10px;
-        display: inline-block;
-        vertical-align: middle;
-        outline: none;
+  .taper-params .params-row {
+    height: 80px; }
+    .taper-params .params-row.row-one {
+      margin-bottom: 3rem;
+   /* Date
+--------------------------------------------------*/ }
+      .taper-params .params-row.row-one .title-param {
+        font-family: "Contrail One", cursive;
+        color: rgba(64, 77, 91, 0.8);
+        text-align: center;
+        padding: 0;
+        height: 100%;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         -o-user-select: none;
         user-select: none; }
-        @media (min-width: 30em) and (max-width: 48.063em) {
-          .taper-params .cal-param .cal-wrapper #input_date {
-            font-size: 2.41632rem; } }
-        @media (min-width: 48.063em) and (max-width: 61.25em) {
-          .taper-params .cal-param .cal-wrapper #input_date {
-            font-size: 3.02869rem; } }
-        @media (min-width: 61.25em) and (max-width: 81.25em) {
-          .taper-params .cal-param .cal-wrapper #input_date {
-            font-size: 3.49386rem; } }
-        @media (min-width: 81.25em) and (max-width: 156.25em) {
-          .taper-params .cal-param .cal-wrapper #input_date {
-            font-size: 4.37548rem; } }
-        @media (min-width: 156.25em) {
-          .taper-params .cal-param .cal-wrapper #input_date {
-            font-size: 5.37889rem; } }
-      .taper-params .cal-param .cal-wrapper .input-group-addon {
-        padding: 0.75rem 0rem 1rem 1rem;
-        font-size: 2.41632rem;
-        background-color: transparent;
-        border: none;
-        width: initial;
-        display: inline-block;
-        color: #404d5b; }
-        @media (min-width: 30em) and (max-width: 48.063em) {
-          .taper-params .cal-param .cal-wrapper .input-group-addon {
-            font-size: 2.41632rem; } }
-        @media (min-width: 48.063em) and (max-width: 61.25em) {
-          .taper-params .cal-param .cal-wrapper .input-group-addon {
-            font-size: 3.02869rem; } }
-        @media (min-width: 61.25em) and (max-width: 81.25em) {
-          .taper-params .cal-param .cal-wrapper .input-group-addon {
-            font-size: 3.49386rem; } }
-        @media (min-width: 81.25em) and (max-width: 156.25em) {
-          .taper-params .cal-param .cal-wrapper .input-group-addon {
-            font-size: 4.37548rem; } }
-        @media (min-width: 156.25em) {
-          .taper-params .cal-param .cal-wrapper .input-group-addon {
-            font-size: 5.37889rem; } }
-        .taper-params .cal-param .cal-wrapper .input-group-addon .fa-calendar-o:before {
-          padding: 1px; }
+        .taper-params .params-row.row-one .title-param .graph-wrapper {
+          padding: 0;
+          display: inline-block;
+          height: 100%; }
+          .taper-params .params-row.row-one .title-param .graph-wrapper [id$='_graph'] {
+            min-height: 100%; }
+        .taper-params .params-row.row-one .title-param .taper-title-wrapper {
+          display: inline-block; }
+          .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+            min-height: 100%;
+            font-size: 2.56289rem;
+            text-shadow: 1px 4px 6px #f9f7f6, 0px 0px 0px #000, 1px 4px 6px #f9f7f6; }
+            @media (min-width: 30em) and (max-width: 48.063em) {
+              .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+                font-size: 2.56289rem; } }
+            @media (min-width: 48.063em) and (max-width: 61.25em) {
+              .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+                font-size: 3.31776rem; } }
+            @media (min-width: 61.25em) and (max-width: 81.25em) {
+              .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+                font-size: 3.90625rem; } }
+            @media (min-width: 81.25em) and (max-width: 156.25em) {
+              .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+                font-size: 5.05174rem; } }
+            @media (min-width: 156.25em) {
+              .taper-params .params-row.row-one .title-param .taper-title-wrapper .taper-title {
+                font-size: 6.39613rem; } }
+      .taper-params .params-row.row-one .cal-param {
+        padding: 0;
+        text-align: center;
+        height: 100%; }
+        .taper-params .params-row.row-one .cal-param .cal-wrapper {
+          text-align: center;
+          white-space: nowrap;
+          height: 100%;
+          display: inline-block;
+          background-color: rgba(0, 0, 0, 0.03);
+          padding: 0 1.5rem 0 1rem;
+          border-radius: 5px;
+          -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
+          .taper-params .params-row.row-one .cal-param .cal-wrapper.cal-hover #input_date,
+          .taper-params .params-row.row-one .cal-param .cal-wrapper.cal-hover .input-group-addon {
+            color: #cc6666; }
+          .taper-params .params-row.row-one .cal-param .cal-wrapper:hover #input_date,
+          .taper-params .params-row.row-one .cal-param .cal-wrapper:hover .input-group-addon {
+            cursor: pointer; }
+          .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+            padding: 0 1rem;
+            background-color: transparent;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 2.41632rem;
+            border: none;
+            text-indent: 10px;
+            vertical-align: middle;
+            outline: none;
+            line-height: 80px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none; }
+            @media (min-width: 30em) and (max-width: 48.063em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+                font-size: 2.41632rem; } }
+            @media (min-width: 48.063em) and (max-width: 61.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+                font-size: 3.02869rem; } }
+            @media (min-width: 61.25em) and (max-width: 81.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+                font-size: 3.49386rem; } }
+            @media (min-width: 81.25em) and (max-width: 156.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+                font-size: 4.37548rem; } }
+            @media (min-width: 156.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper #input_date {
+                font-size: 5.37889rem; } }
+          .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+            font-size: 2.41632rem;
+            background-color: transparent;
+            border: none;
+            width: initial;
+            display: inline-block;
+            color: #404d5b; }
+            @media (min-width: 30em) and (max-width: 48.063em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+                font-size: 2.41632rem; } }
+            @media (min-width: 48.063em) and (max-width: 61.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+                font-size: 3.02869rem; } }
+            @media (min-width: 61.25em) and (max-width: 81.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+                font-size: 3.49386rem; } }
+            @media (min-width: 81.25em) and (max-width: 156.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+                font-size: 4.37548rem; } }
+            @media (min-width: 156.25em) {
+              .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon {
+                font-size: 5.37889rem; } }
+            .taper-params .params-row.row-one .cal-param .cal-wrapper .input-group-addon .fa-calendar-o:before {
+              padding: 1px; }
+    .taper-params .params-row.row-two .rx-wrapper {
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.03);
+      padding: 0 1.5rem 0 1rem;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
   .taper-params .med-param {
-    padding: 0; }
-    @media (min-width: 61.25em) {
-      .taper-params .med-param {
-        height: 110px; } }
-    .taper-params .med-param .med-wrapper {
+    height: 100%; }
+    .taper-params .med-param input[type='text'],
+    .taper-params .med-param .tt-menu {
+      font-family: "Contrail One", cursive;
+      font-size: 32px;
+      color: #404d5b;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 0;
+      padding: 0; }
+      .taper-params .med-param input[type='text']:hover,
+      .taper-params .med-param .tt-menu:hover {
+        border-color: #868686; }
+    .taper-params .med-param input.typeahead.tt-hint {
+      color: #c4cdd6;
+      background-color: transparent !important; }
+    .taper-params .med-param .tt-menu {
+      background-color: rgba(0, 0, 0, 0.03);
+      width: 100%; }
+    .taper-params .med-param .sup-med-wrapper {
       text-align: center; }
-      @media (max-width: 29.99em) {
-        .taper-params .med-param .med-wrapper {
-          padding: 1.5rem 0; } }
-      .taper-params .med-param .med-wrapper .med-col {
-        display: inline-block; }
-    .taper-params .med-param .med-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 16px;
-      font-family: "Open Sans", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.05rem;
-      text-transform: uppercase; }
-      @media (max-width: 61.24em) {
-        .taper-params .med-param .med-list {
-          padding: 1rem; } }
-      @media (max-width: 29.99em) {
-        .taper-params .med-param .med-list {
-          padding: 0 1rem; } }
-      .taper-params .med-param .med-list label {
-        margin: 0;
-        padding-left: 1rem;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -o-user-select: none;
-        user-select: none; }
-        .taper-params .med-param .med-list label:hover {
-          cursor: pointer; }
-        .taper-params .med-param .med-list label.checked {
-          color: #dc9656; }
+      .taper-params .med-param .sup-med-wrapper .med-wrapper {
+        display: inline-block;
+        text-align: left; }
+        .taper-params .med-param .sup-med-wrapper .med-wrapper > div {
+          height: 100%; }
+          .taper-params .med-param .sup-med-wrapper .med-wrapper > div .twitter-typeahead {
+            height: 100%;
+            width: 270px; }
+            .taper-params .med-param .sup-med-wrapper .med-wrapper > div .twitter-typeahead input {
+              height: 100%;
+              width: 100%; }
   .taper-params .size-param {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
@@ -9568,7 +9678,7 @@ input, textarea {
     user-select: none; }
     @media (min-width: 61.25em) {
       .taper-params .size-param {
-        height: 110px; } }
+        height: 100%; } }
     .taper-params .size-param table {
       margin: 0 auto;
       border: none; }
@@ -9587,9 +9697,14 @@ input, textarea {
       padding-left: 0.5rem;
       vertical-align: middle; }
       .taper-params .size-param label:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        color: #cc6666; }
       .taper-params .size-param label.checked {
         color: #cc6666; }
+    .taper-params .size-param .sup-size-wrapper {
+      text-align: center; }
+    .taper-params .size-param .size-wrapper {
+      display: inline-block; }
 
 /* Date Picker PopUp
 ---------------------------------------------------------------------------*/
@@ -9652,12 +9767,6 @@ input, textarea {
     .picker__holder .picker__day.picker__day--outfocus.picker__day--selected:hover {
       background: #e8e8e8;
       color: #696969; }
-
-.graph-wrapper {
-  text-align: center; }
-  .graph-wrapper #nonlinear_graph {
-    display: inline-block;
-    height: 200px; }
 
 /* Phases
 ---------------------------------------------------------------------------*/
@@ -9830,7 +9939,12 @@ input, textarea {
     border-color: #ffdf5f; }
 
 .phase {
-  position: relative; }
+  position: relative;
+  /* 
+     .phase-spacer {
+        float: right;
+     }
+   */ }
   @media (max-width: 48.0525em) {
     .phase {
       height: 216px; } }
@@ -9953,8 +10067,6 @@ input, textarea {
       @media (max-width: 48.0525em) {
         .phase .phase-num p {
           font-size: 80px; } }
-  .phase .phase-spacer {
-    float: right; }
   .phase .phase-params {
     float: right; }
     .phase .phase-params label.fl-label {
