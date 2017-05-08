@@ -9643,7 +9643,8 @@ input, textarea {
       border-left: none;
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       border-radius: 0;
-      padding: 0; }
+      padding: 0;
+      outline: none; }
       .taper-params .med-param input[type='text']:hover,
       .taper-params .med-param .tt-menu:hover {
         border-color: #868686; }
@@ -9653,6 +9654,8 @@ input, textarea {
     .taper-params .med-param .tt-menu {
       background-color: rgba(0, 0, 0, 0.03);
       width: 100%; }
+    .taper-params .med-param .tt-selectable:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
     .taper-params .med-param .sup-med-wrapper {
       text-align: center; }
       .taper-params .med-param .sup-med-wrapper .med-wrapper {
@@ -9680,6 +9683,7 @@ input, textarea {
       .taper-params .size-param {
         height: 100%; } }
     .taper-params .size-param table {
+      text-align: initial;
       margin: 0 auto;
       border: none; }
     .taper-params .size-param td,

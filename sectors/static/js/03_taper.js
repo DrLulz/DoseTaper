@@ -230,15 +230,8 @@ checkBoxes();
 
 
 function checkboxResize() {
-    // < 1175 go to 2 rows
-    // 650 to 
-    // < 650 go to 2 rows
-
-    // < 980 = 1
-
-    // < 650 = 2
-
-    if ( $(window).width() < 733 || $(window).width() > 779 ) {
+    // 2 rows
+    if ( ($(window).width() < 1156 && $(window).width() > 979) || ($(window).width() < 733) ) {
         var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
         var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
         $( '.size-param table' ).append($('<tr/>', {class: 'row-1', html: tr_one}));
@@ -254,7 +247,6 @@ function checkboxResize() {
         var two  = $( '.row-2' );
         
         // one row
-         //if ( width > 732 && width < 980) {
         if ( width > 1155 || (width < 980 && width > 732) ) {
             if ( ! zero.length ) {
                 one.append(two.children()).removeClass('row-1').addClass('row-0');
@@ -262,7 +254,6 @@ function checkboxResize() {
                 }
         // two rows
         } else if (width < 733 || width > 779) {
-        //if (width < 730 || width > 779) {
             if ( zero.length ) {
                 var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
                 var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
