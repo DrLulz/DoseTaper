@@ -6453,37 +6453,6 @@ article {
     1.500 61.250em,
     1.600 81.250em,
     1.618 156.250em; */
-body:before {
-  background-color: #FCF8E3;
-  border-bottom: 1px solid #FBEED5;
-  border-left: 1px solid #FBEED5;
-  color: #C09853;
-  font: small-caption;
-  padding: 3px 6px;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 10000; }
-  @media (min-width: 20em) {
-    body:before {
-      content: "xs ≥ 320px (20em)"; } }
-  @media (min-width: 30em) {
-    body:before {
-      content: "sm ≥ 480px (30em)"; } }
-  @media (min-width: 48.0625em) {
-    body:before {
-      content: "md ≥ 769px (48.0625em)"; } }
-  @media (min-width: 61.25em) {
-    body:before {
-      content: "lg ≥ 980px (61.25em)"; } }
-  @media (min-width: 81.25em) {
-    body:before {
-      content: "xl ≥ 1300px (81.25em)"; } }
-  @media (min-width: 156.25em) {
-    body:before {
-      content: "fk ≥ 2500px (156.25em)"; } }
-
 /* Calls
 ---------------------------------------------------------------------------*/
 .vc-100 {
