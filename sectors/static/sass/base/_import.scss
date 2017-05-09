@@ -1,11 +1,11 @@
 // reset
 @import '../../../../../bower_components/marx/scss/marx';
 
-//core
+// core
 @import "../../../../../bower_components/bootstrap/scss/bootstrap";
 @import '../../../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
-//sass
+// sass
 @import '../../../../../bower_components/modular-scale/stylesheets/modular-scale';
 @import "../../../../../bower_components/sass-mq/mq";
 @import "../../../../../bower_components/sass-rem/rem";
@@ -13,11 +13,12 @@
 // fullpage.js
 @import "../../../../../bower_components/fullpage.js/jquery.fullPage";
 
-// pickadate.js
-//@import "../../../../../bower_components/pickadate/lib/themes/default.css";
-//@import "../../../../../bower_components/pickadate/lib/themes/default.date.css";
-
+// animate
 @import "../../../../../bower_components/animate-sass/animate";
+
+// noty
+@import "../../../../../bower_components/noty/src/noty";
+
 
 /* @import "../css/fa/css/font-awesome.min.css"; */
 /* @import url(animate.css); */
