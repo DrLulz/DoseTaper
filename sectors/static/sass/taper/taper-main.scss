@@ -75,9 +75,6 @@ $anim-fast: 100ms ease-in-out;
    section {
       width: initial;
       margin: 0 -15px;
-      @include mq($until: sm) {
-         margin: 0;
-      }
    }
 }
 
