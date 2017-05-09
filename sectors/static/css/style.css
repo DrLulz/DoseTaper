@@ -6507,7 +6507,6 @@ article {
 ---------------------------------------------------------------------------*/
 #ham_icon {
   position: relative;
-  z-index: 100;
   width: 30px;
   height: 20px;
   cursor: pointer; }
@@ -6578,7 +6577,6 @@ article {
 ---------------------------------------------------------------------------*/
 .overlay {
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   visibility: hidden;
@@ -9548,7 +9546,6 @@ input, textarea {
 
 .taper-params {
   position: relative;
-  z-index: 100;
   padding: 3rem 6.5rem;
   color: #404d5b;
   background-color: #f9f7f6; }
@@ -10084,7 +10081,6 @@ input, textarea {
     line-height: 0;
     text-align: center;
     position: absolute;
-    z-index: 1;
     top: 0;
     right: 0;
     color: rgba(219, 219, 219, 0.8);
@@ -10348,6 +10344,9 @@ footer {
   background-position: 50%;
   background-size: cover; }
 
+#fp-nav {
+  z-index: 1; }
+
 #fp-nav ul li a span {
   background: #e4e4e4; }
 
@@ -10355,7 +10354,8 @@ footer {
   height: 120px;
   padding: 0.7rem 1rem;
   border-bottom: 2px solid transparent;
-  background-color: transparent; }
+  background-color: transparent;
+  z-index: 10 !important; }
   .navbar .container {
     height: 100%; }
     .navbar .container .img {
@@ -10413,7 +10413,7 @@ footer {
             background-color: #5c5c5c; }
   .navbar #ham_nav {
     position: relative;
-    z-index: 10;
+    z-index: 2;
     height: 100%; }
   .navbar .cd-switcher {
     font-size: 1.6rem; }
@@ -10584,7 +10584,6 @@ footer {
     text-decoration: none;
     letter-spacing: 0.1em;
     position: absolute;
-    z-index: 2;
     bottom: 40px;
     left: 50%;
     display: inline-block;

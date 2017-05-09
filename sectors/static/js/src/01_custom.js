@@ -12,6 +12,11 @@ if (mobile) {
 var ham = $('#ham_icon');
 var overlay = $('.overlay');
 ham.add(overlay).click(function(e) {
+    overlay.toggleClass('active');
+    if ( $('#navigation').hasClass('slideDown') ) {
+        $('#navigation').removeClass('slideDown');
+    };
+    $('body').toggleClass('overflow');
     $('.overlay-inner').viewportDimensions();
     overlay.toggleMenu();
     ham.toggleClass('active');
@@ -35,13 +40,10 @@ var $form_modal = $('.cd-user-modal'),
 
 //open modal
 $main_nav.on('click', function(event) {
-
-    // HACK: need to fix overlay on login when on taper.html
-    if ($('#navigation').hasClass('slideDown')) {
-        $('#navigation').removeClass('slideDown');
-    }
-
     $form_modal.addClass('is-visible');
+    if ( $('#navigation').hasClass('slideDown') ) {
+        $('#navigation').removeClass('slideDown');
+    };
     login_selected();
 });
 

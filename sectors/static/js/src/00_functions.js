@@ -28,11 +28,23 @@ function mobile() {
     return check;
 };
 
-/* Ham Icon
+/* Ham Icon & Overlay
 --------------------------------------------------*/
+$('body').on('scroll touchmove mousewheel', function(e){
+    var el1 = $('.overlay.active');
+    var el2 = $('.cd-user-modal.is-visible');
+    if( el1.length > 0 || el2.length > 0 ){
+        e.preventDefault();
+        e.stopPropagation();
+    }   
+});
+
 function resetMenu() {
-    if ((overlay.css('opacity') == 1) && ($(window).width() > 768)) {
+    //if ((overlay.css('opacity') == 1) && ($(window).width() > 768)) {
+    if (overlay.css('opacity') == 1) {
         overlay.toggleMenu();
+        overlay.toggleClass('active');
+        $('body').toggleClass('overflow');
         ham.toggleClass('active');
         $('.ham-icon > .line').toggleClass('line-active');
         $(window).off('resize', resetMenu);
