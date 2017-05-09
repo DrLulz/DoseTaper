@@ -237,9 +237,8 @@ $colors-list: (
     }
 }
 
-// inset "text", "type", "embosed" ? 
-@mixin inset-type($light-shadow, $dark-shadow) {
-  text-shadow: 
-    0px 1px 3px rgba(255,255,255,$light-shadow),
-    -1px -1px 1px rgba(0,0,0,$dark-shadow);
+@mixin background-color() {
+    background-color: #303030;
+    background-image: url(../img/dark-stripes.png);
+    background-repeat: repeat;
 }

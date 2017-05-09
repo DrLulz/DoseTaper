@@ -1,179 +1,204 @@
-/* Taper Paramaters
----------------------------------------------------------------------------*/
-
 .taper-params {
-   padding: 3rem 6.5rem;
-   color: $taper-params;
-   background-color: #f9f7f6;
-   //height: 220px;
    position: relative;
    z-index: 100;
 
+   padding: 3rem 6.5rem;
+
+   color: $taper-params;
+   background-color: #f9f7f6;
+
+   @include mq($until: sm) {
+      padding: 3rem 0;
+   }
+
    .params-row {
       height: 80px;
+      @include mq($until: md) {
+         height: initial;
+      }
 
       &.row-one {
          margin-bottom: 3rem;
-
-         .title-param {
-            font-family: $font-contrail;
-            color: rgba(64, 77, 91, 0.8);
-            text-align: center;
-            padding: 0;
-
-            //@include mq($from: lg) {}
-            //height: 80px;
-            height: 100%;
-
-            // Disable text selection
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-
-            .graph-wrapper {
-               //text-align: center;
-               //padding: 0 2rem 0 0;
-               padding: 0;
-               display: inline-block;
-               height: 100%;
-
-               [id$='_graph'] {
-                  //display: inline-block;
-                  min-height: 100%;
-               }
-            }
-
-            .taper-title-wrapper {
-               //text-align: center;
-               display: inline-block;
-
-               .taper-title {
-                  //position: relative;
-                  //display: inline-block;
-                  min-height: 100%;
-                  @include ms-respond(font-size, 4);
-                  text-shadow: 1px 4px 6px #f9f7f6, 0px 0px 0px #000, 1px 4px 6px #f9f7f6;
-               }
-            }
-         }
-
-
-         /* Date
-      --------------------------------------------------*/
-         .cal-param {
-            padding: 0;
-            text-align: center;
-
-            //@include mq($from: lg) {}
-            //height: 80px;
-            height: 100%;
-
-            .cal-wrapper {
-               text-align: center;
-               white-space: nowrap;
-               //line-height: 1.9;
-               height: 100%;
-               display: inline-block;
-               background-color: rgba(0, 0, 0, 0.03);
-               padding: 0 1.5rem 0 1rem;
-               border-radius: 5px;
-               -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
-               box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
-
-               &.cal-hover {
-                  #input_date,
-                  .input-group-addon {
-                     color: $date-hover;
-                  }
-               }
-
-               &:hover {
-                  #input_date,
-                  .input-group-addon {
-                     cursor: pointer;
-                  }
-               }
-
-               #input_date {
-                  //padding: 5px;
-                  //height: 100%;
-                  padding: 0 1rem;
-                  background-color: transparent;
-                  font-family: $font-opensans;
-                  font-weight: 600;
-                  @include ms-respond(font-size, 3.5);
-                  border: none;
-                  text-indent: 10px;
-                  //display: inline-block;
-                  vertical-align: middle;
-                  outline: none;
-                  line-height: 80px;
-
-                  // Disable text selection
-                  -webkit-user-select: none;
-                  -moz-user-select: none;
-                  -ms-user-select: none;
-                  -o-user-select: none;
-                  user-select: none;
-               }
-
-               .input-group-addon {
-                  //height: 100%;
-                  //padding: 0.75rem 0rem 1rem 1rem;
-                  @include ms-respond(font-size, 3.5);
-                  background-color: transparent;
-                  border: none;
-                  width: initial;
-                  display: inline-block;
-                  color: $taper-params;
-                  //line-height: 1.9;
-
-                  .fa-calendar-o:before {
-                     padding: 1px;
-                  }
-               }
-            }
-         }
       }
 
       &.row-two {
          .rx-wrapper {
             height: 100%;
-            //display: inline-block;
-            background-color: rgba(0, 0, 0, 0.03);
             padding: 0 1.5rem 0 1rem;
+
             border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.03);
             -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
             box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+            @include mq($until: sm) {
+               width: 100%;
+               padding: 0;
+
+               border-radius: 0;
+            }
          }
       }
    }
 
-   /* Medication
-      --------------------------------------------------*/
-   $blackAlpha: rgba(#000, 0.12);
-   $lightGray: #cccccc;
-   $gray: #868686;
+   /// TAPER TITLE
+
+   .title-param {
+      font-family: $font-contrail;
+
+      text-align: center;
+
+      height: 100%;
+      padding: 0;
+
+      // Disable text selection
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+
+      color: rgba(64, 77, 91, 0.8);
+
+      .graph-wrapper {
+         display: inline-block;
+
+         height: 100%;
+         padding: 0;
+
+         [id$='_graph'] {
+            min-height: 100%;
+         }
+      }
+
+      .taper-title-wrapper {
+         display: inline-block;
+
+         .taper-title {
+            min-height: 100%;
+
+            text-shadow: 1px 4px 6px #f9f7f6, 0px 0px 0px #000, 1px 4px 6px #f9f7f6;
+            @include ms-respond(font-size, 4);
+         }
+      }
+   }
+
+   /// DATE SELECTION
+
+   .cal-param {
+      text-align: center;
+
+      height: 100%;
+      padding: 0;
+
+      .cal-wrapper {
+         text-align: center;
+         white-space: nowrap;
+
+         display: inline-block;
+
+         height: 100%;
+         padding: 0 1.5rem 0 1rem;
+
+         border-radius: 5px;
+         background-color: rgba(0, 0, 0, 0.03);
+         -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+
+         @include mq($until: sm) {
+            width: 100%;
+            padding: 0;
+
+            border-radius: 0;
+         }
+
+         .input-group-addon {
+            display: inline-block;
+
+            width: initial;
+
+            color: $taper-params;
+            border: none;
+            background-color: transparent;
+            @include ms-respond(font-size, 3.5);
+
+            .fa-calendar-o {
+               @include transition(color, $anim-fast);
+
+               &:before {
+                  padding: 1px;
+               }
+
+               &:hover {
+                  cursor: pointer;
+               }
+
+               &.cal-hover {
+                  color: $date-hover;
+               }
+            }
+         }
+
+         #input_date {
+            font-family: $font-opensans;
+            font-weight: 600;
+            line-height: 80px;
+
+            vertical-align: middle;
+            text-indent: 10px;
+
+            padding: 0 1rem;
+
+            // Disable text selection
+            -o-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+
+            border: none;
+            outline: none;
+            background-color: transparent;
+            @include ms-respond(font-size, 3.5);
+            @include transition(color, $anim-fast);
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            &.cal-hover {
+               color: $date-hover;
+            }
+         }
+      }
+   }
+
+   /// MEDICATION SELECTION
 
    .med-param {
       height: 100%;
+      @include mq($until: md) {
+         padding-top: 1rem;
+         padding-bottom: 2rem;
+      }
 
       input[type='text'],
       .tt-menu {
          font-family: $font-contrail;
          font-size: 32px;
+
+         padding: 0;
+
          color: $taper-params;
          border-top: none;
          border-right: none;
-         border-left: none;
          border-bottom: 1px solid $blackAlpha;
+         border-left: none;
          border-radius: 0;
-         padding: 0;
          outline: none;
+         @include transition(border-color $anim);
+
          &:hover {
-            border-color: $gray;
+            border-color: $med-gray;
          }
       }
 
@@ -187,111 +212,57 @@
       }
 
       .tt-menu {
-         background-color: rgba(0, 0, 0, 0.03);
          width: 100%;
+
+         border-color: transparent !important;
+         border-bottom-right-radius: 2px;
+         border-bottom-left-radius: 2px;
+         background-color: $med-white;
+         -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
       }
 
       .tt-selectable {
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
+         @include transition(background-color $anim);
+
+         &:hover {
+            background-color: $darkWhite;
+         }
       }
 
       .sup-med-wrapper {
          text-align: center;
 
          .med-wrapper {
-            //height: 100%;
-            display: inline-block;
             text-align: left;
+
+            display: inline-block;
 
             > div {
                height: 100%;
 
                .twitter-typeahead {
-                  height: 100%;
-                  //width: 100%;
                   width: 270px;
+                  height: 100%;
 
                   input {
-                     height: 100%;
                      width: 100%;
+                     height: 100%;
                   }
                }
             }
          }
       }
-
-      //@include ms-respond(font-size, 3.5);
-
-      //@include mq($from: lg) {height: 100%;}
    }
-   /*
-   .med-param {
-      padding: 0;
 
-      @include mq($from: lg) {
-         height: 110px;
-      }
 
-      .med-wrapper {
-         text-align: center;
-         @include mq($until: sm) {
-            padding: 1.5rem 0;
-         }
+   /// SIZE SELECTION
 
-         .med-col {
-            display: inline-block;
-         }
-      }
-
-      .med-list {
-         //float: left; // NEW
-         margin: 0;
-         padding: 0;
-         list-style: none;
-         font-size: 16px;
-         font-family: $font-opensans;
-         font-weight: 700;
-         letter-spacing: 0.05rem;
-         text-transform: uppercase;
-         @include mq($until: lg) {
-            padding: 1rem;
-         }
-         @include mq($until: sm) {
-            padding: 0 1rem;
-         }
-
-         label {
-            margin: 0;
-            padding-left: 1rem;
-            vertical-align: middle;
-
-            // Disable text selection
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-
-            &:hover {
-               cursor: pointer;
-            }
-
-            &.checked {
-               color: $orange;
-            }
-         }
-      }
-   }
-   */
-
-   /* Sizes
-      --------------------------------------------------*/
    .size-param {
-      font-size: 16px;
       font-family: $font-opensans;
+      font-size: 16px;
       font-weight: 700;
+
       letter-spacing: 0.05rem;
 
       // Disable text selection
@@ -306,40 +277,45 @@
       }
 
       table {
-        text-align: initial;
+         text-align: initial;
+
          margin: 0 auto;
+
          border: none;
-         @include mq($from: lg) {
-            //float: left; // NEW
-         }
       }
 
       tr {
-         //border: 1px dashed red;
       }
 
       td,
       th {
-         border: none;
-         //border: 1px dashed grey;
          white-space: nowrap;
+
          padding: 0.25rem 1rem;
+
+         border: none;
       }
 
       ul {
-         list-style: none;
-         list-style-position: inside;
          margin: 0;
          padding: 0;
+
+         list-style: none;
+         list-style-position: inside;
       }
 
       label {
+         vertical-align: middle;
+
          margin: 0;
          padding-left: 0.5rem;
-         vertical-align: middle;
+         @include transition(color $anim-fast);
 
          &:hover {
             cursor: pointer;
+         }
+
+         &.hover {
             color: $red;
          }
 
@@ -364,6 +340,7 @@
 ---------------------------------------------------------------------------*/
 .picker__holder {
    font-family: 'Roboto', sans-serif;
+
    color: #696969 !important;
 
    .picker__box {
@@ -375,6 +352,7 @@
 
       thead th {
          text-align: center;
+
          border: none;
       }
 
@@ -384,19 +362,19 @@
    }
 
    .picker__day--infocus:hover {
-      background: #e8e8e8;
       color: #2f3238;
+      background: #e8e8e8;
    }
 
    .picker__day--outfocus:hover {
-      background: #e8e8e8;
       color: #696969;
+      background: #e8e8e8;
    }
 
    .picker__day--highlighted {
-      background: #c5d3c3 !important;
-      border-color: transparent;
       color: #fff !important;
+      border-color: transparent;
+      background: #c5d3c3 !important;
 
       &:hover {
          background: #d3ded2 !important;
@@ -441,28 +419,30 @@
 
    .picker__button--today,
    .picker__button--close {
-      color: #696969;
       padding: 0.5em 0 !important;
 
+      color: #696969;
+
       &:hover {
-         background: #e8e8e8;
-         border-bottom-color: transparent;
          color: #2f3238;
+         border-bottom-color: transparent;
+         background: #e8e8e8;
       }
 
       &:before {
-         border: none;
          content: none;
+
+         border: none;
       }
    }
 
    .picker__day.picker__day--outfocus.picker__day--selected {
-      background: none;
       color: #dddddd;
+      background: none;
 
       &:hover {
-         background: #e8e8e8;
          color: #696969;
+         background: #e8e8e8;
       }
    }
 }

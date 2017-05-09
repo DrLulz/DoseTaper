@@ -1,12 +1,15 @@
 :root {
    @include rem-baseline;
-   background-color: #303030;
-   background-image: url(../img/dark-stripes.png);
-   background-repeat: repeat;
+   @include background-color;
 }
 
 html,
 body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+
    color: $dark-grey;
    background-color: lighten(#f8f2ed, 2%);
 
@@ -25,10 +28,6 @@ body {
       color: $off-white;
       background-color: $blueberry;
    }
-   height: 100%;
-   width: 100%;
-   margin: 0;
-   padding: 0;
 }
 
 *,
@@ -38,18 +37,18 @@ body {
 }
 
 .wrapper {
-   width: 100%;
-   margin: auto;
-   min-height: 100%;
    overflow: hidden;
+
+   width: 100%;
+   min-height: 100%;
+   margin: auto;
 }
 
 footer {
-   background-color: #303030;
-   background-image: url(../img/dark-stripes.png);
-   background-repeat: repeat;
-   padding: 0 0 32000px 0;
    margin: 0 0 -32000px 0;
+   padding: 0 0 32000px 0;
+
+   @include background-color();
 
    .row {
       padding: 2rem;
@@ -58,6 +57,7 @@ footer {
 
 .section {
    height: 100%;
+
    background-position: 50%;
    background-size: cover;
 }

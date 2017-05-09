@@ -5,7 +5,7 @@
             <section class="row taper-params">
 
                     <div class="row params-row row-one">
-                        <div class="col-lg-6 title-param">
+                        <div class="col-md-5 col-lg-6 title-param">
                             <div class="col-lg-3 graph-wrapper hidden-md-down">
                                 <img id="nonlinear_graph" class="" src="{{ url_for('static', filename='img/nonlinear_graph.svg') }}">
                             </div>
@@ -17,7 +17,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 cal-param">
+                        <div class="col-md-7 col-lg-6 cal-param">
                             <div class="cal-wrapper">
                                 <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
                                 <span id="input_date" name="date" contenteditable="false" unselectable="on"></span>
@@ -27,7 +27,7 @@
 
                     <div class="row params-row row-two">
                         <div class="rx-wrapper">
-                            <div class="col-lg-5 med-param">
+                            <div class="col-md-5 med-param">
                                 <div class="sup-med-wrapper v-align">
                                     <div class="med-wrapper">
                                         <input id="taper_med" class="typeahead" name="meds" type="text" value="Prednisone">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-7 size-param">
+                            <div class="col-md-7 size-param">
                                 <div class="sup-size-wrapper v-align">
                                     <div class="size-wrapper">
                                         {% include 'sizes.html' %}

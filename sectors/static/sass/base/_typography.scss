@@ -1,32 +1,15 @@
-// Google Fonts
-//@import 'https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700i|Damion|Lato:300,400|Oswald|Oxygen:700';
-
-// Custom Fonts
-
-/* @font-face {
-    font-family: 'AsimovPrintBItal';
-    font-weight: normal;
-    font-style: normal;
-
-    src: url('../fonts/AsimovPrintBItal.eot');
-    src: url('../fonts/AsimovPrintBItal.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/AsimovPrintBItal.woff2') format('woff2'),
-         url('../fonts/AsimovPrintBItal.woff') format('woff'),
-         url('../fonts/AsimovPrintBItal.ttf') format('truetype'),
-         url('../fonts/AsimovPrintBItal.svg#AsimovPrintBItal') format('svg');
-} */
-
+// Lato
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: url('../fonts/lato-v13-latin-300.eot');
+  src: url('../fonts/lato-v13-latin-300.eot'); /* IE9 Compat Modes */
   src: local('Lato Light'), local('Lato-Light'),
-       url('../fonts/lato-v13-latin-300.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/lato-v13-latin-300.woff2') format('woff2'),
-       url('../fonts/lato-v13-latin-300.woff') format('woff'),
-       url('../fonts/lato-v13-latin-300.ttf') format('truetype'),
-       url('../fonts/lato-v13-latin-300.svg#Lato') format('svg');
+       url('../fonts/lato-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lato-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/lato-v13-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/lato-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lato-v13-latin-300.svg#Lato') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
@@ -55,8 +38,7 @@
        url('../fonts/lato-v13-latin-700.svg#Lato') format('svg');
 }
 
-
-/* 
+// Oxygen
 @font-face {
     font-family: 'Oxygen';
     font-weight: 700;
@@ -70,63 +52,22 @@
          url('../fonts/oxygen-v5-latin-700.ttf') format('truetype'),
          url('../fonts/oxygen-v5-latin-700.svg#Oxygen') format('svg');
 }
- */
- 
+
+ // Roboto
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url('../fonts/roboto-v16-latin-300.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/roboto-v16-latin-300.eot');
   src: local('Roboto Light'), local('Roboto-Light'),
-       url('../fonts/roboto-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v16-latin-300.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v16-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* 
-@font-face {
-    font-family: 'Oxygen';
-    font-weight: 300;
-    font-style: normal;
-
-    src: url('../fonts/oxygen-v5-latin-300.eot'); 
-    src: local('Oxygen Light'), local('Oxygen-Light'),
-         url('../fonts/oxygen-v5-latin-300.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oxygen-v5-latin-300.woff2') format('woff2'),
-         url('../fonts/oxygen-v5-latin-300.woff') format('woff'),
-         url('../fonts/oxygen-v5-latin-300.ttf') format('truetype'),
-         url('../fonts/oxygen-v5-latin-300.svg#Oxygen') format('svg');
+       url('../fonts/roboto-v16-latin-300.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/roboto-v16-latin-300.woff2') format('woff2'),
+       url('../fonts/roboto-v16-latin-300.woff') format('woff'), 
+       url('../fonts/roboto-v16-latin-300.ttf') format('truetype'),
+       url('../fonts/roboto-v16-latin-300.svg#Roboto') format('svg');
 }
 
-
-@font-face {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-
-    src: url('../fonts/oxygen-v5-latin-regular.eot');
-    src: local('Oxygen'), local('Oxygen-Regular'),
-         url('../fonts/oxygen-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oxygen-v5-latin-regular.woff2') format('woff2'),
-         url('../fonts/oxygen-v5-latin-regular.woff') format('woff'),
-         url('../fonts/oxygen-v5-latin-regular.ttf') format('truetype'),
-         url('../fonts/oxygen-v5-latin-regular.svg#Oxygen') format('svg');
-}
-@font-face {
-    font-family: 'Averia Sans Libre';
-    font-weight: 700;
-    font-style: italic;
-
-    src: url('../fonts/averia-sans-libre-v4-latin-700italic.eot');
-    src: local('Averia Sans Libre Bold Italic'), local('AveriaSansLibre-BoldItalic'),
-         url('../fonts/averia-sans-libre-v4-latin-700italic.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/averia-sans-libre-v4-latin-700italic.woff2') format('woff2'),
-         url('../fonts/averia-sans-libre-v4-latin-700italic.woff') format('woff'),
-         url('../fonts/averia-sans-libre-v4-latin-700italic.ttf') format('truetype'),
-         url('../fonts/averia-sans-libre-v4-latin-700italic.svg#AveriaSansLibre') format('svg');
-} */
-
+// Oswald
 @font-face {
     font-family: 'Oswald';
     font-weight: 400;
@@ -141,6 +82,7 @@
          url('../fonts/oswald-v11-latin-regular.svg#Oswald') format('svg');
 }
 
+// Damion
 @font-face {
     font-family: 'Damion';
     font-weight: 400;
@@ -155,6 +97,7 @@
          url('../fonts/damion-v6-latin-regular.svg#Damion') format('svg');
 }
 
+// Contrail One
 @font-face {
     font-family: 'Contrail One';
     font-weight: 400;
@@ -169,6 +112,7 @@
          url('../fonts/contrail-one-v6-latin-regular.svg#Damion') format('svg');
 }
 
+// FontAwesome
 @font-face {
     font-family: 'FontAwesome';
     font-weight: normal;
@@ -182,29 +126,44 @@
          url('../fonts/fontawesome-webfont.ttf') format('truetype'),
          url('../fonts/fontawesome-webfont.svg#Damion') format('svg');
 }
-/* 
+
+// Open Sans
 @font-face {
-  font-family: 'Timmana';
+  font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/timmana-v1-latin-regular.eot');
-  src: local('Timmana'),
-       url('../fonts/timmana-v1-latin-regular.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/timmana-v1-latin-regular.woff2') format('woff2'),
-       url('../fonts/timmana-v1-latin-regular.woff') format('woff'),
-       url('../fonts/timmana-v1-latin-regular.ttf') format('truetype'),
-       url('../fonts/timmana-v1-latin-regular.svg#Timmana') format('svg');
-} */
+  font-weight: 600;
+  src: url('../fonts/open-sans-v13-latin-600.eot');
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
+       url('../fonts/open-sans-v13-latin-600.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/open-sans-v13-latin-600.woff2') format('woff2'),
+       url('../fonts/open-sans-v13-latin-600.woff') format('woff'),
+       url('../fonts/open-sans-v13-latin-600.ttf') format('truetype'),
+       url('../fonts/open-sans-v13-latin-600.svg#OpenSans') format('svg');
+}
 
 @font-face {
-  font-family: 'Farsan';
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v13-latin-700.eot');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v13-latin-700.eot?#iefix') format('embedded-opentype'),/
+       url('../fonts/open-sans-v13-latin-700.woff2') format('woff2'),
+       url('../fonts/open-sans-v13-latin-700.woff') format('woff'),
+       url('../fonts/open-sans-v13-latin-700.ttf') format('truetype'),
+       url('../fonts/open-sans-v13-latin-700.svg#OpenSans') format('svg');
+}
+
+// Bangers
+@font-face {
+  font-family: 'Bangers';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/farsan-v1-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Farsan'), local('Farsan-Regular'),
-       url('../fonts/farsan-v1-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/farsan-v1-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/farsan-v1-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/farsan-v1-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/farsan-v1-latin-regular.svg#Farsan') format('svg'); /* Legacy iOS */
+  src: url('../fonts/bangers-v9-latin-regular.eot');
+  src: local('Bangers Regular'), local('Bangers-Regular'),
+       url('../fonts/bangers-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/bangers-v9-latin-regular.woff2') format('woff2'),
+       url('../fonts/bangers-v9-latin-regular.woff') format('woff'),
+       url('../fonts/bangers-v9-latin-regular.ttf') format('truetype'),
+       url('../fonts/bangers-v9-latin-regular.svg#Bangers') format('svg');
 }

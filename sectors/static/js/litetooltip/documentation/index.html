@@ -1,0 +1,408 @@
+﻿<!doctype html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>LiteTooltip.js Quick Guide</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link href="js/libs/google-code-prettify/prettify.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/LiteTooltip.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="http://www.inabrains.com/default.aspx">
+                    <img src="images/logo.png" /></a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="http://www.inabrains.com/tooltip/guide.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="subhead">
+        <div class="header-unit">
+            <h1>LiteTooltip.js Responsive jQuery Plugin 2.0</h1>
+            <p class="htext1">Responsive Jquery Tooltip with Valid HTML5 and CSS3 | Smarter Code for Faster Development | Responsive & Interactive Web designs</p>
+            <p class="htext2">
+                "The First Fully Responsive ToolTip Bundle with 12 Positions, Customizable Color Presets
+                <br />
+                Menu Templates, Image Maps, Hotspots, Videos and Triggers"
+            </p>
+
+        </div>
+        <div class="header-bottom"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <section id="toc">
+                    <div class="page-header">
+                        <h1>Table of Contents</h1>
+                    </div>
+                    <ol style="list-style-type: upper-alpha">
+                        <li><a href="#html">HTML Structure</a></li>
+                        <li><a href="#css">CSS Files</a></li>
+                        <li><a href="#javascript">JavaScript</a></li>
+                        <li><a href="#api">API Usage</a></li>
+                        <li><a href="#changelog">Change Log</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ol>
+                    <hr />
+                </section>
+                <section id="html">
+                    <div class="page-header">
+                        <h3>HTML Structure <small>- <a href="#toc">top</a></small></h3>
+                    </div>
+                    <p>Follow these 4 simple steps to just drag and drop the <strong>LiteTooltip.js</strong> jquery plugin and its ready to use:</p>
+                    <pre class="prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+
+        &lt;!-- 1. add css file here --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;!-- 2. add jquery file --&gt;
+        &lt;!-- 3. add litetooltip.js file --&gt;
+        &lt;!-- 4. initialize litetooltip plugin --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                </section>
+                <section id="css">
+                    <div class="page-header">
+                        <h3>CSS Files <small>- <a href="#toc">top</a></small></h3>
+                    </div>
+                    <p>This bundle includes <strong>LiteTooltip.css</strong> and <strong>LiteTooltip.min.css</strong> files inside the "css" directory. Copy both the files to your main project.</p>
+                    <p>You can add <strong>LiteTooltip.css</strong> file using following code:</p>
+                    <pre class="prettyprint linenums">
+&lt;link href="css/LiteTooltip.css" rel="stylesheet" /&gt;
+</pre>
+                    <p>OR</p>
+                    <p>You can add <strong>LiteTooltip.min.css</strong> file using following code:</p>
+                    <pre class="prettyprint linenums">
+&lt;link href="css/LiteTooltip.min.css" rel="stylesheet" /&gt;
+</pre>
+                    <div class="alert alert-info">
+                        You must add only <strong>LiteTooltip.min.css</strong> file in your final release of project.
+                    </div>
+                </section>
+                <section id="javascript">
+                    <div class="page-header">
+                        <h3>JavaScript <small>- <a href="#toc">top</a></small></h3>
+                    </div>
+                    <p>This plugin uses Jquery so you must add it before adding the LiteTooltip.js plugin script file. We have included <strong>jquery-1.9.0.js</strong> and <strong>jquery-1.9.0.min.js</strong> files inside the "js" directory. You can copy both the files to your main project.</p>
+                    <p>You can add <strong>jquery-1.9.0.js</strong> file using following code:</p>
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="js/jquery-1.9.0.js"&gt;&lt;/script&gt;
+</pre>
+                    <p>This bundle includes <strong>LiteTooltip.js</strong> and <strong>LiteTooltip.min.js</strong> files inside the "js" directory. Copy both the files to your main project.</p>
+                    <p>You can add <strong>LiteTooltip.js</strong> file using following code:</p>
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="js/LiteTooltip.js"&gt;&lt;/script&gt;
+</pre>
+                    <p>OR</p>
+                    <p>You can add <strong>LiteTooltip.min.js</strong> file using following code:</p>
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="js/LiteTooltip.min.js"&gt;&lt;/script&gt;
+</pre>
+                    <div class="alert alert-info">
+                        You must add only <strong>jquery-1.9.0.min.js</strong> and <strong>LiteTooltip.min.js</strong> file in your final release of project.
+                    </div>
+                    <h3>Initializing Litetooltip</h3>
+<p>You can use the <code>data-</code> attributes (provided in the <a href="#api">API reference</a>) of any HTML element to use the different features of <strong>LiteTooltip.js</strong>.</p>
+                    <pre class="prettyprint linenums">
+&lt;a href="#" 
+    data-position="right" 
+    data-title="show this text as tooltip"&gt;
+    link text
+&lt;/a&gt;</pre>
+                    <p>Add the following code just below the code provided for adding the <strong>LiteTooltip.js or LiteTooltip.min.js</strong> file.</p>
+                    <p>It will call the <strong>LiteTooltip</strong> plugin for the target element to display the tooltip balloon:</p>
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript"&gt;
+    $("a").LiteTooltip();
+&lt;/script&gt;
+</pre>
+                    <p>Above code will display the tooltip with text specified in the <code>data-title</code> attribute of <code>a</code> tag.</p>
+                    <h3>Sample</h3>
+                    <p>Move your mouse over the following link text to see the working sample</p>
+                    <p><a href="#" id="preview1" data-title="show this text as tooltip" data-location="right">preview</a></p>
+                </section>
+                <section id="api">
+                    <div class="page-header">
+                        <h3>API Usage <small>- <a href="#toc">top</a></small></h3>
+                    </div>
+                    <h3>Options</h3>
+                    <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-location=""</code>.</p>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px">Name</th>
+                                <th style="width: 100px">type</th>
+                                <th style="width: 100px">default</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>title</td>
+                                <td>string</td>
+                                <td>''</td>
+                                <td>It sets the tooltip text. You can specify plain/html formatted text.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>location</td>
+                                <td>string</td>
+                                <td>'top'</td>
+                                <td>12 Positions for the tooltip - top | right | bottom | left | top-left | top-right | right-top | right-bottom | bottom-left | bottom-right | left-top | left-bottom</td>
+                            </tr>
+                            <tr>
+                                <td>opacity</td>
+                                <td>number</td>
+                                <td>0.8</td>
+                                <td>Transparent density between 0 and 1.</td>
+                            </tr>
+                            <tr>
+                                <td>backcolor</td>
+                                <td>string</td>
+                                <td>'#000000'</td>
+                                <td>Color name or Hex-code for setting the background color.</td>
+                            </tr>
+                            <tr>
+                                <td>textcolor</td>
+                                <td>string</td>
+                                <td>'#ffffff'</td>
+                                <td>Color name or Hex-code for setting the fonts color.</td>
+                            </tr>
+                            <tr>
+                                <td>textalign</td>
+                                <td>string</td>
+                                <td>'center'</td>
+                                <td>3 types of text alignment - left | right | center.</td>
+                            </tr>
+                            <tr>
+                                <td>margin</td>
+                                <td>number</td>
+                                <td>5</td>
+                                <td>Spacing between target and tooltip.</td>
+                            </tr>
+                            <tr>
+                                <td>padding</td>
+                                <td>number</td>
+                                <td>10</td>
+                                <td>Spacing between tooltip text and its edges.</td>
+                            </tr>
+                            <tr>
+                                <td>width</td>
+                                <td>number</td>
+                                <td>0</td>
+                                <td>Fixed width for tooltip balloon.</td>
+                            </tr>
+                            <tr>
+                                <td>templatename</td>
+                                <td>string</td>
+                                <td>''</td>
+                                <td>Specify the predefined template name - Conifer | Limeade | BlueRomance.</td>
+                            </tr>
+                            <tr>
+                                <td>delay</td>
+                                <td>number</td>
+                                <td>0</td>
+                                <td>Delay showing or hiding the tooltip. It accepts number value as milliseconds (ms).</td>
+                            </tr>
+                            <tr>
+                                <td>trigger</td>
+                                <td>string</td>
+                                <td>'hover'</td>
+                                <td>Event for triggering the tooltip - click | hover | focus | hoverable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alret-block">
+                        <span class="badge badge-warning">v1.1</span> new option included:
+                    </div>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px">Name</th>
+                                <th style="width: 100px">type</th>
+                                <th style="width: 100px">default</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>issticky</td>
+                                <td>boolean</td>
+                                <td>true</td>
+                                <td>It sets sticky behavior for the tooltip balloon.<br />
+                                    <span class="label label-important">Note</span> It works with <strong>"click"</strong> trigger only and combines the <strong>"hoverable"</strong> trigger behavior to the tooltip when set to <strong>false</strong>.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alret-block">
+                        <span class="badge badge-warning">v2.0</span> new options included:
+                    </div>
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px">Name</th>
+                                <th style="width: 100px">type</th>
+                                <th style="width: 100px">default</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>container</td>
+                                <td>string</td>
+                                <td>body</td>
+                                <td>
+                                    Appends the tooltip to a specific element. Example: container: 'body'<br />
+                                    <span class="label label-important">Note</span> Always specify the value of <strong>id</strong> attribute of container element. <strong>'body'</strong> is the default value so no need to specify it.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>shadow</td>
+                                <td>number</td>
+                                <td>1</td>
+                                <td>If <strong>1</strong> then enables the shadow effect and if <strong>0</strong> then disables the tooltip shadow effect.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-info">
+                        Options can be specified for individual tooltips through the use of data attributes also.
+                    </div>
+                    <h3>Data Attributes <small>"data-"</small></h3>
+                    <p>You can use the <code>data-</code> attributes (provided in the <a href="#api">API reference</a>) of any HTML element to use the different features of <strong>LiteTooltip.js</strong>.</p>
+                    <pre class="prettyprint linenums">
+&lt;a href="#" 
+    data-position="top" 
+    data-title="show this text as tooltip"&gt;
+    link text
+&lt;/a&gt;</pre>
+                    <p>This plugin uses the HTML5 <strong>data-api</strong> instead of using default attributes so that the page code passes the W3C's HTML and CSS validation successfully incase you want to show HTML formatted tooltips.</p>
+                    <h3>Programmatic API</h3>
+                    <p>Yes, you can use the LiteTooltip.js API along with <code>data-</code> attributes. You can specify the tooltip parameters using HTML markup as well as using plugin method created under the <strong>LiteTooltip</strong> namespace in a single code line.</p>
+                    <pre class="prettyprint linenums">
+$("a").LiteTooltip(); // simple code to initialize it with defaults
+$("a").LiteTooltip({ textalign : "center" }); // "textalign" parameter with value "center"
+$("a").LiteTooltip({ textalign : "center", location : "bottom" }); // multiple parameters
+</pre>
+                    <p>API uses the default JSON based { key: value } comma-separated pairs of parameters to specify the values for different settings of LiteTooltip.</p>
+                    <p>You can learn more about the usage of <strong>LiteTooltip.js</strong> from our <a href="http://www.inabrains.com/tooltip/guide.html" target="_blank">complete API Reference guide here</a>.</p>
+                </section>
+                <section id="changelog">
+                    <div class="page-header">
+                        <h1>Change Log</h1>
+                    </div>
+                    <p>
+                        <span class="badge badge-warning">v2.0</span> <span class="label label-info">April 25, 2014</span>
+                    </p>
+                    <div class="well">
+                        <blockquote>
+                            <p><strong>1.</strong> Added a callback method for passing the tooltip content dynamically.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p><strong>2.</strong> <span class="badge badge-warning">new</span> <code>container</code> parameter added for specifying the tooltip container to display the tooltip content in that particular area instead of traditional balloon.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p><strong>3.</strong> <span class="badge badge-warning">new</span> <code>shadow</code> parameter added to enable/disable the tooltip shadow effect.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p><strong>4.</strong> <span class="badge badge-important">major update</span> Released <a href="http://www.inabrains.com/tooltip/image-hotspot-creator.html"><strong>Responsive Image Hotspot Generator Tool</strong></a> specially designed for Litetooltip. Now you can create responsive Image hotspot tooltips with mouse clicks only and the tooltip will generate the code for you instantly.</p>
+                        </blockquote>
+                    </div>
+                    <p>
+                        <span class="badge badge-warning">v1.5</span> <span class="label label-info">Feb 07, 2014</span>
+                    </p>
+                    <div class="well">
+                        <blockquote>
+                            <p><strong>1.</strong> resolved <code>width</code> parameter issue.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p><strong>2.</strong> optimized animation and instance removal.</p>
+                        </blockquote>
+                    </div>
+                    <p>
+                        <span class="badge badge-warning">v1.1</span> <span class="label label-info">March 01, 2013</span>
+                    </p>
+                    <div class="well">
+                        <blockquote>
+                            <p><strong>1.</strong> <code>issticky</code> parameter added for <strong>"click"</strong> trigger.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p><strong>2.</strong> Now <code>delay</code> parameter can be used with <strong>"hoverable"</strong> trigger to autohide the tooltip if user skips mouse hover event.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <strong>3.</strong> Now <code>delay</code> parameter can be used with <strong>"click"</strong> trigger to autohide the tooltip if user skips mouse hover event. 
+                            <br />
+                                <span class="label label-info">Note</span> use <code>issticky: false</code> or <code>data-issticky="false"</code> with <strong>"click"</strong> trigger to see the effect of <code>delay</code> parameter.
+                            </p>
+                        </blockquote>
+                    </div>
+                    <p>
+                        <span class="badge badge-warning">v1.0</span> <span class="label label-info">Feburary 14, 2013</span>
+                    </p>
+                    <div class="well">
+                        <blockquote>
+                            <p><strong>1.</strong> It was our first release of <strong>LiteTooltip.js</strong> bundle.</p>
+                        </blockquote>
+                    </div>
+                </section>
+                <section id="contact">
+                    <div class="page-header">
+                        <h3>Contact Us <small>- <a href="#toc">top</a></small></h3>
+                    </div>
+                    <p>For any issues or further support you can <a href="http://www.inabrains.com/tooltip/guide.html#contact" target="_blank">contact us here</a>.</p>
+                </section>
+                <p><a href="#toc">Go To Table of Contents</a></p>
+            </div>
+        </div>
+    </div>
+    <footer class="modal-footer">
+        <p>&copy; 2013 inabrains.com, All rights reserved</p>
+    </footer>
+
+    <!-- end div .container -->
+    <script src="js/libs/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="js/libs/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <script src="js/libs/google-code-prettify/prettify.js" type="text/javascript"></script>
+    <script src="js/libs/LiteTooltip.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $window = $(window)
+            window.prettyPrint();
+
+            $("#preview1").LiteTooltip();
+        });
+    </script>
+</body>
+</html>
