@@ -9546,6 +9546,7 @@ input, textarea {
 
 .taper-params {
   position: relative;
+  z-index: 1;
   padding: 3rem 6.5rem;
   color: #404d5b;
   background-color: #f9f7f6; }
