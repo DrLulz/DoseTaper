@@ -42,6 +42,7 @@
 
         &.line-1 {
             top: 0;
+            @include transform(translateY(0px));
         }
 
         &.line-2 {
@@ -50,6 +51,7 @@
 
         &.line-3 {
             top: 100%;
+            @include transform(translateY(0px));
         }
 
         &.line-dark {
@@ -88,12 +90,6 @@
 
         .line-3 {
             @include transform(translateY($translateY * -1) translateX($translateX) rotate($rotation * -1));
-        }
-    }
-    &.notransform {
-        .line-1, .line-3 {
-            -webkit-transform: none;
-            transform: none;
         }
     }
 }
