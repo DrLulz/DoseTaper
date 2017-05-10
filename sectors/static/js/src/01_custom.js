@@ -29,7 +29,6 @@ ham.add(overlay).click(function(e) {
     }
     if (mobile && !$('.ham-icon > .line').hasClass('line-active')) {
         ham.addClass('notransform');
-        ham.removeClass('notransform');
     }
     $(window).on('resize', resetMenu);
 });
