@@ -13,6 +13,13 @@
 
     position: relative;
     //z-index: 100;
+    
+    // Disable text selection
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 
     width: $width-line;
     height: $height-icon;

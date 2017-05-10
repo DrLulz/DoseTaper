@@ -153,7 +153,7 @@ input, textarea {
     }
 
     @include mq($from: mobile) {
-        margin: 4em auto;
+        margin: 4.5em auto;
 
         .cd-switcher a {
             line-height: 70px;

@@ -6507,6 +6507,11 @@ article {
 ---------------------------------------------------------------------------*/
 #ham_icon {
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
   width: 30px;
   height: 20px;
   cursor: pointer; }
@@ -6734,7 +6739,7 @@ input, textarea {
         background: #ffffff; }
   @media (min-width: 46.0625em) {
     .cd-user-modal-container {
-      margin: 4em auto; }
+      margin: 4.5em auto; }
       .cd-user-modal-container .cd-switcher a {
         line-height: 70px;
         height: 70px; } }
