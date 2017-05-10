@@ -8,17 +8,17 @@ $('.typeahead')
 
 //function onOpened($e) {}
 
-function onSelected($e, rx_name) {
-    //console.log('rx_name', rx_name)
-    //$('.meds').not('#' + rx_name).hide();
-    //$('#' + rx_name).show();
+function onSelected($e, rx) {
+    $('table.rx').not('#' + rx).addClass('hidden');
+    $('table#' + rx).removeClass('hidden');
+    checkboxResize();
     $e.target.blur();
 }
 
-function onAutocompleted($e, rx_name) {
-    //console.log('rx_name', rx_name)
-    //$('.meds').not('#' + rx_name).hide();
-    //$('#' + rx_name).show();
+function onAutocompleted($e, rx) {
+    $('table.rx').not('#' + rx).addClass('hidden');
+    $('table#' + rx).removeClass('hidden');
+    checkboxResize();
     $e.target.blur();
 }
 

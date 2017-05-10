@@ -160,41 +160,59 @@ function checkBoxes() {
         });
 }; // checkboxes()
 
+
+function resizeDelay(){
+    var $table = $('table.rx').not('.hidden');
+    var zero   = $table.find('.row-0');
+    var one    = $table.find('.row-1');
+    var two    = $table.find('.row-2');
+    
+    // one row
+    if ( width() > 1155 ) {
+        if ( ! zero.length ) {
+            one.append(two.children()).removeClass('row-1').addClass('row-0');
+            two.remove();
+            }
+    // two rows
+    } else {
+        if ( zero.length ) {
+            var tr_one = zero.children('td').slice(0, 3);
+            var tr_two = zero.children('td').slice(3, 6);
+            console.log('tr_one', tr_one)
+            console.log('tr_two', tr_two)
+            $table.append($('<tr/>', {class: 'row-1', html: tr_one}));
+            $table.append($('<tr/>', {class: 'row-2', html: tr_two}));
+            zero.remove();
+            }
+    }
+}
+
 function checkboxResize() {
     
+    var $table = $('table.rx').not('.hidden');
+    var zero = $table.find('.row-0');
+
     // 2 rows
     if ( width() < 1156 ) {
-        var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
-        var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
-        $( '.size-param table' ).append($('<tr/>', {class: 'row-1', html: tr_one}));
-        $( '.size-param table' ).append($('<tr/>', {class: 'row-2', html: tr_two}));
-        $( '.row-0' ).remove();
+        
+        var tr_one = zero.children('td').slice(0, 3);
+        var tr_two = zero.children('td').slice(3, 6);
+
+        $table.append($('<tr/>', {class: 'row-1', html: tr_one}));
+        $table.append($('<tr/>', {class: 'row-2', html: tr_two}));
+        zero.remove();
+    } else if ( !zero.length ) {
+        var one = $table.find('.row-1');
+        var two = $table.find('.row-2');
+        one.append(two.children()).removeClass('row-1').addClass('row-0');
+        two.remove();
     };
 
-    $(window).resize(function() {
-        //var width = $(window).width();
-        var table = $( '.size-param table' );
-        var zero = $( '.row-0' );
-        var one  = $( '.row-1' );
-        var two  = $( '.row-2' );
-        
-        // one row
-        if ( width() > 1155 ) {
-            if ( ! zero.length ) {
-                one.append(two.children()).removeClass('row-1').addClass('row-0');
-                two.remove();
-                }
-        // two rows
-        } else {
-            if ( zero.length ) {
-                var tr_one = $( 'tr.row-0' ).children('td').slice(0, 3);
-                var tr_two = $( 'tr.row-0' ).children('td').slice(3, 6);
-                table.append($('<tr/>', {class: 'row-1', html: tr_one}));
-                table.append($('<tr/>', {class: 'row-2', html: tr_two}));
-                zero.remove();
-                }
-        }
-    });
+    var doit;
+    window.onresize = function(){
+      clearTimeout(doit);
+      doit = setTimeout(resizeDelay, 5);
+    };
 
     if (width() < lg) {
         $('.sup-size-wrapper').removeClass('v-align');
@@ -202,6 +220,8 @@ function checkboxResize() {
     if (width() < md) {
         $('.sup-med-wrapper').removeClass('v-align');
     }
+
+
     $(window).resize(function() {
         if (width() < md) {
             $('.sup-med-wrapper').removeClass('v-align');

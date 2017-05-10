@@ -9800,6 +9800,8 @@ input, textarea {
       text-align: initial;
       margin: 0 auto;
       border: none; }
+      .taper-params .size-param table.rx.hidden {
+        display: none; }
     .taper-params .size-param td,
     .taper-params .size-param th {
       white-space: nowrap;

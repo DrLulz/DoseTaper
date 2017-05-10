@@ -282,6 +282,11 @@
          margin: 0 auto;
 
          border: none;
+         &.rx {
+            &.hidden {
+                display: none;
+            }
+         }
       }
 
       tr {
