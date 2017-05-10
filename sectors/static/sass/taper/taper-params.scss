@@ -338,6 +338,18 @@
 
 /* Date Picker PopUp
 ---------------------------------------------------------------------------*/
+.picker--opened .picker__holder {
+  //-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF00,endColorstr=#FFFFFF00)" !important;
+  background: transparent !important;
+    -webkit-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -o-transition-property: none !important;
+    transition-property: none !important;
+}
+.picker__box {
+    border: none !important;
+}
 .picker__holder {
    font-family: 'Roboto', sans-serif;
 
