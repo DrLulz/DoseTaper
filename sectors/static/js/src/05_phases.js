@@ -140,7 +140,8 @@ $('#add').click(function() {
     append($('<p/>', { unselectable: 'on', html: n }));
     num.appendTo($phase);
 
-    var params = $('<div/>', { class: 'col-xs-8 pull-xs-2 col-md-9 pull-md-1 phase-params' });
+    //var params = $('<div/>', { class: 'col-xs-8 pull-xs-2 col-md-9 pull-md-1 phase-params' });
+    var params = $('<div/>', { class: 'col-xs-7 pull-xs-3 col-sm-8 pull-sm-2 col-md-9 pull-md-1 phase-params' }); 
     var row = $('<div/>', { class: 'row' });
 
     // dose
