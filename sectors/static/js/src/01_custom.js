@@ -31,7 +31,7 @@ ham.add(overlay).click(function(e) {
     ham.toggleClass('active');
     $('.ham-icon > .line').toggleClass('line-active');
     if (mobile && !ham.hasClass('active')) {
-        $('line-1, line-3').css({'-webkit-transform': 'translateY(0px)', '-moz-transform': 'translateY(0px)', '-ms-transform': 'translateY(0px)', '-o-transform': 'translateY(0px)', 'transform': 'translateY(0px)'});
+        $('.line-1, .line-3').css({'-webkit-transform': 'translateY(0px)', '-moz-transform': 'translateY(0px)', '-ms-transform': 'translateY(0px)', '-o-transform': 'translateY(0px)', 'transform': 'translateY(0px)'});
     }
     $(window).on('resize', resetMenu);
 });
