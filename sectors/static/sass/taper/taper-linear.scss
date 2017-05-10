@@ -1,0 +1,28 @@
+#pl.phase {
+   height: initial;
+
+   .phase-params {
+      &.linear-params {
+         float: left;
+         @include mq($until: md) {
+            float: right;
+         }
+
+         input.fl-input {
+            @include ms-respond(font-size, 5);
+         }
+
+         #initial {
+            @include mq($until: md) {
+               padding-top: 4rem;
+            }
+         }
+
+         #terminal {
+            @include mq($until: md) {
+               margin-bottom: 0;
+            }
+         }
+      }
+   }
+}

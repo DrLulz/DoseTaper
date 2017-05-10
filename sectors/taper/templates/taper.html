@@ -1,106 +1,29 @@
 {% extends 'layout.html' %} {% block container %}
 <div id="nl_taper">
+
+    {% if request.url_rule.endpoint == "taper.linear" %}
+    <form id="l_form" method="POST" role="form">
+        <input type="hidden" name="linear" value="linear" />
+    {% else %}
     <form id="nl_form" method="POST" role="form">
+    {% endif %}
+
+        {#<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />#}
+    
+
         <div class="container-fluid">
-            <section class="row taper-params">
-
-                    <div class="row params-row row-one">
-                        <div class="col-md-5 col-lg-6 title-param">
-                            <div class="col-lg-3 graph-wrapper hidden-md-down">
-                                <img id="nonlinear_graph" class="" src="{{ url_for('static', filename='img/nonlinear_graph.svg') }}">
-                            </div>
-
-                            <div class="col-lg-9 v-align taper-title-wrapper">
-                                <div class="taper-title" unselectable="on">
-                                    Non-Linear Taper
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-7 col-lg-6 cal-param">
-                            <div class="cal-wrapper">
-                                <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
-                                <span id="input_date" name="date" contenteditable="false" unselectable="on"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row params-row row-two">
-                        <div class="rx-wrapper">
-                            <div class="col-md-5 med-param">
-                                <div class="sup-med-wrapper v-align">
-                                    <div class="med-wrapper">
-                                        <input id="taper_med" class="typeahead" name="meds" type="text" value="Prednisone">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-7 size-param">
-                                <div class="sup-size-wrapper v-align">
-                                    <div class="size-wrapper">
-                                        {% include 'sizes_prednisone.html' %}
-                                        {% include 'sizes_methylprednisolone.html' %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
-            </section>
+            {% include 'taper-params.html' %}
+
+            {% if request.url_rule.endpoint == "taper.linear" %}
+                {% include 'linear-params.html' %}                
+            {% endif %}
 
             {% include 'phases.html' %}
             
 
-        </div>
+        </div> <!-- container-fluid -->
     </form>
 </div>
 {% endblock %}
-
-
-{#
-<section class="row taper-params">
-        <div class="row params-row row-one">
-            <div class="col-lg-6 title-param" style="border: 1px dashed grey;">
-                <div class="col-lg-3 graph-wrapper hidden-md-down">
-                    <img id="nonlinear_graph" class="" src="{{ url_for('static', filename='img/nonlinear_graph.svg') }}">
-                </div>
-
-                <div class="col-lg-9 v-align taper-title-wrapper">
-                    <div class="taper-title" unselectable="on">
-                        Non-Linear Taper
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 cal-param" style="border: 1px dashed grey;">
-                <div class="cal-wrapper">
-                    <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
-                    <span id="input_date" name="date" contenteditable="false" unselectable="on"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row params-row row-two" style="border: 1px solid black;">
-            <div class="rx-wrapper" style="border: 2px dashed red;">
-                <div class="col-lg-5 med-param" style="border: 2px solid grey;">
-                    <div class="sup-med-wrapper v-align">
-                        <div class="med-wrapper" style="border: 1px dashed orange;">
-                            <input id="taper_med" class="typeahead" name="meds" type="text" value="Prednisone">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7 size-param" style="border: 2px solid grey;">
-                    <div class="sup-size-wrapper v-align">
-                        <div class="size-wrapper" style="border: 1px dashed orange;">
-                            {% include 'sizes.html' %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-</section>
-#}

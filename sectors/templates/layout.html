@@ -71,7 +71,7 @@
                 {% endif %}
 
             {# TAPER #}
-                {% if request.url_rule.endpoint == "taper.index" %}
+                {% if request.url_rule.endpoint != "intro.index" %}
                     <script src="{{ url_for('static', filename='js/dist/taper.min.js') }}"></script>
                 {% endif %}
 

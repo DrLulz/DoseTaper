@@ -1,0 +1,49 @@
+<section class="row taper-params">
+        <div class="row params-row row-one">
+
+            <div class="col-md-5 col-lg-6 title-param">
+                <div class="col-lg-3 graph-wrapper hidden-md-down">
+                    {% if request.url_rule.endpoint == "taper.linear" %}
+                    <img id="nonlinear_graph" class="" src="{{ url_for('static', filename='img/linear_graph.svg') }}">
+                    {% else %}
+                    <img id="nonlinear_graph" class="" src="{{ url_for('static', filename='img/nonlinear_graph.svg') }}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-9 v-align taper-title-wrapper">
+                    <div class="taper-title" unselectable="on">
+                        {% if request.url_rule.endpoint == "taper.linear" %}Linear Taper{% else %}Non-Linear Taper{% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-6 cal-param">
+                <div class="cal-wrapper">
+                    <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+                    <span id="input_date" name="date" contenteditable="false" unselectable="on"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row params-row row-two">
+
+            <div class="rx-wrapper">
+                <div class="col-md-5 med-param">
+                    <div class="sup-med-wrapper v-align">
+                        <div class="med-wrapper">
+                            <input id="taper_med" class="typeahead" name="meds" type="text" value="Prednisone">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 size-param">
+                    <div class="sup-size-wrapper v-align">
+                        <div class="size-wrapper">
+                            {% include 'sizes_prednisone.html' %}
+                            {% include 'sizes_methylprednisolone.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>

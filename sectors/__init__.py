@@ -25,7 +25,7 @@ app = Flask(__name__,
 				template_folder='templates')
 
 app.register_blueprint(intro, url_prefix='/')
-app.register_blueprint(taper, url_prefix='/initiate')
+app.register_blueprint(taper, url_prefix='/method')
 
 '''
 configure_app(app)
