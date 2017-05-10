@@ -21,6 +21,12 @@ ham.add(overlay).click(function(e) {
     overlay.toggleMenu();
     ham.toggleClass('active');
     $('.ham-icon > .line').toggleClass('line-active');
+    if (mobile) {
+        console.log('mobile')
+    }
+    if (!$('.ham-icon > .line').hasClass('line-active')) {
+        console.log('not active')
+    }
     if (mobile && !$('.ham-icon > .line').hasClass('line-active')) {
         ham.addClass('notransform');
         ham.removeClass('notransform');
