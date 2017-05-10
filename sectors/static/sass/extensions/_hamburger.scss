@@ -82,11 +82,18 @@
         }
 
         .line-2 {
+            transition: opacity 0.1s ease-out;
             @include opacity(0);
         }
 
         .line-3 {
             @include transform(translateY($translateY * -1) translateX($translateX) rotate($rotation * -1));
+        }
+    }
+    &.notransform {
+        .line-1, .line-3 {
+            -webkit-transform: none;
+            transform: none;
         }
     }
 }

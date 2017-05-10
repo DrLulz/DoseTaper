@@ -6569,6 +6569,7 @@ article {
     -o-transform: translateY(10px) translateX(0) rotate(45deg);
     transform: translateY(10px) translateX(0) rotate(45deg); }
   #ham_icon.active .line-2 {
+    transition: opacity 0.1s ease-out;
     opacity: 0;
     filter: alpha(opacity=0); }
   #ham_icon.active .line-3 {
@@ -6577,6 +6578,9 @@ article {
     -ms-transform: translateY(-10px) translateX(0) rotate(-45deg);
     -o-transform: translateY(-10px) translateX(0) rotate(-45deg);
     transform: translateY(-10px) translateX(0) rotate(-45deg); }
+  #ham_icon.notransform .line-1, #ham_icon.notransform .line-3 {
+    -webkit-transform: none;
+    transform: none; }
 
 /* Overlay
 ---------------------------------------------------------------------------*/
