@@ -230,12 +230,12 @@ $.fn.initialControls = function() {
     this.append(controls);
     
     $('.phase-add, .phase-del, .taper-calc').
-        on( 'mouseover', function() {
+        on( 'mouseover touchstart', function() {
             $(this).filter(':not(:animated)').animate({
                 width: '100%'
             },'fast');
         }).
-        on( 'mouseout', function() {
+        on( 'mouseout touchend', function() {
             $(this).animate({
                 width: '80%'
             },'fast');
