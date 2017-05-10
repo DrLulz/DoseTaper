@@ -6588,6 +6588,12 @@ article {
     -ms-transform: translateY(-10px) translateX(0) rotate(-45deg);
     -o-transform: translateY(-10px) translateX(0) rotate(-45deg);
     transform: translateY(-10px) translateX(0) rotate(-45deg); }
+  #ham_icon.notransform .line-1, #ham_icon.notransform .line-3 {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px); }
 
 /* Overlay
 ---------------------------------------------------------------------------*/
