@@ -21,8 +21,9 @@ ham.add(overlay).click(function(e) {
     overlay.toggleMenu();
     ham.toggleClass('active');
     $('.ham-icon > .line').toggleClass('line-active');
-    if (mobile && !ham.hasClass('active')) {
-        ham.addClass('notransform').removeClass('notransform');
+    if (mobile && !$('.ham-icon > .line').hasClass('line-active')) {
+        ham.addClass('notransform');
+        ham.removeClass('notransform');
     }
     $(window).on('resize', resetMenu);
 });
