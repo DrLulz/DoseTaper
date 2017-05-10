@@ -17,6 +17,15 @@ function width() {
 /* f(x)
 ---------------------------------------------------------------------------*/
 
+/**
+ * Scroll to Top on Refresh (F5)
+ */
+
+$(window).on('unload', function() {
+    $(window).scrollTop(0);
+});
+// * window.onunload = function(){ window.scrollTo(0,0); }
+
 /* Mobile
 --------------------------------------------------*/
 function mobile() {

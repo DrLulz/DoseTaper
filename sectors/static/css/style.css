@@ -9833,12 +9833,12 @@ input, textarea {
 /* Date Picker PopUp
 ---------------------------------------------------------------------------*/
 .picker--opened .picker__holder {
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF00,endColorstr=#FFFFFF00)" !important;
-  background: transparent !important;
   -webkit-transition-property: none !important;
   -moz-transition-property: none !important;
   -o-transition-property: none !important;
-  transition-property: none !important; }
+  transition-property: none !important;
+  background: transparent !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff00, endColorstr=#ffffff00)" !important; }
 
 .picker__box {
   border: none !important; }
