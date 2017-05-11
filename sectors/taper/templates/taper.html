@@ -1,5 +1,10 @@
 {% extends 'layout.html' %} {% block container %}
+
+{% if request.url_rule.endpoint != "taper.linear" %}
 <div id="nl_taper">
+{% else %}
+<div id="l_taper">
+{% endif %}
 
     {% if request.url_rule.endpoint == "taper.linear" %}
     <form id="l_form" method="POST" role="form">

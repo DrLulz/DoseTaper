@@ -9479,13 +9479,13 @@ input, textarea {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-#nl_taper {
+[id$='_taper'] {
   padding-top: 60px; }
-  #nl_taper .container-fluid {
+  [id$='_taper'] .container-fluid {
     background-color: #303030;
     background-image: url(../img/dark-stripes.png);
     background-repeat: repeat; }
-  #nl_taper section {
+  [id$='_taper'] section {
     width: initial;
     margin: 0 -15px; }
 
@@ -10086,7 +10086,8 @@ input, textarea {
   @media (min-width: 61.25em) {
     .phase {
       height: 200px; } }
-  .phase .phase-label {
+  .phase .phase-label,
+  .phase .nl-phase-label {
     font-family: 'Bangers', cursive;
     position: absolute;
     top: 10px;
@@ -10100,20 +10101,42 @@ input, textarea {
     opacity: 0.3;
     font-size: 1.90919rem; }
     @media (min-width: 30em) and (max-width: 48.063em) {
-      .phase .phase-label {
+      .phase .phase-label,
+      .phase .nl-phase-label {
         font-size: 1.90919rem; } }
     @media (min-width: 48.063em) and (max-width: 61.25em) {
-      .phase .phase-label {
+      .phase .phase-label,
+      .phase .nl-phase-label {
         font-size: 2.10325rem; } }
     @media (min-width: 61.25em) and (max-width: 81.25em) {
-      .phase .phase-label {
+      .phase .phase-label,
+      .phase .nl-phase-label {
         font-size: 2.23607rem; } }
     @media (min-width: 81.25em) and (max-width: 156.25em) {
-      .phase .phase-label {
+      .phase .phase-label,
+      .phase .nl-phase-label {
         font-size: 2.46244rem; } }
     @media (min-width: 156.25em) {
-      .phase .phase-label {
+      .phase .phase-label,
+      .phase .nl-phase-label {
         font-size: 2.69026rem; } }
+  .phase .nl-phase-label {
+    font-size: 1.8rem; }
+    @media (min-width: 30em) and (max-width: 48.063em) {
+      .phase .nl-phase-label {
+        font-size: 1.8rem; } }
+    @media (min-width: 48.063em) and (max-width: 61.25em) {
+      .phase .nl-phase-label {
+        font-size: 1.92rem; } }
+    @media (min-width: 61.25em) and (max-width: 81.25em) {
+      .phase .nl-phase-label {
+        font-size: 2rem; } }
+    @media (min-width: 81.25em) and (max-width: 156.25em) {
+      .phase .nl-phase-label {
+        font-size: 2.1328rem; } }
+    @media (min-width: 156.25em) {
+      .phase .nl-phase-label {
+        font-size: 2.2624rem; } }
   .phase .phase-qod-wrapper {
     line-height: 0;
     text-align: center;

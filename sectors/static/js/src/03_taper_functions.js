@@ -142,7 +142,7 @@ function resizeDelay(){
         two    = $table.find('.row-2');
     
     // one row
-    if ( width() > 1155 && !zero.length ) {
+    if ( width() > 1155){ //&& !zero.length ) {
         one.append(two.children()).removeClass('row-1').addClass('row-0');
         two.remove();
 
@@ -212,7 +212,6 @@ function checkboxResize() {
     });
 
 }; // checkbox_resize()
-
 
 
 /* typeahead
@@ -691,23 +690,8 @@ $('#add, #ladd').click(function(e) {
     $(this).closest('form').find(':input').slice(-1).blur();
 
     if (e.target.id == 'ladd') {
-/*         $('#ldel')
-            .removeClass('phase-empty')
-            .addClass('phase-del animated slideInRight')
-            .on( 'mouseover', function() {
-                $(this).filter(':not(:animated)').animate({
-                    width: '100%'
-                },'fast');
-            })
-            .on( 'mouseout touchend', function() {
-                $(this).animate({
-                    width: '80%'
-                },'fast');
-            }); */
-        
         $('#ladd')
             .addClass('phase-empty animated slideOutRight')
-            //.addClass('phase-add ')
 
         $('#pl #calc')
             .removeClass('slideInRight')
@@ -732,7 +716,11 @@ $('#add, #ladd').click(function(e) {
         'class': 'row phase non-linear animated'
     });
 
-    var label = $('<div/>', { class: 'phase-label', unselectable: 'on', html: 'Phase ' + n });
+    if ( $('#l_taper').length ) {
+        var label = $('<div/>', { class: 'nl-phase-label', unselectable: 'on', html: 'Non-Linear' });
+    } else {
+        var label = $('<div/>', { class: 'phase-label', unselectable: 'on', html: 'Phase ' + n });
+    }
     label.appendTo($phase);
 
     var qod = $('<div/>', { class: 'phase-qod-wrapper' })
@@ -811,9 +799,11 @@ $('#del, #ldel').click(function(e) {
 
         $('#ladd')
             .addClass('slideInRight')
-            .removeClass('phase-empty slideOutRight')
+            .removeClass('phase-empty slideOutRight');
+
     } else {
         if (!$('#p2').length) {
+
             $('#ldel')
                 .removeClass('slideInRight')
                 .addClass('slideOutRight')
@@ -824,7 +814,7 @@ $('#del, #ldel').click(function(e) {
                 
             $('#ladd')
                 .addClass('slideInRight')
-                .removeClass('phase-empty slideOutRight')
+                .removeClass('phase-empty slideOutRight');
 
             $('#pl #calc')
                 .removeClass('slideOutRight')

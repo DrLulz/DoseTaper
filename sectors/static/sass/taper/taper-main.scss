@@ -65,7 +65,7 @@ $anim-fast: 100ms ease-in-out;
    transform: translateY(-50%);
 }
 
-#nl_taper {
+[id$='_taper'] {
    padding-top: 60px;
 
    .container-fluid {

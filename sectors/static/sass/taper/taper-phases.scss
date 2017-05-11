@@ -23,7 +23,8 @@ $icon-left-hover: 0;
       height: $control-lg * 4;
    }
 
-   .phase-label {
+   .phase-label,
+   .nl-phase-label {
       font-family: 'Bangers', cursive;
 
       position: absolute;
@@ -41,6 +42,10 @@ $icon-left-hover: 0;
 
       opacity: 0.3;
       @include ms-respond(font-size, 1.5);
+   }
+
+   .nl-phase-label {
+      @include ms-respond(font-size, 1);
    }
 
    .phase-qod-wrapper {
