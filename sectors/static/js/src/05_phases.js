@@ -85,7 +85,7 @@ $.fn.daysInput = function() {
             $(this).val(output);
         }
     });
-    this.on('keyup keydown', function() {
+    this.on('keyup keydown', function(e) {
         $label = $(this).prev();
         var value = parseFloat($(this).val()) || '';
         var output = value + ' days';
@@ -104,6 +104,63 @@ $.fn.daysInput = function() {
     });
 };
 
+$.fn.linearInput = function() {
+
+    this.on('keyup keydown', function(e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            $(this).blur();
+        }
+    
+        $inst = $('.instructions span');
+    
+        //var id = $(this).attr('id');
+
+        var initial = $('#start_mg').val().replace(/[^0-9\.]/g, '');
+        var terminal = $('#stop_mg').val().replace(/[^0-9\.]/g, '');
+        var decrement = $('#step_mg').val().replace(/[^0-9\.]/g, '');
+        var interval = $('#step_time').val().replace(/[^0-9\.]/g, '');
+
+        if (initial != '') {
+            var initial = 'Start at ' +initial+ 'mg';
+        } else {
+            var initial = 0;
+        }
+        
+        if (terminal != '') {
+            var terminal = 'Stop at ' +terminal+ 'mg';
+        } else {
+            var terminal = 0;
+        }
+
+        if (decrement != '') {
+            var decrement = 'Decrease by ' +decrement+ 'mg';
+        } else {
+            var decrement = 0;
+        }
+
+        if (interval != '') {
+            var interval = 'every ' +interval+ ' days.';
+        } else {
+            var interval = 0;
+        }
+
+        if (!initial && !terminal && !decrement && !interval) {
+            var display = '';
+        } else if (initial && !terminal && !decrement && !interval) {
+            var display = initial;
+        } else if (initial && terminal && !decrement && !interval) {
+            var display = initial+ ', ' +terminal;
+        } else if (initial && terminal && decrement && !interval) {
+            var display = initial+ ', ' +terminal+ ', ' +decrement;
+        } else if (initial && terminal && decrement && interval) {
+            var display = initial+ ', ' +terminal+ ', ' +decrement+ ' ' +interval;
+        }
+
+        $inst.html(display);
+
+    });
+};
 
 /* Dynamic Phases
 ---------------------------------------------------------------------------*/
@@ -140,7 +197,6 @@ $('#add').click(function() {
     append($('<p/>', { unselectable: 'on', html: n }));
     num.appendTo($phase);
 
-    //var params = $('<div/>', { class: 'col-xs-8 pull-xs-2 col-md-9 pull-md-1 phase-params' });
     var params = $('<div/>', { class: 'col-xs-7 pull-xs-3 col-sm-8 pull-sm-2 col-md-9 pull-md-1 phase-params' }); 
     var row = $('<div/>', { class: 'row' });
 
@@ -246,6 +302,10 @@ $('[id$=_form]').on('keydown', '[id$=_days]', function(e) {
         $(this).blur();
         inputs.slice(-2, -1).focus();
     }
+    if (e.which == 13) {
+        e.preventDefault();
+        $(this).blur();
+    }
 });
 $('[id$=_form]').on('keydown', '[id$=_dose]', function(e) {
     if (e.which == 8 && $(this).val() == '' && $(this).attr('id') == 'p2_dose') {
@@ -253,6 +313,10 @@ $('[id$=_form]').on('keydown', '[id$=_dose]', function(e) {
         var inputs = $(this).closest('form').find('.param-input');
         $(this).blur();
         inputs.slice(-3, -2).focus();
+    }
+    if (e.which == 13) {
+        e.preventDefault();
+        $(this).blur();
     }
 });
 $('[id$=_form]').on('keydown', '[id$=_dose]:last', function(e) {
@@ -263,15 +327,20 @@ $('[id$=_form]').on('keydown', '[id$=_dose]:last', function(e) {
 });
 
 
-$('[id$=_dose], [id$=_days], [id$=_mg], [id$=_time]').each(function() {
+$('[id$=_dose], [id$=_days], [id$=_mg], [id$=_time]').each(function(e) {
+
     var $this = $(this);
 
     $this.onFocus();
     $this.onBlur();
 
-    if ($this[0].id.indexOf('_dose') !== -1) {
+    if (($this[0].id.indexOf('_dose') !== -1) || ($this[0].id.indexOf('_mg') !== -1)) {
         $this.doseInput();
-    } else if ($this[0].id.indexOf('_days') !== -1) {
+    } else if ( ($this[0].id.indexOf('_days') !== -1) || ($this[0].id.indexOf('_time') !== -1) ) {
         $this.daysInput();
+    }
+
+    if ( ($this[0].id.indexOf('_mg') !== -1) || ($this[0].id.indexOf('_time') !== -1) ) {
+        $this.linearInput();
     }
 });

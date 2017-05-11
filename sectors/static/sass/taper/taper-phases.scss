@@ -10,6 +10,7 @@ $icon-left-hover: 0;
 
 .phase {
    position: relative;
+   z-index: 0;
 
    @include mq($until: md) {
       height: $control-sm * 4;

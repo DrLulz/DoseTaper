@@ -1,6 +1,31 @@
 #pl.phase {
    height: initial;
 
+    @include mq($from: md) {
+        padding-top: 4rem;
+    }
+
+   .instructions {
+      font-family: $font-opensans;
+      font-weight: 600;
+
+      text-align: center;
+      letter-spacing: 0.06rem;
+
+      position: absolute;
+      top: 10px;
+      right: 0;
+      left: 0;
+
+      max-width: 100%;
+      margin: auto;
+
+      opacity: 0.15;
+      color: #404d5b;
+      //font-size: 20px;
+      @include ms-respond(font-size, 1.5);
+   }
+
    .phase-params {
       &.linear-params {
          float: left;
@@ -12,6 +37,20 @@
             @include ms-respond(font-size, 5);
          }
 
+         #initial,
+         #terminal,
+         #decrement,
+         #interval {
+            input.fl-input {
+               color: #696969;
+               border-bottom: 3px solid #cbc4c6;
+            }
+
+            .fl-is-active input.fl-input {
+               border-color: #a8a8a8;
+            }
+         }
+
          #initial {
             @include mq($until: md) {
                padding-top: 4rem;
@@ -19,8 +58,119 @@
          }
 
          #terminal {
+            $terminal-color: #dc9656;
             @include mq($until: md) {
                margin-bottom: 0;
+            }
+
+            label.fl-label {
+               color: lighten($terminal-color, 0.5);
+            }
+
+            input.fl-input {
+               &::placeholder {
+                  color: $terminal-color;
+               }
+
+               &:-moz-placeholder {
+                  color: $terminal-color;
+               }
+
+               &::-moz-placeholder {
+                  color: $terminal-color;
+               }
+
+               &:-ms-input-placeholder {
+                  color: $terminal-color;
+               }
+
+               &::-ms-input-placeholder {
+                  color: $terminal-color;
+               }
+
+               &::-webkit-input-placeholder {
+                  color: $terminal-color;
+               }
+            }
+
+            .fl-has-focus input.fl-input {
+               border-color: $terminal-color;
+            }
+         }
+
+         #decrement {
+            $decrement-color: #8f9d6a;
+
+            label.fl-label {
+               color: lighten($decrement-color, 0.5);
+            }
+
+            input.fl-input {
+               &::placeholder {
+                  color: $decrement-color;
+               }
+
+               &:-moz-placeholder {
+                  color: $decrement-color;
+               }
+
+               &::-moz-placeholder {
+                  color: $decrement-color;
+               }
+
+               &:-ms-input-placeholder {
+                  color: $decrement-color;
+               }
+
+               &::-ms-input-placeholder {
+                  color: $decrement-color;
+               }
+
+               &::-webkit-input-placeholder {
+                  color: $decrement-color;
+               }
+            }
+
+            .fl-has-focus input.fl-input {
+               border-color: $decrement-color;
+            }
+         }
+
+         #interval {
+            $interval-color: #b294bb;
+
+            label.fl-label {
+               color: lighten($interval-color, 0.5);
+            }
+
+            input.fl-input {
+               &::placeholder {
+                  color: $interval-color;
+               }
+
+               &:-moz-placeholder {
+                  color: $interval-color;
+               }
+
+               &::-moz-placeholder {
+                  color: $interval-color;
+               }
+
+               &:-ms-input-placeholder {
+                  color: $interval-color;
+               }
+
+               &::-ms-input-placeholder {
+                  color: $interval-color;
+               }
+
+               &::-webkit-input-placeholder {
+                  color: $interval-color;
+               }
+            }
+
+            .fl-has-focus input.fl-input {
+               border-color: $interval-color;
             }
          }
       }
