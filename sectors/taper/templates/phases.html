@@ -1,4 +1,8 @@
-<div id="p1" data-id="1" class="row phase">
+{% if request.url_rule.endpoint != "taper.linear" %}
+<div id="p1" data-id="1" class="row phase non-linear">
+{% else %}
+<div id="p1" data-id="0" class="row phase non-linear animated hidden" style="transition: display .2s linear;">
+{% endif %}
     <div class="phase-label" unselectable="on">Phase 1</div>
 
     <div class="phase-qod-wrapper">
@@ -31,8 +35,8 @@
 
 {#  --- PHASE 2 ---  #}
 
-
-<div id="p2" data-id="2" class="row phase">
+{% if request.url_rule.endpoint != "taper.linear" %}
+<div id="p2" data-id="2" class="row phase non-linear">
     <div class="phase-label" unselectable="on">Phase 2</div>
 
 
@@ -60,3 +64,4 @@
         </div>
     </div>
 </div>
+{% endif %}

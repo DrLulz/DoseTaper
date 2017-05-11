@@ -249,6 +249,25 @@ $icon-left-hover: 0;
       }
    }
 
+   .phase-empty {
+      position: relative;
+
+      float: right;
+
+      width: 80%;
+
+      background-color: transparent;
+      @include mq($until: md) {
+         height: $control-sm;
+      }
+      @include mq($from: md) {
+         height: $control-md;
+      }
+      @include mq($from: lg) {
+         height: $control-lg;
+      }
+   }
+
    .phase-del {
       background-color: $red;
 

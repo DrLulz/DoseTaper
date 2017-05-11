@@ -1,9 +1,13 @@
 #pl.phase {
    height: initial;
 
-    @include mq($from: md) {
-        padding-top: 4rem;
-    }
+   @include mq($from: md) {
+      padding-top: 4rem;
+   }
+
+   &.hidden {
+      display: none;
+   }
 
    .instructions {
       font-family: $font-opensans;
@@ -52,8 +56,43 @@
          }
 
          #initial {
+            $initial-color: #81a2be;
             @include mq($until: md) {
                padding-top: 4rem;
+            }
+
+            label.fl-label {
+               color: lighten($initial-color, 0.5);
+            }
+
+            input.fl-input {
+               &::placeholder {
+                  color: $initial-color;
+               }
+
+               &:-moz-placeholder {
+                  color: $initial-color;
+               }
+
+               &::-moz-placeholder {
+                  color: $initial-color;
+               }
+
+               &:-ms-input-placeholder {
+                  color: $initial-color;
+               }
+
+               &::-ms-input-placeholder {
+                  color: $initial-color;
+               }
+
+               &::-webkit-input-placeholder {
+                  color: $initial-color;
+               }
+            }
+
+            .fl-has-focus input.fl-input {
+               border-color: $initial-color;
             }
          }
 
@@ -173,6 +212,25 @@
                border-color: $interval-color;
             }
          }
+      }
+   }
+}
+
+#p1.phase {
+   &.hidden {
+      display: none;
+   }
+   &.visible {
+      display: block;
+   }
+}
+
+.phase-add-delete {
+   .phase-del,
+   .phase-add,
+   .taper-calc {
+      &.inactive {
+         display: none;
       }
    }
 }
