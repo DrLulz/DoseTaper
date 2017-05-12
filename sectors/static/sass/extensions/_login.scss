@@ -207,15 +207,15 @@ input, textarea {
         }
 
         &.cd-username {
-            background-image: url(../img/cd-icon-username.svg);
+            background-image: url(../../img/cd-icon-username.svg);
         }
 
         &.cd-email {
-            background-image: url(../img/cd-icon-email.svg);
+            background-image: url(../../img/cd-icon-email.svg);
         }
 
         &.cd-password {
-            background-image: url(../img/cd-icon-password.svg);
+            background-image: url(../../img/cd-icon-password.svg);
         }
     }
 
@@ -411,7 +411,7 @@ input, textarea {
     width: 40px;
     height: 40px;
 
-    background: url(../img/cd-icon-close.svg) no-repeat center center;
+    background: url(../../img/cd-icon-close.svg) no-repeat center center;
 
     @include mq($from: lg) {
         display: none;

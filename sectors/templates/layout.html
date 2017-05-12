@@ -33,9 +33,9 @@
     {% endif %}
 
     {# CSS #}
-    <link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dist/style.min.css') }}" rel="stylesheet">
     {% if request.url_rule.endpoint != "intro.index" %}
-        <link href="{{ url_for('static', filename='css/addons.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/dist/addons.min.css') }}" rel="stylesheet">
         {#
         <link href="{{ url_for('static', filename='js/litetooltip/dist/css/litetooltip.min.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='css/pickadate.css') }}" rel="stylesheet">
