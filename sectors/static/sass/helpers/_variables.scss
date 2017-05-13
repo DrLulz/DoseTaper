@@ -12,7 +12,7 @@ $white-khaki: #DDD8CE;
 $dark-grey: #5C5C5C; // #666666 #444444 #606060 #303030 #3a3a3a #404040 #333435
 $light-grey: #e4e4e4; // #e4e4e4 #a9a8a8 #767676 #a8a8a8 #E6E1DC
 
-$red: #D76666; // #870000 #df5f5f #990000 #800000 #af5f5f #660000 #800000 #D70000 #DA4939 #FF0000
+//$red: #D76666; // #870000 #df5f5f #990000 #800000 #af5f5f #660000 #800000 #D70000 #DA4939 #FF0000
 //$orange: #DC9656; // #E8BF6A #DFAF5F #FFC66D #FFAF00 #af5f00 #ff8700 #CC7833
 //$yellow: #ffdf5f; // #ffff00
 //$green: #a9b899; // #A5C261 #87AF5F #5fff00 #87af5f #005f00 #519F50 #008700 #A5C261 #144212 #A6E22E #8DA993 #9FB89C #9AB297
@@ -21,6 +21,11 @@ $red: #D76666; // #870000 #df5f5f #990000 #800000 #af5f5f #660000 #800000 #D7000
 //$grey-blue: #959EA9; // #959EA9 #A5ACAB
 $blueberry: #6b7a8f;
 //$purple: #5f5f87; // #870087 #967EFB
+$blue: #81a2be;
+$orange: #dc9656;
+$green: #8f9d6a;
+$purple: #b294bb;
+$red: #cc6666;
 
 /*
 $brown: #af875f;
@@ -58,7 +63,7 @@ $font-cursive: $font-damion;
 ---------------------------------------------------------------------------*/
 $font-login: $font-lato;
 $login-text: $dark-grey;
-$login-error: $red;
+$login-error: #D76666;
 $login-btn: #b5b7b8;
 $login-btn-hover: #9AB297;
 

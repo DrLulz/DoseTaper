@@ -28,6 +28,13 @@
       color: #404d5b;
       //font-size: 20px;
       @include ms-respond(font-size, 1.5);
+      
+      // Disable text selection
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
    }
 
    .phase-params {

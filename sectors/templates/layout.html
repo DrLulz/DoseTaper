@@ -34,13 +34,8 @@
 
     {# CSS #}
     <link href="{{ url_for('static', filename='css/dist/style.min.css') }}" rel="stylesheet">
-    {% if request.url_rule.endpoint != "intro.index" %}
+    {% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}
         <link href="{{ url_for('static', filename='css/dist/addons.min.css') }}" rel="stylesheet">
-        {#
-        <link href="{{ url_for('static', filename='js/litetooltip/dist/css/litetooltip.min.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/pickadate.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/icheck.css') }}" rel="stylesheet">
-        #}
     {% endif %}
 
     {# PREVENT IOS WEBAPP FROM OPENING NEW MOBILE WINDOW #}
@@ -71,7 +66,7 @@
                 {% endif %}
 
             {# TAPER #}
-                {% if request.url_rule.endpoint != "intro.index" %}
+                {% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}
                     <script src="{{ url_for('static', filename='js/dist/taper.min.js') }}"></script>
                 {% endif %}
 

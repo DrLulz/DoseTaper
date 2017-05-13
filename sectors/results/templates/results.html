@@ -1,35 +1,78 @@
 {% extends 'layout.html' %}
 {% block container %}
+<div id="results">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive-vertical shadow-z-1">
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            
-        <table>
-            <tbody>
-                <tr>
-                    <th>
-                        <p>Header1</p>
-                    </th>
-                    <th>
-                        <p>Header 2</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Content 1</p>
-                    </td>
-                    <td>
-                        <p>Content 2</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <table id="table" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Dose</th>
+                                <th>Duration</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Phase">1</td>
+                                <td data-title="Dose">10mg</td>
+                                <td data-title="Duration">10 days</td>
+                                <td data-title="Start Date">05/12/17</td>
+                                <td data-title="End Date">05/21/17</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Phase">2</td>
+                                <td data-title="Dose">10mg</td>
+                                <td data-title="Duration">10 days</td>
+                                <td data-title="Start Date">05/22/17</td>
+                                <td data-title="End Date">05/31/17</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
+                </div>
+            </div>
         </div>
     </div>
+
 </div>
-Hello
-
-
 {% endblock %}
+{#
+http://fontawesome.io/icons/
+
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i> /f1c1
+<i class="fa fa-file-image-o" aria-hidden="true"></i> /f1c5
+<i class="fa fa-sign-in" aria-hidden="true"></i> /f090
+<i class="fa fa-sign-out" aria-hidden="true"></i> /f08b
+<i class="fa fa-bookmark-o" aria-hidden="true"></i> /f097
+<i class="fa fa-bookmark" aria-hidden="true"></i> /f02e
+<i class="fa fa-hdd-o" aria-hidden="true"></i> /f0a0
+<i class="fa fa-floppy-o" aria-hidden="true"></i> /f0c7
+<i class="fa fa-gavel" aria-hidden="true"></i> /f0e3
+<i class="fa fa-balance-scale" aria-hidden="true"></i> /f24e
+<i class="fa fa-envelope-o" aria-hidden="true"></i> /f003
+<i class="fa fa-television" aria-hidden="true"></i> /f26c
+<i class="fa fa-bolt" aria-hidden="true"></i> /f0e7
+<i class="fa fa-rocket" aria-hidden="true"></i> /f135
+<i class="fa fa-list" aria-hidden="true"></i> /f03a
+<i class="fa fa-th-list" aria-hidden="true"></i> /f00b
+<i class="fa fa-user-o" aria-hidden="true"></i> /f2c0
+<i class="fa fa-user-md" aria-hidden="true"></i> /f0f0
+<i class="fa fa-bar-chart" aria-hidden="true"></i> /f080
+<i class="fa fa-info" aria-hidden="true"></i> /f129
+<i class="fa fa-calendar-o" aria-hidden="true"></i> /f133
+<i class="fa fa-clone" aria-hidden="true"></i> /f24d
+<i class="fa fa-folder-open-o" aria-hidden="true"></i> /f115
+<i class="fa fa-folder-o" aria-hidden="true"></i> /f114
+<i class="fa fa-picture-o" aria-hidden="true"></i> /f03e
+<i class="fa fa-paper-plane-o" aria-hidden="true"></i> /f1d9
+<i class="fa fa-cog" aria-hidden="true"></i> /f013
+<i class="fa fa-bars" aria-hidden="true"></i> /f0c9
+<i class="fa fa-sliders" aria-hidden="true"></i> /f1de
+<i class="fa fa-clipboard" aria-hidden="true"></i> /f0ea
+#}
