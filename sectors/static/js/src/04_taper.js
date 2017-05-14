@@ -33,7 +33,12 @@ var n = new Noty({
 });
 //n.show()
 
-
+if (mobile) {
+    console.log('mobile')
+}
+if ($('#results').length) {
+    console.log('results length')
+}
 
 if (mobile && $('#results').length) {
     console.log('remove class')
