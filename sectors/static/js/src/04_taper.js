@@ -35,6 +35,12 @@ var n = new Noty({
 
 
 
+if (mobile && $('#results').length) {
+    $('table').removeClass('table-hover');
+}
+
+
+
 // jQuery’s hasClass and removeClass on steroids
 // by Nikita Vasilyev
 // https://github.com/NV/jquery-regexp-classes
