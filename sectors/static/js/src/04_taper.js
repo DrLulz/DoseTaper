@@ -46,11 +46,11 @@ if (mobile && $('#results').length) {
 }
 
 
-
+console.log('here')
 // jQuery’s hasClass and removeClass on steroids
 // by Nikita Vasilyev
 // https://github.com/NV/jquery-regexp-classes
-(function(removeClass) {
+/* (function(removeClass) {
 
     jQuery.fn.removeClass = function( value ) {
         if ( value && typeof value.test === "function" ) {
@@ -73,4 +73,4 @@ if (mobile && $('#results').length) {
         return this;
     }
 
-})(jQuery.fn.removeClass);
+})(jQuery.fn.removeClass); */
