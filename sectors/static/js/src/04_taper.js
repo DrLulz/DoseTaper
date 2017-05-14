@@ -36,6 +36,7 @@ var n = new Noty({
 
 
 if (mobile && $('#results').length) {
+    console.log('remove class')
     $('table').removeClass('table-hover');
 }
 
