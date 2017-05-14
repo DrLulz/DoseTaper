@@ -1,214 +1,446 @@
 $table-radius: 5px;
 $phase-color: $purple;
+$rx-color: $orange;
+$calendar-color: $blue;
+$table-font: $font-asap;
 
 #results {
    padding-top: 70px;
 
    @include mq($until: sm) {
       .container {
-        width: 100%;
-        width: 100vw;
-        padding: 0;
+         width: 100%;
+         width: 100vw;
+         padding: 0;
       }
    }
-   thead th,
+
+   /*    thead th,
    tbody td {
       border: none;
+   } */
+
+   .table-title {
+      font-family: $font-contrail;
+
+      position: relative;
+
+      padding: 0.5rem 1rem;
+      @include ms-respond(font-size, 2.5);
+      @include user-select(none);
+
+      .title-wrapper {
+         display: inline-block;
+         //position: absolute;
+      }
+
+      .title-icon-wrapper {
+         position: absolute;
+         right: 10px;
+
+         display: inline-block;
+
+         .title-icon {
+            //float: right;
+            padding: 0.5rem;
+
+            cursor: pointer;
+
+            &:hover {
+               color: $red;
+            }
+         }
+      }
    }
 }
 
 
 //background: rgba(0, 0, 0, 0.1);
 
-
-
-/* // Disable text selection unselectable="on"
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none; */
-
-
 .shadow-z-1 {
-   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+   @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
 }
 
-
 .table {
-
-   font-family: $font-lato;
    width: 100%;
    max-width: 100%;
    margin-bottom: 2rem;
+
    border: none;
+   background: $phase-color;
+
+   @include user-select(none);
    @include mq($from: md) {
       border-radius: $table-radius;
    }
-   background: $phase-color;
    @include mq($until: md) {
       font-size: 1.6rem;
    }
    @include mq($from: md) {
       font-size: 2rem;
    }
-}
-
-.table > thead > tr,
-.table > tbody > tr,
-.table > tfoot > tr {
-   -webkit-transition: background 0.3s;
-   -moz-transition: background 0.3s;
-   -o-transition: background 0.3s;
-   transition: background 0.3s;
-}
-
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-   text-align: center;
-   vertical-align: top;
-   padding: 0.7em 1em 0.7em 1.15em;
-   -webkit-transition: all 0.3s ease;
-   -o-transition: all 0.3s ease;
-   transition: all 0.3s ease;
-   border-top: 0;
-}
-
-.table > thead > tr > th {
-
-   font-weight: normal;
-   color: rgba(0, 0, 0, 0.45);
-   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-   text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-   -webkit-font-smoothing: antialiased;
-}
-
-.table > tbody > tr > td {
-   color: #f7f7f7;
-   text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-@include mq($from: md) {
-   // top left
-   .table > thead > tr > th:first-child {
-      border-top-left-radius: $table-radius;
+   font: {
+      family: $table-font;
+      weight: 500;
    }
-   // top right
-   .table > thead > tr > th:last-child {
-      border-top-right-radius: $table-radius;
+
+   th,
+   td {
+      border: none !important;
    }
-   // bottom left
-   .table > tbody > tr:last-child > td:first-child {
-      border-bottom-left-radius: $table-radius;
+
+   > thead,
+   > tbody,
+   > tfoot {
+      > tr {
+         @include transition(background 0.3s);
+
+         > th,
+         > td {
+            text-align: center;
+            vertical-align: top;
+
+            padding: 0.7em 1em 0.7em 1.15em;
+
+            border-top: 0;
+         }
+      }
    }
-   // bottom right
-   .table > tbody > tr:last-child > td:last-child {
-      border-bottom-right-radius: $table-radius;
+
+
+
+   /* custom
+    ---------------------------------------------------------------------------*/
+   > thead {
+      > tr {
+         > th {
+            font-weight: normal;
+
+            color: rgba(0, 0, 0, 0.45);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+            @include font-smoothing;
+         }
+      }
    }
-}
 
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-   border-top: 0;
-}
+   > tbody {
+      > tr {
+         > td {
+            color: #f7f7f7;
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+            @include font-smoothing;
+         }
+      }
+   }
 
-.table > tbody + tbody {
-   border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.table .table {
-   background-color: #fff;
-}
-
-.table .no-border {
-   border: 0;
-}
-
-.table-hover > tbody > tr:hover,
-.table-hover > tbody > tr:hover {
-   //background-color: rgba(0, 0, 0, 0.12);
-   background: rgba(0, 0, 0, 0.19);
+   &.table-hover {
+      > tbody {
+         > tr:hover {
+            background: rgba(0, 0, 0, 0.19);
+         }
+      }
+   }
 }
 
 @include mq($from: md) {
    .table-responsive-vertical {
       border-radius: $table-radius;
    }
+
+   .table {
+      > thead {
+         > tr {
+            > th {
+               &:first-child {
+                  border-top-left-radius: $table-radius;
+               }
+
+               &:last-child {
+                  border-top-right-radius: $table-radius;
+               }
+            }
+         }
+
+         &:first-child {
+            > tr:first-child {
+               > th {
+                  border-top: 0;
+               }
+
+               > td {
+                  border-top: 0;
+               }
+            }
+         }
+      }
+
+      > tbody {
+         > tr {
+            &:last-child {
+               > td {
+                  &:first-child {
+                     border-bottom-left-radius: $table-radius;
+                  }
+
+                  &:last-child {
+                     border-bottom-right-radius: $table-radius;
+                  }
+               }
+            }
+         }
+      }
+   }
 }
 
-
-/* responsive
----------------------------------------------------------------------------*/
-
-//@media screen and (max-width: 768px) {
 @include mq($until: md) {
-   .table-responsive-vertical > .table {
-      margin-bottom: 0;
-      background-color: transparent;
-   }
+   .table-responsive-vertical {
+      > .table {
+         margin-bottom: 0;
 
-   .table-responsive-vertical > .table > thead,
-   .table-responsive-vertical > .table > tfoot {
-      display: none;
-   }
+         background: transparent;
 
-   .table-responsive-vertical > .table > tbody {
-      display: block;
-   }
+         > thead,
+         > tfoot {
+            display: none;
+         }
 
-   .table-responsive-vertical > .table > tbody > tr {
-      display: block;
-      margin-bottom: 1.6rem;
-      border: 1px solid #e0e0e0;
-      //border-radius: 2px;
-   }
+         > tbody {
+            display: block;
 
-   .table-responsive-vertical > .table > tbody > tr > td {
-      text-align: right;
-      vertical-align: middle;
-      display: block;
-      background-color: $phase-color;
-   }
+            > tr {
+               display: block;
 
-   .table-responsive-vertical > .table > tbody > tr > td[data-title]:before {
-      font-size: inherit;
-      font-weight: 400;
-      float: left;
-      content: attr(data-title);
-      //color: #757575;
-      color: rgba(0, 0, 0, 0.45);
-   }
+               margin-bottom: 1.6rem;
 
-   .table-responsive-vertical.shadow-z-1 {
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-   }
+               border: 1px solid #e0e0e0;
 
-   .table-responsive-vertical.shadow-z-1 > .table > tbody > tr {
-      border: none;
-      -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-      -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-   }
+               > td {
+                  text-align: right;
+                  vertical-align: middle;
 
-   .table-responsive-vertical > .table-hover > tbody > tr:hover > td,
-   .table-responsive-vertical > .table-hover > tbody > tr:hover {
-      background-color: $phase-color;
-   }
+                  display: block;
 
-   .table-responsive-vertical > .table-hover > tbody > tr > td:hover {
-      //background-color: rgba(0, 0, 0, 0.12);
-      background: rgba(0, 0, 0, 0.19);
+                  background: $phase-color;
+
+                  &[data-title]:before {
+                     font-size: inherit;
+                     font-weight: 400;
+
+                     float: left;
+
+                     content: attr(data-title);
+
+                     color: rgba(0, 0, 0, 0.45);
+                  }
+               }
+            }
+         }
+      }
+
+      &.shadow-z-1 {
+         @include box-shadow(none);
+
+         > .table {
+            > tbody {
+               > tr {
+                  border: none;
+                  @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
+               }
+            }
+         }
+      }
+
+      > .table-hover {
+         > tbody {
+            > tr {
+               background: $phase-color;
+
+               &:hover {
+                  background: $phase-color;
+
+                  > td {
+                     //background-color: $phase-color;
+                     //background: rgba(0, 0, 0, 0.19);
+                     //background: $phase-color;
+                  }
+               }
+
+               > td {
+                  @include transition(background 0.3s);
+
+                  &:hover {
+                     background: rgba(0, 0, 0, 0.19);
+                  }
+               }
+            }
+         }
+      }
    }
 }
+
+
+
+/* prescription results
+---------------------------------------------------------------------------*/
+#tbl_rx {
+
+   @include mq($until: md) {
+      .table-responsive-vertical {
+         > .table {
+            background: transparent;
+
+            > tbody {
+               > tr {
+                  > td {
+                     background: $rx-color;
+                  }
+               }
+            }
+         }
+
+         > .table-hover {
+            > tbody {
+               > tr {
+                  background: $rx-color;
+
+                  &:hover {
+                     background: $rx-color;
+                  }
+
+                  > td {
+                     &:hover {
+                        background: rgba(0, 0, 0, 0.19);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   .table {
+      background: $rx-color;
+   }
+}
+
+/* calendar results
+---------------------------------------------------------------------------*/
+#tbl_calendar {
+   .tbl-cal-wrapper {
+      padding: 2rem;
+
+      background: $calendar-color;
+      @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
+      @include mq($from: md) {
+         border-radius: $table-radius;
+      }
+   }
+
+   .pill-img {
+      vertical-align: -1px;
+
+      width: auto;
+      height: 12px;
+   }
+
+   .fc {
+      background: #fbfaf9;
+   }
+
+   .fc-bg {
+      .fc-other-month {
+         background: rgba(0, 0, 0, 0.04);
+      }
+   }
+   /*    .fc-bg {
+      table {
+         width: 100%;
+         border-collapse: collapse;
+
+         td {
+            width: 14.285714286%;
+            padding-bottom: 9%;
+         }
+      }
+   } */
+
+   .fc-content-skeleton {
+      table {
+         width: 100%;
+
+         border-collapse: collapse;
+
+         thead {
+            td {
+               width: 14.285714286%;
+               padding-bottom: 0%;
+            }
+         }
+
+         tbody {
+            td {
+               width: 14.285714286%;
+               padding-bottom: 9%;
+            }
+         }
+      }
+   }
+
+   .fc-head {
+      @include ms-respond(font-size, 1.5);
+
+      table {
+         margin: 0.50rem 0 0.55rem 0;
+      }
+   }
+
+   .fc-content {
+      font-family: $font-opensans;
+      font-size: 14px;
+      font-weight: 600;
+
+      color: white;
+      @include font-smoothing;
+   }
+
+   .fc-toolbar {
+      font-family: "Open Sans";
+
+      padding-bottom: 1rem;
+
+      color: white;
+      background-color: #81a2be;
+   }
+}
+
+/* 
+table
+width: 100%;
+border-collapse: collapse;
+
+td
+width: 14.285714286%;
+padding-bottom: 14.285714286%;
+
+
+ */
+/* Style for Calendar
+-------------------------------------------------*/
+/* .fc {margin-top: 30px}
+
+.fc td, .fc th {
+    width: 14.285714286%;
+    }
+.fc-basic-view .fc-body .fc-row {
+    min-height: 10vw;
+    }
+.pill-img {
+    width: 11px; height: 11px;
+    vertical-align: -1px;
+    }
+@media (max-width: 667px) {
+    .pill-img {width: 9px; height: 9px;}
+    }
+@media (max-width: 375px) {
+    .pill-img {width: 9px; height: 9px;}
+    } */

@@ -5,37 +5,97 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="table-responsive-vertical shadow-z-1">
 
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Phase</th>
-                                <th>Dose</th>
-                                <th>Duration</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-title="Phase">1</td>
-                                <td data-title="Dose">10mg</td>
-                                <td data-title="Duration">10 days</td>
-                                <td data-title="Start Date">05/12/17</td>
-                                <td data-title="End Date">05/21/17</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Phase">2</td>
-                                <td data-title="Dose">10mg</td>
-                                <td data-title="Duration">10 days</td>
-                                <td data-title="Start Date">05/22/17</td>
-                                <td data-title="End Date">05/31/17</td>
-                            </tr>
-                        </tbody>
-                    </table>
 
+                <div id="tbl_phase">
+                    <div class="table-title">
+                        <div class="title-wrapper">
+                            Taper Assay
+                        </div>
+                        <div class="title-icon-wrapper v-align">
+                            <span class="fa fa-clone title-icon" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="table-responsive-vertical shadow-z-1">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Dose</th>
+                                    <th>Duration</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Phase">1</td>
+                                    <td data-title="Dose">10mg</td>
+                                    <td data-title="Duration">10 days</td>
+                                    <td data-title="Start Date">05/12/17</td>
+                                    <td data-title="End Date">05/21/17</td>
+                                </tr>
+                                <tr>
+                                    <td data-title="Phase">2</td>
+                                    <td data-title="Dose">10mg</td>
+                                    <td data-title="Duration">10 days</td>
+                                    <td data-title="Start Date">05/22/17</td>
+                                    <td data-title="End Date">05/31/17</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                
+
+
+                <div id="tbl_rx">
+                    <div class="table-title">
+                        <div class="title-wrapper">
+                            Prescription
+                        </div>
+                        <div class="title-icon-wrapper v-align">
+                            <span class="fa fa-clone title-icon" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="table-responsive-vertical shadow-z-1">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Dose</th>
+                                    <th>Pill Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Dose">10mg</td>
+                                    <td data-title="Pill Number">20</td>
+                                </tr>
+                                <tr>
+                                    <td data-title="Dose">5mg</td>
+                                    <td data-title="Pill Number">10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>                    
+                </div>
+
+                <div id="tbl_calendar">
+                    <div class="table-title">
+                        <div class="title-wrapper">
+                            Calendar
+                        </div>
+                        <div class="title-icon-wrapper v-align">
+                            <span class="fa fa-file-image-o title-icon" aria-hidden="true"></span>
+                            <span class="fa fa-file-pdf-o title-icon" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="tbl-cal-wrapper">
+                        {% include 'demo.html' %}
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

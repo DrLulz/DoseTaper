@@ -37,6 +37,9 @@
     {% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}
         <link href="{{ url_for('static', filename='css/dist/addons.min.css') }}" rel="stylesheet">
     {% endif %}
+    {% if (request.url_rule.endpoint == "results.index") %}
+        <link href="{{ url_for('static', filename='css/dist/calendar.min.css') }}" rel="stylesheet">
+    {% endif %}
 
     {# PREVENT IOS WEBAPP FROM OPENING NEW MOBILE WINDOW #}
     {#<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>#}
@@ -68,6 +71,11 @@
             {# TAPER #}
                 {% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}
                     <script src="{{ url_for('static', filename='js/dist/taper.min.js') }}"></script>
+                {% endif %}
+
+            {# RESULTS #}
+                {% if (request.url_rule.endpoint == "resutls.index") %}
+                    <script src="{{ url_for('static', filename='js/dist/results.min.js') }}"></script>
                 {% endif %}
 
         {# FOOTER #}

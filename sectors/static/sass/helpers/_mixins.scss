@@ -87,6 +87,12 @@
     /* IE9 not supported */
 }
 
+@mixin box-shadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -118,6 +124,14 @@
 @mixin font-smoothing {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin user-select($arg) {
+    -webkit-user-select: $arg;
+    -moz-user-select: $arg;
+    -ms-user-select: $arg;
+    -o-user-select: $arg;
+    user-select: $arg;
 }
 
 @mixin arrow_down {
