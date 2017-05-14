@@ -4,6 +4,13 @@ $breakdown-color: $purple;
 #results {
    padding-top: 70px;
 
+   @include mq($until: md) {
+      .container {
+        width: 100%;
+        width: 100vw;
+        padding: 0;
+      }
+   }
    thead th,
    tbody td {
       border: none;

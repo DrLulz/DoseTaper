@@ -11359,6 +11359,11 @@ footer {
 
 #results {
   padding-top: 70px; }
+  @media (max-width: 48.0525em) {
+    #results .container {
+      width: 100%;
+      width: 100vw;
+      padding: 0; } }
   #results thead th,
   #results tbody td {
     border: none; }
