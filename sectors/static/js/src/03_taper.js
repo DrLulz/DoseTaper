@@ -65,13 +65,15 @@ function datePicker() {
             formatSubmit: 'mm/dd/yyyy',
             hiddenName: true,
             onStart: function () {
-                //var date = new Date();
-                var date = new Date(2016,11,31);
+                var date = new Date();
+                //var date = new Date(2016,11,31);
                 this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
             },
             onClose: function() {
-                update_span();
+                //update_span();
+                $date_field.text(this.get());
                 $('.cal-wrapper').removeClass('cal-hover');
+                $(document.activeElement).blur();
             },
         }),
         picker_open_close = $date_field.pickadate( 'picker' );
@@ -88,7 +90,8 @@ function datePicker() {
         .on( 'mousedown', function(event) {
             event.preventDefault()
         });
-    update_span();
+    //update_span();
+    $('#input_date').text(picker_open_close.get());
 }; // datepicker()
 
 // snap popup to bottom on mobile browsers
@@ -100,8 +103,8 @@ if (mobile) {
 }
 
 // Taper start date, hover color
-$('#datepicker-addon .fa-calendar-o, #input_date').on('mouseover mouseout', function() {
-    $('#datepicker-addon .fa-calendar-o, #input_date').toggleClass('cal-hover');
+$('#datepicker-addon .fa-calendar-o, [id$="_date"]').on('mouseover mouseout', function() {
+    $('#datepicker-addon .fa-calendar-o, [id$="_date"]').toggleClass('cal-hover');
 });
 
 
@@ -294,23 +297,6 @@ $('[id$=_form]').on('keydown', '.twitter-typeahead #taper_med', function(e) {
     if (e.which == 13 || e.which == 9) {
         e.preventDefault();
         $('.tt-selectable').first().click();
-    }
-});
-
-
-
-/* headroom
-/* https://github.com/WickyNilliams/headroom.js
-----------------------------------------------------------------------------
-----------------------------------------------------------------------------
----------------------------------------------------------------------------*/
-$('nav').headroom({
-    'tolerance': 5,
-    'offset': 205,
-    'classes': {
-        'initial': 'animated',
-        'pinned': 'slideDown',
-        'unpinned': 'slideUp'
     }
 });
 

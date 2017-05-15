@@ -34,7 +34,8 @@
 
     {# CSS #}
     <link href="{{ url_for('static', filename='css/dist/style.min.css') }}" rel="stylesheet">
-    {% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}
+    {#{% if (request.url_rule.endpoint == "taper.non_linear") or (request.url_rule.endpoint == "taper.linear") %}#}
+    {% if request.url_rule.endpoint != "intro.index" %}
         <link href="{{ url_for('static', filename='css/dist/addons.min.css') }}" rel="stylesheet">
     {% endif %}
     {% if (request.url_rule.endpoint == "results.index") %}
@@ -47,7 +48,6 @@
 </head>
 
 <body>
-    <div class="wrapper">
         
         {# NAVBAR #}
 
@@ -78,12 +78,17 @@
                     <script src="{{ url_for('static', filename='js/dist/results.min.js') }}"></script>
                 {% endif %}
 
-        {# FOOTER #}
+            {# USER #}
+                {% if (request.url_rule.endpoint == "user.index") %}
+                    <script src="{{ url_for('static', filename='js/dist/user.min.js') }}"></script>
+                {% endif %}
+
+
+            {# FOOTER #}
 
             {% if request.url_rule.endpoint != "intro.index" %}
                 {% include 'footer.html' %}
             {% endif %}
 
-    </div>
 </body>
 </html>

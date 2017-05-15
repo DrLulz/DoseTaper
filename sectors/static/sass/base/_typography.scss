@@ -181,3 +181,17 @@
        url('../../fonts/asap-v5-latin-500.ttf') format('truetype'),
        url('../../fonts/asap-v5-latin-500.svg#Asap') format('svg');
 }
+
+// Droid Sans Mono
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/droid-sans-mono-v7-latin-regular.eot');
+  src: local('Droid Sans Mono'), local('DroidSansMono'),
+       url('../../fonts/droid-sans-mono-v7-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('../../fonts/droid-sans-mono-v7-latin-regular.woff2') format('woff2'),
+       url('../../fonts/droid-sans-mono-v7-latin-regular.woff') format('woff'),
+       url('../../fonts/droid-sans-mono-v7-latin-regular.ttf') format('truetype'),
+       url('../../fonts/droid-sans-mono-v7-latin-regular.svg#DroidSansMono') format('svg');
+}

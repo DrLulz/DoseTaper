@@ -12,6 +12,7 @@ from utils import get_instance_folder_path
 from sectors.intro.controllers import intro
 from sectors.taper.controllers import taper
 from sectors.results.controllers import results
+from sectors.user.controllers import user
 #from project.admin.controllers import admin
 #from project.user.controllers import user
 #from project.results.controllers import results
@@ -28,6 +29,7 @@ app = Flask(__name__,
 app.register_blueprint(intro, url_prefix='/')
 app.register_blueprint(taper, url_prefix='/method')
 app.register_blueprint(results, url_prefix='/results')
+app.register_blueprint(user, url_prefix='/user')
 
 '''
 configure_app(app)

@@ -6,8 +6,9 @@ $table-font: $font-asap;
 
 #results {
    padding-top: 70px;
+   padding-bottom: 70px;
 
-   @include mq($until: sm) {
+   @include mq($until: md) {
       .container {
          width: 100%;
          width: 100vw;
@@ -15,16 +16,9 @@ $table-font: $font-asap;
       }
    }
 
-   /*    thead th,
-   tbody td {
-      border: none;
-   } */
-
    .table-title {
       font-family: $font-contrail;
-
       position: relative;
-
       padding: 0.5rem 1rem;
       @include ms-respond(font-size, 2.5);
       @include user-select(none);
@@ -37,13 +31,11 @@ $table-font: $font-asap;
       .title-icon-wrapper {
          position: absolute;
          right: 10px;
-
          display: inline-block;
 
          .title-icon {
             //float: right;
             padding: 0.5rem;
-
             cursor: pointer;
 
             &:hover {
@@ -65,7 +57,6 @@ $table-font: $font-asap;
    width: 100%;
    max-width: 100%;
    margin-bottom: 2rem;
-
    border: none;
    background: $phase-color;
 
@@ -79,6 +70,7 @@ $table-font: $font-asap;
    @include mq($from: md) {
       font-size: 2rem;
    }
+
    font: {
       family: $table-font;
       weight: 500;
@@ -99,9 +91,7 @@ $table-font: $font-asap;
          > td {
             text-align: center;
             vertical-align: top;
-
             padding: 0.7em 1em 0.7em 1.15em;
-
             border-top: 0;
          }
       }
@@ -115,7 +105,6 @@ $table-font: $font-asap;
       > tr {
          > th {
             font-weight: normal;
-
             color: rgba(0, 0, 0, 0.45);
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
             text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
@@ -197,7 +186,6 @@ $table-font: $font-asap;
    .table-responsive-vertical {
       > .table {
          margin-bottom: 0;
-
          background: transparent;
 
          > thead,
@@ -210,27 +198,20 @@ $table-font: $font-asap;
 
             > tr {
                display: block;
-
                margin-bottom: 1.6rem;
-
                border: 1px solid #e0e0e0;
 
                > td {
                   text-align: right;
                   vertical-align: middle;
-
                   display: block;
-
                   background: $phase-color;
 
                   &[data-title]:before {
                      font-size: inherit;
                      font-weight: 400;
-
                      float: left;
-
                      content: attr(data-title);
-
                      color: rgba(0, 0, 0, 0.45);
                   }
                }
@@ -284,7 +265,6 @@ $table-font: $font-asap;
 /* prescription results
 ---------------------------------------------------------------------------*/
 #tbl_rx {
-
    @include mq($until: md) {
       .table-responsive-vertical {
          > .table {
@@ -318,6 +298,7 @@ $table-font: $font-asap;
          }
       }
    }
+
    .table {
       background: $rx-color;
    }
@@ -328,19 +309,11 @@ $table-font: $font-asap;
 #tbl_calendar {
    .tbl-cal-wrapper {
       padding: 2rem;
-
       background: $calendar-color;
       @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
       @include mq($from: md) {
          border-radius: $table-radius;
       }
-   }
-
-   .pill-img {
-      vertical-align: -1px;
-
-      width: auto;
-      height: 12px;
    }
 
    .fc {
@@ -367,7 +340,6 @@ $table-font: $font-asap;
    .fc-content-skeleton {
       table {
          width: 100%;
-
          border-collapse: collapse;
 
          thead {
@@ -386,6 +358,13 @@ $table-font: $font-asap;
       }
    }
 
+   .fc-toolbar {
+      font-family: "Open Sans";
+      padding-bottom: 1rem;
+      color: white;
+      background-color: #81a2be;
+   }
+
    .fc-head {
       @include ms-respond(font-size, 1.5);
 
@@ -398,18 +377,20 @@ $table-font: $font-asap;
       font-family: $font-opensans;
       font-size: 14px;
       font-weight: 600;
-
       color: white;
       @include font-smoothing;
+      @include mq($until: lg) {
+         font-size: 11px;
+      }
    }
 
-   .fc-toolbar {
-      font-family: "Open Sans";
-
-      padding-bottom: 1rem;
-
-      color: white;
-      background-color: #81a2be;
+   .pill-img {
+      vertical-align: -1px;
+      width: auto;
+      height: 12px;
+      @include mq($until: lg) {
+         height: 10px;
+      }
    }
 }
 

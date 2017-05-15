@@ -1,0 +1,95 @@
+{% extends 'layout.html' %} {% block container %}
+{#
+<i class="fa fa-caret-right" aria-hidden="true"></i> /f0da
+<i class="fa fa-caret-down" aria-hidden="true"></i> /f0d7
+#}
+<div id="user">
+    <div class="container">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+
+
+            <div class="card">
+
+                <div class="card-header" role="tab" id="headingOne">
+                    <div class="row">
+                        <div class="col-xs-6 user-left-wrapper">
+                            <div class="user-left v-align">
+                                <span id="headingOne_caret" class="fa fa-caret-right" aria-hidden="true"></span>
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-target="#collapseOne">
+                                        Poison Ivy
+                                    </a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 user-right-wrapper">
+                            <div class="cal-wrapper">
+                                <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+                                <span id="u1_date" name="u1_date" contenteditable="false" unselectable="on"></span>
+                            </div>                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">        
+                    <div class="card-block">
+                        <ol>
+                            <li>60mg x 7 days</li>
+                            <li>40mg x 7 days</li>
+                            <li>20mg x 7 days</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo">
+
+                    <div class="row">
+                        <div class="col-xs-6 user-left-wrapper">
+                            <div class="user-left v-align">
+                                <span class="fa fa-caret-right" aria-hidden="true"></span>
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">
+                                        Poison Ivy #2
+                                    </a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 user-right-wrapper">
+                            <div class="cal-wrapper">
+                                <span class="input-group-addon" id="datepicker-addon"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+                                <span id="u2_date" name="u2_date" contenteditable="false" unselectable="on"></span>
+                            </div>                            
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="card-block">
+                        <ol>
+                            <li>60mg x 7 days</li>
+                            <li>40mg x 7 days</li>
+                            <li>20mg x 7 days</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+
+
+        </div><!-- #accordian -->
+    </div><!-- .container -->
+</div><!-- #user -->
+{% endblock %}

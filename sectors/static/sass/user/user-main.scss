@@ -1,0 +1,121 @@
+//@include mq($until: md) {}
+
+#user {
+   padding-top: 70px;
+   padding-bottom: 70px;
+
+   #accordion {
+      @include ms-respond(font-size, 3);
+
+      .card {
+         .row {
+            height: 50px;
+         }
+
+         h5 {
+            font-family: $font-contrail;
+            display: inline-block;
+            @include ms-respond(font-size, 3);
+            padding-left: 0.5rem;
+
+            a {
+               color: $dark-grey;
+               &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+               }
+            }
+         }
+         ol {
+            font-family: $font-mono;
+            @include ms-respond(font-size, 2);
+            margin-left: 2rem;
+         }
+      }
+
+      .user-left-wrapper,
+      .user-right-wrapper {
+         height: 100%;
+      }
+
+      .user-right-wrapper {
+         text-align: center;
+      }
+
+      .user-left {
+         .fa {
+            //@include ms-respond(font-size, 2);
+            min-width: 20px;
+            @include ms-respond(font-size, 3.5);
+
+            &.fa-caret-right {
+               padding-left: 5px;
+            }
+         }
+      }
+
+      .cal-wrapper {
+         text-align: center;
+         white-space: nowrap;
+         display: inline-block;
+         height: 100%;
+         padding: 0 1.5rem 0 1rem;
+
+         .input-group-addon {
+            display: inline-block;
+            padding: 0.25rem .75rem;
+            width: initial;
+
+            //color: $taper-params;
+            border: none;
+            background-color: transparent;
+            @include ms-respond(font-size, 3);
+
+            .fa-calendar-o {
+               @include transition(color, $anim-fast);
+
+               &:before {
+                  padding: 1px;
+               }
+
+               &:hover {
+                  cursor: pointer;
+               }
+
+               &.cal-hover {
+                  color: $date-hover;
+               }
+            }
+         }
+      }
+
+      [id$='_date'] {
+         font-family: $font-opensans;
+         font-weight: 600;
+         line-height: 50px;
+         vertical-align: middle;
+         text-indent: 10px;
+         padding: 0 1rem;
+
+         // Disable text selection
+         -o-user-select: none;
+         -ms-user-select: none;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         user-select: none;
+         border: none;
+         outline: none;
+         background-color: transparent;
+         @include ms-respond(font-size, 3);
+         @include transition(color, $anim-fast);
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &.cal-hover {
+            color: $date-hover;
+         }
+      }
+   }
+}

@@ -6427,6 +6427,12 @@ body {
   font-weight: 500;
   src: url("../../fonts/asap-v5-latin-500.eot");
   src: local("Asap Medium"), local("Asap-Medium"), url("../../fonts/asap-v5-latin-500.eot?#iefix") format("embedded-opentype"), url("../../fonts/asap-v5-latin-500.woff2") format("woff2"), url("../../fonts/asap-v5-latin-500.woff") format("woff"), url("../../fonts/asap-v5-latin-500.ttf") format("truetype"), url("../../fonts/asap-v5-latin-500.svg#Asap") format("svg"); }
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/droid-sans-mono-v7-latin-regular.eot");
+  src: local("Droid Sans Mono"), local("DroidSansMono"), url("../../fonts/droid-sans-mono-v7-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/droid-sans-mono-v7-latin-regular.woff2") format("woff2"), url("../../fonts/droid-sans-mono-v7-latin-regular.woff") format("woff"), url("../../fonts/droid-sans-mono-v7-latin-regular.ttf") format("truetype"), url("../../fonts/droid-sans-mono-v7-latin-regular.svg#DroidSansMono") format("svg"); }
 /* COLORS
 --------------------------------------------------*/
 /*
@@ -6459,37 +6465,6 @@ article {
     1.500 61.250em,
     1.600 81.250em,
     1.618 156.250em; */
-body:before {
-  background-color: #FCF8E3;
-  border-bottom: 1px solid #FBEED5;
-  border-left: 1px solid #FBEED5;
-  color: #C09853;
-  font: small-caption;
-  padding: 3px 6px;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 10000; }
-  @media (min-width: 20em) {
-    body:before {
-      content: "xs ≥ 320px (20em)"; } }
-  @media (min-width: 30em) {
-    body:before {
-      content: "sm ≥ 480px (30em)"; } }
-  @media (min-width: 48.0625em) {
-    body:before {
-      content: "md ≥ 769px (48.0625em)"; } }
-  @media (min-width: 61.25em) {
-    body:before {
-      content: "lg ≥ 980px (61.25em)"; } }
-  @media (min-width: 81.25em) {
-    body:before {
-      content: "xl ≥ 1300px (81.25em)"; } }
-  @media (min-width: 156.25em) {
-    body:before {
-      content: "fk ≥ 2500px (156.25em)"; } }
-
 /* Calls
 ---------------------------------------------------------------------------*/
 .vc-100 {
@@ -9517,7 +9492,8 @@ input, textarea {
   transform: translateY(-50%); }
 
 [id$='_taper'] {
-  padding-top: 60px; }
+  padding-top: 60px;
+  padding-bottom: 50px; }
   [id$='_taper'] .container-fluid {
     background-color: #303030;
     background-image: url(../../img/dark-stripes.png);
@@ -10558,18 +10534,16 @@ input, textarea {
 
 :root {
   font-size: 62.5%;
-  background-color: #303030;
-  background-image: url(../../img/dark-stripes.png);
-  background-repeat: repeat; }
+  background-color: #f9f7f6; }
 
 html,
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   color: #5c5c5c;
-  background-color: #fbf7f4;
+  background-color: #f9f7f6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Lato", sans-serif;
@@ -10590,20 +10564,23 @@ body {
   box-sizing: border-box;
   /* IE9 not supported */ }
 
-.wrapper {
-  overflow: hidden;
-  width: 100%;
-  min-height: 100%;
-  margin: auto; }
+/* .content-wrapper {
+   overflow: hidden;
 
+   width: 100%;
+   min-height: 100%;
+   margin: auto;
+} */
 footer {
-  margin: 0 0 -32000px 0;
-  padding: 0 0 32000px 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  height: 50px;
+  margin: 0;
+  border: none;
   background-color: #303030;
   background-image: url(../../img/dark-stripes.png);
   background-repeat: repeat; }
-  footer .row {
-    padding: 2rem; }
 
 .section {
   height: 100%;
@@ -11365,11 +11342,8 @@ footer {
 
 #results {
   padding-top: 70px;
-  /*    thead th,
-  tbody td {
-     border: none;
-  } */ }
-  @media (max-width: 29.99em) {
+  padding-bottom: 70px; }
+  @media (max-width: 48.0525em) {
     #results .container {
       width: 100%;
       width: 100vw;
@@ -11576,10 +11550,6 @@ footer {
     @media (min-width: 48.0625em) {
       #tbl_calendar .tbl-cal-wrapper {
         border-radius: 5px; } }
-  #tbl_calendar .pill-img {
-    vertical-align: -1px;
-    width: auto;
-    height: 12px; }
   #tbl_calendar .fc {
     background: #fbfaf9; }
   #tbl_calendar .fc-bg .fc-other-month {
@@ -11593,6 +11563,11 @@ footer {
     #tbl_calendar .fc-content-skeleton table tbody td {
       width: 14.285714286%;
       padding-bottom: 9%; }
+  #tbl_calendar .fc-toolbar {
+    font-family: "Open Sans";
+    padding-bottom: 1rem;
+    color: white;
+    background-color: #81a2be; }
   #tbl_calendar .fc-head {
     font-size: 1.90919rem; }
     @media (min-width: 30em) and (max-width: 48.063em) {
@@ -11619,11 +11594,16 @@ footer {
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
-  #tbl_calendar .fc-toolbar {
-    font-family: "Open Sans";
-    padding-bottom: 1rem;
-    color: white;
-    background-color: #81a2be; }
+    @media (max-width: 61.24em) {
+      #tbl_calendar .fc-content {
+        font-size: 11px; } }
+  #tbl_calendar .pill-img {
+    vertical-align: -1px;
+    width: auto;
+    height: 12px; }
+    @media (max-width: 61.24em) {
+      #tbl_calendar .pill-img {
+        height: 10px; } }
 
 /* 
 table
@@ -11656,5 +11636,176 @@ padding-bottom: 14.285714286%;
 @media (max-width: 375px) {
     .pill-img {width: 9px; height: 9px;}
     } */
+#user {
+  padding-top: 70px;
+  padding-bottom: 70px; }
+  #user #accordion {
+    font-size: 2.27813rem; }
+    @media (min-width: 30em) and (max-width: 48.063em) {
+      #user #accordion {
+        font-size: 2.27813rem; } }
+    @media (min-width: 48.063em) and (max-width: 61.25em) {
+      #user #accordion {
+        font-size: 2.7648rem; } }
+    @media (min-width: 61.25em) and (max-width: 81.25em) {
+      #user #accordion {
+        font-size: 3.125rem; } }
+    @media (min-width: 81.25em) and (max-width: 156.25em) {
+      #user #accordion {
+        font-size: 3.78975rem; } }
+    @media (min-width: 156.25em) {
+      #user #accordion {
+        font-size: 4.52343rem; } }
+    #user #accordion .card .row {
+      height: 50px; }
+    #user #accordion .card h5 {
+      font-family: "Contrail One", cursive;
+      display: inline-block;
+      font-size: 2.27813rem;
+      padding-left: 0.5rem; }
+      @media (min-width: 30em) and (max-width: 48.063em) {
+        #user #accordion .card h5 {
+          font-size: 2.27813rem; } }
+      @media (min-width: 48.063em) and (max-width: 61.25em) {
+        #user #accordion .card h5 {
+          font-size: 2.7648rem; } }
+      @media (min-width: 61.25em) and (max-width: 81.25em) {
+        #user #accordion .card h5 {
+          font-size: 3.125rem; } }
+      @media (min-width: 81.25em) and (max-width: 156.25em) {
+        #user #accordion .card h5 {
+          font-size: 3.78975rem; } }
+      @media (min-width: 156.25em) {
+        #user #accordion .card h5 {
+          font-size: 4.52343rem; } }
+      #user #accordion .card h5 a {
+        color: #5c5c5c; }
+        #user #accordion .card h5 a:hover {
+          cursor: pointer;
+          text-decoration: underline; }
+    #user #accordion .card ol {
+      font-family: "Droid Sans Mono", monospace;
+      font-size: 2.025rem;
+      margin-left: 2rem; }
+      @media (min-width: 30em) and (max-width: 48.063em) {
+        #user #accordion .card ol {
+          font-size: 2.025rem; } }
+      @media (min-width: 48.063em) and (max-width: 61.25em) {
+        #user #accordion .card ol {
+          font-size: 2.304rem; } }
+      @media (min-width: 61.25em) and (max-width: 81.25em) {
+        #user #accordion .card ol {
+          font-size: 2.5rem; } }
+      @media (min-width: 81.25em) and (max-width: 156.25em) {
+        #user #accordion .card ol {
+          font-size: 2.84302rem; } }
+      @media (min-width: 156.25em) {
+        #user #accordion .card ol {
+          font-size: 3.19903rem; } }
+    #user #accordion .user-left-wrapper,
+    #user #accordion .user-right-wrapper {
+      height: 100%; }
+    #user #accordion .user-right-wrapper {
+      text-align: center; }
+    #user #accordion .user-left .fa {
+      min-width: 20px;
+      font-size: 2.41632rem; }
+      @media (min-width: 30em) and (max-width: 48.063em) {
+        #user #accordion .user-left .fa {
+          font-size: 2.41632rem; } }
+      @media (min-width: 48.063em) and (max-width: 61.25em) {
+        #user #accordion .user-left .fa {
+          font-size: 3.02869rem; } }
+      @media (min-width: 61.25em) and (max-width: 81.25em) {
+        #user #accordion .user-left .fa {
+          font-size: 3.49386rem; } }
+      @media (min-width: 81.25em) and (max-width: 156.25em) {
+        #user #accordion .user-left .fa {
+          font-size: 4.37548rem; } }
+      @media (min-width: 156.25em) {
+        #user #accordion .user-left .fa {
+          font-size: 5.37889rem; } }
+      #user #accordion .user-left .fa.fa-caret-right {
+        padding-left: 5px; }
+    #user #accordion .cal-wrapper {
+      text-align: center;
+      white-space: nowrap;
+      display: inline-block;
+      height: 100%;
+      padding: 0 1.5rem 0 1rem; }
+      #user #accordion .cal-wrapper .input-group-addon {
+        display: inline-block;
+        padding: 0.25rem .75rem;
+        width: initial;
+        border: none;
+        background-color: transparent;
+        font-size: 2.27813rem; }
+        @media (min-width: 30em) and (max-width: 48.063em) {
+          #user #accordion .cal-wrapper .input-group-addon {
+            font-size: 2.27813rem; } }
+        @media (min-width: 48.063em) and (max-width: 61.25em) {
+          #user #accordion .cal-wrapper .input-group-addon {
+            font-size: 2.7648rem; } }
+        @media (min-width: 61.25em) and (max-width: 81.25em) {
+          #user #accordion .cal-wrapper .input-group-addon {
+            font-size: 3.125rem; } }
+        @media (min-width: 81.25em) and (max-width: 156.25em) {
+          #user #accordion .cal-wrapper .input-group-addon {
+            font-size: 3.78975rem; } }
+        @media (min-width: 156.25em) {
+          #user #accordion .cal-wrapper .input-group-addon {
+            font-size: 4.52343rem; } }
+        #user #accordion .cal-wrapper .input-group-addon .fa-calendar-o {
+          -webkit-transition: color, 100ms ease-in-out;
+          -moz-transition: color, 100ms ease-in-out;
+          -o-transition: color, 100ms ease-in-out;
+          transition: color, 100ms ease-in-out;
+          /* IE9 not supported */ }
+          #user #accordion .cal-wrapper .input-group-addon .fa-calendar-o:before {
+            padding: 1px; }
+          #user #accordion .cal-wrapper .input-group-addon .fa-calendar-o:hover {
+            cursor: pointer; }
+          #user #accordion .cal-wrapper .input-group-addon .fa-calendar-o.cal-hover {
+            color: #cc6666; }
+    #user #accordion [id$='_date'] {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      line-height: 50px;
+      vertical-align: middle;
+      text-indent: 10px;
+      padding: 0 1rem;
+      -o-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font-size: 2.27813rem;
+      -webkit-transition: color, 100ms ease-in-out;
+      -moz-transition: color, 100ms ease-in-out;
+      -o-transition: color, 100ms ease-in-out;
+      transition: color, 100ms ease-in-out;
+      /* IE9 not supported */ }
+      @media (min-width: 30em) and (max-width: 48.063em) {
+        #user #accordion [id$='_date'] {
+          font-size: 2.27813rem; } }
+      @media (min-width: 48.063em) and (max-width: 61.25em) {
+        #user #accordion [id$='_date'] {
+          font-size: 2.7648rem; } }
+      @media (min-width: 61.25em) and (max-width: 81.25em) {
+        #user #accordion [id$='_date'] {
+          font-size: 3.125rem; } }
+      @media (min-width: 81.25em) and (max-width: 156.25em) {
+        #user #accordion [id$='_date'] {
+          font-size: 3.78975rem; } }
+      @media (min-width: 156.25em) {
+        #user #accordion [id$='_date'] {
+          font-size: 4.52343rem; } }
+      #user #accordion [id$='_date']:hover {
+        cursor: pointer; }
+      #user #accordion [id$='_date'].cal-hover {
+        color: #cc6666; }
 
 /*# sourceMappingURL=style.css.map */

@@ -67,6 +67,7 @@ $anim-fast: 100ms ease-in-out;
 
 [id$='_taper'] {
    padding-top: 60px;
+   padding-bottom: 50px;
 
    .container-fluid {
       @include background-color;
