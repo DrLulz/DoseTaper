@@ -19,15 +19,16 @@ $.fn.userDatePicker = function() {
         picker_class = $(this).attr('id') + '_picker';
 
     $date_field.pickadate({
-        format: 'mmmm dd, yyyy',
+        //format: 'mmmm dd, yyyy',
+        format: 'mm/dd/yyyy',
         today: '<i class="fa fa-crosshairs" aria-hidden="true"></i>',
         clear: '',
         close: '<i class="fa fa-times" aria-hidden="true"></i>',
-        formatSubmit: 'mm/dd/yyyy',
+        formatSubmit: 'yyyy-mm-dd',
         hiddenName: true,
         onStart: function () {
-            var date = new Date();
-            //var date = new Date(2016,11,31);
+            //var date = new Date();
+            var date = new Date(2016,11,31);
             this.set('select', [date.getFullYear(), date.getMonth(), date.getDate()]);
         },
         onClose: function(e) {

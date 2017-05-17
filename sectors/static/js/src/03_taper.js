@@ -672,7 +672,8 @@ function newControls(phase) {
         .addClass(control_in);
 }
 
-$('#add, #ladd').click(function(e) {
+$('[id$=_taper]').on('click', '#add, #ladd', function(e) {
+
     $(this).closest('form').find(':input').slice(-1).blur();
 
     if (e.target.id == 'ladd') {
@@ -767,7 +768,12 @@ $('#add, #ladd').click(function(e) {
         });
 
     // show controls on new phase
-    newControls($phase);
+    if ( ($('.phase.linear').length) && ($('.phase.non-linear').length == 1) ) {
+        $('.phase.non-linear').last().nonLinearControls();
+    } else {
+        newControls($phase);
+    }
+    
 
     $('html, body').animate({
         scrollTop: $phase.offset().top
@@ -775,7 +781,9 @@ $('#add, #ladd').click(function(e) {
 
 });
 
-$('#del, #ldel').click(function(e) {
+$('[id$=_taper]').on('click', '#del, #ldel', function(e) {
+
+    var linear = $('.phase.linear').length != 0;
 
     if (e.target.id == 'ldel') {
         
@@ -808,32 +816,42 @@ $('#del, #ldel').click(function(e) {
         }
     }
 
-    if ($('.phase').length == 2) {
+    if ( ($('.phase').length == 2) && (linear == false) ) {
         return;
     } else {
-        var $phase = $('.phase').slice(2).last();
+        if ( linear == false ) {
+            var $phase = $('.phase').slice(2).last();
+        } else {
+            var $phase = $('.phase').slice(1).last();
+        }
 
-        var $controls   = $('.non-linear .phase-add-delete'),
-            control_in  = 'slideInRight',
-            control_out = 'slideOutRight';
+        if ( ( (linear == true) && ($('.phase').length > 2) ) || (linear == false) ) {
+    
+            var $controls   = $('.non-linear .phase-add-delete'),
+                control_in  = 'slideInRight',
+                control_out = 'slideOutRight';
 
-        $controls
-            .removeClass(control_in)
-            .addClass(control_out)
-            .one(animation_end, function() {
-                $(this).removeClass(control_out);
-            });
+            $controls
+                .removeClass(control_in)
+                .addClass(control_out)
+                .one(animation_end, function() {
+                    $(this).removeClass(control_out);
+                });
+        }
+
 
         $phase
             .removeClass('slideInRight')
             .addClass('slideOutRight')
             .one(animation_end, function() {
                 $(this).slideToggle('fast', 'linear', function() { $phase.detach(); });
-
-                $controls
-                    .addClass(control_in)
-                    .appendTo($phase.prev());
-
+                
+                if ( ( (linear == true) && ($('.phase').length > 2) ) || (linear == false) ) {
+                    $controls
+                        .addClass(control_in)
+                        .appendTo($phase.prev());
+                }
+            
                 var inputs = $(this).closest('form').find(':input');
                 inputs.slice(-4, -3).focus();
             });

@@ -1,5 +1,17 @@
 //@include mq($until: md) {}
 
+@mixin padding-sm-down() {
+   @include mq($until: md) {
+      padding: 0;
+   }
+}
+
+@mixin btn-padding() {
+   @include mq($until: md) {
+      padding: 0.75rem 1.5rem;
+   }
+}
+
 #user {
    padding-top: 70px;
    padding-bottom: 70px;
@@ -8,6 +20,9 @@
       @include ms-respond(font-size, 3);
 
       .card {
+         @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
+         border: none;
+
          .row {
             height: 50px;
          }
@@ -20,16 +35,18 @@
 
             a {
                color: $dark-grey;
+
                &:hover {
-                cursor: pointer;
-                text-decoration: underline;
+                  cursor: pointer;
+                  text-decoration: underline;
                }
             }
          }
+
          ol {
-            font-family: $font-mono;
+            font-family: $font-opensans;
             @include ms-respond(font-size, 2);
-            margin-left: 2rem;
+            //margin-left: 2rem;
          }
       }
 
@@ -40,6 +57,47 @@
 
       .user-right-wrapper {
          text-align: center;
+         //@include padding-sm-down;
+         padding: 0;
+
+         .btn-wrapper {
+            height: 100%;
+            display: inline-block;
+
+            .btn {
+               color: #fff;
+               appearance: initial;
+               -moz-appearance: initial;
+               -webkit-appearance: initial;
+               border: none;
+               padding: 1rem 2rem;
+               @include btn-padding;
+               @include ms-respond(font-size, 1.5);
+               line-height: 1;
+            }
+
+            .user-calc {
+               $calc-color: #8f9d6a;
+               background-color: $calc-color; //c66
+               box-shadow: 0px 2px 0px 0px darken($calc-color, 20%);
+               //height: 100%;
+               //position: absolute;
+
+               &:hover {
+                  background-color: lighten($calc-color, 8%);
+                  box-shadow: 0px 2px 0px 0px lighten(darken($calc-color, 20%), 4%);
+               }
+
+               &:after {
+                  font-family: 'FontAwesome';
+                  content: '\f1ec';
+                  //position: absolute;
+                  //top: 50%;
+                  //right: 0;
+                  //left: $icon-left-initial;
+               }
+            }
+         }
       }
 
       .user-left {
@@ -59,11 +117,14 @@
          white-space: nowrap;
          display: inline-block;
          height: 100%;
-         padding: 0 1.5rem 0 1rem;
+         //padding: 0 1.5rem 0 1rem;
+         //@include padding-sm-down;
+         padding: 0;
 
          .input-group-addon {
             display: inline-block;
-            padding: 0.25rem .75rem;
+            //padding: 0.25rem .75rem;
+            padding: 0 0.1rem 0.2rem 0;
             width: initial;
 
             //color: $taper-params;
@@ -95,7 +156,8 @@
          line-height: 50px;
          vertical-align: middle;
          text-indent: 10px;
-         padding: 0 1rem;
+         //padding: 0 1rem;
+         @include padding-sm-down;
 
          // Disable text selection
          -o-user-select: none;

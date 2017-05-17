@@ -9922,6 +9922,8 @@ input, textarea {
   background-color: #e8e8e8; }
   .phase:nth-of-type(6n + 1) .phase-label {
     color: #404d5b; }
+  .phase:nth-of-type(6n + 1) .nl-phase-label {
+    color: #404d5b; }
   .phase:nth-of-type(6n + 1) .phase-num {
     color: #81A2BE; }
   .phase:nth-of-type(6n + 1) label.fl-label {
@@ -9949,6 +9951,8 @@ input, textarea {
 .phase:nth-of-type(6n + 2) {
   background-color: #d0d6d6; }
   .phase:nth-of-type(6n + 2) .phase-label {
+    color: #404d5b; }
+  .phase:nth-of-type(6n + 2) .nl-phase-label {
     color: #404d5b; }
   .phase:nth-of-type(6n + 2) .phase-num {
     color: #DC9656; }
@@ -9978,6 +9982,8 @@ input, textarea {
   background-color: #f0efee; }
   .phase:nth-of-type(6n + 3) .phase-label {
     color: #404d5b; }
+  .phase:nth-of-type(6n + 3) .nl-phase-label {
+    color: #404d5b; }
   .phase:nth-of-type(6n + 3) .phase-num {
     color: #8F9D6A; }
   .phase:nth-of-type(6n + 3) label.fl-label {
@@ -10005,6 +10011,8 @@ input, textarea {
 .phase:nth-of-type(6n + 4) {
   background-color: #f9f7f6; }
   .phase:nth-of-type(6n + 4) .phase-label {
+    color: #404d5b; }
+  .phase:nth-of-type(6n + 4) .nl-phase-label {
     color: #404d5b; }
   .phase:nth-of-type(6n + 4) .phase-num {
     color: #B294BB; }
@@ -10034,6 +10042,8 @@ input, textarea {
   background-color: #6C6C6C; }
   .phase:nth-of-type(6n + 5) .phase-label {
     color: #ffffff; }
+  .phase:nth-of-type(6n + 5) .nl-phase-label {
+    color: #ffffff; }
   .phase:nth-of-type(6n + 5) .phase-num {
     color: #CC6666; }
   .phase:nth-of-type(6n + 5) label.fl-label {
@@ -10061,6 +10071,8 @@ input, textarea {
 .phase:nth-of-type(6n + 6) {
   background-color: #2f3238; }
   .phase:nth-of-type(6n + 6) .phase-label {
+    color: #ffffff; }
+  .phase:nth-of-type(6n + 6) .nl-phase-label {
     color: #ffffff; }
   .phase:nth-of-type(6n + 6) .phase-num {
     color: #ffdf5f; }
@@ -11656,57 +11668,101 @@ padding-bottom: 14.285714286%;
     @media (min-width: 156.25em) {
       #user #accordion {
         font-size: 4.52343rem; } }
-    #user #accordion .card .row {
-      height: 50px; }
-    #user #accordion .card h5 {
-      font-family: "Contrail One", cursive;
-      display: inline-block;
-      font-size: 2.27813rem;
-      padding-left: 0.5rem; }
-      @media (min-width: 30em) and (max-width: 48.063em) {
-        #user #accordion .card h5 {
-          font-size: 2.27813rem; } }
-      @media (min-width: 48.063em) and (max-width: 61.25em) {
-        #user #accordion .card h5 {
-          font-size: 2.7648rem; } }
-      @media (min-width: 61.25em) and (max-width: 81.25em) {
-        #user #accordion .card h5 {
-          font-size: 3.125rem; } }
-      @media (min-width: 81.25em) and (max-width: 156.25em) {
-        #user #accordion .card h5 {
-          font-size: 3.78975rem; } }
-      @media (min-width: 156.25em) {
-        #user #accordion .card h5 {
-          font-size: 4.52343rem; } }
-      #user #accordion .card h5 a {
-        color: #5c5c5c; }
-        #user #accordion .card h5 a:hover {
-          cursor: pointer;
-          text-decoration: underline; }
-    #user #accordion .card ol {
-      font-family: "Droid Sans Mono", monospace;
-      font-size: 2.025rem;
-      margin-left: 2rem; }
-      @media (min-width: 30em) and (max-width: 48.063em) {
-        #user #accordion .card ol {
-          font-size: 2.025rem; } }
-      @media (min-width: 48.063em) and (max-width: 61.25em) {
-        #user #accordion .card ol {
-          font-size: 2.304rem; } }
-      @media (min-width: 61.25em) and (max-width: 81.25em) {
-        #user #accordion .card ol {
-          font-size: 2.5rem; } }
-      @media (min-width: 81.25em) and (max-width: 156.25em) {
-        #user #accordion .card ol {
-          font-size: 2.84302rem; } }
-      @media (min-width: 156.25em) {
-        #user #accordion .card ol {
-          font-size: 3.19903rem; } }
+    #user #accordion .card {
+      -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+      border: none; }
+      #user #accordion .card .row {
+        height: 50px; }
+      #user #accordion .card h5 {
+        font-family: "Contrail One", cursive;
+        display: inline-block;
+        font-size: 2.27813rem;
+        padding-left: 0.5rem; }
+        @media (min-width: 30em) and (max-width: 48.063em) {
+          #user #accordion .card h5 {
+            font-size: 2.27813rem; } }
+        @media (min-width: 48.063em) and (max-width: 61.25em) {
+          #user #accordion .card h5 {
+            font-size: 2.7648rem; } }
+        @media (min-width: 61.25em) and (max-width: 81.25em) {
+          #user #accordion .card h5 {
+            font-size: 3.125rem; } }
+        @media (min-width: 81.25em) and (max-width: 156.25em) {
+          #user #accordion .card h5 {
+            font-size: 3.78975rem; } }
+        @media (min-width: 156.25em) {
+          #user #accordion .card h5 {
+            font-size: 4.52343rem; } }
+        #user #accordion .card h5 a {
+          color: #5c5c5c; }
+          #user #accordion .card h5 a:hover {
+            cursor: pointer;
+            text-decoration: underline; }
+      #user #accordion .card ol {
+        font-family: "Open Sans", sans-serif;
+        font-size: 2.025rem; }
+        @media (min-width: 30em) and (max-width: 48.063em) {
+          #user #accordion .card ol {
+            font-size: 2.025rem; } }
+        @media (min-width: 48.063em) and (max-width: 61.25em) {
+          #user #accordion .card ol {
+            font-size: 2.304rem; } }
+        @media (min-width: 61.25em) and (max-width: 81.25em) {
+          #user #accordion .card ol {
+            font-size: 2.5rem; } }
+        @media (min-width: 81.25em) and (max-width: 156.25em) {
+          #user #accordion .card ol {
+            font-size: 2.84302rem; } }
+        @media (min-width: 156.25em) {
+          #user #accordion .card ol {
+            font-size: 3.19903rem; } }
     #user #accordion .user-left-wrapper,
     #user #accordion .user-right-wrapper {
       height: 100%; }
     #user #accordion .user-right-wrapper {
-      text-align: center; }
+      text-align: center;
+      padding: 0; }
+      #user #accordion .user-right-wrapper .btn-wrapper {
+        height: 100%;
+        display: inline-block; }
+        #user #accordion .user-right-wrapper .btn-wrapper .btn {
+          color: #fff;
+          appearance: initial;
+          -moz-appearance: initial;
+          -webkit-appearance: initial;
+          border: none;
+          padding: 1rem 2rem;
+          font-size: 1.90919rem;
+          line-height: 1; }
+          @media (max-width: 48.0525em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              padding: 0.75rem 1.5rem; } }
+          @media (min-width: 30em) and (max-width: 48.063em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              font-size: 1.90919rem; } }
+          @media (min-width: 48.063em) and (max-width: 61.25em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              font-size: 2.10325rem; } }
+          @media (min-width: 61.25em) and (max-width: 81.25em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              font-size: 2.23607rem; } }
+          @media (min-width: 81.25em) and (max-width: 156.25em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              font-size: 2.46244rem; } }
+          @media (min-width: 156.25em) {
+            #user #accordion .user-right-wrapper .btn-wrapper .btn {
+              font-size: 2.69026rem; } }
+        #user #accordion .user-right-wrapper .btn-wrapper .user-calc {
+          background-color: #8f9d6a;
+          box-shadow: 0px 2px 0px 0px #586140; }
+          #user #accordion .user-right-wrapper .btn-wrapper .user-calc:hover {
+            background-color: #a2ad83;
+            box-shadow: 0px 2px 0px 0px #636d48; }
+          #user #accordion .user-right-wrapper .btn-wrapper .user-calc:after {
+            font-family: 'FontAwesome';
+            content: '\f1ec'; }
     #user #accordion .user-left .fa {
       min-width: 20px;
       font-size: 2.41632rem; }
@@ -11732,10 +11788,10 @@ padding-bottom: 14.285714286%;
       white-space: nowrap;
       display: inline-block;
       height: 100%;
-      padding: 0 1.5rem 0 1rem; }
+      padding: 0; }
       #user #accordion .cal-wrapper .input-group-addon {
         display: inline-block;
-        padding: 0.25rem .75rem;
+        padding: 0 0.1rem 0.2rem 0;
         width: initial;
         border: none;
         background-color: transparent;
@@ -11773,7 +11829,6 @@ padding-bottom: 14.285714286%;
       line-height: 50px;
       vertical-align: middle;
       text-indent: 10px;
-      padding: 0 1rem;
       -o-user-select: none;
       -ms-user-select: none;
       -webkit-user-select: none;
@@ -11788,6 +11843,9 @@ padding-bottom: 14.285714286%;
       -o-transition: color, 100ms ease-in-out;
       transition: color, 100ms ease-in-out;
       /* IE9 not supported */ }
+      @media (max-width: 48.0525em) {
+        #user #accordion [id$='_date'] {
+          padding: 0; } }
       @media (min-width: 30em) and (max-width: 48.063em) {
         #user #accordion [id$='_date'] {
           font-size: 2.27813rem; } }
