@@ -1,0 +1,284 @@
+//@include mq($until: md) {}
+@include mq-add-breakpoint(user, 600px);
+
+@mixin padding-sm-down() {
+   @include mq($until: md) {
+      padding: 0;
+   }
+}
+
+@mixin btn-padding() {
+   @include ms-respond(padding-right, 1.1);
+   @include ms-respond(padding-left, 1.1);
+   @include mq($from: md) {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+   }
+   @include mq($until: md) {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+   }
+}
+
+@mixin user-font() {
+    @include mq($from: xs, $until: sm) {
+        font-size: 1.8rem;
+    }
+    @include mq($from: sm, $until: md) {
+        font-size: 2rem;
+    }
+    @include mq($from: md, $until: lg) {
+        font-size: 2.2rem;
+    }
+   @include mq($from: lg) {
+      font-size: 2.4rem;
+   }
+}
+
+#user {
+   padding-top: 70px;
+   padding-bottom: 70px;
+
+   @include mq($until: user) {
+      .container {
+         width: 100vw;
+         padding: 0;
+      }
+   }
+
+   #accordion {
+      //@include ms-respond(font-size, 3);
+      //font-size: 2.6141rem;
+      @include user-font;
+
+      .card {
+         border: none;
+         @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24));
+
+         .card-footer,
+         .card-header {
+            background-color: lighten(#cfd0d1, 10%);
+         }
+
+         .row {
+            height: 50px;
+
+            .user-del {
+               font-size: 16px;
+               vertical-align: top;
+               //background-color: $calc-color; //c66
+               //box-shadow: 0px 2px 0px 0px darken($calc-color, 20%);
+               //height: 100%;
+               //position: absolute;
+               position: absolute;
+               top: 5px;
+               right: 10px;
+               padding: 0;
+               cursor: pointer;
+               //$calc-color: $red;
+               color: #b8887f;
+               @include transition(color, $anim-fast);
+
+               &:hover {
+                  //background-color: lighten($calc-color, 8%);
+                  //box-shadow: 0px 2px 0px 0px lighten(darken($calc-color, 20%), 4%);
+                  //color: #FF0000;
+                  color: $red;
+               }
+
+               &:after {
+                  font-family: 'FontAwesome';
+                  padding: 1px;
+                  content: '\f2d3';
+               }
+            }
+         }
+
+         h5 {
+            font-family: $font-contrail;
+            display: inline-block;
+            padding-left: 0.5rem;
+            //@include ms-respond(font-size, 2.6);
+            //@include ms-respond(font-size, 2.2);
+            //font-size: 2.6141rem;
+            @include user-font;
+            //@include transition(border-bottom, $anim-fast);
+
+
+            a {
+               text-decoration: none;
+               color: $dark-grey;
+               border-bottom: 1px solid transparent;
+               @include transition(border-bottom, $anim-fast);
+
+               &:hover {
+                  cursor: pointer;
+                  //text-decoration: underline;
+                  border-color: #5c5c5c;
+               }
+            }
+         }
+
+         ol {
+            font-family: $font-opensans;
+            @include ms-respond(font-size, 2);
+            //margin-left: 2rem;
+         }
+      }
+
+      .user-left-wrapper,
+      .user-right-wrapper {
+         height: 100%;
+      }
+
+      .user-right-wrapper {
+         text-align: center;
+         //@include padding-sm-down;
+         padding: 0;
+
+         .btn-wrapper {
+            display: inline-block;
+            //height: 100%;
+            //@include ms-respond(padding-left, 2.6);
+            //margin-left: 2rem;
+            @include mq($until: md) {
+               //margin-left: 1rem;
+            }
+            //float: left;
+
+            .btn {
+               //@include ms-respond(padding-bottom, 1.1);
+
+
+               //@include ms-respond(font-size, 1);
+               font-size: 1.8rem;
+               line-height: 1.5;
+               //@include btn-padding;
+               //padding: 0.75rem 1.5rem;
+               padding: 0;
+               //padding: 0.75rem 1.5rem;
+               color: #fff;
+               border: none;
+               -moz-appearance: initial;
+               -webkit-appearance: initial;
+               appearance: initial;
+               @include transition(color, $anim-fast);
+            }
+
+            .user-calc {
+               $calc-color: #bec6be;
+               //color: $calc-color;
+               //background-color: lighten($calc-color, 20%); //c66
+               //box-shadow: 0px 2px 0px 0px darken($calc-color, 20%);
+               background-color: $calc-color;
+               @include btn-padding;
+
+               &:hover {
+                  background-color: #9ab297;
+                  //background-color: darken($calc-color, 8%);
+                  //background-color: lighten($calc-color, 8%);
+                  //box-shadow: 0px 2px 0px 0px lighten(darken($calc-color, 20%), 4%);
+               }
+
+               &:after {
+                  font-family: 'FontAwesome';
+                  content: '\f1ec';
+                  //position: absolute;
+                  //top: 50%;
+                  //right: 0;
+                  //left: $icon-left-initial;
+               }//#9ab297; //#5c5c5c;//#9AB297
+            }
+         }
+      }
+
+      .user-left {
+         .fa {
+            //@include ms-respond(font-size, 2);
+            min-width: 20px;
+            //@include ms-respond(font-size, 3.5);
+            //font-size: 2.6141rem;
+            @include user-font;
+
+            &.fa-caret-right {
+               padding-left: 5px;
+            }
+         }
+      }
+
+      .cal-wrapper {
+         text-align: center;
+         white-space: nowrap;
+         display: inline-block;
+         height: 100%;
+         //padding: 0 1.5rem 0 1rem;
+         //@include padding-sm-down;
+         padding: 0;
+         @include mq($until: md) {
+            margin-top: 2px;
+         }
+
+         .input-group-addon {
+            display: inline-block;
+            width: initial;
+            //padding: 0.25rem .75rem;
+            padding: 0 0.1rem 0.2rem 0;
+
+            //color: $taper-params;
+            border: none;
+            background-color: transparent;
+            //@include ms-respond(font-size, 2);
+            //font-size: 2.6141rem;
+            @include user-font;
+
+            .fa-calendar-o {
+               @include transition(color, $anim-fast);
+
+               &:before {
+                  padding: 1px;
+               }
+
+               &:hover {
+                  cursor: pointer;
+               }
+
+               &.cal-hover {
+                  color: $date-hover;
+               }
+            }
+         }
+      }
+
+      [id$='_date'] {
+         font-family: $font-opensans;
+         font-weight: 600;
+         line-height: 50px;
+         vertical-align: middle;
+         text-indent: 10px;
+
+         // Disable text selection
+         -o-user-select: none;
+         -ms-user-select: none;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         user-select: none;
+         border: none;
+         outline: none;
+         background-color: transparent;
+         //padding: 0 1rem;
+         @include padding-sm-down;
+         //@include ms-respond(font-size, 2);
+         //font-size: 2.6141rem;
+         @include user-font;
+         @include transition(color, $anim-fast);
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &.cal-hover {
+            color: $date-hover;
+         }
+      }
+   }
+}
